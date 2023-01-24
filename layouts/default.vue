@@ -42,10 +42,11 @@
         </table>
       </nav>
     </header>
-
+    <!-- Output the page content-->
     <div>
       <slot />
     </div>
+
     <div class="bottomcontainer">
     <div>
       <h3 class="footer">
@@ -116,6 +117,9 @@
 }
 
 .router-link-exact-active {
+  text-decoration:none;
+}
+.nuxt-link-active {
   text-decoration:none;
 }
 
