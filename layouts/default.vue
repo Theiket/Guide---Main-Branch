@@ -80,6 +80,7 @@ body header nav footer {
   letter-spacing:5px;
   text-decoration:none;
   padding-block-end:7px;;
+  animation: 1s appear;
 }
 .menu {
   color: #CF6A2F;
@@ -87,6 +88,7 @@ body header nav footer {
   font: bold 45px 'Segoe UI', sans-serif;
   text-decoration:none;
   display:inline-flex;
+  animation: 1s appear;
 }
 
 @keyframes appear {
@@ -103,6 +105,7 @@ body header nav footer {
   border-top: solid;
   border-bottom: solid;
   border-color:#CF6A2F;
+  animation: 1s appear;
 }
 
 .button {
@@ -137,6 +140,7 @@ body header nav footer {
   align-items: center;
   text-align: center;
   background-color:#24262B;
+  animation: 1s appear;
 }
 
 .footer {
