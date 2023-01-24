@@ -2,7 +2,7 @@
 <div class="topmenu">
   <header>
     <nav>
-    <table>
+      <table>
       <td>
       <NuxtLink to="/">
         <h1 class="menu">
