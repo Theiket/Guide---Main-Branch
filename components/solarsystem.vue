@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Starmap go here
+        Starmap goes here
       </h1>
     </div>
   </div>
