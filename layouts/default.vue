@@ -69,8 +69,11 @@
 
 :root{
   --lightorange:#CF6A2F;
+}
+body header nav footer {
   background-color:#24262B;
 }
+
 .topmenu {
   background-color:#24262B;
   padding-left:25px;
