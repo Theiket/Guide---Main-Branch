@@ -1,6 +1,5 @@
 <template>
   <div class="mining">
-    <body>
       <table>
         <td class="refinery">
           <h3>
@@ -29,7 +28,6 @@
           </h3>
         </td>
       </table>
-    </body>
   </div>
 </template>
 

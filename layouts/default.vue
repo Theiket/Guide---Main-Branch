@@ -79,6 +79,10 @@
   --darkgray:#1B191E;
 }
 
+body{
+  background-color:var(--backgray)
+}
+
 .topmenu {
   background-color:var(--backgray);
   padding-inline-start:25px;

@@ -1,6 +1,5 @@
 <template>
 <div class="container">
-  <body>
     <table>
       <div class="blocks">
       <td class="refineryinput">
@@ -12,7 +11,6 @@
       </td>
       </div>
     </table>
-  </body>
 </div>
 </template>
 
