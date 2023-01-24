@@ -91,6 +91,7 @@
   text-decoration:none;
   display:inline-block;
   animation: 1s appear;
+  user-select:none;
 }
 
 @keyframes appear {
@@ -155,8 +156,10 @@
 }
 .copyright {
   width:800px;
+  user-select:none;
 }
 .version {
   width:800px;
+  user-select:none;
 
 </style>
