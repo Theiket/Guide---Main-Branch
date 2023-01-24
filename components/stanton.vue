@@ -99,11 +99,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 html,
 body {
-  min-width: 100vw;
+  min-width: 70vw;
   min-height: 100vh;
   overflow: hidden;
   animation: 1s appear;
   background-color:var(--backgray);
+  margin-inline-start:-25px;
 }
 
 body {
