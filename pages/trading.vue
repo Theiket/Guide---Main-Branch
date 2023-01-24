@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <tradingcontent />
-    <bottomtext />
   </div>
 </template>
 

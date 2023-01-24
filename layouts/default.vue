@@ -161,5 +161,5 @@
 .version {
   width:800px;
   user-select:none;
-
+}
 </style>

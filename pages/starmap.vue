@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <stanton />
-    <bottomtext />
   </div>
 </template>
 

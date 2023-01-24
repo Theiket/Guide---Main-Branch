@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <refinerybody />
-    <bottomtext />
   </div>
 </template>
 

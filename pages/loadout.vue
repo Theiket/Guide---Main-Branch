@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <loadoutbody />
-    <bottomtext />
   </div>
 </template>
 

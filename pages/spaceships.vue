@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <spaceshipcontent />
-    <bottomtext />
   </div>
 </template>
 
