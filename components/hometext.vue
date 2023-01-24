@@ -2,7 +2,7 @@
 <div class="container">
     <div>
       <h1 class="title">
-        I am GUIDE.<br>Your personal space companion.
+        Meet GUIDE.<br>Your personal space companion.
       </h1>
     </div>
   </div>
