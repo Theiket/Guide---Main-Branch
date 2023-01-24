@@ -1,6 +1,5 @@
 <template>
   <div>
-    <headermenu />
     <hometext />
     <bottomtext />
   </div>
