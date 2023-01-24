@@ -1,5 +1,6 @@
 <template>
 <div>
+<!--Header Nav Menu-->
   <div class="topmenu">
     <header>
       <nav>
@@ -43,11 +44,13 @@
         </table>
       </nav>
     </header>
-    <!-- Output the page content-->
+
+<!-- Output the page content-->
     <div>
       <slot />
     </div>
 
+<!--Footer Text-->
     <div class="bottomcontainer">
     <div>
       <h3 class="footer">
@@ -68,7 +71,6 @@
 </template>
 
 <style>
-
 :root{
   --lightorange:#CF6A2F;
   --orangehover:#CF9A2F;
