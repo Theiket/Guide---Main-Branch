@@ -83,12 +83,12 @@
   padding-inline-start:25px;
   letter-spacing:5px;
   text-decoration:none;
-  padding-block-end:7px;;
+  padding-block-end:7px;
   animation: 1s appear;
 }
 .menu {
   color: var(--lightorange);
-  padding-block-start:5px;
+  margin-block-start:0px;
   font: bold 45px 'Segoe UI', sans-serif;
   text-decoration:none;
   display:inline-block;
@@ -105,10 +105,10 @@
 .links {
   position:absolute;
   right:10px;
-  padding-left:63%;
-  margin-top: 7px;
-  border-top: solid;
-  border-bottom: solid;
+  padding-inline-start:63%;
+  margin-block-start: 7px;
+  border-block-start: solid;
+  border-block-end: solid;
   border-color:var(--lightorange);
   animation: 1s appear;
 }
@@ -137,7 +137,7 @@
 
 .bottomcontainer {
   width:auto;
-  padding-top:20px;
+  padding-block-start:20px;
   margin:auto;
   display: flex;
   vertical-align:bottom;
