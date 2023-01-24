@@ -21,7 +21,7 @@
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  background-color:#24262B;
+  background-color:var(--backgray);
   align-items:center;
   justify-content:center;
 }
@@ -31,40 +31,35 @@ table {
 .refineryinput {
   width:300px;
   text-align: center;
-  padding-left:100px;
-  padding-top:10px;
+  padding-inline-start:100px;
+  padding-block-start:10px;
 }
 .refineryoutput {
   width:250px;
 }
 
-.title {
-  width:600px;
-  animation: 1s appear;
-  font: bold 64px/64px 'Segoe UI', sans-serif;
-  display: block;
-  color: #CF6A2F;
-  letter-spacing: 1px;
-}
-
 .blocks {
   animation: 1s appear;
-  background-color:#1B191E;
+  background-color:var(--darkgray);
   width:1200px;
   height:750px;
-  margin-top:5px;
+  margin-block-start:5px;
   justify-items:center;
   align-items:center;
-  color:#CF6A2F;
+  color:var(--lightorange);
   font-size:24px;
   border:3px;
   border-style:solid;
-  border-color:#CF6A2F;
+  border-color:var(--lightorange);
   border-radius:50px;
   z-index:1;
 }
 
 .blocktitle{
+  width:600px;
+  animation: 1s appear;
+  font: bold 48px/48px 'Segoe UI', sans-serif;
+  color:var(--lightorange);
 }
 
 @keyframes appear {

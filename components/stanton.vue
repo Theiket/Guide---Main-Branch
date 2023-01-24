@@ -103,7 +103,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   animation: 1s appear;
-  background-color:#24262B;
+  background-color:var(--backgray);
 }
 
 body {
