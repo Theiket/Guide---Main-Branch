@@ -22,7 +22,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color:#24262B;
+  background-color:var(--backgray);
 }
 
 .infotext {
@@ -30,17 +30,10 @@
   animation: 1s appear;
   font: bold 14px 'Segoe UI', sans-serif;
   display: block;
-  color: #9DA1B2;
+  color: var(--lightgray);
   letter-spacing: 1px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
 @keyframes appear {
   0% {
     opacity: 0;

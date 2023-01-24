@@ -35,16 +35,16 @@
 
 <style scoped>
 .mining {
-  min-height:100vh;
-  background-color:#24262B;
+  min-height:50vh;
+  background-color:var(--backgray);
   align-content:center;
   vertical-align:center;
   padding:20%;
 }
 
 .button {
-  background-color:#1B191E;
-  color:#CF6A2F;
+  background-color:var(--darkgray);
+  color:var(--lightorange);
   text-align:center;
   border-style:solid;
   border-width:3px;
@@ -71,7 +71,7 @@
 }
 
 a:hover {
-  color:#CF9A2F;
+  color:var(--hoverorange);
 }
 
 .nuxt-link-active {
@@ -80,7 +80,7 @@ a:hover {
 
 .mining h3 {
   text-decoration:none;
-  color: #CF6A2F;
+  color: var(--lightorange);
 }
 @keyframes appear {
   0% {

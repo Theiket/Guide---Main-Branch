@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color:#24262B;
+  background-color:var(--backorange);
 }
 
 .title {
@@ -24,17 +24,10 @@
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
   display: block;
-  color: #CF6A2F;
+  color: var(--lightorange);
   letter-spacing: 1px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
 @keyframes appear {
   0% {
     opacity: 0;
