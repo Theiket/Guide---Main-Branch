@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="topmenu">
     <header>
       <nav>
@@ -63,31 +64,32 @@
     </div>
 
   </div>
+</div>
 </template>
 
 <style>
 
 :root{
   --lightorange:#CF6A2F;
-}
-body header nav footer {
-  background-color:#24262B;
+  --orangehover:#CF9A2F;
+  --backgray:#24262B;
+  --lightgray:#9DA1B2;
 }
 
 .topmenu {
-  background-color:#24262B;
-  padding-left:25px;
+  background-color:var(--backgray);
+  padding-inline-start:25px;
   letter-spacing:5px;
   text-decoration:none;
   padding-block-end:7px;;
   animation: 1s appear;
 }
 .menu {
-  color: #CF6A2F;
+  color: var(--lightorange);
   padding-block-start:5px;
   font: bold 45px 'Segoe UI', sans-serif;
   text-decoration:none;
-  display:inline-flex;
+  display:inline-block;
   animation: 1s appear;
 }
 
@@ -104,12 +106,12 @@ body header nav footer {
   margin-top: 7px;
   border-top: solid;
   border-bottom: solid;
-  border-color:#CF6A2F;
+  border-color:var(--lightorange);
   animation: 1s appear;
 }
 
 .button {
-  color:#CF6A2F;
+  color:var(--lightorange);
   text-align:center;
   border-style:none;
   font: bold 15px 'Segoe UI', sans-serif;
@@ -120,7 +122,7 @@ body header nav footer {
   margin-inline-end:5px;
 }
 .button a:hover {
-  color:#CF9A2F;
+  color:var(--orangehover);
 }
 
 .router-link-exact-active {
@@ -132,21 +134,21 @@ body header nav footer {
 
 .bottomcontainer {
   width:auto;
-  padding-top:20px%;
+  padding-top:20px;
   margin:auto;
   display: flex;
   vertical-align:bottom;
   justify-content:center;
   align-items: center;
   text-align: center;
-  background-color:#24262B;
+  background-color:var(--backgray);
   animation: 1s appear;
 }
 
 .footer {
   font: bold 10px 'Segoe UI', sans-serif;
   display: inline-block;
-  color: #9DA1B2;
+  color: var(--lightgray);
   letter-spacing: 1px;
 }
 .cells {

@@ -1,6 +1,6 @@
 <template>
-  <body>
-    <div class="mining">
+  <div class="mining">
+    <body>
       <table>
         <td class="refinery">
           <h3>
@@ -29,8 +29,8 @@
           </h3>
         </td>
       </table>
-    </div>
-  </body>
+    </body>
+  </div>
 </template>
 
 <style scoped>
