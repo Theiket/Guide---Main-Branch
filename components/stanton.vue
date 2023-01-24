@@ -99,8 +99,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   overflow: hidden;
   animation: 1s appear;
   background-color:#24262B;
