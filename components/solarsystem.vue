@@ -1,12 +1,12 @@
 <template>
-<body>
-<div class="container">
+  <div class="container">
     <div>
       <h1 class="title">
-        Loadout testing goes here
+        Starmap go here
       </h1>
     </div>
   </div>
+</template>
 
   <style scoped>
 .container {
