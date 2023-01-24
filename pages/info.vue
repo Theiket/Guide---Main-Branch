@@ -1,8 +1,6 @@
 <template>
   <div>
-    <headermenu />
     <pageinfo />
-    <bottomtext />
   </div>
 </template>
 

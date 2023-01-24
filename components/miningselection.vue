@@ -35,7 +35,7 @@
 
 <style scoped>
 .mining {
-  height:100vh;
+  height:40vh;
   background-color:#24262B;
   align-content:center;
   vertical-align:center;
@@ -52,10 +52,10 @@
   font: bold 35px 'Segoe UI', sans-serif;
   letter-spacing:1px;
   display: inline-block;
-  padding-left:100px;
-  padding-right:100px;
-  padding-top:100px;
-  padding-bottom:100px;
+  padding-inline-start:100px;
+  padding-inline-end:100px;
+  padding-block-start:100px;
+  padding-block-end:100px;
   text-decoration:none;
   animation: 1s appear;
 
