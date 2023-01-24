@@ -65,10 +65,11 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 
 :root{
   --lightorange:#CF6A2F;
+  background-color:#24262B;
 }
 .topmenu {
   background-color:#24262B;
