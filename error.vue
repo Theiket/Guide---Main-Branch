@@ -16,7 +16,6 @@
 </template>
 
 <script setup>
-+ definePageMeta({ layout: 'default' })
   defineProps(['error'])
 </script>
 
