@@ -62,7 +62,7 @@ table {
 .blocktitle{
   width:600px;
   animation: 1s appear;
-  font: bold 48px/48px 'Segoe UI', sans-serif;
+  font: bold 34px/34px 'Segoe UI', sans-serif;
   color:var(--lightorange);
   letter-spacing:1px;
   margin-inline-start:-50px;
