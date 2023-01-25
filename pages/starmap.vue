@@ -1,6 +1,6 @@
 <template>
   <div>
-    <solarsystem />
+    <starmaptest />
   </div>
 </template>
 
