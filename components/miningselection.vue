@@ -69,7 +69,7 @@
 }
 
 a:hover {
-  color:var(--hoverorange);
+  color:var(--orangehover);
 }
 
 .nuxt-link-active {
