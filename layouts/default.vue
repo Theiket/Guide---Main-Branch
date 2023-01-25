@@ -123,11 +123,11 @@ body{
   border-style:none;
   display: inline-block;
   padding: 10px 10px;
-  scale:140%;
+  scale:150%;
   justify-content:center;
   vertical-align:center;
   text-decoration:none;
-  padding-inline-end:10px;
+  padding-inline-end:15px;
   margin-inline-end:5px;
   margin-block-end:5px;
 }
