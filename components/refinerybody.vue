@@ -14,6 +14,12 @@
 </div>
 </template>
 
+<script setup>
+  useHead({
+    title: 'GUIDE | Refinery'
+  })
+</script>
+
 <style scoped>
 .container {
   margin: 0 auto;

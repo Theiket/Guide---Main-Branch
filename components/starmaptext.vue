@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script setup>
+  useHead({
+    title: 'GUIDE | Starmap'
+  })
+</script>
+
   <style scoped>
 .container {
   margin: 0 auto;

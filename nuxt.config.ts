@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-icon'],
   app: {
     head: {
-      title: 'GUIDE - Grindstone',
+      title: 'GUIDE',
       meta: [
         {name: 'description', content: 'Your GUIDE to Star Citizen'}
       ]

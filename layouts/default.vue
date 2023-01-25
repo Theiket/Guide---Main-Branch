@@ -123,7 +123,7 @@ body{
   border-style:none;
   display: inline-block;
   padding: 10px 10px;
-  scale:135%;
+  scale:140%;
   justify-content:center;
   vertical-align:center;
   text-decoration:none;

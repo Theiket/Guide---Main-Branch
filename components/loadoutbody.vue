@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script setup>
+  useHead({
+    title: 'GUIDE | Mining Loadouts'
+  })
+</script>
+
 <style scoped>
 .container {
   margin: 0 auto;

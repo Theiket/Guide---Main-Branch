@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script setup>
+  useHead({
+    title: 'GUIDE | Ship Log'
+  })
+</script>
+
 <style scoped>
 .container {
   margin: 0 auto;
