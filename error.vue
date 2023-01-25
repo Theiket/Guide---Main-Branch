@@ -13,4 +13,8 @@
 
 <style scoped>
 
+html body {
+  background-color:var(--backgray);
+}
+
 </style>

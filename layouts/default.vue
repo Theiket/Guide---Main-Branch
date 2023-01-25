@@ -14,29 +14,29 @@
       </td>
       <td>
         <div class="links">
-        <div class="button">
+        <div class="navbutton">
           <NuxtLink to="/mining">
-          <img src="~/assets/gem.svg">
+          <Icon name="bi:gem" />
           </NuxtLink>
         </div>
-        <div class="button">
+        <div class="navbutton">
           <NuxtLink to="/trading">
-          <img src="~/assets/twinarrows.svg">
+          <Icon name="game-icons:trade" />
           </NuxtLink>
         </div>
-        <div class="button">
+        <div class="navbutton">
           <NuxtLink to="/spaceships">
-          <img src="~/assets/rocket.svg">
+          <Icon name="icomoon-free:rocket" />
           </NuxtLink>
         </div>
-        <div class="button">
+        <div class="navbutton">
           <NuxtLink to="/starmap">
-          <img src="~/assets/globe.svg">
+          <Icon name="ph:planet" />
           </NuxtLink>
         </div>
-        <div class="button">
+        <div class="navbutton">
           <NuxtLink to="/info">
-          <img src="~/assets/infoicon.svg">
+          <Icon name="ic:outline-info" />
           </NuxtLink>
         </div>
         </div>
@@ -118,24 +118,31 @@ body{
   animation: 1s appear;
 }
 
-.button {
+.navbutton {
   color:var(--lightorange);
-  text-align:center;
   border-style:none;
-  font: bold 15px 'Segoe UI', sans-serif;
-  letter-spacing:1px;
   display: inline-block;
   padding: 10px 10px;
+  scale:135%;
+  justify-content:center;
+  vertical-align:center;
   text-decoration:none;
+  padding-inline-end:10px;
   margin-inline-end:5px;
+  margin-block-end:5px;
 }
-.button a:hover {
+
+.navbutton a {
+  color:var(--lightorange);
+}
+.navbutton a:hover {
   color:var(--orangehover);
 }
 
 .router-link-exact-active {
   text-decoration:none;
 }
+
 .nuxt-link-active {
   text-decoration:none;
 }
