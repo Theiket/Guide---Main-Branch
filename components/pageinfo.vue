@@ -38,6 +38,7 @@
   display: block;
   color: var(--lightgray);
   letter-spacing: 1px;
+  user-select:none;
 }
 
 @keyframes appear {

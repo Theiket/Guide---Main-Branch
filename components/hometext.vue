@@ -26,6 +26,7 @@
   display: block;
   color: var(--lightorange);
   letter-spacing: 1px;
+  user-select:none;
 }
 
 @keyframes appear {
