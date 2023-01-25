@@ -21,12 +21,12 @@
         </div>
         <div class="navbutton">
           <NuxtLink to="/trading">
-          <Icon name="game-icons:trade" />
+          <Icon name="material-symbols:currency-exchange" />
           </NuxtLink>
         </div>
         <div class="navbutton">
           <NuxtLink to="/spaceships">
-          <Icon name="icomoon-free:rocket" />
+          <Icon name="carbon:rocket" />
           </NuxtLink>
         </div>
         <div class="navbutton">
