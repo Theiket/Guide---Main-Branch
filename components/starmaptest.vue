@@ -6,13 +6,7 @@
 <script>
 + definePageMeta({ layout: 'default' })
 export default {
-app: {
-  head: {
-    script: {
-      { src: "~/components/starmap.js"  }
-    }
-  }
-}
+
 }
 
 </script>
