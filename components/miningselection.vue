@@ -3,28 +3,28 @@
       <table>
         <td class="refinery">
           <h3>
-          <NuxtLink to="/refinery">
           <div class="button">
+          <NuxtLink to="/refinery">
           Refinery
           <br>
           <div class="loadouticon">
           <Icon name="game-icons:anvil-impact" />
           </div>
-          </div>
           </NuxtLink>
+          </div>
           </h3>
         </td>
         <td class="loadout">
           <h3>
-          <NuxtLink to="/loadout">
           <div class="button">
+          <NuxtLink to="/loadout">
           Loadout
           <br>
           <div class="loadouticon">
           <Icon name="game-icons:laser-blast" />
           </div>
-          </div>
           </NuxtLink>
+          </div>
           </h3>
         </td>
       </table>
@@ -40,7 +40,7 @@
   padding:20%;
 }
 
-.button {
+.button a{
   background-color:var(--darkgray);
   color:var(--lightorange);
   text-align:center;
@@ -52,8 +52,8 @@
   display: inline-block;
   padding-inline-start:100px;
   padding-inline-end:100px;
-  padding-block-start:100px;
-  padding-block-end:100px;
+  padding-block-start:70px;
+  padding-block-end:130px;
   text-decoration:none;
   animation: 1s appear;
 }
@@ -68,20 +68,15 @@
 }
 
 .loadouticon {
-  scale:150%;
+  scale:300%;
 }
 
-a:hover {
+.button a:hover {
   color:var(--orangehover);
-}
-
-.nuxt-link-active {
-  text-decoration:none;
 }
 
 .mining h3 {
   text-decoration:none;
-  color: var(--lightorange);
 }
 @keyframes appear {
   0% {
