@@ -3,7 +3,7 @@
   </div>
 </template>
 
-<script setup>
+<script>
 // Settings
 var particleCount = 80,
 	motion = 0.05,
@@ -103,7 +103,7 @@ function renderParticles() {
     p += '<div class="star" style="top:'+ px +'%; left:'+ py +'%; width:'+ size +'px; height:'+ size +'px; background:'+hsl+'" data-tooltip="' + tooltip + '"></div>';
   }
   $('#stars').html(p);
-}
+};
 
 //init
 renderParticles();
