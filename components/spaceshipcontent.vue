@@ -1,11 +1,56 @@
 <template>
 <div class="container">
-    <div>
-      <h1 class="title">
-        Spaceships go here
-      </h1>
+  <div class="leftcard">
+    <div class="col-md-3">
+    <h4>
+    Manufacturer
+    </h4>
     </div>
   </div>
+  <div class="centercard">
+      <p>
+      Weapons
+      <br>
+      <div class="dropdown">
+      <Icon name="bxs:caret-down-circle" />
+      </div>
+      <br>
+      Shields
+      <br>
+      <div class="dropdown">
+      <Icon name="bxs:caret-down-circle" />
+      </div>
+      <br>
+      Power Plants
+      <br>
+      <div class="dropdown">
+      <Icon name="bxs:caret-down-circle" />
+      </div>
+      <br>
+      Coolers
+      <br>
+      <div class="dropdown">
+      <Icon name="bxs:caret-down-circle" />
+      </div>
+      <br>
+      Quantum Drives
+      <br>
+      <div class="dropdown">
+      <Icon name="bxs:caret-down-circle" />
+      </div>
+      </p>
+  </div>
+  <div class="rightcard">
+    <div class="col-md-3">
+    <h4>
+    Ship Name
+    </h4>
+    <p>
+    Ship information can go here, there's quite a lot of it to be fair, but it still belongs here.
+    </p>
+    </div>
+  </div>
+</div>
 </template>
 
 <script setup>
@@ -16,17 +61,48 @@
 
 <style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
+  margin: auto;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  min-width:90vw;
   background-color:var(--backgray);
 }
 
+.col-md-3 {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  min-height:90vh;
+}
+
+.leftcard {
+  position: relative;
+  width: 30%;
+  height: auto;
+  padding-inline-end:25px;
+  margin-inline-start:-15px;
+}
+
+.centercard {
+  position: relative;
+  width: 40%;
+  height: auto;
+  padding-block-start:30px;
+}
+
+.centercard p {
+  font-size:18px;
+}
+
+.rightcard {
+  position: relative;
+  width: 30%;
+  height: auto;
+}
+
 .title {
-  width:1200px;
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
   display: block;
@@ -34,12 +110,32 @@
   letter-spacing: 1px;
 }
 
-.subtitle {
+p {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightgray);
   padding-block-end: 15px;
+  padding-inline-start:15px;
+  padding-inline-end:15px;
+}
+
+h4 {
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightgray);
+  padding-block-end:5px;
+  text-align:center;
+}
+
+.icon {
+  scale:200%;
+  padding-block-start:5px;
 }
 @keyframes appear {
   0% {
