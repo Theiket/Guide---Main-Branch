@@ -4,26 +4,26 @@
         <td class="refinery">
           <h3>
           <NuxtLink to="/refinery">
-          <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button"
-          >
+          <div class="button">
           Refinery
-          </a>
+          <br>
+          <div class="loadouticon">
+          <Icon name="game-icons:anvil-impact" />
+          </div>
+          </div>
           </NuxtLink>
           </h3>
         </td>
         <td class="loadout">
           <h3>
           <NuxtLink to="/loadout">
-          <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button"
-          >
+          <div class="button">
           Loadout
-          </a>
+          <br>
+          <div class="loadouticon">
+          <Icon name="game-icons:laser-blast" />
+          </div>
+          </div>
           </NuxtLink>
           </h3>
         </td>
@@ -56,7 +56,6 @@
   padding-block-end:100px;
   text-decoration:none;
   animation: 1s appear;
-
 }
 
 .refinery {
@@ -66,6 +65,10 @@
 .loadout {
   line-height:200px;
   padding-left:20px;
+}
+
+.loadouticon {
+  scale:150%;
 }
 
 a:hover {
@@ -85,4 +88,5 @@ a:hover {
     opacity: 0;
   }
 }
+
 </style>
