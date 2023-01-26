@@ -1,6 +1,6 @@
 <template>
   <div>
-    <starmaptest />
+    <starmaptext />
   </div>
 </template>
 
