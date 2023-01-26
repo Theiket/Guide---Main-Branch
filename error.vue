@@ -1,18 +1,18 @@
 <template>
     <div>
     <NuxtLayout name="default">
-    <body>
-    <center>
-      <h1>{{ error.statusCode }}</h1>
-      <p>Task failed successfully</p>
-      <p>{{ error.message }}</p>
-    <div class="errorbutton">
-    <NuxtLink to="/">
-      Back to Home
-    </NuxtLink>
-    </div>
-    </center>
-    </body>
+      <body>
+      <center>
+        <h1>{{ error.statusCode }}</h1>
+        <p>Task failed successfully</p>
+        <p>{{ error.message }}</p>
+      <div class="errorbutton">
+        <NuxtLink to="/">
+          Back to Home
+        </NuxtLink>
+      </div>
+      </center>
+      </body>
     </NuxtLayout>
     </div>
 </template>
