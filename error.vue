@@ -1,9 +1,10 @@
 <template>
     <div>
+    <NuxtLayout name="default">
     <body>
     <center>
       <h1>{{ error.statusCode }}</h1>
-      <p>Your credentials are insufficient.</p>
+      <p>Task failed successfully</p>
       <p>{{ error.message }}</p>
     <div class="errorbutton">
     <NuxtLink to="/">
@@ -12,6 +13,7 @@
     </div>
     </center>
     </body>
+    </NuxtLayout>
     </div>
 </template>
 
@@ -49,6 +51,8 @@ p {
   margin:0px 500px 0px 500px;
   padding:15px 15px 15px 15px;
   border-radius:15px;
+  margin-block-end:230px;
+  background-color:var(--darkgray);
 }
 
 .errorbutton a {
