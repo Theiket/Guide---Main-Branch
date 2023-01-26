@@ -81,7 +81,7 @@ function uuidv4() {
 }
 
 // Create particle positions
-for (i = 0; i < particleCount; i++) {
+for (var i = 0; i < particleCount; i++) {
   var p = new Particle();
   particles.push(p);
   points.push([p.x*c, p.y*c]);
@@ -92,12 +92,12 @@ function renderParticles() {
   p = "";
   // Render particles
   for (var i = 0; i < particleCount; i++) {
-    px = particles[i]["x"];
-    py = particles[i]["y"];
-    pz = particles[i]["z"];
-    size = particles[i]["size"];
-    hsl = "hsl(" + particles[i]["hue"] + ", " + particles[i]["sat"] + "%, 90%)";
-    tooltip = uuidv4();
+    var px = particles[i]["x"];
+    var py = particles[i]["y"];
+    var pz = particles[i]["z"];
+    var size = particles[i]["size"];
+    var hsl = "hsl(" + particles[i]["hue"] + ", " + particles[i]["sat"] + "%, 90%)";
+    var tooltip = uuidv4();
       
 //console.log("px: " + px + ", py: " + py + ", pz: " + pz)
     p += '<div class="star" style="top:'+ px +'%; left:'+ py +'%; width:'+ size +'px; height:'+ size +'px; background:'+hsl+'" data-tooltip="' + tooltip + '"></div>';
