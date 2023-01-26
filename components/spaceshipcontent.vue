@@ -55,7 +55,7 @@
 
 <script setup>
   useHead({
-    title: 'GUIDE | Ship Log'
+    title: 'GUIDE | Ship Loadouts'
   })
 </script>
 
