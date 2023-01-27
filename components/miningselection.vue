@@ -33,7 +33,7 @@
 
 <style scoped>
 .mining {
-  min-height:50vh;
+  min-height:85vh;
   background-color:var(--backgray);
   align-content:center;
   vertical-align:center;
@@ -52,8 +52,8 @@
   display: inline-block;
   padding-inline-start:100px;
   padding-inline-end:100px;
-  padding-block-start:70px;
-  padding-block-end:130px;
+  padding-block-start:50px;
+  padding-block-end:100px;
   text-decoration:none;
   animation: 1s appear;
 }
@@ -68,6 +68,7 @@
 }
 
 .loadouticon {
+  margin-block-start:10px;
   scale:300%;
 }
 
