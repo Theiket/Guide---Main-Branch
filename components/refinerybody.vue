@@ -45,9 +45,10 @@ table {
 .blocks {
   animation: 1s appear;
   background-color:var(--darkgray);
-  width:1200px;
+  min-width:90%;
   height:750px;
   margin-block-start:5px;
+  margin-inline-end:20px;
   justify-items:center;
   align-items:center;
   color:var(--lightorange);

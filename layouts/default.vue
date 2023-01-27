@@ -73,6 +73,8 @@
 <style>
 
 :root{
+  --greensafety:#2FCFA9;
+  --reddanger:#CF3A2F;
   --lightorange:#CF6A2F;
   --orangehover:#CF9A2F;
   --backgray:#24262B;

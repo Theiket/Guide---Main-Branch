@@ -60,10 +60,10 @@
   <div class="rightcard">
     <div class="col-md-3">
     <h4>
-    Ship Name
+    Vehicle Name
     </h4>
     <p>
-    Ship information can go here, there's quite a lot of it to be fair, but it still belongs here.
+    Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
     </p>
     </div>
   </div>
@@ -72,7 +72,7 @@
 
 <script setup>
   useHead({
-    title: 'GUIDE | Ship Loadouts'
+    title: 'GUIDE | Vehicle Loadouts'
   })
 
 </script>
@@ -161,8 +161,9 @@ h4 {
   font-weight:bold;
   letter-spacing:1px;
   color: var(--lightgray);
-  padding-block-end:5px;
+  padding-block-end:10px;
   text-align:center;
+  padding-block-start:5px;
 }
 
 .dropdown .icon {
@@ -171,17 +172,15 @@ h4 {
   color:var(--lightgray);
 }
 
-.va-select {
+.leftcard .va-select {
   --va-select-cursor: pointer;
-  --va-select-dropdown-border-radius: 4px;
-  --va-select-dropdown-background: var(--va-background-secondary);
+  --va-select-dropdown-border-radius: 10px;
+  --va-select-dropdown-background: var(--va-dropdown-secondary);
   --va-select-box-shadow: 0 4px 8px rgba(59, 63, 73, 0.15);
   --va-select-min-width: var(--va-form-element-min-width);
   --va-select-anchor-state-icon-margin-left: 0.25rem;
   letter-spacing:1px;
   word-spacing:3px;
-  text-transform:capitalize;
-  text-align:center;
 }
 
 @keyframes appear {
