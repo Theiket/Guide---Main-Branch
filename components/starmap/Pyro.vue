@@ -33,7 +33,6 @@
   letter-spacing:1px;
   text-transform:capitalize;
   opacity:1;
-  position:relative;
   color:var(--lightorange);
   -webkit-transition: all 400ms ease-out;
   -moz-transition: all 400ms ease-out;

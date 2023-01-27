@@ -65,6 +65,7 @@
     <p>
     Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
     </p>
+
     </div>
   </div>
 </div>
@@ -162,9 +163,9 @@ h4 {
   font-weight:bold;
   letter-spacing:1px;
   color: var(--lightgray);
-  padding-block-end:10px;
+  padding-block-end:5px;
   text-align:center;
-  padding-block-start:5px;
+  padding-block-start:10px;
 }
 
 .dropdown .icon {
@@ -181,10 +182,11 @@ h4 {
   --va-select-min-width: var(--va-form-element-min-width);
   --va-select-anchor-state-icon-margin-left: 0.25rem;
   letter-spacing:1px;
-  word-spacing:3px;
+  word-spacing:0px;
   font-family:'Segoe UI', sans-serif;
   font-size:16px;
   color:var(--darkgray);
+  width:300px;
 }
 
 @keyframes appear {
