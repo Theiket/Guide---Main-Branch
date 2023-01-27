@@ -13,7 +13,7 @@
       </NuxtLink>
       </td>
       <td>
-        <div class="links">
+        <div class="navlinks">
         <div class="navbutton">
           <NuxtLink to="/mining">
           <Icon name="bi:gem" />
@@ -71,6 +71,7 @@
 </template>
 
 <style>
+
 :root{
   --lightorange:#CF6A2F;
   --orangehover:#CF9A2F;
@@ -99,6 +100,7 @@ body{
   display:inline-block;
   animation: 1s appear;
   user-select:none;
+  width:15%;
 }
 
 @keyframes appear {
@@ -107,11 +109,12 @@ body{
   }
 }
 
-.links {
+.navlinks {
   position:absolute;
   right:10px;
   padding-inline-start:63%;
-  margin-block-start: 7px;
+  margin-block-start: -40px;
+  margin-block-end:7px;
   border-block-start: solid;
   border-block-end: solid;
   border-color:var(--lightorange);
@@ -176,4 +179,5 @@ body{
   width:800px;
   user-select:none;
 }
+
 </style>

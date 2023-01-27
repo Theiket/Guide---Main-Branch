@@ -7,9 +7,15 @@
     Manufacturer
     </h4>
     <br>
-    <va-button-dropdown class="mr-2 mb-2" label="medium (default)">
-    Content
-    </va-button-dropdown>
+    <center>
+    <va-select
+      v-model="value"
+      class="mb-6"
+      placeholder="Select Manufacturer"
+      color="#CF6A2F"
+      :options="options"
+    />
+    </center>
     </div>
   </div>
 <!-- Component Selection Card -->
@@ -18,7 +24,11 @@
       Weapons
       <br>
       <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
       <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
       </div>
       <br>
       Shields
@@ -64,15 +74,30 @@
   useHead({
     title: 'GUIDE | Ship Loadouts'
   })
+
+</script>
+
+<script>
+export default {
+  name: 'State',
+  data () {
+    return {
+      options: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outlands', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems', 'Vanduul'],
+      value: '',
+    }
+  },
+}
 </script>
 
 <style scoped>
 .container {
   margin: auto;
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   min-width:90vw;
   background-color:var(--backgray);
+  animation: 1s appear;
+  padding-block-start:15px;
 }
 
 .col-md-3 {
@@ -81,7 +106,7 @@
   border-width:3px;
   border-color:var(--lightorange);
   border-radius:25px;
-  min-height:90vh;
+  min-height:85vh;
 }
 
 .leftcard {
@@ -140,10 +165,25 @@ h4 {
   text-align:center;
 }
 
-.icon {
+.dropdown .icon {
   scale:200%;
   padding-block-start:5px;
+  color:var(--lightgray);
 }
+
+.va-select {
+  --va-select-cursor: pointer;
+  --va-select-dropdown-border-radius: 4px;
+  --va-select-dropdown-background: var(--va-background-secondary);
+  --va-select-box-shadow: 0 4px 8px rgba(59, 63, 73, 0.15);
+  --va-select-min-width: var(--va-form-element-min-width);
+  --va-select-anchor-state-icon-margin-left: 0.25rem;
+  letter-spacing:1px;
+  word-spacing:3px;
+  text-transform:capitalize;
+  text-align:center;
+}
+
 @keyframes appear {
   0% {
     opacity: 0;
