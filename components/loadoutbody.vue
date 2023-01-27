@@ -23,6 +23,8 @@
   align-items: center;
   text-align: center;
   background-color:var(--backgray);
+  user-select:none;
+
 }
 
 .title {

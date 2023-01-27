@@ -28,6 +28,7 @@
   background-color:var(--backgray);
   align-items:center;
   justify-content:center;
+  user-select:none;
 }
 table {
   width:100%;
