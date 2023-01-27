@@ -23,6 +23,7 @@
   margin:10px 10px;
   left:-70px;
   bottom:60px;
+  user-select:none;
 }
 .systemPyro:hover {
   color: var(--reddanger);

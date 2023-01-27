@@ -98,6 +98,7 @@ export default {
   background-color:var(--backgray);
   animation: 1s appear;
   padding-block-start:15px;
+  user-select:none;
 }
 
 .col-md-3 {
@@ -181,6 +182,9 @@ h4 {
   --va-select-anchor-state-icon-margin-left: 0.25rem;
   letter-spacing:1px;
   word-spacing:3px;
+  font-family:'Segoe UI', sans-serif;
+  font-size:16px;
+  color:var(--darkgray);
 }
 
 @keyframes appear {

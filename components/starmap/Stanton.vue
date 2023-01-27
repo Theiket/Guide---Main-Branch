@@ -22,6 +22,7 @@
   color: var(--lightgray);
   border-radius: 50%;
   margin:10px 10px;
+  user-select:none;
 }
 .systemStanton:hover {
   color: var(--greensafety);

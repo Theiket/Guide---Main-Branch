@@ -50,6 +50,7 @@
   font: bold 35px 'Segoe UI', sans-serif;
   letter-spacing:1px;
   display: inline-block;
+  margin-block-start:-50px;
   padding-inline-start:100px;
   padding-inline-end:100px;
   padding-block-start:50px;

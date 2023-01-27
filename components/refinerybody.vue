@@ -46,8 +46,7 @@ table {
   animation: 1s appear;
   background-color:var(--darkgray);
   min-width:90%;
-  height:750px;
-  margin-block-start:5px;
+  height:82vh;
   margin-inline-end:20px;
   justify-items:center;
   align-items:center;
