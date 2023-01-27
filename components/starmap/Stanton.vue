@@ -27,6 +27,7 @@
 .systemStanton:hover {
   color: var(--greensafety);
 }
+
 .systemStanton .planetText {
   font: bold 15px 'Segoe UI', sans-serif;
   letter-spacing:1px;
