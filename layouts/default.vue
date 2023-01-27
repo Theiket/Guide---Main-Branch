@@ -93,8 +93,8 @@ body{
 }
 .menu {
   color: var(--lightorange);
-  margin-block-start:0px;
   font: bold 45px 'Segoe UI', sans-serif;
+  margin-block-start:0px;
   text-decoration:none;
   display:inline-block;
   animation: 1s appear;
@@ -122,8 +122,8 @@ body{
   color:var(--lightorange);
   border-style:none;
   display: inline-block;
-  padding: 10px 10px;
   scale:150%;
+  padding: 10px 10px;
   justify-content:center;
   vertical-align:center;
   text-decoration:none;

@@ -1,12 +1,18 @@
 <template>
 <div class="container">
+<!-- Ship Selection Card -->
   <div class="leftcard">
     <div class="col-md-3">
     <h4>
     Manufacturer
     </h4>
+    <br>
+    <va-button-dropdown class="mr-2 mb-2" label="medium (default)">
+    Content
+    </va-button-dropdown>
     </div>
   </div>
+<!-- Component Selection Card -->
   <div class="centercard">
       <p>
       Weapons
@@ -40,6 +46,7 @@
       </div>
       </p>
   </div>
+<!-- Ship Information Card -->
   <div class="rightcard">
     <div class="col-md-3">
     <h4>

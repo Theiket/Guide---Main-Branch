@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^0.7.1",
+    "@vuestic/nuxt": "^1.0.9",
     "nuxt-icon": "^0.2.7"
   }
 }
