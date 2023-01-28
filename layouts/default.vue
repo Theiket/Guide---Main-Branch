@@ -1,6 +1,6 @@
 <template>
 <div>
-<!--Header Nav Menu-->
+<!-- Header Nav Menu -->
   <div class="topmenu">
     <header>
       <nav>
@@ -50,7 +50,7 @@
       <slot />
     </div>
 
-<!--Footer Text-->
+<!-- Footer Text -->
     <div class="bottomcontainer">
     <footer>
     <div>
