@@ -3,25 +3,12 @@
 <!-- Left + Center Area -->
   <div class="centercard">
   <div class="harvestableGeneration">
-    <table>
-      <tr>
-    <div class="row my-8">
-      <td>
-        <h4>
+    <va-card
+    color="#1B191E" 
+    class="provider">
+      <h4>
         Planetary Body
-        </h4>
-      </td>
-      <td>
-        <h4>
-        Deposit Type
-        </h4>
-      </td>
-    </div>
-      </tr>
-    <br>
-      <tr>
-      <td>
-      <div class="provider">
+      </h4>
       <va-select
         v-model="value"
         class="mb-6"
@@ -30,10 +17,13 @@
         width="200px"
         :options="options"
       />
-      </div>
-      </td>
-      <td>
-      <div class="harvestable">
+      </va-card>
+      <va-card
+      color="#1B191E"
+      class="harvestable">
+      <h4>
+        Deposit Type
+      </h4>
       <va-select
         v-model="value"
         class="mb-6"
@@ -42,17 +32,12 @@
         width="180px"
         :options="options"
       />
-      </div>
-      </td>
-      </tr>
-      <tr>
-      <td>
-      <va-button color="#CF6A2F" size="large" round="true">
-      Generate
-      </va-button>
-      </td>
-      </tr>
-    </table>
+      </va-card>
+      <center>
+        <button class="button Generate">
+        Generate
+        </button>
+      </center>
   </div>
   <br>
     <Icon name="game-icons:rock" />
@@ -64,12 +49,13 @@
   <div class="rightcard">
     <div class="col-md-3">
     <center>
-    <va-button color="#CF6A2F" size="large" round="true">
+    <button class="button Prospector">
     Prospector
-    </va-button>
-    <va-button color="#CF6A2F" size="large" round="true">
+    </button>
+    <br>
+    <button class="button MOLE">
     MOLE
-    </va-button>
+    </button>
     </center>
     </div>
   </div>
@@ -90,13 +76,6 @@ export default {
     return {
       value:'',
       options: ['Hurston', 'Arial', 'Aberdeen', 'Magda', 'Ita', 'Crusader', 'Cellin', 'Daymar', 'Yela', 'ArcCorp','Lyria', 'Wala', 'microTech', 'Calliope', 'Clio', 'Euterpe'],
-    }
-  },
-  name: 'harvestable',
-  data () {
-    return {
-      value:'',
-      options: ['C Type', 'E Type', 'M Type', 'P Type', 'Q Type', 'S Type', 'Atacamite', 'Felsic', 'Gneiss', 'Granite', 'Igneous', 'Obsidian', 'Quantanium', 'Quartzite', 'Shale', 'Aphorite', 'Dolivine', 'Hadanite'],
     }
   },
 }
@@ -128,16 +107,18 @@ export default {
   position: absolute;
   width: 70%;
   height: auto;
-  padding-block-start:10px;
+  padding-block-start:5px;
+  padding-inline-start:75px;
 }
 .centercard p {
   font-size:18px;
 }
 .centercard .icon {
   scale:1000%;
-  padding-inline-start:5%;
-  padding-block-start:3%;
   color:var(--lightgray);
+  position:absolute;
+  left:450px;
+  top:350px;
 }
 
 .rightcard {
@@ -147,11 +128,6 @@ export default {
   vertical-align:center;
   right:20px;
 }
-.rightcard .va-button {
-  margin-block-start:50%;
-  width:300px;
-  height:70px;
-}
 
 .harvestableGeneration {
   background-color:var(--darkgray);
@@ -159,19 +135,17 @@ export default {
   border-width:3px;
   border-color:var(--lightorange);
   border-radius:25px;
-  width:600px;
-  text-align:center;
   padding-inline-start:15px;
   padding-block-end:15px;
 }
 .harvestableGeneration .provider {
   width:200px;
 }
-
 .harvestableGeneration .harvestable {
   width:180px;
 }
-.centercard .va-select {
+
+.va-select {
   --va-select-cursor: pointer;
   --va-select-dropdown-border-radius: 10px;
   --va-select-dropdown-background: var(--va-dropdown-secondary);
@@ -183,9 +157,63 @@ export default {
   font-family:'Segoe UI', sans-serif;
   font-size:16px;
   color:var(--darkgray);
-  width:300px;
 }
 
+.button {
+  width:300px;
+  height:70px;
+  background-color:var(--lightorange);
+  border-style:solid;
+  border-color:var(--lightorange);
+  border-radius:50px;
+  font-weight:bold;
+  color:var(--darkgray);
+  font-size:25px;
+  font-family:'Segoe UI', sans-serif;
+  cursor:pointer;
+}
+.button:hover {
+  border-color:var(--orangehover);
+  background-color:var(--orangehover);
+}
+.Prospector {
+  margin-block-start:50%;
+}
+.MOLE {
+  margin-block-start:20%;
+}
+.Generate {
+  margin-block-start:5px;
+  height:35px;
+  width:150px;
+}
+
+.harvestableGeneration {
+   --va-card-display: inline-block;
+  --va-card-position: relative;
+  --va-card-overflow: visible;
+  --va-card-box-shadow: var(--va-box-shadow);
+  --va-card-border-radius: 0.375rem;
+  --va-card-color: #34495e;
+  --va-card-background-color: var(--va-background-secondary);
+  --va-card-padding: 1.25rem;
+  width:600px;
+}
+.provider {
+  position:relative;
+  left:50px;
+  text-align:center;
+}
+.harvestable {
+  margin-inline-start:10%;
+  position:relative;
+  left:50px;
+  text-align:center;
+}
+
+.harvestableGeneration br {
+  height:4px;
+}
 
 /*Text*/
 
