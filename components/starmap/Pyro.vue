@@ -5,6 +5,11 @@
   <Icon name="game-icons:anarchy" />
   <p class="planetText">PYRO</p>
   <p class="systemText">SYSTEM</p>
+  <div class="unavailable">
+  <p class="warningText">
+  SCAN UNAVAILABLE
+  </p>
+  </div>
   </div>
   </NuxtLink>
 </div>
@@ -62,15 +67,31 @@
 }
 
 .icon {
-  align-self:center;
   scale:300%;
+  border-style:dashed;
+  border-color:transparent;
+  border-width:thin;
+  border-radius:50%;
 }
 
-.icon:hover {
+.systemPyro:hover .icon {
   border-style:dashed;
   border-color:var(--orangehover);
   border-width:thin;
   border-radius:50%;
+  animation:1s appear;
+}
+
+.systemPyro .warningText {
+  opacity:0;
+  font: bold 15px 'Segoe UI', sans-serif;
+  width:200px;
+  letter-spacing:1px;
+  text-align:left;
+  right:50px;
+}
+.systemPyro:hover .warningText {
+  opacity:1;
   animation:1s appear;
 }
 </style>

@@ -64,8 +64,12 @@
 
 .icon {
   scale:300%;
+  border-style:dashed;
+  border-color:transparent;
+  border-width:thin;
+  border-radius:50%;
 }
-.icon:hover {
+.systemStanton:hover .icon {
   border-style:dashed;
   border-color:var(--orangehover);
   border-width:thin;
