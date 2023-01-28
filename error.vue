@@ -1,11 +1,15 @@
 <template>
-    <div>
+    <div class="pageError">
     <NuxtLayout name="default">
       <body>
       <center>
         <h1>{{ error.statusCode }}</h1>
+        <br>
         <p>Task failed successfully</p>
+        <br>
         <p>{{ error.message }}</p>
+        <br>
+        <br>
       <div class="errorbutton">
         <NuxtLink to="/">
           Back to Home
@@ -22,6 +26,10 @@
 </script>
 
 <style scoped>
+
+.pageError {
+  height:90vh;
+}
 
  body {
   background-color:var(--backgray);
@@ -51,7 +59,6 @@ p {
   margin:0px 500px 0px 500px;
   padding:15px 15px 15px 15px;
   border-radius:15px;
-  margin-block-end:230px;
   background-color:var(--darkgray);
 }
 

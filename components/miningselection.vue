@@ -37,7 +37,9 @@
   background-color:var(--backgray);
   align-content:center;
   vertical-align:center;
-  padding:20%;
+  justify-content:center;
+  padding:20% 25%;
+  width:auto;
 }
 
 .button a{
