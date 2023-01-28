@@ -135,7 +135,7 @@ export default {
   border-color:var(--lightorange);
   border-radius:25px;
   padding-inline-start:15px;
-  padding-block-end:15px;
+  padding-block-end:5px;
 }
 .harvestableGeneration .provider {
   width:200px;
@@ -183,8 +183,9 @@ export default {
 }
 .Generate {
   margin-block-start:5px;
-  height:35px;
+  height:30px;
   width:150px;
+  font-size:20px;
 }
 
 /* Cards */
@@ -205,7 +206,7 @@ export default {
   text-align:center;
 }
 .harvestable {
-  margin-inline-start:10%;
+  margin-inline-start:13%;
   position:relative;
   left:50px;
   text-align:center;
