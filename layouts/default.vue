@@ -52,6 +52,7 @@
 
 <!--Footer Text-->
     <div class="bottomcontainer">
+    <footer>
     <div>
       <h3 class="footer">
       <table class="cells">
@@ -64,6 +65,7 @@
       </table>
       </h3>
     </div>
+    </footer>
     </div>
 
   </div>
@@ -154,15 +156,14 @@ body{
 
 .bottomcontainer {
   width:auto;
-  padding-block-start:20px;
-  margin:auto;
   display: flex;
-  vertical-align:bottom;
   justify-content:center;
-  align-items: center;
+  align-items:;
   text-align: center;
   background-color:var(--backgray);
   animation: 1s appear;
+  position:absolute;
+  bottom:15px;
 }
 
 .footer {

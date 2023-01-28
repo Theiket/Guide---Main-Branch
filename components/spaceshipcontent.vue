@@ -101,7 +101,6 @@ export default {
   padding-block-start:15px;
   user-select:none;
 }
-
 .col-md-3 {
   background-color:var(--darkgray);
   border-style:solid;
