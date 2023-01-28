@@ -136,6 +136,8 @@ export default {
   border-radius:25px;
   padding-inline-start:15px;
   padding-block-end:5px;
+  position:relative;
+  left:100px;
 }
 .harvestableGeneration .provider {
   width:200px;
