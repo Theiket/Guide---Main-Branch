@@ -1,39 +1,223 @@
 <template>
 <div class="container">
-    <div>
-      <h1 class="title">
-        Loadout testing goes here
-      </h1>
+<!-- Left + Center Area -->
+  <div class="centercard">
+  <div class="harvestableGeneration">
+    <table>
+      <tr>
+    <div class="row my-8">
+      <td>
+        <h4>
+        Planetary Body
+        </h4>
+      </td>
+      <td>
+        <h4>
+        Deposit Type
+        </h4>
+      </td>
+    </div>
+      </tr>
+    <br>
+      <tr>
+      <td>
+      <div class="provider">
+      <va-select
+        v-model="value"
+        class="mb-6"
+        placeholder="Select Planet"
+        color="#CF6A2F"
+        width="200px"
+        :options="options"
+      />
+      </div>
+      </td>
+      <td>
+      <div class="harvestable">
+      <va-select
+        v-model="value"
+        class="mb-6"
+        placeholder="Select Deposit"
+        color="#CF6A2F"
+        width="180px"
+        :options="options"
+      />
+      </div>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <va-button color="#CF6A2F" size="large" round="true">
+      Generate
+      </va-button>
+      </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+    <Icon name="game-icons:rock" />
+  <br>
+  <div class="instability">
+  </div>
+  </div>
+<!-- Loadout Selection -->
+  <div class="rightcard">
+    <div class="col-md-3">
+    <center>
+    <va-button color="#CF6A2F" size="large" round="true">
+    Prospector
+    </va-button>
+    <va-button color="#CF6A2F" size="large" round="true">
+    MOLE
+    </va-button>
+    </center>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
   useHead({
     title: 'GUIDE | Mining Loadouts'
   })
+
+</script>
+
+<script>
+export default {
+  name: 'provider',
+  data () {
+    return {
+      value:'',
+      options: ['Hurston', 'Arial', 'Aberdeen', 'Magda', 'Ita', 'Crusader', 'Cellin', 'Daymar', 'Yela', 'ArcCorp','Lyria', 'Wala', 'microTech', 'Calliope', 'Clio', 'Euterpe'],
+    }
+  },
+  name: 'harvestable',
+  data () {
+    return {
+      value:'',
+      options: ['C Type', 'E Type', 'M Type', 'P Type', 'Q Type', 'S Type', 'Atacamite', 'Felsic', 'Gneiss', 'Granite', 'Igneous', 'Obsidian', 'Quantanium', 'Quartzite', 'Shale', 'Aphorite', 'Dolivine', 'Hadanite'],
+    }
+  },
+}
+
 </script>
 
 <style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 85vh;
+  margin: auto;
+  max-height: 85vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  min-width:90vw;
   background-color:var(--backgray);
+  animation: 1s appear;
+  padding-block-start:15px;
   user-select:none;
-
 }
 
+.col-md-3 {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  min-height:85vh;
+}
+
+.centercard {
+  position: absolute;
+  width: 70%;
+  height: auto;
+  padding-block-start:10px;
+}
+.centercard p {
+  font-size:18px;
+}
+.centercard .icon {
+  scale:1000%;
+  padding-inline-start:5%;
+  padding-block-start:3%;
+  color:var(--lightgray);
+}
+
+.rightcard {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  vertical-align:center;
+  right:20px;
+}
+.rightcard .va-button {
+  margin-block-start:50%;
+  width:300px;
+  height:70px;
+}
+
+.harvestableGeneration {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  width:600px;
+  text-align:center;
+  padding-inline-start:15px;
+  padding-block-end:15px;
+}
+.harvestableGeneration .provider {
+  width:200px;
+}
+
+.harvestableGeneration .harvestable {
+  width:180px;
+}
+.centercard .va-select {
+  --va-select-cursor: pointer;
+  --va-select-dropdown-border-radius: 10px;
+  --va-select-dropdown-background: var(--va-dropdown-secondary);
+  --va-select-box-shadow: 0 4px 8px rgba(59, 63, 73, 0.15);
+  --va-select-min-width: var(--va-form-element-min-width);
+  --va-select-anchor-state-icon-margin-left: 0.25rem;
+  letter-spacing:1px;
+  word-spacing:0px;
+  font-family:'Segoe UI', sans-serif;
+  font-size:16px;
+  color:var(--darkgray);
+  width:300px;
+}
+
+
+/*Text*/
+
 .title {
-  width:1200px;
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
   display: block;
   color: var(--lightorange);
   letter-spacing: 1px;
+}
+
+p {
+  font-weight: 300;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightgray);
+  padding-block-end: 15px;
+  padding-inline-start:15px;
+  padding-inline-end:15px;
+}
+
+h4 {
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightgray);
+  padding-block-end:5px;
+  padding-block-start:5px;
 }
 
 @keyframes appear {

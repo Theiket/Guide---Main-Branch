@@ -82,6 +82,7 @@
   --backgray:#24262B;
   --lightgray:#9DA1B2;
   --darkgray:#1B191E;
+  --va-divider-color:transparent;
 }
 
 body{
