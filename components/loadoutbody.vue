@@ -15,7 +15,7 @@
         placeholder="Select Planet"
         color="#CF6A2F"
         width="200px"
-        :options="options"
+        :options="['Hurston', 'Arial', 'Aberdeen', 'Magda', 'Ita', 'Crusader', 'Cellin', 'Daymar', 'Yela', 'ArcCorp','Lyria', 'Wala', 'microTech', 'Calliope', 'Clio', 'Euterpe']"
       />
       </va-card>
       <va-card
@@ -29,8 +29,8 @@
         class="mb-6"
         placeholder="Select Deposit"
         color="#CF6A2F"
-        width="180px"
-        :options="options"
+        width="200px"
+        :options="['C Type', 'E Type', 'M Type', 'P Type', 'Q Type', 'S Type', 'Atacamite', 'Felsic', 'Gneiss', 'Granite', 'Igneous', 'Obsidian', 'Quantanium', 'Quartzite', 'Shale', 'Aphorite', 'Dolivine', 'Hadanite']"
       />
       </va-card>
       <center>
@@ -75,7 +75,6 @@ export default {
   data () {
     return {
       value:'',
-      options: ['Hurston', 'Arial', 'Aberdeen', 'Magda', 'Ita', 'Crusader', 'Cellin', 'Daymar', 'Yela', 'ArcCorp','Lyria', 'Wala', 'microTech', 'Calliope', 'Clio', 'Euterpe'],
     }
   },
 }
@@ -142,7 +141,7 @@ export default {
   width:200px;
 }
 .harvestableGeneration .harvestable {
-  width:180px;
+  width:200px;
 }
 
 .va-select {
@@ -158,7 +157,7 @@ export default {
   font-size:16px;
   color:var(--darkgray);
 }
-
+/* Buttons */
 .button {
   width:300px;
   height:70px;
@@ -188,6 +187,7 @@ export default {
   width:150px;
 }
 
+/* Cards */
 .harvestableGeneration {
    --va-card-display: inline-block;
   --va-card-position: relative;
@@ -209,10 +209,6 @@ export default {
   position:relative;
   left:50px;
   text-align:center;
-}
-
-.harvestableGeneration br {
-  height:4px;
 }
 
 /*Text*/
