@@ -1,11 +1,11 @@
 <template>
 <div class="container">
 <div class="systemName">
-<h1>
 <NuxtLink to="/starmap">
+<h1>
 PYRO
-</NuxtLink>
 </h1>
+</NuxtLink>
 </div>
   <div class="solar-system">
   <div class="PyroVI-orbit orbit">
@@ -132,7 +132,7 @@ PYRO
 }
 .planet:hover {
   box-shadow:0px 0px 5px black;
-  top:-5px;
+  top:-5.5px;
   width:10px;
   height:10px;
 }

@@ -1,9 +1,11 @@
 <template>
 <div class="container">
 <div class="systemName">
+<NuxtLink to="/starmap">
 <h1>
 STANTON
 </h1>
+</NuxtLink>
 </div>
   <div class="solar-system">
     <div class="microtech-orbit orbit">
@@ -137,10 +139,17 @@ STANTON
   border-width:2px;
   border-color:var(--lightgray);
   padding-inline-start:10px;
+  z-index:1;
 }
 .systemName h1 {
   font: 35px 'Segoe UI', sans-serif;
   font-weight:bold;
+}
+.systemName a {
+  color:var(--lightorange);
+}
+.systemName a:hover {
+  color:var(--orangehover);
 }
 
 p {
