@@ -114,15 +114,15 @@ STANTON
 }
 
 .sun {
-	width: 35px;
-	height: 35px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	background-color: #CF9A2F;
 }
 .sun:hover {
   box-shadow:0px 0px 5px black;
-  width:40px;
-  height:40px;
+  width:35px;
+  height:35px;
 }
 
 .systemName {
