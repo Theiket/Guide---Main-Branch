@@ -15,6 +15,12 @@
       color="#CF6A2F"
       :options="options"
     />
+    <br><br><br>
+    <div class="shipSelect">
+    <Icon name="ic:round-circle" />
+    <Icon name="ic:round-circle" />
+    <Icon name="ic:round-circle" />
+    </div>
     </center>
     </div>
   </div>
@@ -65,7 +71,26 @@
     <p>
     Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
     </p>
-
+    <table class="infoCard">
+      <tr>
+        <td class="shipRole">
+        <h4>Role</h4><br><p>Value</p>
+        </td>
+        <td class="shipSize">
+        <h4>Size</h4><br><p>Value</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="shipDimensions">
+        <h4>Dimensions</h4><br><p>Value</p>
+        </td>
+        <td class="shipFuel">
+        <h4>Fuel Capacity</h4>
+        <br>
+        <p>Quantum Value | Hydrogen Value</p>
+        </td>
+      </tr>
+    </table>
     </div>
   </div>
 </div>
@@ -135,6 +160,26 @@ export default {
   height: auto;
 }
 
+.shipRole {
+  padding-inline-start:50px;
+  text-align:center;
+  width:100px;
+}
+.shipSize {
+  text-align:center;
+  width:100px;
+}
+.shipDimensions {
+  padding-inline-start:10px;
+  text-align:center;
+  width:100px;
+}
+.shipFuel {
+  padding-inline-start:10px;
+  text-align:center;
+  width:200px;
+}
+
 .title {
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
@@ -167,10 +212,25 @@ h4 {
   padding-block-start:10px;
 }
 
+.infoCard p {
+  margin-block-start:-15px;
+  color:var(--lightorange);
+}
+
 .dropdown .icon {
   scale:200%;
   padding-block-start:5px;
   color:var(--lightgray);
+}
+
+.shipSelect {
+}
+.shipSelect .icon {
+  color:var(--lightgray);
+  scale:300%;
+  padding-inline-start:70px;
+  position:relative;
+  left:-100px;
 }
 
 .leftcard .va-select {

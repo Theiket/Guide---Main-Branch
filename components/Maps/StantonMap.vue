@@ -50,7 +50,7 @@ STANTON
   display: flex;
   justify-content: center;
   align-items: center;
-  scale:290%;
+  scale:285%;
   position:absolute;
   margin-block-start:20%;
   margin-inline-start:40%;
@@ -67,7 +67,7 @@ STANTON
 .microtech-orbit {
   width: 210px;
 	height: 210px;
-  rotate:60deg;
+  rotate:50deg;
 }
 .arccorp-orbit {
 	width: 165px;
