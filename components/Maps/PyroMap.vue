@@ -125,6 +125,7 @@ PYRO
 }
 .planet.PyroV {
   background-color:green;
+  z-index:1;
 }
 .planet.PyroVI {
   background-color:purple;
