@@ -13,7 +13,8 @@ STANTON
         <div class="crusader-orbit orbit">
         <div class="planet crusader"></div>
           <div class="hurston-orbit orbit">
-          <div class="planet hurston"></div>
+          <div class="planet hurston">
+          </div>
           <NuxtLink to="starmap">
           <div class="sun">
           </div>
@@ -40,7 +41,6 @@ STANTON
 .solar-system {
   animation: 5s appear;
 }
-
 
 .solar-system {
   width: 250px;
@@ -105,8 +105,10 @@ STANTON
   background-color:white;
 }
 .planet:hover {
-  background-color:var(--orangehover);
   box-shadow:0px 0px 5px black;
+  top:-6.5px;
+  width:13px;
+  height:13px;
 }
 
 .sun {
@@ -116,8 +118,9 @@ STANTON
 	background-color: #CF9A2F;
 }
 .sun:hover {
-  background-color: var(--orangehover);
   box-shadow:0px 0px 5px black;
+  width:40px;
+  height:40px;
 }
 
 .systemName {
@@ -132,13 +135,28 @@ STANTON
   margin-block-start:5%;
   border-bottom-style:solid;
   border-width:2px;
-  border-color:var(--lightgray)
+  border-color:var(--lightgray);
+  padding-inline-start:10px;
 }
 .systemName h1 {
   font: 35px 'Segoe UI', sans-serif;
   font-weight:bold;
 }
 
+p {
+  font-weight: 300;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 5px;
+  font-weight:bold;
+  letter-spacing:0.3px;
+  color: var(--lightgray);
+  padding-block-end: 15px;
+  padding-inline-start:15px;
+  padding-inline-end:15px;
+  rotate:-140deg;
+}
+
+/* Animations */
 @keyframes slideappear {
   0% {
     opacity: 0;

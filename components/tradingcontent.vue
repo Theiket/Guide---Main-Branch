@@ -2,7 +2,7 @@
 <div class="container">
     <div>
       <h1 class="title">
-        Coming soon
+        Trading will come soon
       </h1>
     </div>
 </div>

@@ -56,7 +56,7 @@ PYRO
   display: flex;
   justify-content: center;
   align-items: center;
-  scale:150%;
+  scale:200%;
   position:absolute;
   margin-block-start:15%;
   margin-inline-start:35%;
@@ -105,9 +105,9 @@ PYRO
 
 .planet {
 	position: absolute;
-	top: -5px;
-  width: 10px;
-  height: 10px;
+	top: -4px;
+  width: 7px;
+  height: 7px;
 	border-radius: 50%;
   background-color: #3ff9dc;
 }
@@ -131,8 +131,10 @@ PYRO
   background-color:purple;
 }
 .planet:hover {
-  background-color:var(--orangehover);
   box-shadow:0px 0px 5px black;
+  top:-5px;
+  width:10px;
+  height:10px;
 }
 
 .sun {
@@ -142,8 +144,9 @@ PYRO
 	background-color: #CF9A2F;
 }
 .sun:hover {
-  background-color: var(--orangehover);
   box-shadow:0px 0px 5px black;
+  width:13px;
+  height:13px;
 }
 
 .systemName {
@@ -154,11 +157,12 @@ PYRO
   display:inline-block;
   width:15%;
   position:absolute;
-  margin-inline-start:20%;
+  margin-inline-start:10%;
   margin-block-start:5%;
   border-bottom-style:solid;
   border-width:2px;
-  border-color:var(--lightgray)
+  border-color:var(--lightgray);
+  padding-inline-start:10px;
 }
 .systemName h1 {
   font: 35px 'Segoe UI', sans-serif;
