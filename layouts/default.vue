@@ -108,6 +108,17 @@ body{
   width:15%;
 }
 
+@keyframes slideappear {
+  0% {
+    opacity: 0;
+    left:-50px;
+  }
+  100% {
+    opacity: 1;
+    left:0px;
+  }
+}
+
 @keyframes appear {
   0% {
     opacity: 0;

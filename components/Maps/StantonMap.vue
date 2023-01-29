@@ -1,5 +1,10 @@
 <template>
 <div class="container">
+<div class="systemName">
+<h1>
+STANTON
+</h1>
+</div>
   <div class="solar-system">
     <div class="microtech-orbit orbit">
     <div class="planet microtech"></div>
@@ -27,11 +32,16 @@
 <style scoped>
 
 .container {
-  position:absolute;
-  margin-block-start:20%;
-  margin-inline-start:40%;
-  animation: 1s appear;
+  user-select:none;
 }
+.systemName {
+  animation: 1.5s slideappear;
+}
+.solar-system {
+  animation: 5s appear;
+}
+
+
 .solar-system {
   width: 250px;
   height: 250px;
@@ -39,6 +49,9 @@
   justify-content: center;
   align-items: center;
   scale:290%;
+  position:absolute;
+  margin-block-start:20%;
+  margin-inline-start:40%;
 }
 
 .orbit {
@@ -105,5 +118,44 @@
 .sun:hover {
   background-color: var(--orangehover);
   box-shadow:0px 0px 5px black;
+}
+
+.systemName {
+  color: var(--lightorange);
+  letter-spacing:1px;
+  margin-block-start:0px;
+  text-decoration:none;
+  display:inline-block;
+  width:15%;
+  position:absolute;
+  margin-inline-start:20%;
+  margin-block-start:5%;
+  border-bottom-style:solid;
+  border-width:1px;
+  border-color:var(--lightgray)
+}
+.systemName h1 {
+  font: 35px 'Segoe UI', sans-serif;
+  font-weight:bold;
+}
+
+@keyframes slideappear {
+  0% {
+    opacity: 0;
+    left:-500px;
+  }
+  75% {
+    opacity:0;
+  }
+  100% {
+    opacity: 1;
+    left:25px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 </style>

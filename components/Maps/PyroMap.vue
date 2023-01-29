@@ -1,21 +1,34 @@
 <template>
 <div class="container">
+<div class="systemName">
+<h1>
+<NuxtLink to="/starmap">
+PYRO
+</NuxtLink>
+</h1>
+</div>
   <div class="solar-system">
-    <div class="microtech-orbit orbit">
-    <div class="planet microtech"></div>
-      <div class="arccorp-orbit orbit">
-      <div class="planet arccorp"></div>
-        <div class="crusader-orbit orbit">
-        <div class="planet crusader"></div>
-          <div class="hurston-orbit orbit">
-          <div class="planet hurston"></div>
+  <div class="PyroVI-orbit orbit">
+  <div class="planet PyroVI"></div>
+  <div class="PyroV-orbit orbit">
+  <div class="planet PyroV"></div>
+    <div class="PyroIV-orbit orbit">
+    <div class="planet PyroIV"></div>
+      <div class="PyroIII-orbit orbit">
+      <div class="planet PyroIII"></div>
+        <div class="PyroII-orbit orbit">
+        <div class="planet PyroII"></div>
+          <div class="PyroI-orbit orbit">
+          <div class="planet PyroI"></div>
           <NuxtLink to="starmap">
           <div class="sun">
           </div>
           </NuxtLink>
           </div>
         </div>
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </div>
@@ -27,18 +40,26 @@
 <style scoped>
 
 .container {
-  position:absolute;
-  margin-block-start:20%;
-  margin-inline-start:40%;
-  animation: 1s appear;
+  user-select:none;
+}
+/*Animations*/
+.systemName {
+  animation: 1.5s slideappear;
 }
 .solar-system {
-  width: 250px;
-  height: 250px;
+  animation:5s appear;
+}
+
+.solar-system {
+  max-width: 360px;
+  max-height: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
-  scale:290%;
+  scale:150%;
+  position:absolute;
+  margin-block-start:15%;
+  margin-inline-start:35%;
 }
 
 .orbit {
@@ -49,27 +70,38 @@
 	border: 1px solid var(--lightorange);
 	border-radius: 50%;
 } 
-.microtech-orbit {
+.PyroI-orbit {
+	width: 30px;
+	height: 30px;
+  rotate:10deg;
+}
+.PyroII-orbit {
+	width: 50px;
+	height: 50px;
+  rotate:-20deg;
+}
+.PyroIII-orbit {
+	width: 70px;
+	height: 70px;
+  rotate:90deg;
+}
+.PyroIV-orbit {
+  width: 220px;
+	height: 220px;
+  rotate:6deg;
+  border-color:transparent;
+  border-style:hidden;
+}
+.PyroV-orbit {
   width: 210px;
 	height: 210px;
-  rotate:60deg;
+  rotate:15deg;
 }
-.arccorp-orbit {
-	width: 165px;
-	height: 165px;
-  rotate:85deg;
+.PyroVI-orbit {
+  width: 360px;
+	height: 360px;
+  rotate:270deg;
 }
-.crusader-orbit {
-	width: 120px;
-	height: 120px;
-  rotate:105deg;
-}
-.hurston-orbit {
-	width: 90px;
-	height: 90px;
-  rotate:-110deg;
-}
-
 
 .planet {
 	position: absolute;
@@ -79,17 +111,23 @@
 	border-radius: 50%;
   background-color: #3ff9dc;
 }
-.planet.hurston {
+.planet.PyroI {
   background-color:#CF3A2F;
 }
-.planet.crusader {
+.planet.PyroII {
   background-color:#2FCFA9;
 }
-.planet.arccorp {
+.planet.PyroIII {
   background-color:#CF2F55;
 }
-.planet.microtech {
+.planet.PyroIV {
   background-color:white;
+}
+.planet.PyroV {
+  background-color:green;
+}
+.planet.PyroVI {
+  background-color:purple;
 }
 .planet:hover {
   background-color:var(--orangehover);
@@ -97,13 +135,58 @@
 }
 
 .sun {
-	width: 35px;
-	height: 35px;
+	width: 10px;
+	height: 10px;
 	border-radius: 50%;
 	background-color: #CF9A2F;
 }
 .sun:hover {
   background-color: var(--orangehover);
   box-shadow:0px 0px 5px black;
+}
+
+.systemName {
+  color: var(--lightorange);
+  letter-spacing:1px;
+  margin-block-start:0px;
+  text-decoration:none;
+  display:inline-block;
+  width:15%;
+  position:absolute;
+  margin-inline-start:20%;
+  margin-block-start:5%;
+  border-bottom-style:solid;
+  border-width:1px;
+  border-color:var(--lightgray)
+}
+.systemName h1 {
+  font: 35px 'Segoe UI', sans-serif;
+  font-weight:bold;
+}
+.systemName a {
+  color:var(--lightorange);
+}
+.systemName a:hover {
+  color:var(--orangehover);
+}
+
+@keyframes slideappear {
+  0% {
+    opacity: 0;
+    left:-500px;
+  }
+  60% {
+    opacity:0;
+  }
+  100% {
+    opacity: 1;
+    left:25px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 </style>
