@@ -157,7 +157,7 @@ PYRO
   margin-inline-start:20%;
   margin-block-start:5%;
   border-bottom-style:solid;
-  border-width:1px;
+  border-width:2px;
   border-color:var(--lightgray)
 }
 .systemName h1 {
