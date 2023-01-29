@@ -38,7 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scale:300%;
+  scale:290%;
 }
 
 .orbit {

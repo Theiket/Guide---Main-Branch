@@ -1,6 +1,6 @@
 <template>
 <div>
-  <NuxtLink to="/starmap">
+  <NuxtLink to="/MapPyro">
   <div class="systemPyro">
   <Icon name="game-icons:anarchy" />
   <p class="planetText">PYRO</p>
