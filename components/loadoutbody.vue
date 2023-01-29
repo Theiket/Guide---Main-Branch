@@ -43,6 +43,28 @@
     <Icon name="game-icons:rock" />
   <br>
   <div class="instability">
+    <va-card
+    color="#1B191E" 
+    class="provider">
+    <h4>
+    Instability
+    </h4>
+    <br>
+    <h3>
+    00.00
+    </h3>
+    </va-card>
+    <va-card
+    color="#1B191E"
+    class="harvestable">
+    <h4>
+    Resistance
+    </h4>
+    <br>
+    <h3>
+    00.00
+    </h3>
+    </va-card>
   </div>
   </div>
 <!-- Loadout Selection -->
@@ -146,6 +168,25 @@ export default {
   width:200px;
 }
 
+.instability {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  padding-inline-start:15px;
+  padding-block-end:5px;
+  position:relative;
+  left:100px;
+  top:500px; 
+}
+.instability .provider {
+  width:200px;
+}
+.instability .harvestable {
+  width:150px;
+}
+
 .va-select {
   --va-select-cursor: pointer;
   --va-select-dropdown-border-radius: 10px;
@@ -192,7 +233,7 @@ export default {
 
 /* Cards */
 .harvestableGeneration {
-   --va-card-display: inline-block;
+  --va-card-display: inline-block;
   --va-card-position: relative;
   --va-card-overflow: visible;
   --va-card-box-shadow: var(--va-box-shadow);
@@ -212,6 +253,18 @@ export default {
   position:relative;
   left:50px;
   text-align:center;
+}
+
+.instability {
+  --va-card-display: inline-block;
+  --va-card-position: relative;
+  --va-card-overflow: visible;
+  --va-card-box-shadow: var(--va-box-shadow);
+  --va-card-border-radius: 0.375rem;
+  --va-card-color: #34495e;
+  --va-card-background-color: var(--va-background-secondary);
+  --va-card-padding: 1.25rem;
+  width:600px;
 }
 
 /*Text*/
@@ -245,6 +298,17 @@ h4 {
   color: var(--lightgray);
   padding-block-end:5px;
   padding-block-start:5px;
+}
+
+h3 {
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightorange);
+  padding-block-end:5px;
+  margin-block-start:-10px;
 }
 
 @keyframes appear {

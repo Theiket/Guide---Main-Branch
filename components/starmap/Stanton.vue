@@ -1,6 +1,6 @@
 <template>
 <div>
-<NuxtLink to="/starmap">
+<NuxtLink to="/MapStanton">
     <div class="systemStanton">
     <Icon name="mdi:circle-slice-8" />
     <br>

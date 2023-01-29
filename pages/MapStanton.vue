@@ -1,6 +1,6 @@
 <template>
-<div class="map">
-
+<div>
+<MapsStantonMap />
 </div>
 </template>
 
@@ -8,9 +8,5 @@
 </script>
 
 <style scoped>
-
-.map {
-  
-}
 
 </style>
