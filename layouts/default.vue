@@ -57,7 +57,8 @@
       <h3 class="footer">
       <table class="cells">
       <td class="copyright">
-        Copyright 2023 Grindstone Mining Co.
+        Copyright 2023 ©
+        Grindstone Mining Co.
       </td>
       <td class="version">
         GUIDE v0.1-HADES | Updated for Star Citizen Alpha v3.17.4-LIVE

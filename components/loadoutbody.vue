@@ -186,7 +186,7 @@ export default {
 .instability .harvestable {
   width:150px;
 }
-
+/* Dropdowns */
 .va-select {
   --va-select-cursor: pointer;
   --va-select-dropdown-border-radius: 10px;
