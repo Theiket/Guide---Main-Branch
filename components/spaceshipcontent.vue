@@ -40,25 +40,41 @@
       Shields
       <br>
       <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
       <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
       </div>
       <br>
       Power Plants
       <br>
       <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
       <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
       </div>
       <br>
       Coolers
       <br>
       <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
       <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
       </div>
       <br>
       Quantum Drives
       <br>
       <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
       <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
       </div>
       </p>
   </div>
@@ -82,13 +98,49 @@
       </tr>
       <tr>
         <td class="shipDimensions">
-        <h4>Dimensions</h4><br><p>Value</p>
+        <h4>Dimensions</h4><br><p>Length x<br>Width x<br>Height x</p>
         </td>
         <td class="shipFuel">
         <h4>Fuel Capacity</h4>
         <br>
-        <p>Quantum Value | Hydrogen Value</p>
+        <p>Quantum Value<br>Hydrogen Value</p>
         </td>
+      </tr>
+      <tr>
+      <td class="shipShields">
+      <h4>Shield Capacity</h4>
+      <br>
+      <p>Shield Value</p>
+      </td>
+      <td class="shipHealth">
+      <h4>Hull Health</h4>
+      <br>
+      <p>Hitpoint Value</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="shipPower">
+      <h4>Power</h4>
+      <br>
+      <p>Power Value</p>
+      </td>
+      <td class="shipCooling">
+      <h4>Cooling Capacity</h4>
+      <br>
+      <p>Cooling Value</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="shipEM">
+      <h4>EM Emissions</h4>
+      <br>
+      <p>EM Value</p>
+      </td>
+      <td class="shipIR">
+      <h4>IR Emissions</h4>
+      <br>
+      <p>IR Value</p>
+      </td>
       </tr>
     </table>
     </div>
@@ -160,24 +212,12 @@ export default {
   height: auto;
 }
 
-.shipRole {
-  padding-inline-start:50px;
+.infoCard {
   text-align:center;
-  width:100px;
+  margin-inline-start:0px;
 }
-.shipSize {
-  text-align:center;
-  width:100px;
-}
-.shipDimensions {
-  padding-inline-start:10px;
-  text-align:center;
-  width:100px;
-}
-.shipFuel {
-  padding-inline-start:10px;
-  text-align:center;
-  width:200px;
+.infoCard td {
+  width:300px;
 }
 
 .title {
@@ -215,6 +255,10 @@ h4 {
 .infoCard p {
   margin-block-start:-15px;
   color:var(--lightorange);
+}
+.infoCard h4 {
+  font-size:20px;
+  margin-block-start:-10px;
 }
 
 .dropdown .icon {
