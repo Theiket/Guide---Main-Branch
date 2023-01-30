@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon',
     '@vuestic/nuxt',
-    'three',
   ],
   app: {
     head: {
