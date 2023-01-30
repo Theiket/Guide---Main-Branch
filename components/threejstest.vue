@@ -1,10 +1,10 @@
 <template>
-
+<div>
 <canvas id="scene"></canvas>
-
+</div>
 </template>
 
-<script>
+<script setup>
 var ww = window.innerWidth,
   wh = window.innerHeight;
 
