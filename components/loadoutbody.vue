@@ -9,7 +9,24 @@
       <h4>
         Planetary Body
       </h4>
-      <selectorsplanetaryBody />
+      <select name="selectPlanet" id="planetaryBody">
+      <option value="hurston">Hurston</option>
+      <option value="arial">Arial</option>
+      <option value="aberdeen">Aberdeen</option>
+      <option value="magda">Magda</option>
+      <option value="ita">Ita</option>
+      <option value="crusader">Crusader</option>
+      <option value="cellin">Cellin</option>
+      <option value="daymar">Daymar</option>
+      <option value="yela">Yela</option>
+      <option value="arccorp">ArcCorp</option>
+      <option value="lyria">Lyria</option>
+      <option value="wala">Wala</option>
+      <option value="microtech">microTech</option>
+      <option value="calliope">Calliope</option>
+      <option value="clio">Clio</option>
+      <option value="euterpe">Euterpe</option>
+      </select>
       </va-card>
       <va-card
       color="#1B191E"
@@ -17,7 +34,26 @@
       <h4>
         Deposit Type
       </h4>
-      <selectorsdepositType/>
+      <select name="selectDeposit" id="depositType">
+      <option value="c-type">C Type</option>
+      <option value="e-type">E Type</option>
+      <option value="m-type">M Type</option>
+      <option value="p-type">P Type</option>
+      <option value="q-type">Q Type</option>
+      <option value="s-type">S Type</option>
+      <option value="atacamite">Atacamite</option>
+      <option value="felsic">Felsic</option>
+      <option value="gneiss">Gneiss</option>
+      <option value="granite">Granite</option>
+      <option value="igneous">Igneous</option>
+      <option value="obsidian">Obsidian</option>
+      <option value="quantanium">Quantanium</option>
+      <option value="quartzite">Quartzite</option>
+      <option value="shale">Shale</option>
+      <option value="aphorite">Aphorite</option>
+      <option value="dolivine">Dolivine</option>
+      <option value="hadanite">Hadanite</option>
+      </select>
       </va-card>
       <center>
         <button class="button Generate">
@@ -152,6 +188,20 @@ export default {
 }
 .harvestableGeneration .harvestable {
   width:200px;
+}
+.harvestableGeneration select {
+  background-color:var(--lightorange);
+  border-style:solid;
+  border-radius:10px;
+  border-color:var(--lightorange);
+  color:var(--darkgray);
+  width:150px;
+  font-weight:bold;
+  font-size:16px;
+  text-align:center;
+}
+.harvestableGeneration select option:hover {
+  color:var(--orangehover);
 }
 
 .instability {
