@@ -188,11 +188,12 @@ export default {
 }
 .harvestableGeneration .harvestable {
   width:200px;
+  padding-inline-start:10px;
 }
 .harvestableGeneration select {
   background-color:var(--lightorange);
   border-style:solid;
-  border-radius:10px;
+  border-radius:15px;
   border-color:var(--lightorange);
   color:var(--darkgray);
   width:150px;
@@ -331,7 +332,7 @@ h4 {
   font-size: 22px;
   font-weight:bold;
   letter-spacing:1px;
-  color: white;
+  color: var(--lightgray);
   padding-block-end:5px;
   padding-block-start:5px;
 }
@@ -344,7 +345,7 @@ h3 {
   letter-spacing:1px;
   color: var(--lightorange);
   padding-block-end:5px;
-  margin-block-start:-10px;
+  margin-block-start:-20px;
 }
 
 @keyframes appear {

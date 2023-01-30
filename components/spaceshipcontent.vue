@@ -8,13 +8,22 @@
     </h4>
     <br>
     <center>
-    <va-select
-      v-model="value"
-      class="mb-6"
-      placeholder="Select Manufacturer"
-      color="#CF6A2F"
-      :options="options"
-    />
+    <select name="selectDeposit" id="depositType">
+      <option value="aegis">Aegis Dynamics</option>
+      <option value="anvil">Anvil Aerospace</option>
+      <option value="aopoa">AopoA</option>
+      <option value="argo">ARGO Astronautics</option>
+      <option value="banu">Banu Souli</option>
+      <option value="consolidated">Consolidated Outlands</option>
+      <option value="crusaderind">Crusader Industries</option>
+      <option value="drakeint">Drake Interplanetary</option>
+      <option value="esperia">Esperia Inc</option>
+      <option value="gatac">Gatac Manufacture</option>
+      <option value="kruger">Kruger Intergalactic</option>
+      <option value="misc">Musashi Industrial (MISC)</option>
+      <option value="origin">Origin Jumpworks</option>
+      <option value="rsi">Roberts Space Industries</option>
+      </select>
     <br><br><br>
     <div class="shipSelect">
     <Icon name="ic:round-circle" />
@@ -296,6 +305,23 @@ h4 {
 .rightcard .va-divider {
   color:var(--lightgray);
 }
+
+.leftcard select {
+  background-color:var(--lightorange);
+  border-style:solid;
+  border-radius:20px;
+  border-color:var(--lightorange);
+  color:var(--darkgray);
+  width:300px;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  height:40px;
+}
+.leftcard select option:hover {
+  color:var(--orangehover);
+}
+
 @keyframes appear {
   0% {
     opacity: 0;
