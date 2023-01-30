@@ -2,7 +2,7 @@
   <div style="max-width: 300px;">
     <va-select 
     placeholder="Select Deposit"
-    v-model="value" 
+    v-model="value"
     :options="options" 
     />
   </div>

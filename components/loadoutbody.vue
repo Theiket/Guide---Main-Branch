@@ -9,14 +9,7 @@
       <h4>
         Planetary Body
       </h4>
-      <va-select
-        v-model="value"
-        class="mb-6"
-        placeholder="Select Planet"
-        color="#CF6A2F"
-        width="200px"
-        :options="['Hurston', 'Arial', 'Aberdeen', 'Magda', 'Ita', 'Crusader', 'Cellin', 'Daymar', 'Yela', 'ArcCorp','Lyria', 'Wala', 'microTech', 'Calliope', 'Clio', 'Euterpe']"
-      />
+      <selectorsplanetaryBody />
       </va-card>
       <va-card
       color="#1B191E"
@@ -24,14 +17,7 @@
       <h4>
         Deposit Type
       </h4>
-      <va-select
-        v-model="value"
-        class="mb-6"
-        placeholder="Select Deposit"
-        color="#CF6A2F"
-        width="200px"
-        :options="['C Type', 'E Type', 'M Type', 'P Type', 'Q Type', 'S Type', 'Atacamite', 'Felsic', 'Gneiss', 'Granite', 'Igneous', 'Obsidian', 'Quantanium', 'Quartzite', 'Shale', 'Aphorite', 'Dolivine', 'Hadanite']"
-      />
+      <selectorsdepositType/>
       </va-card>
       <center>
         <button class="button Generate">

@@ -2,8 +2,8 @@
   <div style="max-width: 300px;">
     <va-select 
     placeholder="Select Planet"
-    v-model="value" 
-    :options="options" 
+    v-model="value"
+    :options="options"  
     />
   </div>
 </template>

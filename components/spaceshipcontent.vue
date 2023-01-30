@@ -87,7 +87,8 @@
     <p>
     Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
     </p>
-    <table class="infoCard">
+      <va-divider />
+      <table class="infoCard">
       <tr>
         <td class="shipRole">
         <h4>Role</h4><br><p>Value</p>
@@ -292,6 +293,9 @@ h4 {
   width:300px;
 }
 
+.rightcard .va-divider {
+  color:var(--lightgray);
+}
 @keyframes appear {
   0% {
     opacity: 0;
