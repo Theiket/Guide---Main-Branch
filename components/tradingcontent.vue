@@ -27,7 +27,7 @@
 }
 
 .title {
-  width:1200px;
+  width:1000px;
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
   display: block;

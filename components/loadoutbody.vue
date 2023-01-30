@@ -331,7 +331,7 @@ h4 {
   font-size: 22px;
   font-weight:bold;
   letter-spacing:1px;
-  color: var(--lightgray);
+  color: white;
   padding-block-end:5px;
   padding-block-start:5px;
 }

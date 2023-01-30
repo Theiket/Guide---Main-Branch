@@ -20,10 +20,10 @@
 }
 
 .title {
-  width:1200px;
+  width:1000px;
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
-  display: block;
+  display: flex;
   color: var(--lightorange);
   letter-spacing: 1px;
   user-select:none;
