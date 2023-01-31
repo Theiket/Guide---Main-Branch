@@ -14,8 +14,8 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
-var ww = 1903,
-  wh = 722;
+var ww = window.innerWidth,
+  wh = window.innerHeight;
 
 function init(){
   renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene'), antialias: true,});
