@@ -101,8 +101,8 @@ animate()
 
 <style scoped>
 .asteroid-container {
-  width: 90vw;
-  height: 80vh;
+  width: 40vw;
+  height: 20vh;
 }
 </style>
 ``
