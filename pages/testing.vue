@@ -1,6 +1,6 @@
 <template>
   <div>
-    <threejstest />
+    <asteroidtest />
   </div>
 </template>
 

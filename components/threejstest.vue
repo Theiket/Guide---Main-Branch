@@ -14,6 +14,8 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
+if (process.browser) {
+
 var ww = window.innerWidth,
   wh = window.innerHeight;
 
@@ -168,6 +170,7 @@ function ColorLuminance(hex, lum) {
   }
 
   return rgb;
+}
 }
 </script>
 
