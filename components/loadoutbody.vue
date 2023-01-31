@@ -171,7 +171,7 @@ export default {
   vertical-align:center;
   right:20px;
 }
-
+/*Top Card*/
 .harvestableGeneration {
   background-color:var(--darkgray);
   border-style:solid;
@@ -198,13 +198,17 @@ export default {
   color:var(--darkgray);
   width:150px;
   font-weight:bold;
+  font-family:'Segoe UI', sans-serif;
   font-size:16px;
   text-align:center;
 }
-.harvestableGeneration select option:hover {
-  color:var(--orangehover);
+.harvestableGeneration select option {
+  font-weight:bold;
+  font-family:'Segoe UI', sans-serif;
+  font-size:16px;
 }
 
+/*Bottom Card*/
 .instability {
   background-color:var(--darkgray);
   border-style:solid;
