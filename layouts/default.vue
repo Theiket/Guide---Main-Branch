@@ -35,6 +35,11 @@
           </NuxtLink>
         </div>
         <div class="navbutton">
+          <NuxtLink to="/catalogue">
+          <Icon name="material-symbols:search" />
+          </NuxtLink>
+        </div>
+        <div class="navbutton">
           <NuxtLink to="/info">
           <Icon name="ic:outline-info" />
           </NuxtLink>
@@ -129,7 +134,7 @@ body{
 .navlinks {
   position:absolute;
   right:10px;
-  padding-inline-start:63%;
+  padding-inline-start:60%;
   margin-block-start: -40px;
   margin-block-end:7px;
   border-block-start: solid;
