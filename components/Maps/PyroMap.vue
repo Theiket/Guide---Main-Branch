@@ -56,7 +56,7 @@ PYRO
   display: flex;
   justify-content: center;
   align-items: center;
-  scale:200%;
+  scale:190%;
   position:absolute;
   margin-block-start:15%;
   margin-inline-start:35%;
@@ -100,7 +100,7 @@ PYRO
 .PyroVI-orbit {
   width: 360px;
 	height: 360px;
-  rotate:270deg;
+  rotate:285deg;
 }
 
 .planet {
