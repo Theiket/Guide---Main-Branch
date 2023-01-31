@@ -62,7 +62,9 @@
       </center>
   </div>
   <br>
+  <div class="asteroid">
     <asteroidtest />
+  </div>
   <br>
   <div class="instability">
     <va-card
@@ -215,20 +217,21 @@
 .instability .harvestable {
   width:150px;
 }
-/* Dropdowns */
-.va-select {
-  --va-select-cursor: pointer;
-  --va-select-dropdown-border-radius: 10px;
-  --va-select-dropdown-background: var(--va-dropdown-secondary);
-  --va-select-box-shadow: 0 4px 8px rgba(59, 63, 73, 0.15);
-  --va-select-min-width: var(--va-form-element-min-width);
-  --va-select-anchor-state-icon-margin-left: 0.25rem;
-  letter-spacing:1px;
-  word-spacing:0px;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-  color:var(--darkgray);
+
+/* Asteroid */
+.asteroid {
+  margin-block-start:90px;
+  margin-inline-start:200px;
+  padding-inline-end:400px;
+  width:200px;
+  height:200px;
+  border-left:solid;
+  border-right:solid;
+  border-color:var(--lightorange);
+  border-width:2px;
+  border-radius:40px;
 }
+
 /* Buttons */
 .button {
   width:300px;

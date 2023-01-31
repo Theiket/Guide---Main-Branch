@@ -40,7 +40,7 @@ export default {
       width, height
     )
     // Set the background color to black
-    renderer.setClearColor(0x24262B)
+    renderer.setClearColor(0x24262B, 0)
 
     // Create the asteroid wireframe geometry
     const geometry = new THREE.WireframeGeometry(
@@ -101,8 +101,9 @@ animate()
 
 <style scoped>
 .asteroid-container {
-  width: 40vw;
-  height: 20vh;
+  width: 200px;
+  height: 200px;
+  z-index:-1;
 }
 </style>
 ``
