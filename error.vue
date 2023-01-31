@@ -10,10 +10,10 @@
         <p>{{ error.message }}</p>
         <br>
         <br>
-      <div class="errorbutton">
-        <NuxtLink to="/">
+        <div class="errorbutton">
+      <NuxtLink to="/">
           Back to Home
-        </NuxtLink>
+      </NuxtLink>
       </div>
       </center>
       </body>
@@ -28,7 +28,9 @@
 <style scoped>
 
 .pageError {
-  height:90vh;
+  max-height:100vh;
+  height:75vh;
+  user-select:none;
 }
 
  body {

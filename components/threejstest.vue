@@ -4,9 +4,13 @@
 </div>
 </template>
 
-<script setup>
-var ww = window.innerWidth,
-  wh = window.innerHeight;
+<script>
+import * as THREE from 'three';
+
+const scene = new THREE.Scene();
+
+var ww = 1903,
+    wh = 722;
 
 function init(){
   renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene'),antialias: true});
