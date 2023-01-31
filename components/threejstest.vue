@@ -13,7 +13,7 @@ var ww = 1903,
     wh = 722;
 
 function init(){
-  renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene'),antialias: true});
+  renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene'), antialias: true,});
   renderer.setClearColor(0x000000);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
