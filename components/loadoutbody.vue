@@ -62,7 +62,7 @@
       </center>
   </div>
   <br>
-    <Icon name="game-icons:rock" />
+    <asteroidtest />
   <br>
   <div class="instability">
     <va-card
@@ -110,18 +110,6 @@
   useHead({
     title: 'GUIDE | Mining Loadouts'
   })
-
-</script>
-
-<script>
-export default {
-  name: 'provider',
-  data () {
-    return {
-      value:'',
-    }
-  },
-}
 
 </script>
 
@@ -306,6 +294,10 @@ export default {
   --va-card-background-color: var(--va-background-secondary);
   --va-card-padding: 1.25rem;
   width:600px;
+  margin-block-start:100px;
+  margin-inline-start:80px;
+  position:absolute;
+  padding-block-end:;
 }
 
 /*Text*/

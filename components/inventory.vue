@@ -1,19 +1,18 @@
 <template>
 <div>
 <div class="topcontainer">
-<table>
-  <td>
   <h3 class="blocktitle">
     Catalogue
   </h3>
-  </td>
-  <td>
-    <input type="text" id="search" name="searchInput">
-  </td>
-  <td>
-  <p>Placeholder</p>
-  </td>
-  </table>
+    <input 
+    type="text" 
+    id="search" 
+    name="searchInput"
+    placeholder="Search..."
+    >
+  <p>
+    Filters Go Here
+  </p>
 </div>
 <div class="container">
 </div>
@@ -33,8 +32,6 @@
   height: 50px;
   display: flex;
   background-color:var(--darkgray);
-  align-items:center;
-  justify-content:center;
   user-select:none;
   border:3px;
   border-style:solid;
@@ -46,7 +43,7 @@
 
 .container {
   margin: 0 auto;
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   background-color:var(--darkgray);
   align-items:center;
@@ -56,24 +53,36 @@
   border-style:solid;
   border-color:var(--lightorange);
   border-radius:50px;
-  margin-block-start:7px;
+  margin-block-start:10px;
   margin-inline-end:7px;
 }
 
 .blocktitle{
-  width:600px;
   animation: 1s appear;
   font: bold 34px/34px 'Segoe UI', sans-serif;
   color:var(--lightorange);
   letter-spacing:1px;
+  margin-block-end:0px;
 }
 .topcontainer .blocktitle {
-  padding-block-end:7px;
   text-align:left;
+  padding-inline-start:50px;
 }
-
 .topcontainer input {
-  width:200px;
+  width:300px;
+  height:42px;
+  background-color:var(--darkgray);
+  border-style:none;
+  color:var(--lightgray);
+  border-left:solid 2px var(--lightgray);
+  border-right:solid 2px var(--lightgray);
+  margin-inline-start:50px;
+  margin-block-start:1px;
+  padding-inline-start:15px;
+}
+.topcontainer p {
+  margin-inline-start:50px;
+  margin-block-start:13px;
 }
 
 /*Text*/
