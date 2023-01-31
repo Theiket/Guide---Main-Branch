@@ -33,7 +33,7 @@
 
 <style scoped>
 .mining {
-  min-height:85vh;
+  height:85vh;
   background-color:var(--backgray);
   align-content:center;
   vertical-align:center;

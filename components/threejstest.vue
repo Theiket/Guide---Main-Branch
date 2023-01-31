@@ -1,6 +1,11 @@
 <template>
 <div>
-<canvas id="scene"></canvas>
+<ClientOnly>
+  <canvas id="scene"></canvas>
+    <template #fallback>
+      <p>Loading...</p>
+    </template>
+</ClientOnly>
 </div>
 </template>
 
@@ -10,7 +15,7 @@ import * as THREE from 'three';
 const scene = new THREE.Scene();
 
 var ww = 1903,
-    wh = 722;
+  wh = 722;
 
 function init(){
   renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene'), antialias: true,});
