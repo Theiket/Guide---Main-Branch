@@ -9,6 +9,7 @@
 <script>
 // Import Three.js
 import * as THREE from 'three'
+import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js'
 
 export default {
   mounted() {
@@ -43,19 +44,24 @@ export default {
     renderer.setClearColor(0x24262B, 0)
 
     // Create the asteroid wireframe geometry
-    const geometry = new THREE.WireframeGeometry(
-      new THREE.SphereGeometry(1, 32, 32)
-    )
+    const geometry = new THREE.TetrahedronGeometry(1, 3)
 
     // Create the asteroid wireframe material
-    const material = new THREE.LineBasicMaterial({
-      color: 0x9DA1B2
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x9DA1B2,
+      wireframe: false,
+      wireframeLinecap: "square",
+      wireframeLinejoin: "miter",
+      roughness: 0.65,
+      flatShading: true,
     })
 
     // Create the asteroid wireframe mesh
-    const mesh = new THREE.LineSegments(geometry, material)
+    const mesh = new THREE.Mesh(geometry, material)
     // Add the asteroid to the scene
     scene.add(mesh)
+
+    
 
     // Resize the renderer when the window is resized
     window.addEventListener('resize', () => {
@@ -65,36 +71,30 @@ export default {
       )
     })
 
+// Lighting
+const pointLight = new THREE.PointLight(0xffffff)
+pointLight.position.set(5,3,5)
+const ambientLight = new THREE.AmbientLight(0x24262B)
 
-// Variables for mouse movement
-let mouseX = 0
-let mouseY = 0
+scene.add(pointLight, ambientLight)
 
-// Event listener for mouse movement
-document.addEventListener("mousemove", (event) => {
-  // Update the mouseX and mouseY values based on the mouse position
-  mouseX = (event.clientX / window.innerWidth) * 2 - 1
-  mouseY = -(event.clientY / window.innerHeight) * 2 + 1
-})
+// Create a new TrackballControls object
+    const controls = new TrackballControls(camera, renderer.domElement)
 
-// Animation loop
-function animate() {
-  // Request the next animation frame
-  requestAnimationFrame(animate)
+    // Animation loop
+    function animate() {
+      // Request the next animation frame
+      requestAnimationFrame(animate)
 
-  // Update the y-axis rotation of the mesh by 0.01 radians each frame
-  mesh.rotation.y += 0.00
+      // Update the controls
+      controls.update()
 
-  // Update the x-axis and z-axis rotations of the mesh based on the mouseX and mouseY values
-  mesh.rotation.x += mouseY * 0.005
-  mesh.rotation.z += mouseX * 0.005
+      // Render the scene and camera
+      renderer.render(scene, camera)
+    }
 
-  // Render the scene and camera
-  renderer.render(scene, camera)
-}
-
-// Start the animation loop
-animate()
+    // Start the animation loop
+    animate()
   }
 }
 </script>
