@@ -44,7 +44,7 @@ export default {
     renderer.setClearColor(0x24262B, 0)
 
     // Create the asteroid wireframe geometry
-    const geometry = new THREE.TetrahedronGeometry(1, 3)
+    const geometry = new THREE.TetrahedronGeometry(1, 4)
 
     // Create the asteroid wireframe material
     const material = new THREE.MeshStandardMaterial({
@@ -52,7 +52,7 @@ export default {
       wireframe: false,
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
-      roughness: 0.65,
+      roughness: 0.8,
       flatShading: true,
     })
 
@@ -73,7 +73,7 @@ export default {
 
 // Lighting
 const pointLight = new THREE.PointLight(0xffffff)
-pointLight.position.set(5,3,5)
+pointLight.position.set(10,10,10)
 const ambientLight = new THREE.AmbientLight(0x24262B)
 
 scene.add(pointLight, ambientLight)
@@ -85,6 +85,10 @@ scene.add(pointLight, ambientLight)
     function animate() {
       // Request the next animation frame
       requestAnimationFrame(animate)
+
+      // Update the x and y axis rotation of the mesh by chosen radians each frame
+      mesh.rotation.y += 0.001
+      mesh.rotation.x += 0.0004
 
       // Update the controls
       controls.update()
@@ -106,5 +110,3 @@ scene.add(pointLight, ambientLight)
   z-index:-1;
 }
 </style>
-``
-

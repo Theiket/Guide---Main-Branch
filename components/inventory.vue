@@ -2,27 +2,71 @@
 <div>
 <div class="topcontainer">
   <h3 class="blocktitle">
-    Catalogue
+    ARCHIVE
   </h3>
     <input 
+    class="inputSearch"
     type="text" 
     id="search" 
     name="searchInput"
     placeholder="Search..."
     >
-  <p>
-    Filters Go Here
-  </p>
+    <va-button-toggle
+    toggle-color="#CF6A2F"
+    active-button-text-color="#1B191E"
+    text-color="#9DA1B2"
+    color="#1B191E"
+    v-model="model"
+    :options="[
+        { label: 'ALL', value: 'all' },
+        { label: 'WEAPONS', value: 'weapons' },
+        { label: 'CLOTHING', value: 'clothing' },
+        { label: 'CONSUMABLES', value: 'consumables' },
+        { label: 'SHIPS', value: 'ships' },
+        { label: 'COMPONENTS', value: 'components' },
+      ]"
+  />
 </div>
 <div class="container">
+<table class="invlist">
+  <tr class="invheading">
+    <td>
+    <p>Name</p>
+    </td>
+    <td>
+    <p>Description</p>
+    </td>
+    <td>
+    <p>Category</p>
+    </td>
+    <td>
+    <p>Location</p>
+    </td>
+    <td>
+    <p>Price</p>
+    </td>
+  </tr>
+  <tr>
+
+  </tr>
+</table>
 </div>
 </div>
 </template>
 
-<script setup>
+<script>
   useHead({
-    title: 'GUIDE | Catalogue'
+    title: 'GUIDE | Archive'
   })
+
+export default {
+  data () {
+    return {
+      model: 'two',
+    }
+  },
+}
+
 </script>
 
 <style scoped>
@@ -39,6 +83,7 @@
   border-radius:50px;
   margin-block-start:7px;
   margin-inline-end:7px;
+  animation: 1s appear;
 }
 
 .container {
@@ -46,8 +91,6 @@
   min-height: 80vh;
   display: flex;
   background-color:var(--darkgray);
-  align-items:center;
-  justify-content:center;
   user-select:none;
   border:3px;
   border-style:solid;
@@ -55,7 +98,23 @@
   border-radius:50px;
   margin-block-start:10px;
   margin-inline-end:7px;
+  animation: 1s appear;
 }
+
+.container .invlist {
+  margin-inline-start:50px;
+  margin-block-start:10px;
+}
+.invlist td {
+  border-right:solid;
+  border-color:rgba(157, 161, 178, 0.4);
+  border-width:1px;
+  width:100px;
+}
+.invlist .invheading {
+  text-align:center;
+}
+
 
 .blocktitle{
   animation: 1s appear;
@@ -66,25 +125,33 @@
 }
 .topcontainer .blocktitle {
   text-align:left;
-  padding-inline-start:50px;
+  padding-inline-start:30px;
+  margin-block-start:3px;
 }
-.topcontainer input {
-  width:300px;
+.topcontainer .inputSearch {
+  width:400px;
   height:42px;
   background-color:var(--darkgray);
   border-style:none;
   color:var(--lightgray);
-  border-left:solid 2px var(--lightgray);
-  border-right:solid 2px var(--lightgray);
-  margin-inline-start:50px;
+  margin-inline-start:20px;
   margin-block-start:1px;
   padding-inline-start:15px;
+  margin-inline-end:15px;
 }
 .topcontainer p {
-  margin-inline-start:50px;
+  margin-inline-start:0px;
   margin-block-start:13px;
 }
-
+.topcontainer td {
+  border-right:solid;
+  border-color:rgba(157, 161, 178, 0.4);
+  border-width:1px;
+  width:50px;
+}
+.topcontainer {
+  --va-button-toggle-border-radius:0px;
+}
 /*Text*/
 
 .title {
