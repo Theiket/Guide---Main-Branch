@@ -71,6 +71,15 @@
     </td>
     </tr>
   </table>
+    <div class="outputBlock">
+    <h3>Mass</h3>
+    <br>
+    <output 
+    name="mass"
+    id = "massOutput"
+    >
+    </output>
+    </div>
   </div>
 </div>
 </template>
@@ -79,6 +88,8 @@
   useHead({
     title: 'GUIDE | Refinery'
   })
+
+
 </script>
 
 <style scoped>
