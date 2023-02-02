@@ -178,6 +178,11 @@
   font-size:16px;
 }
 
+.outputBlock {
+  padding-inline-start:50px;
+  padding-block-start:100px;
+}
+
 .blocks {
   animation: 1s appear;
   background-color:var(--darkgray);
