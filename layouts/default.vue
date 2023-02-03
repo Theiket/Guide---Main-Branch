@@ -176,7 +176,6 @@ body{
   width:auto;
   display: flex;
   justify-content:center;
-  align-items:;
   text-align: center;
   background-color:var(--backgray);
   animation: 1s appear;
@@ -190,8 +189,7 @@ body{
   color: var(--lightgray);
   letter-spacing: 1px;
 }
-.cells {
-}
+
 .copyright {
   width:800px;
   user-select:none;
