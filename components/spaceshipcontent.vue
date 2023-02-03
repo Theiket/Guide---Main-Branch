@@ -14,7 +14,10 @@
     </select>
     <br><br><br>
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
-    <button value="stalker"></button><button value="titan"></button><button value="warlock"></button><br>
+    <button value="stalker"></button>
+    <button value="titan"></button>
+    <button value="warlock"></button>
+    <br>
     <label for="stalker">
     <p>Avenger Stalker</p>
     </label>
@@ -29,55 +32,95 @@
     <button value="gladius"></button>
     <button value="hammerhead"></button>
     <br>
-    <label for="eclipse"><p>Eclipse</p></label>
-    <label for="gladius"><p>Gladius</p></label>
-    <label for="hammerhead"><p>Hammerhead</p></label>
+    <label for="eclipse">
+    <p>Eclipse</p>
+    </label>
+    <label for="gladius">
+    <p>Gladius</p>
+    </label>
+    <label for="hammerhead">
+    <p>Hammerhead</p>
+    </label>
     <br>
     <button value="idris-k"></button>
     <button value="idris-m"></button>
     <button value="idris-p"></button>
     <br>
-    <label for="idris-k"><p>Idris-K</p></label>
-    <label for="idris-m"><p>Idris-M</p></label>
-    <label for="idris-p"><p>Idris-P</p></label>
+    <label for="idris-k">
+    <p>Idris-K</p>
+    </label>
+    <label for="idris-m">
+    <p>Idris-M</p>
+    </label>
+    <label for="idris-p">
+    <p>Idris-P</p>
+    </label>
     <br>
     <button value="javelin"></button>
     <button value="nautilus"></button>
     <button value="reclaimer"></button>
     <br>
-    <label for="javelin"><p>Javelin</p></label>
-    <label for="nautilus"><p>Nautilus</p></label>
-    <label for="reclaimer"><p>Reclaimer</p></label>
+    <label for="javelin">
+    <p>Javelin</p>
+    </label>
+    <label for="nautilus">
+    <p>Nautilus</p>
+    </label>
+    <label for="reclaimer">
+    <p>Reclaimer</p>
+    </label>
     <br>
     <button value="redeemer"></button>
     <button value="retaliatorbase"></button>
     <button value="retaliatorbomber"></button>
     <br>
-    <label for="redeemer"><p>Redeemer</p></label>
-    <label for="retaliatorbase"><p>Retaliator Base</p></label>
-    <label for="retaliatorbomber"><p>Retaliator Bomber</p></label>
+    <label for="redeemer">
+    <p>Redeemer</p>
+    </label>
+    <label for="retaliatorbase">
+    <p>Retaliator Base</p>
+    </label>
+    <label for="retaliatorbomber">
+    <p>Retaliator Bomber</p>
+    </label>
     <br>
     <button value="sabre"></button>
     <button value="comet"></button>
     <button value="raven"></button>
     <br>
-    <label for="sabre"><p>Sabre</p></label>
-    <label for="comet"><p>Sabre Comet</p></label>
-    <label for="raven"><p>Sabre Raven</p></label>
+    <label for="sabre">
+    <p>Sabre</p>
+    </label>
+    <label for="comet">
+    <p>Sabre Comet</p>
+    </label>
+    <label for="raven">
+    <p>Sabre Raven</p>
+    </label>
     <br>
     <button value="harbinger"></button>
     <button value="hoplite"></button>
     <button value="sentinel"></button>
     <br>
-    <label for="harbinger"><p>Vanguard Harbinger</p></label>
-    <label for="hoplite"><p>Vanguard Hoplite</p></label>
-    <label for="sentinel"><p>Vanguard Sentinel</p></label>
+    <label for="harbinger">
+    <p>Vanguard Harbinger</p>
+    </label>
+    <label for="hoplite">
+    <p>Vanguard Hoplite</p>
+    </label>
+    <label for="sentinel">
+    <p>Vanguard Sentinel</p>
+    </label>
     <br>
     <button value="warden"></button>
     <button value="vulcan"></button>
     <br>
-    <label for="warden"><p>Vanguard Warden</p></label>
-    <label for="vulcan"><p>Vulcan</p></label>
+    <label for="warden">
+    <p>Vanguard Warden</p>
+    </label>
+    <label for="vulcan">
+    <p>Vulcan</p>
+    </label>
   </div>
   <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
     <button value="arrow"></button>
