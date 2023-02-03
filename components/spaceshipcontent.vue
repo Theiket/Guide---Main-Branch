@@ -8,45 +8,79 @@
     </h4>
     <br>
     <center>
-    <select name="selectDeposit" id="depositType">
-      <option value="aegis">Aegis Dynamics</option>
-      <option value="anvil">Anvil Aerospace</option>
-      <option value="aopoa">AopoA</option>
-      <option value="argo">ARGO Astronautics</option>
-      <option value="banu">Banu Souli</option>
-      <option value="consolidated">Consolidated Outlands</option>
-      <option value="crusaderind">Crusader Industries</option>
-      <option value="drakeint">Drake Interplanetary</option>
-      <option value="esperia">Esperia Inc</option>
-      <option value="gatac">Gatac Manufacture</option>
-      <option value="greycat">Greycat Industrial</option>
-      <option value="kruger">Kruger Intergalactic</option>
-      <option value="misc">Musashi Industrial (MISC)</option>
-      <option value="origin">Origin Jumpworks</option>
-      <option value="rsi">Roberts Space Industries</option>
-      <option value="tumbril">Tumbril Land Systems</option>
-      <option value="vanduul">Vanduul</option>
-      </select>
+    <select v-model="selectedCompany">
+      <option disabled value="">Choose a manufacturer</option>
+      <option v-for="company in companies" :key="company">{{ company }}</option>
+    </select>
     <br><br><br>
-    <div class="shipSelect">
-    <table>
-    <td>
-    <Icon name="ic:round-circle" />
-    <br><br>
-    <p>100i</p>
-    </td>
-    <td>
-    <Icon name="ic:round-circle" />
-    <br><br>
-    <p>115p</p>
-    </td>
-    <td>
-    <Icon name="ic:round-circle" />
-    <br><br>
-    <p>125a</p>
-    </td>
-    </table>
-    </div>
+  <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
+    <button value="stalker"></button><button value="titan"></button><button value="warlock"></button><br>
+    <label for="stalker">
+    <p>Avenger Stalker</p>
+    </label>
+    <label for="titan">
+    <p>Avenger Titan</p>
+    </label>
+    <label for="warlock">
+    <p>Avenger Warlock</p>
+    </label>
+    <br>
+    <button value="eclipse"></button>
+    <button value="gladius"></button>
+    <button value="hammerhead"></button>
+    <br>
+    <label for="eclipse"><p>Eclipse</p></label>
+    <label for="gladius"><p>Gladius</p></label>
+    <label for="hammerhead"><p>Hammerhead</p></label>
+    <br>
+    <button value="idris-k"></button>
+    <button value="idris-m"></button>
+    <button value="idris-p"></button>
+    <br>
+    <label for="idris-k"><p>Idris-K</p></label>
+    <label for="idris-m"><p>Idris-M</p></label>
+    <label for="idris-p"><p>Idris-P</p></label>
+    <br>
+    <button value="javelin"></button>
+    <button value="nautilus"></button>
+    <button value="reclaimer"></button>
+    <br>
+    <label for="javelin"><p>Javelin</p></label>
+    <label for="nautilus"><p>Nautilus</p></label>
+    <label for="reclaimer"><p>Reclaimer</p></label>
+    <br>
+    <button value="redeemer"></button>
+    <button value="retaliatorbase"></button>
+    <button value="retaliatorbomber"></button>
+    <br>
+    <label for="redeemer"><p>Redeemer</p></label>
+    <label for="retaliatorbase"><p>Retaliator Base</p></label>
+    <label for="retaliatorbomber"><p>Retaliator Bomber</p></label>
+    <br>
+    <button value="sabre"></button>
+    <button value="comet"></button>
+    <button value="raven"></button>
+    <br>
+    <label for="sabre"><p>Sabre</p></label>
+    <label for="comet"><p>Sabre Comet</p></label>
+    <label for="raven"><p>Sabre Raven</p></label>
+    <br>
+    <button value="harbinger"></button>
+    <button value="hoplite"></button>
+    <button value="sentinel"></button>
+    <br>
+    <label for="harbinger"><p>Vanguard Harbinger</p></label>
+    <label for="hoplite"><p>Vanguard Hoplite</p></label>
+    <label for="sentinel"><p>Vanguard Sentinel</p></label>
+    <br>
+    <button value="warden"></button>
+    <button value="vulcan"></button>
+    <br>
+    <label for="warden"><p>Vanguard Warden</p></label>
+    <label for="vulcan"><p>Vulcan</p></label>
+  </div>
+  <div class="shipSelect">
+  </div>
     </center>
     </div>
   </div>
@@ -184,14 +218,13 @@
 
 <script>
 export default {
-  name: 'State',
-  data () {
+  data() {
     return {
-      options: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outlands', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems', 'Vanduul'],
-      value: '',
-    }
-  },
-}
+      selectedCompany: '',
+      companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outlands', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems', 'Vanduul']
+    };
+  }
+};
 </script>
 
 <style scoped>
@@ -262,9 +295,6 @@ p {
   font-weight:bold;
   letter-spacing:1px;
   color: var(--lightgray);
-  padding-block-end: 15px;
-  padding-inline-start:15px;
-  padding-inline-end:15px;
 }
 
 h4 {
@@ -294,17 +324,33 @@ h4 {
   color:var(--lightgray);
 }
 
-.shipSelect {
+.aegis {
+  margin-inline-start:15px;
+  margin-block-start:-15px;
 }
-.shipSelect .icon {
-  color:var(--lightgray);
-  scale:300%;
-  padding-inline-start:65px;
-  position:relative;
-  left:-100px;
+.aegis button {
+  border-style:solid;
+  border-radius:50%;
+  border-width:15px;
+  border-color:var(--lightgray);
+  cursor:pointer;
+  display:inline-flex;
+  margin-inline-end:30px;
+  padding:10px 10px;
+  background-color:var(--lightgray);
 }
-.shipSelect td {
-  text-align:center;
+.aegis button:hover {
+  background-color:var(--lightorange);
+  border-color:var(--lightorange);
+}
+.aegis label {
+  width:100px;
+  display:inline-flex;
+  margin-inline-start:0px;
+  margin-inline-end:0px;
+  margin-block-start:2px;
+  margin-block-end:2px;
+
 }
 
 .leftcard .va-select {
@@ -337,6 +383,7 @@ h4 {
   font-size:18px;
   text-align:center;
   height:40px;
+  margin-block-start:-20px;
 }
 .leftcard select option:hover {
   color:var(--orangehover);
