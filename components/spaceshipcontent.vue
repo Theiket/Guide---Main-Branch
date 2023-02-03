@@ -19,16 +19,33 @@
       <option value="drakeint">Drake Interplanetary</option>
       <option value="esperia">Esperia Inc</option>
       <option value="gatac">Gatac Manufacture</option>
+      <option value="greycat">Greycat Industrial</option>
       <option value="kruger">Kruger Intergalactic</option>
       <option value="misc">Musashi Industrial (MISC)</option>
       <option value="origin">Origin Jumpworks</option>
       <option value="rsi">Roberts Space Industries</option>
+      <option value="tumbril">Tumbril Land Systems</option>
+      <option value="vanduul">Vanduul</option>
       </select>
     <br><br><br>
     <div class="shipSelect">
+    <table>
+    <td>
     <Icon name="ic:round-circle" />
+    <br><br>
+    <p>100i</p>
+    </td>
+    <td>
     <Icon name="ic:round-circle" />
+    <br><br>
+    <p>115p</p>
+    </td>
+    <td>
     <Icon name="ic:round-circle" />
+    <br><br>
+    <p>125a</p>
+    </td>
+    </table>
     </div>
     </center>
     </div>
@@ -282,9 +299,12 @@ h4 {
 .shipSelect .icon {
   color:var(--lightgray);
   scale:300%;
-  padding-inline-start:70px;
+  padding-inline-start:65px;
   position:relative;
   left:-100px;
+}
+.shipSelect td {
+  text-align:center;
 }
 
 .leftcard .va-select {
