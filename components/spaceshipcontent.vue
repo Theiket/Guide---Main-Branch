@@ -964,95 +964,153 @@
     </table>
   </div>
   <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
-    <button value="100i"></button>
-    <button value="125a"></button>
-    <button value="135c"></button>
-    <br>
-    <label for="100i">
-    <p>100i</p>
-    </label>
-    <label for="125a">
-    <p>125a</p>
-    </label>
-    <label for="135c">
-    <p>135c</p>
-    </label>
-    <br>
-    <button value="300i"></button>
-    <button value="315p"></button>
-    <button value="325a"></button>
-    <br>
-    <label for="300i">
-    <p>300i</p>
-    </label>
-    <label for="315p">
-    <p>315p</p>
-    </label>
-    <label for="325a">
-    <p>325a</p>
-    </label>
-    <br>
-    <button value="350r"></button>
-    <button value="400i"></button>
-    <button value="600iexplorer"></button>
-    <br>
-    <label for="350r">
-    <p>350r</p>
-    </label>
-    <label for="400i">
-    <p>400i</p>
-    </label>
-    <label for="600iexplorer">
-    <p>600i Explorer</p>
-    </label>
-    <br>
-    <button value="600itouring"></button>
-    <button value="85x"></button>
-    <button value="890j"></button>
-    <br>
-    <label for="600itouring">
-    <p>600i Touring</p>
-    </label>
-    <label for="85x">
-    <p>85X</p>
-    </label>
-    <label for="890j">
-    <p>890 Jump</p>
-    </label>
-    <br>
-    <button value="g12"></button>
-    <button value="g12a"></button>
-    <button value="g12r"></button>
-    <br>
-    <label for="g12">
-    <p>G12</p>
-    </label>
-    <label for="g12a">
-    <p>G12a</p>
-    </label>
-    <label for="g12r">
-    <p>G12r</p>
-    </label>
-    <br>
-    <button value="m50"></button>
-    <button value="x1"></button>
-    <button value="x1f"></button>
-    <br>
-    <label for="m50">
-    <p>M50</p>
-    </label>
-    <label for="x1">
-    <p>X1</p>
-    </label>
-    <label for="x1f">
-    <p>X1 Force</p>
-    </label>
-    <br>
-    <button value="x1v"></button>
-    <br>
-    <label for="x1v">
-    <p>X1 Velocity</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="100i"></button>
+      <br>
+      <label for="100i">
+      <p>100i</p>
+      </label>
+    </td>
+    <td>
+      <button value="125a"></button>
+      <br>
+      <label for="125a">
+      <p>125a</p>
+      </label>
+    </td>
+    <td>
+      <button value="135c"></button>
+      <br>
+      <label for="135c">
+      <p>135c</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="300i"></button>
+      <br>
+      <label for="300i">
+      <p>300i</p>
+      </label>
+    </td>
+    <td>
+      <button value="315p"></button>
+      <br>
+      <label for="315p">
+      <p>315p</p>
+      </label>
+    </td>
+    <td>
+      <button value="325a"></button>
+      <br>
+      <label for="325a">
+      <p>325a</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="350r"></button>
+      <br>
+      <label for="350r">
+      <p>350r</p>
+      </label>
+    </td>
+    <td>
+      <button value="400i"></button>
+      <br>
+      <label for="400i">
+      <p>400i</p>
+      </label>
+    </td>
+    <td>
+      <button value="600iexplorer"></button>
+      <br>
+      <label for="600iexplorer">
+      <p>600i Explorer</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="600itouring"></button>
+      <br>
+      <label for="600itouring">
+      <p>600i Touring</p>
+      </label>
+    </td>
+    <td>
+      <button value="85x"></button>
+      <br>
+      <label for="85x">
+      <p>85X</p>
+      </label>
+    </td>
+    <td>
+      <button value="890j"></button>
+      <br>
+      <label for="890j">
+      <p>890 Jump</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="g12"></button>
+      <br>
+      <label for="g12">
+      <p>G12</p>
+      </label>
+    </td>
+    <td>
+      <button value="g12a"></button>
+      <br>
+      <label for="g12a">
+      <p>G12a</p>
+      </label>
+    </td>
+    <td>
+      <button value="g12r"></button>
+      <br>
+      <label for="g12r">
+      <p>G12r</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="m50"></button>
+      <br>
+      <label for="m50">
+      <p>M50</p>
+      </label>
+    </td>
+    <td>
+      <button value="x1"></button>
+      <br>
+      <label for="x1">
+      <p>X1</p>
+      </label>
+    </td>
+    <td>
+      <button value="x1f"></button>
+      <br>
+      <label for="x1f">
+      <p>X1 Force</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+      <button value="x1v"></button>
+      <br>
+      <label for="x1v">
+      <p>X1 Velocity</p>
+      </label>
+    </tr>
+    </table>
   </div>
   <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
     <button value="auroracl"></button>
