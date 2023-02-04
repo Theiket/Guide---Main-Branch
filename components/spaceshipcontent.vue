@@ -14,233 +14,384 @@
     </select>
     <br><br><br>
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
-    <button value="stalker"></button>
-    <button value="titan"></button>
-    <button value="warlock"></button>
-    <br>
-    <label for="stalker">
-    <p>Avenger Stalker</p>
-    </label>
-    <label for="titan">
-    <p>Avenger Titan</p>
-    </label>
-    <label for="warlock">
-    <p>Avenger Warlock</p>
-    </label>
-    <br>
-    <button value="eclipse"></button>
-    <button value="gladius"></button>
-    <button value="hammerhead"></button>
-    <br>
-    <label for="eclipse">
-    <p>Eclipse</p>
-    </label>
-    <label for="gladius">
-    <p>Gladius</p>
-    </label>
-    <label for="hammerhead">
-    <p>Hammerhead</p>
-    </label>
-    <br>
-    <button value="idris-k"></button>
-    <button value="idris-m"></button>
-    <button value="idris-p"></button>
-    <br>
-    <label for="idris-k">
-    <p>Idris-K</p>
-    </label>
-    <label for="idris-m">
-    <p>Idris-M</p>
-    </label>
-    <label for="idris-p">
-    <p>Idris-P</p>
-    </label>
-    <br>
-    <button value="javelin"></button>
-    <button value="nautilus"></button>
-    <button value="reclaimer"></button>
-    <br>
-    <label for="javelin">
-    <p>Javelin</p>
-    </label>
-    <label for="nautilus">
-    <p>Nautilus</p>
-    </label>
-    <label for="reclaimer">
-    <p>Reclaimer</p>
-    </label>
-    <br>
-    <button value="redeemer"></button>
-    <button value="retaliatorbase"></button>
-    <button value="retaliatorbomber"></button>
-    <br>
-    <label for="redeemer">
-    <p>Redeemer</p>
-    </label>
-    <label for="retaliatorbase">
-    <p>Retaliator Base</p>
-    </label>
-    <label for="retaliatorbomber">
-    <p>Retaliator Bomber</p>
-    </label>
-    <br>
-    <button value="sabre"></button>
-    <button value="comet"></button>
-    <button value="raven"></button>
-    <br>
-    <label for="sabre">
-    <p>Sabre</p>
-    </label>
-    <label for="comet">
-    <p>Sabre Comet</p>
-    </label>
-    <label for="raven">
-    <p>Sabre Raven</p>
-    </label>
-    <br>
-    <button value="harbinger"></button>
-    <button value="hoplite"></button>
-    <button value="sentinel"></button>
-    <br>
-    <label for="harbinger">
-    <p>Vanguard Harbinger</p>
-    </label>
-    <label for="hoplite">
-    <p>Vanguard Hoplite</p>
-    </label>
-    <label for="sentinel">
-    <p>Vanguard Sentinel</p>
-    </label>
-    <br>
-    <button value="warden"></button>
-    <button value="vulcan"></button>
-    <br>
-    <label for="warden">
-    <p>Vanguard Warden</p>
-    </label>
-    <label for="vulcan">
-    <p>Vulcan</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="stalker"></button>
+      <br>
+      <label for="stalker">
+      <p>Avenger Stalker</p>
+      </label>
+    </td>
+    <td>
+      <button value="titan"></button>
+      <br>
+      <label for="titan">
+      <p>Avenger Titan</p>
+      </label>
+    </td>
+    <td>
+      <button value="warlock"></button>
+      <br>
+      <label for="warlock">
+      <p>Avenger Warlock</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="eclipse"></button>
+      <br>
+      <label for="eclipse">
+      <p>Eclipse</p>
+      </label>
+    </td>
+    <td>
+      <button value="gladius"></button>
+      <br>
+      <label for="gladius">
+      <p>Gladius</p>
+      </label>
+    </td>
+    <td>
+      <button value="hammerhead"></button>
+      <br>
+      <label for="hammerhead">
+      <p>Hammerhead</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="idris-k"></button>
+      <br>
+      <label for="idris-k">
+      <p>Idris-K</p>
+      </label>
+    </td>
+    <td>
+      <button value="idris-m"></button>
+      <br>
+      <label for="idris-m">
+      <p>Idris-M</p>
+      </label>
+    </td>
+    <td>
+      <button value="idris-p"></button>
+      <br>
+      <label for="idris-p">
+      <p>Idris-P</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="javelin"></button>
+      <br>
+      <label for="javelin">
+      <p>Javelin</p>
+      </label>
+    </td>
+    <td>
+      <button value="nautilus"></button>
+      <br>
+      <label for="nautilus">
+      <p>Nautilus</p>
+      </label>
+    </td>
+    <td>
+      <button value="reclaimer"></button>
+      <br>
+      <label for="reclaimer">
+      <p>Reclaimer</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="redeemer"></button>
+      <br>
+      <label for="redeemer">
+      <p>Redeemer</p>
+      </label>
+    </td>
+    <td>
+      <button value="retaliatorbase"></button>
+      <br>
+      <label for="retaliatorbase">
+      <p>Retaliator Base</p>
+      </label>
+    </td>
+    <td>
+      <button value="retaliatorbomber"></button>
+      <br>
+      <label for="retaliatorbomber">
+      <p>Retaliator Bomber</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="sabre"></button>
+      <br>
+      <label for="sabre">
+      <p>Sabre</p>
+      </label>
+    </td>
+    <td>
+      <button value="comet"></button>
+      <br>
+      <label for="comet">
+      <p>Sabre Comet</p>
+      </label>
+    </td>
+    <td>
+      <button value="raven"></button>
+      <br>
+      <label for="raven">
+      <p>Sabre Raven</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="harbinger"></button>
+      <br>
+      <label for="harbinger">
+      <p>Vanguard Harbinger</p>
+      </label>
+    </td>
+    <td>
+      <button value="hoplite"></button>
+      <br>
+      <label for="hoplite">
+      <p>Vanguard Hoplite</p>
+      </label>
+    </td>
+    <td>
+      <button value="sentinel"></button>
+      <br>
+      <label for="sentinel">
+      <p>Vanguard Sentinel</p>
+      </label>
+    </td>
+    </tr>
+    <td>
+      <button value="warden"></button>
+      <br>
+      <label for="warden">
+      <p>Vanguard Warden</p>
+      </label>
+    </td>
+    <td>
+      <button value="vulcan"></button>
+      <br>
+      <label for="vulcan">
+      <p>Vulcan</p>
+      </label>
+    </td>
+    </table>
   </div>
   <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
-    <button value="arrow"></button>
-    <button value="C8"></button>
-    <button value="C8R"></button>
-    <br>
-    <label for="arrow">
-    <p>Arrow</p>
-    </label>
-    <label for="C8">
-    <p>C8 Pisces</p>
-    </label>
-    <label for="C8R">
-    <p>C8R Pisces Rescue</p>
-    </label>
-    <br>
-    <button value="C8X"></button>
-    <button value="carrack"></button>
-    <button value="crucible"></button>
-    <br>
-    <label for="C8X">
-    <p>C8X Pisces Expedition</p>
-    </label>
-    <label for="carrack">
-    <p>Carrack</p>
-    </label>
-    <label for="crucible">
-    <p>Crucible</p>
-    </label>
-    <br>
-    <button value="F7A"></button>
-    <button value="F7A2"></button>
-    <button value="F7AR"></button>
-    <br>
-    <label for="F7A">
-    <p>F7A Hornet</p>
-    </label>
-    <label for="F7A2">
-    <p>F7A Hornet Mk II</p>
-    </label>
-    <label for="F7AR">
-    <p>F7A-R Hornet Tracker</p>
-    </label>
-    <br>
-    <button value="F7C"></button>
-    <button value="F7CM"></button>
-    <button value="F7CR"></button>
-    <br>
-    <label for="F7C">
-    <p>F7C Hornet</p>
-    </label>
-    <label for="F7CM">
-    <p>F7C-M Super Hornet</p>
-    </label>
-    <label for="F7CR">
-    <p>F7C-R Hornet Tracker</p>
-    </label>
-    <br>
-    <button value="F7CS"></button>
-    <button value="F8A"></button>
-    <button value="F8C"></button>
-    <br>
-    <label for="F7CS">
-    <p>F7C-S Hornet Ghost</p>
-    </label>
-    <label for="F8A">
-    <p>F8A Lightning</p>
-    </label>
-    <label for="F8C">
-    <p>F8C Lightning</p>
-    </label>
-    <br>
-    <button value="gladiator"></button>
-    <button value="hawk"></button>
-    <button value="hurricane"></button>
-    <br>
-    <label for="gladiator">
-    <p>Gladiator</p>
-    </label>
-    <label for="hawk">
-    <p>Hawk</p>
-    </label>
-    <label for="hurricane">
-    <p>Hurricane</p>
-    </label>
-    <br>
-    <button value="legionnaire"></button>
-    <button value="liberator"></button>
-    <button value="terrapin"></button>
-    <br>
-    <label for="legionnaire">
-    <p>Legionnaire</p>
-    </label>
-    <label for="liberator">
-    <p>Liberator</p>
-    </label>
-    <label for="terrapin">
-    <p>Terrapin</p>
-    </label>
-    <br>
-    <button value="valkyrie"></button>
-    <br>
-    <label for="valkyrie">
-    <p>Valkyrie</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="arrow"></button>
+      <br>
+      <label for="arrow">
+      <p>Arrow</p>
+      </label>
+    </td>
+    <td>
+      <button value="C8"></button>
+      <br>
+      <label for="C8">
+      <p>C8 Pisces</p>
+      </label>
+    </td>
+    <td>
+      <button value="C8R"></button>
+      <br>
+      <label for="C8R">
+      <p>C8R Pisces Rescue</p>
+      </label>
+    </td>
+    </tr>    
+    <tr>
+    <td>
+      <button value="C8X"></button>
+      <br>
+      <label for="C8X">
+      <p>C8X Pisces Expedition</p>
+      </label>
+    </td>
+    <td>
+      <button value="carrack"></button>
+      <br>
+      <label for="carrack">
+      <p>Carrack</p>
+      </label>
+    </td>
+    <td>
+      <button value="crucible"></button>
+      <br>
+      <label for="crucible">
+      <p>Crucible</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="F7A"></button>
+      <br>
+      <label for="F7A">
+      <p>F7A Hornet</p>
+      </label>
+    </td>
+    <td>
+      <button value="F7A2"></button>
+      <br>
+      <label for="F7A2">
+      <p>F7A Hornet Mk II</p>
+      </label>
+    </td>
+    <td>
+      <button value="F7AR"></button>
+      <br>
+      <label for="F7AR">
+      <p>F7A-R Hornet Tracker</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="F7C"></button>
+      <br>
+      <label for="F7C">
+      <p>F7C Hornet</p>
+      </label>
+    </td>
+    <td>
+      <button value="F7CM"></button>
+      <br>
+      <label for="F7CM">
+      <p>F7C-M Super Hornet</p>
+      </label>
+    </td>
+    <td>
+      <button value="F7CR"></button>
+      <br>
+      <label for="F7CR">
+      <p>F7C-R Hornet Tracker</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="F7CS"></button>
+      <br>
+      <label for="F7CS">
+      <p>F7C-S Hornet Ghost</p>
+      </label>
+    </td>
+    <td>
+      <button value="F8A"></button>
+      <br>
+      <label for="F8A">
+      <p>F8A Lightning</p>
+      </label>
+    </td>
+    <td>
+      <button value="F8C"></button>
+      <br>
+      <label for="F8C">
+      <p>F8C Lightning</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="gladiator"></button>
+      <br>
+      <label for="gladiator">
+      <p>Gladiator</p>
+      </label>
+    </td>
+    <td>
+      <button value="hawk"></button>
+      <br>
+      <label for="hawk">
+      <p>Hawk</p>
+      </label>
+    </td>
+    <td>
+      <button value="hurricane"></button>
+      <br>
+      <label for="hurricane">
+      <p>Hurricane</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="legionnaire"></button>
+      <br>
+      <label for="legionnaire">
+      <p>Legionnaire</p>
+      </label>
+    </td>
+    <td>
+      <button value="liberator"></button>
+      <br>
+      <label for="liberator">
+      <p>Liberator</p>
+      </label>
+    </td>
+    <td>
+      <button value="terrapin"></button>
+      <br>
+      <label for="terrapin">
+      <p>Terrapin</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="valkyrie"></button>
+      <br>
+      <label for="valkyrie">
+      <p>Valkyrie</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="aopoa" v-if="selectedCompany === 'AopoA'">
+    <table>
+    <tr>
+    <td>
     <button value="khartual"></button>
-    <button value="nox"></button>
-    <button value="santokyai"></button>
     <br>
     <label for="khartual">
     <p>Khartu-al</p>
     </label>
+    </td>
+    <td>
+    <button value="nox"></button>
+    <br>
     <label for="nox">
     <p>Nox</p>
     </label>
+    </td>
+    <td>
+    <button value="santokyai"></button>
+    <br>
     <label for="santokyai">
     <p>San'tok-yai</p>
     </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
     <button value="mole"></button>
@@ -1028,7 +1179,6 @@ h4 {
   margin-block-start:-15px;
 }
 .anvil {
-  margin-inline-start:15px;
   margin-block-start:-15px;
 }
 .aopoa {
@@ -1099,23 +1249,25 @@ h4 {
   border-color:var(--lightgray);
   cursor:pointer;
   display:inline-flex;
-  margin-inline-end:30px;
   padding:5px 5px;
   background-color:var(--lightgray);
+  margin-block-start:5px;
 }
 .leftcard button:hover {
   background-color:var(--lightorange);
   border-color:var(--lightorange);
 }
 .leftcard label {
-  width:100px;
   display:inline-flex;
-  margin-inline-start:0px;
-  margin-inline-end:0px;
   margin-block-start:2px;
   margin-block-end:2px;
-
 }
+.leftcard table {
+  text-align:center;
+  width:300px;
+  margin-block-end:5px;
+}
+
 
 .leftcard .va-select {
   --va-select-cursor: pointer;
