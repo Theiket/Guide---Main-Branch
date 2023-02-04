@@ -1156,7 +1156,7 @@
       <button value="constellationandromeda"></button>
       <br>
       <label for="constellationandromeda">
-      <p>Constellation Andromeda</p>
+      <p>Constellation<br>Andromeda</p>
       </label>
     </td>
     </tr>
@@ -1165,21 +1165,21 @@
       <button value="constellationaquila"></button>
       <br>
       <label for="constellationaquila">
-      <p>Constellation Aquila</p>
+      <p>Constellation<br>Aquila</p>
       </label>
     </td>
     <td>
       <button value="constellationphoenix"></button>
       <br>
       <label for="constellationphoenix">
-      <p>Constellation Phoenix</p>
+      <p>Constellation<br>Phoenix</p>
       </label>
     </td>
     <td>
       <button value="constellationtaurus"></button>
       <br>
       <label for="constellationtaurus">
-      <p>Constellation Taurus</p>
+      <p>Constellation<br>Taurus</p>
       </label>
     </td>
     </tr>
