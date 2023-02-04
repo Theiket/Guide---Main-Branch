@@ -1574,6 +1574,10 @@ h4 {
   min-width:250px;
   margin-block-start:-20px;
 }
+.leftcard td {
+  width:125px;
+}
+
 
 @keyframes appear {
   0% {
