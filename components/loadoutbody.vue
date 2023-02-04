@@ -93,7 +93,7 @@
   </div>
 <!-- Loadout Selection -->
   <div class="rightcard">
-    <div class="col-md-3">
+    <div class="rightcol">
     <center>
     <button class="button Prospector">
     Prospector
@@ -127,7 +127,7 @@
   user-select:none;
 }
 
-.col-md-3 {
+.rightcol {
   background-color:var(--darkgray);
   border-style:solid;
   border-width:3px;
