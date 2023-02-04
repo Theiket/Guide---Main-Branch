@@ -1113,110 +1113,180 @@
     </table>
   </div>
   <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
-    <button value="auroracl"></button>
-    <button value="auroraes"></button>
-    <button value="auroraln"></button>
-    <br>
-    <label for="auroracl">
-    <p>Aurora CL</p>
-    </label>
-    <label for="auroraes">
-    <p>Aurora ES</p>
-    </label>
-    <label for="auroraln">
-    <p>Aurora LN</p>
-    </label>
-    <br>
-    <button value="auroralx"></button>
-    <button value="auroramr"></button>
-    <button value="constellationandromeda"></button>
-    <br>
-    <label for="auroralx">
-    <p>Aurora LX</p>
-    </label>
-    <label for="auroramr">
-    <p>Aurora MR</p>
-    </label>
-    <label for="constellationandromeda">
-    <p>Constellation Andromeda</p>
-    </label>
-    <br>
-    <button value="constellationaquila"></button>
-    <button value="constellationphoenix"></button>
-    <button value="constellationtaurus"></button>
-    <br>
-    <label for="constellationaquila">
-    <p>Constellation Aquila</p>
-    </label>
-    <label for="constellationphoenix">
-    <p>Constellation Phoenix</p>
-    </label>
-    <label for="constellationtaurus">
-    <p>Constellation Taurus</p>
-    </label>
-    <br>
-    <button value="mantis"></button>
-    <button value="scorpius"></button>
-    <button value="ursa"></button>
-    <br>
-    <label for="mantis">
-    <p>Mantis</p>
-    </label>
-    <label for="scorpius">
-    <p>Scorpius</p>
-    </label>
-    <label for="ursa">
-    <p>Ursa</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="auroracl"></button>
+      <br>
+      <label for="auroracl">
+      <p>Aurora CL</p>
+      </label>
+    </td>
+    <td>
+      <button value="auroraes"></button>
+      <br>
+      <label for="auroraes">
+      <p>Aurora ES</p>
+      </label>
+    </td>
+    <td>
+      <button value="auroraln"></button>
+      <br>
+      <label for="auroraln">
+      <p>Aurora LN</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="auroralx"></button>
+      <br>
+      <label for="auroralx">
+      <p>Aurora LX</p>
+      </label>
+    </td>
+    <td>
+      <button value="auroramr"></button>
+      <br>
+      <label for="auroramr">
+      <p>Aurora MR</p>
+      </label>
+    </td>
+    <td>
+      <button value="constellationandromeda"></button>
+      <br>
+      <label for="constellationandromeda">
+      <p>Constellation Andromeda</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="constellationaquila"></button>
+      <br>
+      <label for="constellationaquila">
+      <p>Constellation Aquila</p>
+      </label>
+    </td>
+    <td>
+      <button value="constellationphoenix"></button>
+      <br>
+      <label for="constellationphoenix">
+      <p>Constellation Phoenix</p>
+      </label>
+    </td>
+    <td>
+      <button value="constellationtaurus"></button>
+      <br>
+      <label for="constellationtaurus">
+      <p>Constellation Taurus</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="mantis"></button>
+      <br>
+      <label for="mantis">
+      <p>Mantis</p>
+      </label>
+    </td>
+    <td>
+      <button value="scorpius"></button>
+      <br>
+      <label for="scorpius">
+      <p>Scorpius</p>
+      </label>
+    </td>
+    <td>
+      <button value="ursa"></button>
+      <br>
+      <label for="ursa">
+      <p>Ursa</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
-    <button value="cyclone"></button>
-    <button value="cycloneaa"></button>
-    <button value="cyclonemt"></button>
-    <br>
-    <label for="cyclone">
-    <p>Cyclone</p>
-    </label>
-    <label for="cycloneaa">
-    <p>Cyclone AA</p>
-    </label>
-    <label for="cyclonemt">
-    <p>Cyclone MT</p>
-    </label>
-    <br>
-    <button value="cyclonerc"></button>
-    <button value="cyclonern"></button>
-    <button value="cyclonetr"></button>
-    <br>
-    <label for="cyclonerc">
-    <p>Cyclone RC</p>
-    </label>
-    <label for="cyclonern">
-    <p>Cyclone RN</p>
-    </label>
-    <label for="cyclonetr">
-    <p>Cyclone TR</p>
-    </label>
-    <br>
-    <button value="nova"></button>
-    <button value="rangercv"></button>
-    <button value="rangerrv"></button>
-    <br>
-    <label for="nova">
-    <p>Nova</p>
-    </label>
-    <label for="rangercv">
-    <p>Ranger CV</p>
-    </label>
-    <label for="rangerrv">
-    <p>Ranger RV</p>
-    </label>
-    <br>
-    <button value="rangertr"></button>
-    <br>
-    <label for="rangertr">
-    <p>Ranger TR</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="cyclone"></button>
+      <br>
+      <label for="cyclone">
+      <p>Cyclone</p>
+      </label>
+    </td>
+    <td>
+      <button value="cycloneaa"></button>
+      <br>
+      <label for="cycloneaa">
+      <p>Cyclone AA</p>
+      </label>
+    </td>
+    <td>
+      <button value="cyclonemt"></button>
+      <br>
+      <label for="cyclonemt">
+      <p>Cyclone MT</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="cyclonerc"></button>
+      <br>
+      <label for="cyclonerc">
+      <p>Cyclone RC</p>
+      </label>
+    </td>
+    <td>
+      <button value="cyclonern"></button>
+      <br>
+      <label for="cyclonern">
+      <p>Cyclone RN</p>
+      </label>
+    </td>
+    <td>
+      <button value="cyclonetr"></button>
+      <br>
+      <label for="cyclonetr">
+      <p>Cyclone TR</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="nova"></button>
+      <br>
+      <label for="nova">
+      <p>Nova</p>
+      </label>
+    </td>
+    <td>
+      <button value="rangercv"></button>
+      <br>
+      <label for="rangercv">
+      <p>Ranger CV</p>
+      </label>
+    </td>
+    <td>
+      <button value="rangerrv"></button>
+      <br>
+      <label for="rangerrv">
+      <p>Ranger RV</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+      <button value="rangertr"></button>
+      <br>
+      <label for="rangertr">
+      <p>Ranger TR</p>
+      </label>
+    </tr>
+    </table>
   </div>
     </center>
     </div>
