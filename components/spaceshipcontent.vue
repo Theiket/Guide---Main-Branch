@@ -838,81 +838,130 @@
     </table>
   </div>
   <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
-    <button value="expanse"></button>
-    <button value="freelancer"></button>
-    <button value="freelancerdur"></button>
-    <br>
-    <label for="expanse">
-    <p>Expanse</p>
+    <table>
+    <tr>
+    <td>
+      <button value="expanse"></button>
+      <br>
+      <label for="expanse">
+      <p>Expanse</p>
+      </label>
+    </td>
+    <td>
+      <button value="freelancer"></button>
+      <br>
+      <label for="freelancer">
+      <p>Freelancer</p>
+      </label>
+    </td>
+    <td>
+      <button value="freelancerdur"></button>
+      <br>
+      <label for="freelancerdur">
+      <p>Freelancer DUR</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="freelancermax"></button>
+      <br>
+      <label for="freelancermax">
+      <p>Freelancer MAX</p>
+      </label>
+    </td>
+    <td>
+      <button value="freelancermis"></button>
+      <br>
+      <label for="freelancermis">
+      <p>Freelancer MIS</p>
     </label>
-    <label for="freelancer">
-    <p>Freelancer</p>
-    </label>
-    <label for="freelancerdur">
-    <p>Freelancer DUR</p>
-    </label>
-    <br>
-    <button value="freelancermax"></button>
-    <button value="freelancermis"></button>
-    <button value="hulla"></button>
-    <br>
-    <label for="freelancermax">
-    <p>Freelancer MAX</p>
-    </label>
-    <label for="freelancermis">
-    <p>Freelancer MIS</p>
-    </label>
-    <label for="hulla">
-    <p>HULL A</p>
-    </label>
-    <br>
-    <button value="prospector"></button>
-    <button value="razor"></button>
-    <button value="razorex"></button>
-    <br>
-    <label for="prospector">
-    <p>Prospector</p>
-    </label>
-    <label for="razor">
-    <p>Razor</p>
-    </label>
-    <label for="razorex">
-    <p>Razor EX</p>
-    </label>
-    <br>
-    <button value="razorlx"></button>
-    <button value="reliantkore"></button>
-    <button value="reliantmako"></button>
-    <br>
-    <label for="razorlx">
-    <p>Razor LX</p>
-    </label>
-    <label for="reliantkore">
-    <p>Reliant Kore</p>
-    </label>
-    <label for="reliantmako">
-    <p>Reliant Mako</p>
-    </label>
-    <br>
-    <button value="reliantsen"></button>
-    <button value="relianttana"></button>
-    <button value="starfarer"></button>
-    <br>
-    <label for="reliantsen">
-    <p>Reliant Sen</p>
-    </label>
-    <label for="relianttana">
-    <p>Reliant Tana</p>
-    </label>
-    <label for="starfarer">
-    <p>Starfarer</p>
-    </label>
-    <br>
-    <button value="starfarergemini"></button>
-    <br>
-    <label for="starfarergemini">
-    <p>Starfarer Gemini</p>
-    </label>
+    </td>
+    <td>
+      <button value="hulla"></button>
+      <br>
+      <label for="hulla">
+      <p>HULL A</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="prospector"></button>
+      <br>
+      <label for="prospector">
+      <p>Prospector</p>
+      </label>
+    </td>
+    <td>
+      <button value="razor"></button>
+      <br>
+      <label for="razor">
+      <p>Razor</p>
+      </label>
+    </td>
+    <td>
+      <button value="razorex"></button>
+      <br>
+      <label for="razorex">
+      <p>Razor EX</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="razorlx"></button>
+      <br>
+      <label for="razorlx">
+      <p>Razor LX</p>
+      </label>
+    </td>
+    <td>
+      <button value="reliantkore"></button>
+      <br>
+      <label for="reliantkore">
+      <p>Reliant Kore</p>
+      </label>
+    </td>
+    <td>
+      <button value="reliantmako"></button>
+      <br>
+      <label for="reliantmako">
+      <p>Reliant Mako</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="reliantsen"></button>
+      <br>
+      <label for="reliantsen">
+      <p>Reliant Sen</p>
+      </label>
+    </td>
+    <td>
+      <button value="relianttana"></button>
+      <br>
+      <label for="relianttana">
+      <p>Reliant Tana</p>
+      </label>
+    </td>
+    <td>
+      <button value="starfarer"></button>
+      <br>
+      <label for="starfarer">
+      <p>Starfarer</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+      <button value="starfarergemini"></button>
+      <br>
+      <label for="starfarergemini">
+      <p>Starfarer Gemini</p>
+      </label>
+    </tr>
+    </table>
   </div>
   <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
     <button value="100i"></button>
