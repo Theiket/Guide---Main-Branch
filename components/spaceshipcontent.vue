@@ -1626,7 +1626,7 @@ h4 {
   margin-block-end:0px;
 }
 .leftcard td {
-  padding-inline-end:10px;
+  padding-inline-end:0px;
 }
 
 .leftcard .va-select {
