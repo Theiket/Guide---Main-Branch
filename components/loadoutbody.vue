@@ -100,6 +100,8 @@
       Prospector
       </button>
       </center>
+      <br>
+      <p>Text Goes Here</p>
     </div>
     <div v-else-if="mole">
       <center>
@@ -108,6 +110,8 @@
       MOLE
       </button>
       </center>
+      <br>
+      <p>Text Goes Here</p>
     </div>
     <div class="mainButtons" v-else>
       <center>
