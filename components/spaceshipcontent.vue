@@ -20,21 +20,21 @@
       <button value="stalker"></button>
       <br>
       <label for="stalker">
-      <p>Avenger Stalker</p>
+      <p>Avenger<br>Stalker</p>
       </label>
     </td>
     <td>
       <button value="titan"></button>
       <br>
       <label for="titan">
-      <p>Avenger Titan</p>
+      <p>Avenger<br>Titan</p>
       </label>
     </td>
     <td>
       <button value="warlock"></button>
       <br>
       <label for="warlock">
-      <p>Avenger Warlock</p>
+      <p>Avenger<br>Warlock</p>
       </label>
     </td>
     </tr>
@@ -119,14 +119,14 @@
       <button value="retaliatorbase"></button>
       <br>
       <label for="retaliatorbase">
-      <p>Retaliator Base</p>
+      <p>Retaliator<br>Base</p>
       </label>
     </td>
     <td>
       <button value="retaliatorbomber"></button>
       <br>
       <label for="retaliatorbomber">
-      <p>Retaliator Bomber</p>
+      <p>Retaliator<br>Bomber</p>
       </label>
     </td>
     </tr>
@@ -142,14 +142,14 @@
       <button value="comet"></button>
       <br>
       <label for="comet">
-      <p>Sabre Comet</p>
+      <p>Sabre<br>Comet</p>
       </label>
     </td>
     <td>
       <button value="raven"></button>
       <br>
       <label for="raven">
-      <p>Sabre Raven</p>
+      <p>Sabre<br>Raven</p>
       </label>
     </td>
     </tr>
@@ -158,21 +158,21 @@
       <button value="harbinger"></button>
       <br>
       <label for="harbinger">
-      <p>Vanguard Harbinger</p>
+      <p>Vanguard<br>Harbinger</p>
       </label>
     </td>
     <td>
       <button value="hoplite"></button>
       <br>
       <label for="hoplite">
-      <p>Vanguard Hoplite</p>
+      <p>Vanguard<br>Hoplite</p>
       </label>
     </td>
     <td>
       <button value="sentinel"></button>
       <br>
       <label for="sentinel">
-      <p>Vanguard Sentinel</p>
+      <p>Vanguard<br>Sentinel</p>
       </label>
     </td>
     </tr>
@@ -180,7 +180,7 @@
       <button value="warden"></button>
       <br>
       <label for="warden">
-      <p>Vanguard Warden</p>
+      <p>Vanguard<br>Warden</p>
       </label>
     </td>
     <td>
@@ -213,7 +213,7 @@
       <button value="C8R"></button>
       <br>
       <label for="C8R">
-      <p>C8R Pisces Rescue</p>
+      <p>C8R Pisces<br>Rescue</p>
       </label>
     </td>
     </tr>    
@@ -222,7 +222,7 @@
       <button value="C8X"></button>
       <br>
       <label for="C8X">
-      <p>C8X Pisces Expedition</p>
+      <p>C8X Pisces<br>Expedition</p>
       </label>
     </td>
     <td>
@@ -245,21 +245,21 @@
       <button value="F7A"></button>
       <br>
       <label for="F7A">
-      <p>F7A Hornet</p>
+      <p>F7A<br>Hornet</p>
       </label>
     </td>
     <td>
       <button value="F7A2"></button>
       <br>
       <label for="F7A2">
-      <p>F7A Hornet Mk II</p>
+      <p>F7A<br>Hornet Mk II</p>
       </label>
     </td>
     <td>
       <button value="F7AR"></button>
       <br>
       <label for="F7AR">
-      <p>F7A-R Hornet Tracker</p>
+      <p>F7A-R<br>Hornet Tracker</p>
       </label>
     </td>
     </tr>
@@ -268,21 +268,21 @@
       <button value="F7C"></button>
       <br>
       <label for="F7C">
-      <p>F7C Hornet</p>
+      <p>F7C<br>Hornet</p>
       </label>
     </td>
     <td>
       <button value="F7CM"></button>
       <br>
       <label for="F7CM">
-      <p>F7C-M Super Hornet</p>
+      <p>F7C-M<br>Super Hornet</p>
       </label>
     </td>
     <td>
       <button value="F7CR"></button>
       <br>
       <label for="F7CR">
-      <p>F7C-R Hornet Tracker</p>
+      <p>F7C-R<br>Hornet Tracker</p>
       </label>
     </td>
     </tr>
@@ -291,21 +291,21 @@
       <button value="F7CS"></button>
       <br>
       <label for="F7CS">
-      <p>F7C-S Hornet Ghost</p>
+      <p>F7C-S<br>Hornet Ghost</p>
       </label>
     </td>
     <td>
       <button value="F8A"></button>
       <br>
       <label for="F8A">
-      <p>F8A Lightning</p>
+      <p>F8A<br>Lightning</p>
       </label>
     </td>
     <td>
       <button value="F8C"></button>
       <br>
       <label for="F8C">
-      <p>F8C Lightning</p>
+      <p>F8C<br>Lightning</p>
       </label>
     </td>
     </tr>
@@ -407,14 +407,14 @@
       <button value="mpuvc"></button>
       <br>
       <label for="mpuvc">
-      <p>MPUV Cargo</p>
+      <p>MPUV<br>Cargo</p>
       </label>
     </td>
     <td>
       <button value="mpuvp"></button>
       <br>
       <label for="mpuvp">
-      <p>MPUV Personnel</p>
+      <p>MPUV<br>Personnel</p>
       </label>
     </td>
     </tr>
@@ -529,21 +529,21 @@
       <button value="a1spirit"></button>
       <br>
       <label for="a1spirit">
-      <p>A1 Spirit</p>
+      <p>A1<br>Spirit</p>
       </label>
     </td>
     <td>
       <button value="a2hercules"></button>
       <br>
       <label for="a2hercules">
-      <p>A2 Hercules</p>
+      <p>A2<br>Hercules</p>
       </label>
     </td>
     <td>
       <button value="aresinferno"></button>
       <br>
       <label for="aresinferno">
-      <p>Ares Inferno</p>
+      <p>Ares<br>Inferno</p>
       </label>
     </td>
     </tr>
@@ -559,14 +559,14 @@
       <button value="c1spirit"></button>
       <br>
       <label for="c1spirit">
-      <p>C1 Spirit</p>
+      <p>C1<br>Spirit</p>
       </label>
     </td>
     <td>
       <button value="c2hercules"></button>
       <br>
       <label for="c2hercules">
-      <p>C2 Hercules</p>
+      <p>C2<br>Hercules</p>
       </label>
     </td>
     </tr>
@@ -575,21 +575,21 @@
       <button value="e1spirit"></button>
       <br>
       <label for="e1spirit">
-      <p>E1 Spirit</p>
+      <p>E1<br>Spirit</p>
       </label>
     </td>
     <td>
       <button value="genesis"></button>
       <br>
       <label for="genesis">
-      <p>Genesis Starliner</p>
+      <p>Genesis<br>Starliner</p>
       </label>
     </td>
     <td>
       <button value="m2hercules"></button>
       <br>
       <label for="m2hercules">
-      <p>M2 Hercules</p>
+      <p>M2<br>Hercules</p>
       </label>
     </td>
     </tr>
@@ -597,7 +597,7 @@
       <button value="msr"></button>
       <br>
       <label for="msr">
-      <p>Mercury Star Runner</p>
+      <p>Mercury<br>Star Runner</p>
     </label>
     </table>
   </div>
@@ -631,21 +631,21 @@
     <button value="cutlassblack"></button>
     <br>
     <label for="cutlassblack">
-    <p>Cutlass Black</p>
+    <p>Cutlass<br>Black</p>
     </label>
     </td>
     <td>
       <button value="cutlassblue"></button>
       <br>
       <label for="cutlassblue">
-      <p>Cutlass Blue</p>
+      <p>Cutlass<br>Blue</p>
       </label>
     </td>
     <td>
       <button value="cutlassred"></button>
       <br>
       <label for="cutlassred">
-      <p>Cutlass Red</p>
+      <p>Cutlass<br>Red</p>
       </label>
     </td>
     </tr>
@@ -654,7 +654,7 @@
       <button value="cutlasssteel"></button>
       <br>
       <label for="cutlasssteel">
-      <p>Cutlass Steel</p>
+      <p>Cutlass<br>Steel</p>
       </label>
     </td>
     <td>
@@ -691,7 +691,7 @@
       <button value="krakenp"></button>
       <br>
       <label for="krakenp">
-      <p>Kraken Privateer</p>
+      <p>Kraken<br>Privateer</p>
       </label>
     </td>
     </tr>
@@ -757,7 +757,7 @@
       <button value="talonshrike"></button>
       <br>
       <label for="talonshrike">
-      <p>Talon Shrike</p>
+      <p>Talon<br>Shrike</p>
       </label>
     </td>
     </tr>
@@ -824,14 +824,14 @@
       <button value="p52"></button>
       <br>
       <label for="p52">
-      <p>P-52 Merlin</p>
+      <p>P-52<br>Merlin</p>
       </label>
     </td>
     <td>
       <button value="p72"></button>
       <br>
       <label for="p72">
-      <p>P-72 Archimedes</p>
+      <p>P-72<br>Archimedes</p>
       </label>
     </td>
     </tr>
@@ -858,7 +858,7 @@
       <button value="freelancerdur"></button>
       <br>
       <label for="freelancerdur">
-      <p>Freelancer DUR</p>
+      <p>Freelancer<br>DUR</p>
       </label>
     </td>
     </tr>
@@ -867,14 +867,14 @@
       <button value="freelancermax"></button>
       <br>
       <label for="freelancermax">
-      <p>Freelancer MAX</p>
+      <p>Freelancer<br>MAX</p>
       </label>
     </td>
     <td>
       <button value="freelancermis"></button>
       <br>
       <label for="freelancermis">
-      <p>Freelancer MIS</p>
+      <p>Freelancer<br>MIS</p>
     </label>
     </td>
     <td>
@@ -920,14 +920,14 @@
       <button value="reliantkore"></button>
       <br>
       <label for="reliantkore">
-      <p>Reliant Kore</p>
+      <p>Reliant<br>Kore</p>
       </label>
     </td>
     <td>
       <button value="reliantmako"></button>
       <br>
       <label for="reliantmako">
-      <p>Reliant Mako</p>
+      <p>Reliant<br>Mako</p>
       </label>
     </td>
     </tr>
@@ -936,14 +936,14 @@
       <button value="reliantsen"></button>
       <br>
       <label for="reliantsen">
-      <p>Reliant Sen</p>
+      <p>Reliant<br>Sen</p>
       </label>
     </td>
     <td>
       <button value="relianttana"></button>
       <br>
       <label for="relianttana">
-      <p>Reliant Tana</p>
+      <p>Reliant<br>Tana</p>
       </label>
     </td>
     <td>
@@ -958,7 +958,7 @@
       <button value="starfarergemini"></button>
       <br>
       <label for="starfarergemini">
-      <p>Starfarer Gemini</p>
+      <p>Starfarer<br>Gemini</p>
       </label>
     </tr>
     </table>
@@ -1615,17 +1615,19 @@ h4 {
   border-color:var(--lightorange);
 }
 .leftcard label {
-  display:inline-flex;
   margin-block-start:2px;
   margin-block-end:2px;
+  display:inline-flex;
 }
 .leftcard table {
   justify-items:center;
   text-align:center;
-  width:250px;
+  min-width:250px;
   margin-block-end:0px;
 }
-
+.leftcard td {
+  padding-inline-end:10px;
+}
 
 .leftcard .va-select {
   --va-select-cursor: pointer;
