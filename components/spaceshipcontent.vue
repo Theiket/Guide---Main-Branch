@@ -818,15 +818,24 @@
     </table>
   </div>
   <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
-    <button value="p52"></button>
-    <button value="p72"></button>
-    <br>
-    <label for="p52">
-    <p>P-52 Merlin</p>
-    </label>
-    <label for="p72">
-    <p>P-72 Archimedes</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="p52"></button>
+      <br>
+      <label for="p52">
+      <p>P-52 Merlin</p>
+      </label>
+    </td>
+    <td>
+      <button value="p72"></button>
+      <br>
+      <label for="p72">
+      <p>P-72 Archimedes</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
     <button value="expanse"></button>
