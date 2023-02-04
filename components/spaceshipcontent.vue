@@ -394,257 +394,428 @@
     </table>
   </div>
   <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
-    <button value="mole"></button>
-    <button value="mpuvc"></button>
-    <button value="mpuvp"></button>
-    <br>
-    <label for="mole">
-    <p>MOLE</p>
-    </label>
-    <label for="mpuvc">
-    <p>MPUV Cargo</p>
-    </label>
-    <label for="mpuvp">
-    <p>MPUV Personnel</p>
-    </label>
-    <br>
-    <button value="raft"></button>
-    <button value="srv"></button>
-    <br>
-    <label for="raft">
-    <p>RAFT</p>
-    </label>
-    <label for="srv">
-    <p>SRV</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="mole"></button>
+      <br>
+      <label for="mole">
+      <p>MOLE</p>
+      </label>
+    </td>
+    <td>
+      <button value="mpuvc"></button>
+      <br>
+      <label for="mpuvc">
+      <p>MPUV Cargo</p>
+      </label>
+    </td>
+    <td>
+      <button value="mpuvp"></button>
+      <br>
+      <label for="mpuvp">
+      <p>MPUV Personnel</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="raft"></button>
+      <br>
+      <label for="raft">
+      <p>RAFT</p>
+      </label>
+    </td>
+    <td>
+      <button value="srv"></button>
+      <br>
+      <label for="srv">
+      <p>SRV</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="banu" v-if="selectedCompany === 'Banu Souli'">
-    <button value="defender"></button>
-    <button value="merchantman"></button>
-    <br>
-    <label for="defender">
-    <p>Defender</p>
-    </label>
-    <label for="merchantman">
-    <p>Merchantman</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="defender"></button>
+      <br>
+      <label for="defender">
+      <p>Defender</p>
+      </label>
+    </td>
+    <td>
+      <button value="merchantman"></button>
+      <br>
+      <label for="merchantman">
+      <p>Merchantman</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
-    <button value="hoverquad"></button>
-    <button value="mustangalpha"></button>
-    <button value="mustangbeta"></button>
-    <br>
-    <label for="hoverquad">
-    <p>HoverQuad</p>
-    </label>
-    <label for="mustangalpha">
-    <p>Mustang Alpha</p>
-    </label>
-    <label for="mustangbeta">
-    <p>Mustang Beta</p>
-    </label>
-    <br>
-    <button value="mustangdelta"></button>
-    <button value="mustanggamma"></button>
-    <button value="mustangomega"></button>
-    <br>
-    <label for="mustangdelta">
-    <p>Mustang Delta</p>
-    </label>
-    <label for="mustanggamma">
-    <p>Mustang Gamma</p>
-    </label>
-    <label for="mustangomega">
-    <p>Mustang Omega</p>
-    </label>
-    <br>
-    <button value="nomad"></button>
-    <button value="pioneer"></button>
-    <br>
-    <label for="nomad">
-    <p>Nomad</p>
-    </label>
-    <label for="pioneer">
-    <p>Pioneer</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="hoverquad"></button>
+      <br>
+      <label for="hoverquad">
+      <p>HoverQuad</p>
+      </label>
+    </td>
+    <td>
+      <button value="mustangalpha"></button>
+      <br>
+      <label for="mustangalpha">
+      <p>Mustang Alpha</p>
+      </label>
+    </td>
+    <td>
+      <button value="mustangbeta"></button>
+      <br>
+      <label for="mustangbeta">
+      <p>Mustang Beta</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="mustangdelta"></button>
+      <br>
+      <label for="mustangdelta">
+      <p>Mustang Delta</p>
+      </label>
+    </td>
+    <td>
+      <button value="mustanggamma"></button>
+      <br>
+      <label for="mustanggamma">
+      <p>Mustang Gamma</p>
+      </label>
+    </td>
+    <td>
+      <button value="mustangomega"></button>
+      <br>
+      <label for="mustangomega">
+      <p>Mustang Omega</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="nomad"></button>
+      <br>
+      <label for="nomad">
+      <p>Nomad</p>
+      </label>
+    </td>
+    <td>
+      <button value="pioneer"></button>
+      <br>
+      <label for="pioneer">
+      <p>Pioneer</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
-    <button value="a1spirit"></button>
-    <button value="a2hercules"></button>
-    <button value="aresinferno"></button>
-    <br>
-    <label for="a1spirit">
-    <p>A1 Spirit</p>
+    <table>
+    <tr>
+    <td>
+      <button value="a1spirit"></button>
+      <br>
+      <label for="a1spirit">
+      <p>A1 Spirit</p>
+      </label>
+    </td>
+    <td>
+      <button value="a2hercules"></button>
+      <br>
+      <label for="a2hercules">
+      <p>A2 Hercules</p>
+      </label>
+    </td>
+    <td>
+      <button value="aresinferno"></button>
+      <br>
+      <label for="aresinferno">
+      <p>Ares Inferno</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="aresion"></button>
+      <br>
+      <label for="aresion">
+      <p>Ares Ion</p>
+      </label>
+    </td>
+    <td>
+      <button value="c1spirit"></button>
+      <br>
+      <label for="c1spirit">
+      <p>C1 Spirit</p>
+      </label>
+    </td>
+    <td>
+      <button value="c2hercules"></button>
+      <br>
+      <label for="c2hercules">
+      <p>C2 Hercules</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="e1spirit"></button>
+      <br>
+      <label for="e1spirit">
+      <p>E1 Spirit</p>
+      </label>
+    </td>
+    <td>
+      <button value="genesis"></button>
+      <br>
+      <label for="genesis">
+      <p>Genesis Starliner</p>
+      </label>
+    </td>
+    <td>
+      <button value="m2hercules"></button>
+      <br>
+      <label for="m2hercules">
+      <p>M2 Hercules</p>
+      </label>
+    </td>
+    </tr>
+      <br>
+      <button value="msr"></button>
+      <br>
+      <label for="msr">
+      <p>Mercury Star Runner</p>
     </label>
-    <label for="a2hercules">
-    <p>A2 Hercules</p>
-    </label>
-    <label for="aresinferno">
-    <p>Ares Inferno</p>
-    </label>
-    <br>
-    <button value="aresion"></button>
-    <button value="c1spirit"></button>
-    <button value="c2hercules"></button>
-    <br>
-    <label for="aresion">
-    <p>Ares Ion</p>
-    </label>
-    <label for="c1spirit">
-    <p>C1 Spirit</p>
-    </label>
-    <label for="c2hercules">
-    <p>C2 Hercules</p>
-    </label>
-    <br>
-    <button value="e1spirit"></button>
-    <button value="genesis"></button>
-    <button value="m2hercules"></button>
-    <br>
-    <label for="e1spirit">
-    <p>E1 Spirit</p>
-    </label>
-    <label for="genesis">
-    <p>Genesis Starliner</p>
-    </label>
-    <label for="m2hercules">
-    <p>M2 Hercules</p>
-    </label>
-    <br>
-    <button value="msr"></button>
-    <br>
-    <label for="msr">
-    <p>Mercury Star Runner</p>
-    </label>
+    </table>
   </div>
   <div class="drake" v-if="selectedCompany === 'Drake Interplanetary'">
-    <button value="buccaneer"></button>
-    <button value="caterpillar"></button>
-    <button value="corsair"></button>
-    <br>
-    <label for="buccaneer">
-    <p>Buccaneer</p>
-    </label>
-    <label for="Caterpillar">
-    <p>Caterpillar</p>
-    </label>
-    <label for="corsair">
-    <p>Corsair</p>
-    </label>
-    <br>
+    <table>
+    <tr>
+    <td>
+      <button value="buccaneer"></button>
+      <br>
+      <label for="buccaneer">
+      <p>Buccaneer</p>
+      </label>
+    </td>
+    <td>
+      <button value="caterpillar"></button>
+      <br>
+      <label for="Caterpillar">
+      <p>Caterpillar</p>
+      </label>
+    </td>
+    <td>
+      <button value="corsair"></button>
+      <br>
+      <label for="corsair">
+      <p>Corsair</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
     <button value="cutlassblack"></button>
-    <button value="cutlassblue"></button>
-    <button value="cutlassred"></button>
     <br>
     <label for="cutlassblack">
     <p>Cutlass Black</p>
     </label>
-    <label for="cutlassblue">
-    <p>Cutlass Blue</p>
-    </label>
-    <label for="cutlassred">
-    <p>Cutlass Red</p>
-    </label>
-    <br>
-    <button value="cutlasssteel"></button>
-    <button value="cutter"></button>
-    <button value="dragonfly"></button>
-    <br>
-    <label for="cutlasssteel">
-    <p>Cutlass Steel</p>
-    </label>
-    <label for="cutter">
-    <p>Cutter</p>
-    </label>
-    <label for="dragonfly">
-    <p>Dragonfly</p>
-    </label>
-    <br>
-    <button value="herald"></button>
-    <button value="kraken"></button>
-    <button value="krakenp"></button>
-    <br>
-    <label for="herald">
-    <p>Herald</p>
-    </label>
-    <label for="kraken">
-    <p>Kraken</p>
-    </label>
-    <label for="krakenp">
-    <p>Kraken Privateer</p>
-    </label>
-    <br>
-    <button value="mule"></button>
-    <button value="vulture"></button>
-    <br>
-    <label for="mule">
-    <p>Mule</p>
-    </label>
-    <label for="vulture">
-    <p>Vulture</p>
-    </label>
+    </td>
+    <td>
+      <button value="cutlassblue"></button>
+      <br>
+      <label for="cutlassblue">
+      <p>Cutlass Blue</p>
+      </label>
+    </td>
+    <td>
+      <button value="cutlassred"></button>
+      <br>
+      <label for="cutlassred">
+      <p>Cutlass Red</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="cutlasssteel"></button>
+      <br>
+      <label for="cutlasssteel">
+      <p>Cutlass Steel</p>
+      </label>
+    </td>
+    <td>
+      <button value="cutter"></button>
+      <br>
+      <label for="cutter">
+      <p>Cutter</p>
+      </label>
+    </td>
+    <td>
+      <button value="dragonfly"></button>
+      <br>
+      <label for="dragonfly">
+      <p>Dragonfly</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="herald"></button>
+      <br>
+      <label for="herald">
+      <p>Herald</p>
+      </label>
+    </td>
+    <td>
+      <button value="kraken"></button>
+      <br>
+      <label for="kraken">
+      <p>Kraken</p>
+      </label>
+    </td>
+    <td>
+      <button value="krakenp"></button>
+      <br>
+      <label for="krakenp">
+      <p>Kraken Privateer</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="mule"></button>
+      <br>
+      <label for="mule">
+      <p>Mule</p>
+      </label>
+    </td>
+    <td>
+      <button value="vulture"></button>
+      <br>
+      <label for="vulture">
+      <p>Vulture</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
-    <button value="blade"></button>
-    <button value="glaive"></button>
-    <button value="prowler"></button>
-    <br>
-    <label for="blade">
-    <p>Blade</p>
-    </label>
-    <label for="glaive">
-    <p>Glaive</p>
-    </label>
-    <label for="prowler">
-    <p>Prowler</p>
-    </label>
-    <br>
-    <button value="scythe"></button>
-    <button value="talon"></button>
-    <button value="talonshrike"></button>
-    <br>
-    <label for="scythe">
-    <p>Scythe</p>
-    </label>
-    <label for="talon">
-    <p>Talon</p>
-    </label>
-    <label for="talonshrike">
-    <p>Talon Shrike</p>
-    </label>
-    <br>
+    <table>
+    <tr>
+    <td>
+      <button value="blade"></button>
+      <br>
+      <label for="blade">
+      <p>Blade</p>
+      </label>
+    </td>
+    <td>
+      <button value="glaive"></button>
+      <br>
+      <label for="glaive">
+      <p>Glaive</p>
+      </label>
+    </td>
+    <td>
+      <button value="prowler"></button>
+      <br>
+      <label for="prowler">
+      <p>Prowler</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="scythe"></button>
+      <br>
+      <label for="scythe">
+      <p>Scythe</p>
+      </label>
+    </td>
+    <td>
+      <button value="talon"></button>
+      <br>
+      <label for="talon">
+      <p>Talon</p>
+      </label>
+    </td>
+    <td>
+      <button value="talonshrike"></button>
+      <br>
+      <label for="talonshrike">
+      <p>Talon Shrike</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
-    <button value="railen"></button>
-    <br>
-    <label for="railen">
-    <p>Railen</p>
-    </label>
+    <table>
+    <td>
+      <button value="railen"></button>
+      <br>
+      <label for="railen">
+      <p>Railen</p>
+      </label>
+    </td>
+    </table>
   </div>
   <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
-    <button value="ptv"></button>
-    <button value="roc"></button>
-    <button value="rocds"></button>
-    <br>
-    <label for="ptv">
-    <p>PTV</p>
-    </label>
-    <label for="roc">
-    <p>ROC</p>
-    </label>
-    <label for="rocds">
-    <p>ROC-DS</p>
-    </label>
-    <br>
-    <button value="stv"></button>
-    <button value="utv"></button>
-    <br>
-    <label for="stv">
-    <p>STV</p>
-    </label>
-    <label for="utv">
-    <p>UTV</p>
-    </label>
+    <table>
+    <tr>
+    <td>
+      <button value="ptv"></button>
+      <br>
+      <label for="ptv">
+      <p>PTV</p>
+      </label>
+    </td>
+    <td>
+      <button value="roc"></button>
+      <br>
+      <label for="roc">
+      <p>ROC</p>
+      </label>
+    </td>
+    <td>
+      <button value="rocds"></button>
+      <br>
+      <label for="rocds">
+      <p>ROC-DS</p>
+      </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <button value="stv"></button>
+      <br>
+      <label for="stv">
+      <p>STV</p>
+      </label>
+    </td>
+    <td>
+      <button value="utv"></button>
+      <br>
+      <label for="utv">
+      <p>UTV</p>
+      </label>
+    </td>
+    </tr>
+    </table>
   </div>
   <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
     <button value="p52"></button>
@@ -1263,9 +1434,10 @@ h4 {
   margin-block-end:2px;
 }
 .leftcard table {
+  justify-items:center;
   text-align:center;
-  width:300px;
-  margin-block-end:5px;
+  width:250px;
+  margin-block-end:0px;
 }
 
 
