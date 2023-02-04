@@ -1030,7 +1030,7 @@
       <button value="600iexplorer"></button>
       <br>
       <label for="600iexplorer">
-      <p>600i Explorer</p>
+      <p>600i<br>Explorer</p>
       </label>
     </td>
     </tr>
@@ -1039,7 +1039,7 @@
       <button value="600itouring"></button>
       <br>
       <label for="600itouring">
-      <p>600i Touring</p>
+      <p>600i<br>Touring</p>
       </label>
     </td>
     <td>
@@ -1107,7 +1107,7 @@
       <button value="x1v"></button>
       <br>
       <label for="x1v">
-      <p>X1 Velocity</p>
+      <p>X1<br>Velocity</p>
       </label>
     </tr>
     </table>
