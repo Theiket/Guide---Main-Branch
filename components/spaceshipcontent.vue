@@ -1531,74 +1531,24 @@ h4 {
   color:var(--lightgray);
 }
 
-.aegis {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.anvil {
-  margin-block-start:-15px;
-}
-.aopoa {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.argo {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.banu {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.consol {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.crusader {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.drake {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.esperia {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.gatac {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.greycat {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.kruger {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.misc {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.origin {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.rsi {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.tumbril {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
-.vanduul {
-  margin-inline-start:15px;
-  margin-block-start:-15px;
-}
+/*Left Card */
 
+.leftcard select {
+  background-color:var(--lightorange);
+  border-style:solid;
+  border-radius:20px;
+  border-color:var(--lightorange);
+  color:var(--darkgray);
+  width:300px;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  height:40px;
+  margin-block-start:-20px;
+}
+.leftcard select option:hover {
+  color:var(--orangehover);
+}
 .leftcard button {
   border-style:solid;
   border-radius:50%;
@@ -1620,49 +1570,9 @@ h4 {
   display:inline-flex;
 }
 .leftcard table {
-  justify-items:center;
   text-align:center;
   min-width:250px;
-  margin-block-end:0px;
-}
-.leftcard td {
-  padding-inline-end:0px;
-}
-
-.leftcard .va-select {
-  --va-select-cursor: pointer;
-  --va-select-dropdown-border-radius: 10px;
-  --va-select-dropdown-background: var(--va-dropdown-secondary);
-  --va-select-box-shadow: 0 4px 8px rgba(59, 63, 73, 0.15);
-  --va-select-min-width: var(--va-form-element-min-width);
-  --va-select-anchor-state-icon-margin-left: 0.25rem;
-  letter-spacing:1px;
-  word-spacing:0px;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-  color:var(--darkgray);
-  width:300px;
-}
-
-.rightcard .va-divider {
-  color:var(--lightgray);
-}
-
-.leftcard select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:20px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:300px;
-  font-weight:bold;
-  font-size:18px;
-  text-align:center;
-  height:40px;
   margin-block-start:-20px;
-}
-.leftcard select option:hover {
-  color:var(--orangehover);
 }
 
 @keyframes appear {
