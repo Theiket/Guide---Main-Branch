@@ -94,7 +94,26 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
   <div class="rightcol">
-    <div class="mainButtons">
+    <div v-if="prospector">
+      <center>
+      <button class="button Alternate" @click="prospector = !prospector">
+      Prospector
+      </button>
+      </center>
+      <br>
+      <p>Text Goes Here</p>
+    </div>
+    <div v-else-if="mole">
+      <center>
+      <button class="button Alternate" 
+      @click="mole = !mole">
+      MOLE
+      </button>
+      </center>
+      <br>
+      <p>Text Goes Here</p>
+    </div>
+    <div class="mainButtons" v-else>
       <center>
       <button class="button Prospector" @click="prospector = !prospector">
       Prospector
@@ -106,25 +125,6 @@
       </button>
       </center>
     </div>
-    <div v-if="prospector">
-      <center>
-      <button class="button Prospector" @click="prospector = !prospector">
-      Prospector
-      </button>
-      </center>
-      <br>
-      <p>Text Goes Here</p>
-    </div>
-    <div v-if="mole">
-      <center>
-      <button class="button MOLE" 
-      @click="mole = !mole">
-      MOLE
-      </button>
-      </center>
-      <br>
-      <p>Text Goes Here</p>
-    </div>
   </div>
 </div>
 </div>
@@ -134,7 +134,17 @@
   useHead({
     title: 'GUIDE | Mining Loadouts'
   })
+</script>
 
+<script>
+export default {
+  data() {
+    return {
+      prospector: false,
+      mole: false
+    }
+  }
+};
 </script>
 
 <style scoped>
