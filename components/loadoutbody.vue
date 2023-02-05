@@ -99,9 +99,18 @@
       <button class="button Alternate" @click="prospector = !prospector">
       Prospector
       </button>
-      </center>
+      <br><br>
+      <p>Mining Laser</p>
       <br>
-      <p>Text Goes Here</p>
+      <select name="selectLaser" id="miningLaser">
+        <option value="arbors1">Arbor S1</option>
+        <option value="lancets1">Lancet S1</option>
+        <option value="hofstedes1">Hofstede S1</option>
+        <option value="kleins1">Klein S1</option>
+        <option value="helixs1">Helix S1</option>
+        <option value="impacts1">Impact S1</option>
+      </select>
+      </center>
     </div>
     <div v-else-if="mole">
       <center>
@@ -212,23 +221,6 @@ export default {
   width:200px;
   padding-inline-start:10px;
 }
-.harvestableGeneration select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:15px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:150px;
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-  text-align:center;
-}
-.harvestableGeneration select option {
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-}
 
 /*Bottom Card*/
 .instability {
@@ -294,6 +286,28 @@ export default {
   width:150px;
   font-size:20px;
 }
+.Alternate {
+  margin-block-start:15px;
+}
+
+/*Select*/
+select {
+  background-color:var(--lightorange);
+  border-style:solid;
+  border-radius:15px;
+  border-color:var(--lightorange);
+  color:var(--darkgray);
+  width:150px;
+  font-weight:bold;
+  font-family:'Segoe UI', sans-serif;
+  font-size:16px;
+  text-align:center;
+}
+select option {
+  font-weight:bold;
+  font-family:'Segoe UI', sans-serif;
+  font-size:16px;
+}
 
 /* Cards */
 .harvestableGeneration {
@@ -352,7 +366,6 @@ p {
   font-weight:bold;
   letter-spacing:1px;
   color: var(--lightgray);
-  padding-block-end: 15px;
   padding-inline-start:15px;
   padding-inline-end:15px;
 }
