@@ -94,26 +94,7 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
   <div class="rightcol">
-    <div v-if="prospector">
-      <center>
-      <button class="button Prospector" @click="prospector = !prospector">
-      Prospector
-      </button>
-      </center>
-      <br>
-      <p>Text Goes Here</p>
-    </div>
-    <div v-else-if="mole">
-      <center>
-      <button class="button MOLE" 
-      @click="mole = !mole">
-      MOLE
-      </button>
-      </center>
-      <br>
-      <p>Text Goes Here</p>
-    </div>
-    <div class="mainButtons" v-else>
+    <div class="mainButtons">
       <center>
       <button class="button Prospector" @click="prospector = !prospector">
       Prospector
@@ -124,6 +105,25 @@
       MOLE
       </button>
       </center>
+    </div>
+    <div v-if="prospector">
+      <center>
+      <button class="button Prospector" @click="prospector = !prospector">
+      Prospector
+      </button>
+      </center>
+      <br>
+      <p>Text Goes Here</p>
+    </div>
+    <div v-if="mole">
+      <center>
+      <button class="button MOLE" 
+      @click="mole = !mole">
+      MOLE
+      </button>
+      </center>
+      <br>
+      <p>Text Goes Here</p>
     </div>
   </div>
 </div>
