@@ -10,6 +10,7 @@
         Planetary Body
       </h4>
       <select name="selectPlanet" id="planetaryBody">
+        <option disabled value="">Select Planet</option>
         <option value="hurston">Hurston</option>
         <option value="arial">Arial</option>
         <option value="aberdeen">Aberdeen</option>
@@ -35,6 +36,7 @@
         Deposit Type
       </h4>
       <select name="selectDeposit" id="depositType">
+        <option disabled value="">Select Deposit</option>
         <option value="c-type">C Type</option>
         <option value="e-type">E Type</option>
         <option value="m-type">M Type</option>
@@ -94,7 +96,7 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
   <div class="rightcol">
-    <div v-if="prospector">
+    <div class="prospectorCard" v-if="prospector">
       <center>
       <button class="button Alternate" @click="prospector = !prospector">
       Prospector
@@ -112,15 +114,59 @@
       </select>
       </center>
     </div>
-    <div v-else-if="mole">
+    <div class="moleCard" v-else-if="mole">
       <center>
       <button class="button Alternate" 
       @click="mole = !mole">
       MOLE
       </button>
-      </center>
+      <table>
+      <tr>
+      <td>
+      <br><br>
+      <p>Left Turret</p>
       <br>
-      <p>Text Goes Here</p>
+      <select name="selectLaser" id="miningLaser">
+        <option disabled value="">Select Laser</option>
+        <option value="arbors1">Arbor S2</option>
+        <option value="lancets1">Lancet S2</option>
+        <option value="hofstedes1">Hofstede S2</option>
+        <option value="kleins1">Klein S2</option>
+        <option value="helixs1">Helix S2</option>
+        <option value="impacts1">Impact S2</option>
+      </select>
+      </td>
+      <td>
+      <br><br>
+      <p>Central Turret</p>
+      <br>
+      <select name="selectLaser" id="miningLaser">
+        <option disabled value="">Select Laser</option>
+        <option value="arbors1">Arbor S2</option>
+        <option value="lancets1">Lancet S2</option>
+        <option value="hofstedes1">Hofstede S2</option>
+        <option value="kleins1">Klein S2</option>
+        <option value="helixs1">Helix S2</option>
+        <option value="impacts1">Impact S2</option>
+      </select>
+      </td>
+      <td>
+      <br><br>
+      <p>Right Turret</p>
+      <br>
+      <select name="selectLaser" id="miningLaser">
+        <option disabled value="">Select Laser</option>
+        <option value="arbors1">Arbor S2</option>
+        <option value="lancets1">Lancet S2</option>
+        <option value="hofstedes1">Hofstede S2</option>
+        <option value="kleins1">Klein S2</option>
+        <option value="helixs1">Helix S2</option>
+        <option value="impacts1">Impact S2</option>
+      </select>
+      </td>
+      </tr>
+      </table>
+      </center>
     </div>
     <div class="mainButtons" v-else>
       <center>
@@ -307,6 +353,11 @@ select option {
   font-weight:bold;
   font-family:'Segoe UI', sans-serif;
   font-size:16px;
+}
+.moleCard select {
+  width:100%;
+}
+.moleCard table {
 }
 
 /* Cards */
