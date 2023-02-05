@@ -129,11 +129,12 @@
       <br>
       <select name="selectLaser" id="leftLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors1">Arbor S2</option>
-        <option value="lancets1">Lancet S2</option>
-        <option value="hofstedes1">Hofstede S2</option>
-        <option value="kleins1">Klein S2</option>
-        <option value="helixs1">Helix S2</option>
+        <option value="arbors2">Arbor S2</option>
+        <option value="lancets2">Lancet S2</option>
+        <option value="hofstedes2">Hofstede S2</option>
+        <option value="kleins2">Klein S2</option>
+        <option value="helixs2">Helix S2</option>
+        <option value="impacts2">Impact S2</option>
         <option value="impacts1">Impact S2</option>
       </select>
       </td>
@@ -143,12 +144,12 @@
       <br>
       <select name="selectLaser" id="centerLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors1">Arbor S2</option>
-        <option value="lancets1">Lancet S2</option>
-        <option value="hofstedes1">Hofstede S2</option>
-        <option value="kleins1">Klein S2</option>
-        <option value="helixs1">Helix S2</option>
-        <option value="impacts1">Impact S2</option>
+        <option value="arbors2">Arbor S2</option>
+        <option value="lancets2">Lancet S2</option>
+        <option value="hofstedes2">Hofstede S2</option>
+        <option value="kleins2">Klein S2</option>
+        <option value="helixs2">Helix S2</option>
+        <option value="impacts2">Impact S2</option>
       </select>
       </td>
       <td>
@@ -157,12 +158,12 @@
       <br>
       <select name="selectLaser" id="rightLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors1">Arbor S2</option>
-        <option value="lancets1">Lancet S2</option>
-        <option value="hofstedes1">Hofstede S2</option>
-        <option value="kleins1">Klein S2</option>
-        <option value="helixs1">Helix S2</option>
-        <option value="impacts1">Impact S2</option>
+        <option value="arbors2">Arbor S2</option>
+        <option value="lancets2">Lancet S2</option>
+        <option value="hofstedes2">Hofstede S2</option>
+        <option value="kleins2">Klein S2</option>
+        <option value="helixs2">Helix S2</option>
+        <option value="impacts2">Impact S2</option>
       </select>
       </td>
       </tr>
