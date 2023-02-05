@@ -105,6 +105,7 @@
       <p>Mining Laser</p>
       <br>
       <select name="selectLaser" id="miningLaser">
+        <option disabled value="">Select Laser</option>
         <option value="arbors1">Arbor S1</option>
         <option value="lancets1">Lancet S1</option>
         <option value="hofstedes1">Hofstede S1</option>
@@ -356,8 +357,6 @@ select option {
 }
 .moleCard select {
   width:100%;
-}
-.moleCard table {
 }
 
 /* Cards */
