@@ -104,15 +104,10 @@
       <br><br>
       <p>Mining Laser</p>
       <br>
-      <select name="selectLaser" id="miningLaser">
+      <select v-model="prospectorLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors1">Arbor S1</option>
-        <option value="lancets1">Lancet S1</option>
-        <option value="hofstedes1">Hofstede S1</option>
-        <option value="kleins1">Klein S1</option>
-        <option value="helixs1">Helix S1</option>
-        <option value="impacts1">Impact S1</option>
-      </select>
+        <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
+        </select>
       </center>
     </div>
     <div class="moleCard" v-else-if="mole">
@@ -126,45 +121,29 @@
       <td>
       <br><br>
       <p>Left Turret</p>
-      <br>
-      <select name="selectLaser" id="leftLaser">
+        <br>
+        <select v-model="leftLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors2">Arbor S2</option>
-        <option value="lancets2">Lancet S2</option>
-        <option value="hofstedes2">Hofstede S2</option>
-        <option value="kleins2">Klein S2</option>
-        <option value="helixs2">Helix S2</option>
-        <option value="impacts2">Impact S2</option>
-        <option value="impacts1">Impact S2</option>
-      </select>
+        <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+        </select>
       </td>
       <td>
       <br><br>
       <p>Central Turret</p>
-      <br>
-      <select name="selectLaser" id="centerLaser">
+        <br>
+        <select v-model="centralLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors2">Arbor S2</option>
-        <option value="lancets2">Lancet S2</option>
-        <option value="hofstedes2">Hofstede S2</option>
-        <option value="kleins2">Klein S2</option>
-        <option value="helixs2">Helix S2</option>
-        <option value="impacts2">Impact S2</option>
-      </select>
+        <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+        </select>
       </td>
       <td>
       <br><br>
       <p>Right Turret</p>
-      <br>
-      <select name="selectLaser" id="rightLaser">
+        <br>
+        <select v-model="rightLaser">
         <option disabled value="">Select Laser</option>
-        <option value="arbors2">Arbor S2</option>
-        <option value="lancets2">Lancet S2</option>
-        <option value="hofstedes2">Hofstede S2</option>
-        <option value="kleins2">Klein S2</option>
-        <option value="helixs2">Helix S2</option>
-        <option value="impacts2">Impact S2</option>
-      </select>
+        <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+        </select>
       </td>
       </tr>
       </table>
@@ -198,7 +177,15 @@ export default {
   data() {
     return {
       prospector: false,
-      mole: false
+      mole: false,
+      leftLaser: '',
+      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
+      centralLaser: '',
+      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
+      rightLaser: '',
+      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
+      prospectorLaser: '',
+      s1lasers: ['Arbor S1','Lancet S1', 'Hofstede S1','Klein S1','Helix S1','Impact S1'],
     }
   }
 };
@@ -359,6 +346,7 @@ select option {
 .moleCard select {
   width:100%;
 }
+
 
 /* Cards */
 .harvestableGeneration {
