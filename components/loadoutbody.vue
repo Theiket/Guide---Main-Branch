@@ -126,7 +126,7 @@
       <br><br>
       <p>Left Turret</p>
       <br>
-      <select name="selectLaser" id="miningLaser">
+      <select name="selectLaser" id="leftLaser">
         <option disabled value="">Select Laser</option>
         <option value="arbors1">Arbor S2</option>
         <option value="lancets1">Lancet S2</option>
@@ -140,7 +140,7 @@
       <br><br>
       <p>Central Turret</p>
       <br>
-      <select name="selectLaser" id="miningLaser">
+      <select name="selectLaser" id="centerLaser">
         <option disabled value="">Select Laser</option>
         <option value="arbors1">Arbor S2</option>
         <option value="lancets1">Lancet S2</option>
@@ -154,7 +154,7 @@
       <br><br>
       <p>Right Turret</p>
       <br>
-      <select name="selectLaser" id="miningLaser">
+      <select name="selectLaser" id="rightLaser">
         <option disabled value="">Select Laser</option>
         <option value="arbors1">Arbor S2</option>
         <option value="lancets1">Lancet S2</option>
