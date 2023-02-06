@@ -19,7 +19,7 @@
       <div class="quantityInput">
       <h3>Quantity</h3>
       <br>
-      <input 
+      <input v-model="inputQuantity"
       class="inputQuantity"
       type="number" 
       id="quantityInput" 
