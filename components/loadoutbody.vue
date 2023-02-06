@@ -9,25 +9,10 @@
       <h4>
         Planetary Body
       </h4>
-      <select name="selectPlanet" id="planetaryBody">
+      <select v-model="selectPlanet">
         <option disabled value="">Select Planet</option>
-        <option value="hurston">Hurston</option>
-        <option value="arial">Arial</option>
-        <option value="aberdeen">Aberdeen</option>
-        <option value="magda">Magda</option>
-        <option value="ita">Ita</option>
-        <option value="crusader">Crusader</option>
-        <option value="cellin">Cellin</option>
-        <option value="daymar">Daymar</option>
-        <option value="yela">Yela</option>
-        <option value="arccorp">ArcCorp</option>
-        <option value="lyria">Lyria</option>
-        <option value="wala">Wala</option>
-        <option value="microtech">microTech</option>
-        <option value="calliope">Calliope</option>
-        <option value="clio">Clio</option>
-        <option value="euterpe">Euterpe</option>
-      </select>
+        <option v-for="planet in planets" :key="planet">{{ planet }}</option>
+        </select>
       </va-card>
       <va-card
       color="#1B191E"
@@ -35,27 +20,10 @@
       <h4>
         Deposit Type
       </h4>
-      <select name="selectDeposit" id="depositType">
+      <select v-model="selectDeposit">
         <option disabled value="">Select Deposit</option>
-        <option value="c-type">C Type</option>
-        <option value="e-type">E Type</option>
-        <option value="m-type">M Type</option>
-        <option value="p-type">P Type</option>
-        <option value="q-type">Q Type</option>
-        <option value="s-type">S Type</option>
-        <option value="atacamite">Atacamite</option>
-        <option value="felsic">Felsic</option>
-        <option value="gneiss">Gneiss</option>
-        <option value="granite">Granite</option>
-        <option value="igneous">Igneous</option>
-        <option value="obsidian">Obsidian</option>
-        <option value="quantanium">Quantanium</option>
-        <option value="quartzite">Quartzite</option>
-        <option value="shale">Shale</option>
-        <option value="aphorite">Aphorite</option>
-        <option value="dolivine">Dolivine</option>
-        <option value="hadanite">Hadanite</option>
-      </select>
+        <option v-for="deposit in deposits" :key="deposit">{{ deposit }}</option>
+        </select>
       </va-card>
       <center>
         <button class="button Generate">
@@ -186,6 +154,10 @@ export default {
       s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
       prospectorLaser: '',
       s1lasers: ['Arbor S1','Lancet S1', 'Hofstede S1','Klein S1','Helix S1','Impact S1'],
+      selectPlanet: '',
+      planets: ['Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'],
+      selectDeposit: '',
+      deposits: ['C Type','E Type','M Type','P Type','Q Type','S Type','Atacamite','Felsic','Gneiss','Granite','Igneous','Obsidian','Quantanium','Quartzite','Shale','Aphorite','Dolivine','Hadanite'],
     }
   }
 };
