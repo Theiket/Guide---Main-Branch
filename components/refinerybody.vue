@@ -9,27 +9,10 @@
         Commodity
         </h3>
         <br>
-        <select name="selectCommodity" id="commodityType">
-      <option value="agricium">Agricium</option>
-      <option value="aluminium">Aluminium</option>
-      <option value="beryl">Beryl</option>
-      <option value="bexalite">Bexalite</option>
-      <option value="borase">Borase</option>
-      <option value="copper">Copper</option>
-      <option value="corundum">Corundum</option>
-      <option value="diamond">Diamond</option>
-      <option value="gold">Gold</option>
-      <option value="hephaestanite">Hephaestanite</option>
-      <option value="laranite">Laranite</option>
-      <option value="quantanium">Quantanium</option>
-      <option value="quartz">Quartz</option>
-      <option value="taranite">Taranite</option>
-      <option value="titanium">Titanium</option>
-      <option value="tungsten">Tungsten</option>
-      <option value="aphorite">Aphorite</option>
-      <option value="dolivine">Dolivine</option>
-      <option value="hadanite">Hadanite</option>
-      </select>
+        <select v-model="selectedCommodity">
+          <option disabled value="">Select Commodity</option>
+          <option v-for="commodity in commodities" :key="commodity">{{ commodity }}</option>
+        </select>
       </div>
     </td>
     <td>
@@ -53,20 +36,10 @@
     </td>
     <td>
     <div class="refineryLocation">
-    <select 
-    name="selectRefinery" 
-    id="refineryStation"
-    >
-      <option value="stanton1L1">HUR-L1</option>
-      <option value="stanton1L2">HUR-L2</option>
-      <option value="stanton2L1">CRU-L1</option>
-      <option value="stanton3L1">ARC-L1</option>
-      <option value="stanton3L2">ARC-L2</option>
-      <option value="stanton3L4">ARC-L4</option>
-      <option value="stanton4L1">MIC-L1</option>
-      <option value="stanton4L2">MIC-L2</option>
-      <option value="stanton4L5">MIC-L5</option>
-    </select>
+      <select v-model="selectedRefinery">
+        <option disabled value="">Select Refinery</option>
+        <option v-for="refinery in refineries" :key="refinery">{{ refinery }}</option>
+      </select>
     </div>
     </td>
     </tr>
@@ -89,8 +62,19 @@
   useHead({
     title: 'GUIDE | Refinery'
   })
+</script>
 
-
+<script>
+export default {
+  data() {
+    return {
+      selectedRefinery: '',
+      refineries: ['HUR-L1','HUR-L2','CRU-L1','ARC-L1','ARC-L2','ARC-L4','MIC-L1','MIC-L2','MIC-L5'],
+      selectedCommodity: '',
+      commodities: ['Agricium','Aluminium','Beryl','Bexalite','Borase','Copper','Corundum','Diamond','Gold','Hephaestanite','Laranite','Quantanium','Quartz','Taranite','Titanium','Tungsten','Aphorite','Dolivine','Hadanite']
+    };
+  }
+};
 </script>
 
 <style scoped>
