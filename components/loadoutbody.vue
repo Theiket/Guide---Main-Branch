@@ -147,9 +147,7 @@ export default {
       prospector: false,
       mole: false,
       leftLaser: '',
-      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
       centralLaser: '',
-      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
       rightLaser: '',
       s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
       prospectorLaser: '',
@@ -295,6 +293,15 @@ export default {
 }
 .Alternate {
   margin-block-start:15px;
+}
+.prospectorCard {
+  animation: 1s appear;
+}
+.moleCard {
+  animation: 1s appear;
+}
+.mainButtons {
+  animation: 1s appear;
 }
 
 /*Select*/
