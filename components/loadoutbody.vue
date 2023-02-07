@@ -75,7 +75,12 @@
       <select v-model="prospectorLaser">
         <option disabled value="">Select Laser</option>
         <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
-        </select>
+      </select>
+      <br><br>
+      <select v-model="laserModule">
+        <option disabled value="">Select Module</option>
+        <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+      </select>
       </center>
     </div>
     <div class="moleCard" v-else-if="mole">
@@ -156,6 +161,8 @@ export default {
       planets: ['Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'],
       selectDeposit: '',
       deposits: ['C Type','E Type','M Type','P Type','Q Type','S Type','Atacamite','Felsic','Gneiss','Granite','Igneous','Obsidian','Quantanium','Quartzite','Shale','Aphorite','Dolivine','Hadanite'],
+      laserModule: '',
+      lasermodules: ['Brandt','Forel','Lifeline','Optimum','Rime','Stampede','Surge','Torpid','FLTR MK1','FLTR MK2','FLTR MK3','Focus MK1','Focus MK2','Focus MK3','Reiger MK1','Reiger MK2','Reiger MK3','Torrent MK1','Torrent MK2','Torrent MK3','Vaux MK1','Vaux MK2','Vaux MK3','XTR MK1','XTR MK2','XTR MK3'],
     }
   }
 };
