@@ -77,10 +77,12 @@
         <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
       </select>
       <br><br>
-      <select v-model="laserModule">
+      <div>
+        <select v-model="laserModule">
         <option disabled value="">Select Module</option>
         <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-      </select>
+        </select>
+      </div>
       </center>
     </div>
     <div class="moleCard" v-else-if="mole">
