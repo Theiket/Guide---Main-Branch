@@ -77,7 +77,7 @@
         <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
       </select>
       <br><br>
-      <div>
+      <div v-if="prospectorLaser === 'Arbor S1'">
         <select v-model="laserModule">
         <option disabled value="">Select Module</option>
         <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
