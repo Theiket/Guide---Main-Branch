@@ -51,7 +51,6 @@
       name="mass"
       id = "massOutput"
       >
-      Value
       </output>
     </div>
   </div>
