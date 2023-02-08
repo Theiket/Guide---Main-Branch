@@ -293,13 +293,6 @@ export default {
 .centercard p {
   font-size:18px;
 }
-.centercard .icon {
-  scale:1000%;
-  color:var(--lightgray);
-  position:absolute;
-  left:450px;
-  top:350px;
-}
 
 .rightcard {
   position: absolute;
@@ -337,9 +330,9 @@ export default {
   border-radius:25px;
   padding-inline-start:15px;
   padding-block-end:5px;
-  position:relative;
+  position:absolute;
   left:100px;
-  top:500px; 
+  top:700px; 
 }
 .instability .provider {
   width:200px;
@@ -350,7 +343,7 @@ export default {
 
 /* Asteroid */
 .asteroid {
-  margin-block-start:90px;
+  margin-block-start:10%;
   margin-inline-start:200px;
   padding-inline-end:400px;
   width:200px;
@@ -360,6 +353,7 @@ export default {
   border-color:var(--lightorange);
   border-width:2px;
   border-radius:40px;
+  position:absolute;
 }
 
 /* Buttons */
