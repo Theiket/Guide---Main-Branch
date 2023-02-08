@@ -17,21 +17,21 @@
     </td>
     <td>
       <div class="quantityInput">
-      <h3>Quantity</h3>
-      <br>
-      <input v-model="inputQuantity"
-      class="inputQuantity"
-      type="number" 
-      id="quantityInput" 
-      placeholder="Input quantity"
-      >
+        <h3>Quantity</h3>
+        <br>
+        <input v-model="inputQuantity"
+        class="inputQuantity"
+        type="number" 
+        id="quantityInput" 
+        placeholder="Input quantity"
+        >
       </div>
     </td>
     </tr>
     <tr>
     <td>
     <div class="refineryLocation">
-    <h3>Location</h3>
+      <h3>Location</h3>
     </div>
     </td>
     <td>
@@ -45,14 +45,14 @@
     </tr>
   </table>
     <div class="outputBlock">
-    <h3>Mass</h3>
-    <br>
-    <output 
-    name="mass"
-    id = "massOutput"
-    >
-    Value
-    </output>
+      <h3>Mass</h3>
+      <br>
+      <output 
+      name="mass"
+      id = "massOutput"
+      >
+      Value
+      </output>
     </div>
   </div>
 </div>

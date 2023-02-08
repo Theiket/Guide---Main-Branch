@@ -4,14 +4,14 @@
   <h3 class="blocktitle">
     ARCHIVE
   </h3>
-    <input 
+  <input 
     class="inputSearch"
     type="text" 
     id="search" 
     name="searchInput"
     placeholder="Search..."
-    >
-    <va-button-toggle
+  >  
+  <va-button-toggle
     toggle-color="#CF6A2F"
     active-button-text-color="#1B191E"
     text-color="#9DA1B2"
@@ -26,9 +26,10 @@
         { label: 'COMPONENTS', value: 'components' },
       ]"
   />
+    
 </div>
 <div class="container">
-<table class="invlist">
+  <table class="invlist">
   <tr class="invheading">
     <td>
     <p>Name</p>
@@ -49,7 +50,7 @@
   <tr>
 
   </tr>
-</table>
+  </table>
 </div>
 </div>
 </template>
@@ -152,6 +153,10 @@ export default {
 .topcontainer {
   --va-button-toggle-border-radius:0px;
 }
+.topcontainer .va-button-toggle {
+  position:relative;
+}
+
 /*Text*/
 
 .title {
