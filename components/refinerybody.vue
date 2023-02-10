@@ -19,10 +19,10 @@
       <div class="quantityInput">
         <h3>Quantity</h3>
         <br>
-        <input v-model="inputQuantity"
+        <input v-model="MassValue"
         class="inputQuantity"
-        type="number" 
-        id="quantityInput" 
+        type="number"
+        min="0"
         placeholder="Input quantity"
         >
       </div>
@@ -45,13 +45,15 @@
     </tr>
   </table>
     <div class="outputBlock">
-      <h3>Mass</h3>
-      <br>
-      <output 
-      name="mass"
-      id = "massOutput"
-      >
-      </output>
+      <table>
+        <tr>
+        <td>
+        <h3>Mass</h3>
+        <br>
+        <center><p>{{ MassValue * 2}}</p></center>
+        </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
@@ -64,6 +66,14 @@
 </script>
 
 <script>
+import { ref } from 'vue';
+
+const MassValue = ref('')
+
+function handleInputChange(event) {
+  MassValue.value = event.target.value
+}
+
 export default {
   data() {
     return {
