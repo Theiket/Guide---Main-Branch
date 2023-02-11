@@ -4,24 +4,24 @@
         <td class="refinery">
           <h3>
           <div class="button">
-          <NuxtLink to="/refinery">
-          Refinery
-          <br>
-          <div class="loadouticon">
-          <Icon name="game-icons:anvil-impact" />
-          </div>
-          </NuxtLink>
+            <NuxtLink to="/refinery">
+            Refinery
+            <br>
+            <div class="loadouticon">
+            <Icon name="game-icons:anvil-impact" />
+            </div>
+            </NuxtLink>
           </div>
           </h3>
         </td>
         <td class="loadout">
           <h3>
           <div class="button">
-          <NuxtLink to="/loadout">
-          Loadout
-          <br>
-          <div class="loadouticon">
-          <Icon name="game-icons:laser-blast" />
+            <NuxtLink to="/loadout">
+            Loadout
+            <br>
+            <div class="loadouticon">
+            <Icon name="game-icons:laser-blast" />
           </div>
           </NuxtLink>
           </div>
@@ -38,7 +38,7 @@
   align-content:center;
   vertical-align:center;
   justify-content:center;
-  padding:20% 22%;
+  padding:20% 25%;
   width:auto;
 }
 

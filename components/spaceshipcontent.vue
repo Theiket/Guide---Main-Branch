@@ -1351,9 +1351,11 @@
     <h4>
     Vehicle Name
     </h4>
+    <div class="vehicleText">
     <p>
     Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
     </p>
+    </div>
       <va-divider />
       <table class="infoCard">
       <tr>
@@ -1576,6 +1578,12 @@ h4 {
 }
 .leftcard td {
   width:125px;
+}
+
+/*Right Card*/
+.vehicleText {
+  padding-inline-start:15px;
+  padding-inline-end:15px;
 }
 
 
