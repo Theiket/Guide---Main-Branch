@@ -1354,6 +1354,13 @@
       <div class="componentSelect" v-if="coolers">
         <br>
         <p>Become Visible</p>
+        <br>
+        <div class="coolerButton" v-for="coolers in s1coolers">
+          <button>
+           Test
+          </button>
+        </div>
+        <br>
       </div>
     </div>
     <div class="quantumdrives">
@@ -1526,17 +1533,6 @@ export default {
   width:300px;
 }
 
-.componentSelect {
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-width:3px;
-  border-color:var(--lightorange);
-  border-radius:25px;
-  margin-inline-end:15px;
-  margin-block-start:15px;
-  overflow:;
-}
-
 .title {
   animation: 1s appear;
   font: bold 64px/70px 'Segoe UI', sans-serif;
@@ -1634,6 +1630,29 @@ h4 {
   padding-inline-end:15px;
 }
 
+
+/*Center Card*/
+.componentSelect {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  margin-inline-end:15px;
+  margin-block-start:15px;
+  object-fit:contain;
+}
+.componentSelect button {
+}
+
+.coolerButton {
+  scale:100%;
+  position:relative;
+  border:none;
+  padding-inline-start:5px;
+  padding-block-end:2px;
+  padding-inline-end:5px;
+}
 
 @keyframes appear {
   0% {
