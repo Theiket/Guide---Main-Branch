@@ -1646,9 +1646,6 @@ h4 {
 }
 
 .coolerButton {
-  scale:100%;
-  position:relative;
-  border:none;
   padding-inline-start:5px;
   padding-block-end:2px;
   padding-inline-end:5px;
