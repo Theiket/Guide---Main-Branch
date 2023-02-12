@@ -1298,10 +1298,14 @@
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
-      <va-button>
+      <va-button @click="weapons = !weapons">
       <Icon name="bxs:caret-down-circle" />
       </va-button>
       </va-button-group>
+      </div>
+      <div v-if="weapons">
+      <br>
+      <p>Become Visible</p>
       </div>
     </div>
     <div class="shields">
@@ -1310,10 +1314,14 @@
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
-      <va-button>
+      <va-button @click="shields = !shields">
       <Icon name="bxs:caret-down-circle" />
       </va-button>
       </va-button-group>
+      </div>
+      <div v-if="shields">
+      <br>
+      <p>Become Visible</p>
       </div>
     </div>
     <div class="powerplants">
@@ -1322,10 +1330,14 @@
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
-      <va-button>
+      <va-button @click="powerplants = !powerplants">
       <Icon name="bxs:caret-down-circle" />
       </va-button>
       </va-button-group>
+      </div>
+      <div v-if="powerplants">
+      <br>
+      <p>Become Visible</p>
       </div>
     </div>
     <div class="coolers">
@@ -1334,10 +1346,14 @@
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
-      <va-button>
+      <va-button @click="coolers = !coolers">
       <Icon name="bxs:caret-down-circle" />
       </va-button>
       </va-button-group>
+      </div>
+      <div v-if="coolers">
+      <br>
+      <p>Become Visible</p>
       </div>
     </div>
     <div class="quantumdrives">
@@ -1346,10 +1362,14 @@
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
-      <va-button>
+      <va-button @click="quantumdrives = !quantumdrives">
       <Icon name="bxs:caret-down-circle" />
       </va-button>
       </va-button-group>
+      </div>
+      <div v-if="quantumdrives">
+      <br>
+      <p>Become Visible</p>
       </div>
     </div>
   </div>
@@ -1437,6 +1457,11 @@
 export default {
   data() {
     return {
+      weapons: false,
+      shields: false,
+      powerplants: false,
+      coolers: false,
+      quantumdrives: false,
       selectedCompany: '',
       companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems']
     };
