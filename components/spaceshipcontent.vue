@@ -1345,15 +1345,15 @@
       <p>Coolers</p>
       <br>
       <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button @click="coolers = !coolers">
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
+        <va-button-group preset="plain" class="mb-6">
+        <va-button @click="coolers = !coolers">
+        <Icon name="bxs:caret-down-circle" />
+        </va-button>
+        </va-button-group>
       </div>
-      <div v-if="coolers">
-      <br>
-      <p>Become Visible</p>
+      <div class="componentSelect" v-if="coolers">
+        <br>
+        <p>Become Visible</p>
       </div>
     </div>
     <div class="quantumdrives">
@@ -1463,7 +1463,11 @@ export default {
       coolers: false,
       quantumdrives: false,
       selectedCompany: '',
-      companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems']
+      companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'],
+      s1coolers: ['IcePlunge','QuickCool','ZeroRush','Bracer','Glacier','Polar','Tundra','CryoStar','FrostStar','WinterStar','Ecoflow','Hydrocel','Thermax','Ultraflow','ArcticStorm','BlastChill','FlashFreeze','Heatsafe','Snowblind','Vaporblock','Berian','Endo','Gelid'],
+      s2coolers:'',
+      s3coolers:'',
+      s4coolers:'',
     };
   }
 };
@@ -1520,6 +1524,17 @@ export default {
 }
 .infoCard td {
   width:300px;
+}
+
+.componentSelect {
+  background-color:var(--darkgray);
+  border-style:solid;
+  border-width:3px;
+  border-color:var(--lightorange);
+  border-radius:25px;
+  margin-inline-end:15px;
+  margin-block-start:15px;
+  overflow:;
 }
 
 .title {
