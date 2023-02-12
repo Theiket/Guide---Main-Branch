@@ -1293,8 +1293,8 @@
   </div>
 <!-- Component Selection Card -->
   <div class="centercard">
-      <p>
-      Weapons
+    <div class="weapons">
+      <p>Weapons</p>
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
@@ -1303,18 +1303,10 @@
       </va-button>
       </va-button-group>
       </div>
+    </div>
+    <div class="shields">
       <br>
-      Shields
-      <br>
-      <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button>
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
-      </div>
-      <br>
-      Power Plants
+      <p>Shields</p>
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
@@ -1323,18 +1315,10 @@
       </va-button>
       </va-button-group>
       </div>
+    </div>
+    <div class="powerplants">
       <br>
-      Coolers
-      <br>
-      <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button>
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
-      </div>
-      <br>
-      Quantum Drives
+      <p>Power Plants</p>
       <br>
       <div class="dropdown">
       <va-button-group preset="plain" class="mb-6">
@@ -1343,7 +1327,31 @@
       </va-button>
       </va-button-group>
       </div>
-      </p>
+    </div>
+    <div class="coolers">
+      <br>
+      <p>Coolers</p>
+      <br>
+      <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
+      <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
+      </div>
+    </div>
+    <div class="quantumdrives">
+      <br>
+      <p>Quantum Drives</p>
+      <br>
+      <div class="dropdown">
+      <va-button-group preset="plain" class="mb-6">
+      <va-button>
+      <Icon name="bxs:caret-down-circle" />
+      </va-button>
+      </va-button-group>
+      </div>
+    </div>
   </div>
 <!-- Ship Information Card -->
   <div class="rightcard">
