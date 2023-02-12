@@ -1356,9 +1356,9 @@
         <p>Become Visible</p>
         <br>
         <div class="coolerButton" v-for="coolers in s1coolers">
-          <button>
+          <va-button>
            Test
-          </button>
+          </va-button>
         </div>
         <br>
       </div>
