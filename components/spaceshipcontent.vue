@@ -1639,9 +1639,8 @@ h4 {
   border-width:3px;
   border-color:var(--lightorange);
   border-radius:25px;
-  margin-inline-end:15px;
+  margin-inline-end:25px;
   margin-block-start:15px;
-  place-content: space-evenly;
 }
 .coolerButton {
   padding-inline-start:5px;
