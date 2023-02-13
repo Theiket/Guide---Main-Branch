@@ -1654,6 +1654,7 @@ h4 {
 }
 .coolerButton p {
   padding-block-end:5px;
+  font-size:16px;
 }
 .coolerButton button {
   background-color:transparent;
@@ -1661,6 +1662,7 @@ h4 {
   border-radius:15px;
   width:30%;
   overflow:scroll;
+  margin-block-start:4px;
 }
 .coolerButton button:hover {
   border-color:var(--lightorange);
