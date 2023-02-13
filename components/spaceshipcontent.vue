@@ -1352,14 +1352,15 @@
         </va-button-group>
       </div>
       <div class="componentSelect" v-if="coolers">
-        <br>
-        <p>Become Visible</p>
-        <br>
-        <div class="coolerButton" v-for="coolers in s1coolers">
-          <va-button>
-           Test
-          </va-button>
-        </div>
+        <span class="coolerButton" v-for="cooler in s1coolers">
+          <button>
+          <h4> {{cooler}} </h4>
+          <p>
+          Grade | Class <br>
+          Cooling: numVal
+          </p>
+          </button>
+        </span>
         <br>
       </div>
     </div>
@@ -1471,7 +1472,7 @@ export default {
       quantumdrives: false,
       selectedCompany: '',
       companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'],
-      s1coolers: ['IcePlunge','QuickCool','ZeroRush','Bracer','Glacier','Polar','Tundra','CryoStar','FrostStar','WinterStar','Ecoflow','Hydrocel','Thermax','Ultraflow','ArcticStorm','BlastChill','FlashFreeze','Heatsafe','Snowblind','Vaporblock','Berian','Endo','Gelid'],
+      s1coolers: ['ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'],
       s2coolers:'',
       s3coolers:'',
       s4coolers:'',
@@ -1640,15 +1641,33 @@ h4 {
   border-radius:25px;
   margin-inline-end:15px;
   margin-block-start:15px;
-  object-fit:contain;
+  place-content: space-evenly;
 }
-.componentSelect button {
-}
-
 .coolerButton {
   padding-inline-start:5px;
   padding-block-end:2px;
   padding-inline-end:5px;
+}
+.coolerButton h4 {
+  font-size:20px;
+  color:var(--lightorange);
+  padding-block-start:0px;
+}
+.coolerButton p {
+  padding-block-end:5px;
+}
+.coolerButton button {
+  background-color:transparent;
+  border:2px solid transparent;
+  border-radius:15px;
+  width:30%;
+  overflow:scroll;
+}
+.coolerButton button:hover {
+  border-color:var(--lightorange);
+}
+.coolerButton button:hover h4 {
+  color:var(--orangehover);
 }
 
 @keyframes appear {
