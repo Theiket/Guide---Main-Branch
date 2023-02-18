@@ -1319,9 +1319,17 @@
       </va-button>
       </va-button-group>
       </div>
-      <div v-if="shields">
-      <br>
-      <p>Become Visible</p>
+      <div class="componentSelect" v-if="shields">
+        <span class="coolerButton" v-for="shield in s1shields">
+          <button>
+          <h4> {{shield}} </h4>
+          <p>
+          Grade | Class <br>
+          Capacity: numVal
+          </p>
+          </button>
+        </span>
+        <br>
       </div>
     </div>
     <div class="powerplants">
@@ -1335,9 +1343,17 @@
       </va-button>
       </va-button-group>
       </div>
-      <div v-if="powerplants">
-      <br>
-      <p>Become Visible</p>
+      <div class="componentSelect" v-if="powerplants">
+        <span class="coolerButton" v-for="powerplant in s1powerplants">
+          <button>
+          <h4> {{powerplant}} </h4>
+          <p>
+          Grade | Class <br>
+          Power: numVal
+          </p>
+          </button>
+        </span>
+        <br>
       </div>
     </div>
     <div class="coolers">
@@ -1375,9 +1391,17 @@
       </va-button>
       </va-button-group>
       </div>
-      <div v-if="quantumdrives">
-      <br>
-      <p>Become Visible</p>
+      <div class="componentSelect" v-if="quantumdrives">
+      <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
+          <button>
+          <h4> {{quantumdrive}} </h4>
+          <p>
+          Grade | Class <br>
+          Values Go Here
+          </p>
+          </button>
+        </span>
+        <br>
       </div>
     </div>
   </div>
@@ -1471,15 +1495,57 @@ export default {
       coolers: false,
       quantumdrives: false,
       selectedCompany: '',
-      companies: ['Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'],
-      s1coolers: ['ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'],
-      s2coolers:['AbsoluteZero','Arctic','Aufeis','Avalanche','Boreal','Coldsnap','CoolCore','CryoStarEx','FrostStarEx','FullFrost','Graupel','Heatsink','HydroJet','Icebox','IceDive','Nightfall','Permafrost','RapidCool','Snowfall','Snowpack','Taiga','Whiteout','WinterStarEx'],
-      s3coolers:['Blizzard','Chillmax','CryoStarXL','Draug','Elsen','FrostStarXL','Galinstan','Hydropulse','Iceflush','Kragen','Mercury','Tempest','ThermalCore','WinterStarXL'],
-      s4coolers:['Idris','Javelin','890 Jump','Bengal'],
-      s1powerplants: ['Breton','Charger','Deltamax','Dynaflux','Endurance','FierellCascade','Fortitude','Hypergen','Ionburst','JS300','Lightblossom','Lumacore','Magnabloom','Overdrive','Powerbolt','Quadracell','Regulus','Roughneck','SlipStream','SonicLite','Starheart','Sunflare','Whiterose','Zapjet'],
-      s2powerplants: ['Bolide','Cirrus','Daybreak','Diligence','Eclipse','Exogen','FullForce','GammaMax','Genoa','IonSurge','JS400','Lotus','LuxCore','Maelstrom','QuadracellMT','Radiance','Sedulity','Solarflare','SparkJet','Starburn','Trommel','TurboDrive','UltraFlux','Vortex'],
-      s3powerplants: ['Celestial','Centurion','Drassik','Durango','Fulgur','FullForcePro','Ginzel','IonSurgePro','JS500','Megaflux','NewDawn','QuadracellMX','Reliance','Smartgen','SparkJetPro','Superdrive','TigerLily'],
-      s4powerplants: ['Bengal','890 Jump','Idris','Reclaimer'],
+      companies: [
+        'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
+        ],
+      s1coolers: [
+        'ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'
+        ],
+      s2coolers:[
+        'AbsoluteZero','Arctic','Aufeis','Avalanche','Boreal','Coldsnap','CoolCore','CryoStarEx','FrostStarEx','FullFrost','Graupel','Heatsink','HydroJet','Icebox','IceDive','Nightfall','Permafrost','RapidCool','Snowfall','Snowpack','Taiga','Whiteout','WinterStarEx'
+        ],
+      s3coolers:[
+        'Blizzard','Chillmax','CryoStarXL','Draug','Elsen','FrostStarXL','Galinstan','Hydropulse','Iceflush','Kragen','Mercury','Tempest','ThermalCore','WinterStarXL'
+        ],
+      s4coolers:[
+        'Idris','Javelin','890 Jump','Bengal'
+        ],
+      s1powerplants: [
+        'Breton','Charger','Deltamax','Dynaflux','Endurance','FierellCascade','Fortitude','Hypergen','Ionburst','JS300','Lightblossom','Lumacore','Magnabloom','Overdrive','Powerbolt','Quadracell','Regulus','Roughneck','SlipStream','SonicLite','Starheart','Sunflare','Whiterose','Zapjet'
+        ],
+      s2powerplants: [
+        'Bolide','Cirrus','Daybreak','Diligence','Eclipse','Exogen','FullForce','GammaMax','Genoa','IonSurge','JS400','Lotus','LuxCore','Maelstrom','QuadracellMT','Radiance','Sedulity','Solarflare','SparkJet','Starburn','Trommel','TurboDrive','UltraFlux','Vortex'
+        ],
+      s3powerplants: [
+        'Celestial','Centurion','Drassik','Durango','Fulgur','FullForcePro','Ginzel','IonSurgePro','JS500','Megaflux','NewDawn','QuadracellMX','Reliance','Smartgen','SparkJetPro','Superdrive','TigerLily'
+        ],
+      s4powerplants: [
+        'Bengal','890 Jump','Idris','Reclaimer'
+        ],
+      s1shields: [
+        '5SA','6SA','7SA','AllStop','Banu Placeholder','Bulwark','Cloak','Falco','ForceWall','FR66','Guardian','Hex','Ink','Jaghte','Mirage','Palisade','SecureHyde','Shimmer','Steward','Targa','Veil','Web'
+        ],
+      s2shields: [
+        '5MA','6MA','7MA','Armada','Aspis','Bamoty','Banu Placeholder','Bloc','Citadel','Coverall','FR76','FullStop','Haltur','Obscura','Rampart','RPel','SecureShield','Sheut','Shroud','Stop','Trenta','Umbra'
+        ],
+      s3shields: [
+        '5CA','6CA','7CA','Armor','Barbican','FR86','FullBlock','Guard','Haven','Parapet','SecureScreen','Stronghold','SureStop','Ward'
+        ],
+      s4shields: [
+        'Bengal','Idris','Idris-Pirate','Javelin','890 Jump'
+        ],
+      s1quantumdrives: [
+        'Atlas','Beacon','Burst','Colossus','Drift','Eos','Expedition','Flood','FoxFire','Goliath','Hyperion','LightFire','Rush','Siren','Spectre','VK-00','Voyage','Vulcan','Wayfare','Zephyr'
+        ],
+      s2quantumdrives: [
+        'Aither','Bolon','Bolt','Cascade','Crossfield','Flash','Hemera','Huracan','Khaos','Nova','Odyssey','Quest','Sojourn','SparkFire','Spicule','SunFire','Torrent','XL1','Yaluk','Yeager'
+        ],
+      s3quantumdrives: [
+        'Agni','Balandin','Drifter','Echo','Erebos','Fissure','Impulse','Kama','Metis','Pontes','Ranger','TS2','Tyche','Vesta','Wanderer'
+        ],
+      s4quantumdrives: [
+        'Javelin','Idris','890 Jump'
+        ],
     };
   }
 };
