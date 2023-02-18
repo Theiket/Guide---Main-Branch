@@ -1476,6 +1476,10 @@ export default {
       s2coolers:['AbsoluteZero','Arctic','Aufeis','Avalanche','Boreal','Coldsnap','CoolCore','CryoStarEx','FrostStarEx','FullFrost','Graupel','Heatsink','HydroJet','Icebox','IceDive','Nightfall','Permafrost','RapidCool','Snowfall','Snowpack','Taiga','Whiteout','WinterStarEx'],
       s3coolers:['Blizzard','Chillmax','CryoStarXL','Draug','Elsen','FrostStarXL','Galinstan','Hydropulse','Iceflush','Kragen','Mercury','Tempest','ThermalCore','WinterStarXL'],
       s4coolers:['Idris','Javelin','890 Jump','Bengal'],
+      s1powerplants: ['Breton','Charger','Deltamax','Dynaflux','Endurance','FierellCascade','Fortitude','Hypergen','Ionburst','JS300','Lightblossom','Lumacore','Magnabloom','Overdrive','Powerbolt','Quadracell','Regulus','Roughneck','SlipStream','SonicLite','Starheart','Sunflare','Whiterose','Zapjet'],
+      s2powerplants: ['Bolide','Cirrus','Daybreak','Diligence','Eclipse','Exogen','FullForce','GammaMax','Genoa','IonSurge','JS400','Lotus','LuxCore','Maelstrom','QuadracellMT','Radiance','Sedulity','Solarflare','SparkJet','Starburn','Trommel','TurboDrive','UltraFlux','Vortex'],
+      s3powerplants: ['Celestial','Centurion','Drassik','Durango','Fulgur','FullForcePro','Ginzel','IonSurgePro','JS500','Megaflux','NewDawn','QuadracellMX','Reliance','Smartgen','SparkJetPro','Superdrive','TigerLily'],
+      s4powerplants: ['Bengal','890 Jump','Idris','Reclaimer'],
     };
   }
 };
