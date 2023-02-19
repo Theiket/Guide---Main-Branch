@@ -1498,6 +1498,54 @@ export default {
       companies: [
         'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
         ],
+      aegis: [
+        'Avenger Stalker','Avenger Titan','Avenger Warlock','Eclipse','Gladius','Hammerhead','Idris-K','Idris-M','Idris-P','Javelin','Nautilus','Reclaimer','Redeemer','Retaliator Base','Retaliator Bomber','Sabre','Sabre Comet','Sabre Raven','Vanguard Harbinger','Vanguard Hoplite','Vanguard Sentinel','Vanguard Warden','Vulcan'
+        ],
+      anvil: [
+        'Arrow','C8 Pisces','C8R Pisces Rescue','C8X Pisces Expedition','Carrack','Crucible','F7A Hornet','F7A Hornet MK II','F7A-R Hornet Tracker','F7C Hornet','F7C-M Super Hornet','F7C-R Hornet Tracker','F7C-S Hornet Ghost','F8A Lightning','F8C Lightning','Gladiator','Hawk','Hurricane','Legionnaire','Liberator','Terrapin','Valkyrie'
+        ],
+      aopoa: [
+        'Khartu-al','Nox','Santok-yai'
+        ],
+      argo: [
+        'MOLE','MPUV Cargo','MPUV Personnel','RAFT','SRV'
+        ],
+      banu: [
+        'Defender','Merchantman'
+        ],
+      consol: [
+        'HoverQuad','Mustang Alpha','Mustang Beta','Mustang Delta','Mustang Gamma','Mustang Omega','Nomad','Pioneer'
+        ],
+      crusader: [
+        'A1 Spirit','A2 Hercules','Ares Inferno','Ares Ion','C1 Spirit','C2 Hercules','E1 Spirit','Genesis Starliner','M2 Hercules','Mercury Star Runner'
+        ],
+      drake: [
+        'Buccaneer','Caterpillar','Corsair','Cutlass Black','Cutlass Blue','Cutlass Red','Cutlass Steel','Cutter','Dragonfly','Herald','Kraken','Kraken Privateer','Mule','Vulture'
+        ],
+      esperia: [
+        'Blade','Glaive','Prowler','Scythe','Talon','Talon Shrike'
+        ],
+      gatac: [
+        'Railen'
+        ],
+      greycat: [
+        'PTV','ROC','ROC-DS','STV','UTV'
+        ],
+      kruger: [
+        'P-52 Merlin','P-72 Archimedes'
+        ],
+      misc: [
+        'Expanse','Freelancer','Freelancer DUR','Freelancer MAX','Freelancer MIS','Hull A','Prospector','Razor','Razor EX','Razor LX','Reliant Kore','Reliant Mako','Reliant Sen','Reliant Tana','Starfarer','Starfarer Gemini'
+        ],
+      origin: [
+        '100i','125a','135c','300i','315p','325a','350r','400i','600i Explorer','600i Touring','85X','890 Jump','G12','G12a','G12r','M50','X1','X1 Force','X1 Velocity'
+        ],
+      rsi: [
+        'Aurora CL','Aurora ES','Aurora LN','Aurora LX','Aurora MR','Constellation Andromeda','Constellation Aquila','Constellation Phoenix','Constellation Taurus','Mantis','Scorpius','Scorpius Antares','Ursa'
+        ],
+      tumbril: [
+        'Cyclone','Cyclone AA','Cyclone MT','Cyclone RC','Cylcone RN','Cyclone TR','Nova','Ranger CV','Ranger RV','Ranger TR'
+        ],
       s1coolers: [
         'ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'
         ],
