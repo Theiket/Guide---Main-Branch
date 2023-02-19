@@ -3,10 +3,10 @@
 <!-- Ship Selection Card -->
   <div class="leftcard">
     <div class="col-md-3">
-    <h4>
-    Manufacturer
-    </h4>
-    <br>
+      <h4>
+      Manufacturer
+      </h4>
+      <br>
     <center>
     <select v-model="selectedCompany">
       <option disabled value="">Choose a manufacturer</option>
