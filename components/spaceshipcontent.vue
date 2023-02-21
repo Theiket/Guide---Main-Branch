@@ -16,7 +16,7 @@
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
     <span v-for="ships in aegis">
       <td>
-      <button></button>
+      <button @click=""></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -262,7 +262,7 @@
   <div class="rightcard">
     <div class="col-md-3">
     <h4>
-    Vehicle Name
+    {{vehicleName}}
     </h4>
     <div class="vehicleText">
     <p>
@@ -348,6 +348,7 @@ export default {
       coolers: false,
       quantumdrives: false,
       selectedCompany: '',
+      vehicleName:'Vehicle Name',
       companies: [
         'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
         ],
