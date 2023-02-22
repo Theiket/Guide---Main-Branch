@@ -1064,10 +1064,123 @@ export default {
         },
         ],
       rsi: [
-        'Aurora CL','Aurora ES','Aurora LN','Aurora LX','Aurora MR','Constellation Andromeda','Constellation Aquila','Constellation Phoenix','Constellation Taurus','Mantis','Scorpius','Scorpius Antares','Ursa'
+        {
+          name:'Aurora CL',
+          description:"Customized for mercantile and trading excursions, the Aurora Clipper is the perfect vessel for aspiring entrepreneurs and seasoned traders alike. Thanks to its expanded cargo capacity, the Clipper ups the ante for personal merchant craft.",
+          role:'Light freight',
+        },
+        {
+          name:'Aurora ES',
+          description:"The Aurora is the modern-day descendant of the Roberts Space Industries X-7 spacecraft which tested the very first jump engines. Utilitarian to a T, the Aurora Essential is the perfect choice for new ship owners: versatile enough to tackle a myriad of challenges, yet with a straightforward and intuitive design.",
+          role:'Pathfinder',
+        },
+        {
+          name:'Aurora LN',
+          description:"With a more robust shield generator and a pair of additional weapon hard points, the Legionnaire is a dedicated combat fighter, built to handle any obstacle the universe can throw at you.",
+          role:'Light fighter',
+        },
+        {
+          name:'Aurora LX',
+          description:"Be proud of your roots with the brand-new Aurora Deluxe, built for the discerning pilot who never forgets where he or she came from. The LX features patent leather interior to guarantee comfort for those long stretches in the deep black.",
+          role:'Pathfinder',
+        },
+        {
+          name:'Aurora MR',
+          description:"Perhaps you're looking for something that offers carrying capacity but has combat capabilities too? The Aurora Marque comes with a pair of Behring-quality lasers and a high quality gun cooler system.",
+          role:'Light fighter',
+        },
+        {
+          name:'Constellation Andromeda',
+          description:"The Constellation Andromeda, a multi-person freighter, is the most popular ship in RSI's current production array. Constellations are beloved by smugglers and merchants alike because they are modular, high powered... and just downright iconic-looking.",
+          role:'Medium freight/gunship',
+        },
+        {
+          name:'Constellation Aquila',
+          description:"Explore any distant horizons! The Constellation Aquila features a redesigned cockpit for maximum visibility, advanced sensors and an onboard Ursa rover for planetary exploration. Let’s see what’s out there!",
+          role:'Expedition',
+        },
+        {
+          name:'Constellation Phoenix',
+          description:"A dedicated luxury spacecraft for the discerning star captain. The Constellation Phoenix can be operated as an organization command ship and features a luxurious redesigned interior. The Phoenix comes with a Lynx rover and a Kruger P-72 Archimedes Fighter",
+          role:'Luxury touring',
+        },
+        {
+          name:'Constellation Taurus',
+          description:"Enjoy the adventure of a multi-crew Constellation on a budget! The Constellation Taurus is a dedicated freighter. Fully configurable but without all the bells-and-whistles, the Taurus is a great way to get started with crewed ships.",
+          role:'Medium freight',
+        },
+        {
+          name:'Mantis',
+          description:"Stop ships dead in their tracks with RSI’s premier Quantum Enforcement ship. The Mantis features a tailor-made Quantum Enforcement Device from Wei-Tek, capable of ripping ships out of QT with its Quantum Snare and preventing hasty escapes with its Quantum Dampener.",
+          role:'Interdiction',
+        },
+        {
+          name:'Scorpius',
+          description:"From RSI’s expert Research and Development teams in Killian and the same engineers that brought you some of the galaxy’s most vaunted war machines comes the next evolution in heavy combat, interception, and defense – the RSI Scorpius. With an adaptable bi-wing configuration and revolutionary rail-mounted remote turret, the Scorpius offers unprecedented fire coverage, allowing for both defensive and assault-minded applications.",
+          role:'Heavy fighter',
+        },
+        {
+          name:'Scorpius Antares',
+          description:"",
+          role:'Heavy fighter/interdiction',
+        },
+        {
+          name:'Ursa Rover',
+          description:"Built by RSI specifically for the planetside explorer, the Ursa Rover offers civilians military-grade all-terrain capabilities and stands as the rugged standard in ground-based scouting, mapping and discovery applications.",
+          role:'Exploration',
+        },
         ],
       tumbril: [
-        'Cyclone','Cyclone AA','Cyclone MT','Cyclone RC','Cylcone RN','Cyclone TR','Nova','Ranger CV','Ranger RV','Ranger TR'
+        {
+          name:'Cyclone',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Cyclone AA',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Cyclone MT',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Cyclone RC',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Cylcone RN',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Cyclone TR',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Nova',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Ranger CV',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Ranger RV',
+          description:"",
+          role:'',
+        },
+        {
+          name:'Ranger TR',
+          description:"",
+          role:'',
+        },
         ],
       s1coolers: [
         'ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'
