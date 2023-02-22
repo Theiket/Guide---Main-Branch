@@ -967,7 +967,101 @@ export default {
         },
         ],
       origin: [
-        '100i','125a','135c','300i','315p','325a','350r','400i','600i Explorer','600i Touring','85X','890 Jump','G12','G12a','G12r','M50','X1','X1 Force','X1 Velocity'
+        {
+          name:'100i',
+          description:"Tour the universe with the perfect coupling of luxury and performance. The 100i features Origin Jumpworks' patented AIR fuel system, making it the most efficient and eco-friendly ship on the market. Capable of long distance flights that most ships of its size aren't equipped for, the 100i is perfect for solo pilots looking to turn heads without sacrificing functionality or reliability.",
+          role:'Touring',
+        },
+        {
+          name:'125a',
+          description:"Risks were meant to be taken, but why risk running out of fuel in the heat of battle? With the AIR fuel system, a souped-up weapons package, and all the luxury and refinement you've come to expect from Origin Jumpworks, the 125a has been designed for the discerning maverick.",
+          role:'Light fighter',
+        },
+        {
+          name:'135c',
+          description:"With a deceptive amount of storage space in its sleek, stylish frame, and Origin's patented AIR fuel system, the 135c model is the obvious choice for musicians, couriers, and anyone trying to get the party started. Get it there fast, and look good while you're doing it.",
+          role:'Light freight',
+        },
+        {
+          name:'300i',
+          description:"If you're going to travel the stars... why not do it in style? The 300i is Origin Jumpworks' premiere luxury spacecraft. It is a sleek, silver killer that sends as much of a message with its silhouette as it does with its weaponry.",
+          role:'Luxury touring',
+        },
+        {
+          name:'315p',
+          description:"Exploration is man's highest calling. Prepare to chart distant horizons with man's most sophisticated piece of technology, the ORIGIN 315p. Featuring a more robust power plant and a custom scanning package, exclusively designed by Chimera Communications.",
+          role:'Pathfinder',
+        },
+        {
+          name:'325a',
+          description:"Just because it's a rough galaxy doesn't mean you need to sacrifice your comfort: the 325a can come out on top in any dogfight. The 325a features an advanced weapon payload as well as a custom targeting system designed especially for the 325a by WillsOp.",
+          role:'Interdiction',
+        },
+        {
+          name:'350r',
+          description:"Origin Jumpwork’s 300 Series is the ultimate fusion of elegance and power. Every component, every part is individually calibrated, so no matter which model and options you choose, your ship will stay in perfect harmony as the ultimate in astroengineering. By far the fastest member of the family, the 350r refocus all of the 300’s power and translates it into pure speed.",
+          role:'Racing',
+        },
+        {
+          name:'400i',
+          description:"To explore the stars is a most noble endeavor, and Origin Jumpworks has risen to the occasion in crafting the 400i, the ultimate high-performance pathfinder. Representing a harmonious concourse of style, quality, and sophistication, the 400i exhibits class-leading range, substantial defensive capabilities, and a factory-equipped scanning array, while maintaining the comfort and elegance Origin is known for. Take on the harshest corners of the galaxy without compromise.",
+          role:'Touring',
+        },
+        {
+          name:'600i Explorer',
+          description:"This multi-role luxury vessel from Origin Jumpworks features an exquisitely detailed hull design that balances performance and versatility in a sleek and timeless form. The 600i is designed with a cutting-edge modular technology, allowing you to customize your ship for your needs. Looking to stamp your name in history with the discovery of a new star system? The 600i's Explorer module swaps the lounge for a robust scanning station as well as additional utility hardpoints to increase the ship's effectiveness even more.",
+          role:'Expedition',
+        },
+        {
+          name:'600i Touring',
+          description:"Let the voyage begin with the 2947 600i from Origin Jumpworks. This multi-role luxury vessel from Origin Jumpworks features an exquisitely detailed hull design that balances performance and versatility in a sleek and timeless form. The 600i is designed with a cutting-edge modular technology, allowing you to customize your ship for your needs. Taking the family on a long-distance trip across the stars? The Touring module lets your guests relax in ease with stunning furniture from some of the Empire's top designers.",
+          role:'Touring',
+        },
+        {
+          name:'85X',
+          description:"Elegantly styled and meticulously constructed, the 85X is a versatile and comprehensive away-vessel that features precision control in and out of atmosphere. Utilizing much of the same thruster technology as the 300 series, it has the power of a racer with the reliability of a touring ship. Whether descending down to the planet surface or taking in the sights of your system, this runabout continues Origin’s proud tradition of turning heads.",
+          role:'Touring',
+        },
+        {
+          name:'890 Jump',
+          description:"With an elegant, sleek exterior that belies its spacious interior, the 890 Jump is a true engineering marvel; crafted to impress from every angle by combining a unique, innovative design with the finest materials and the most advanced technology. The result is a vessel that is in a class all of its own, a masterpiece worthy of the name ORIGIN.",
+          role:'Luxury Touring',
+        },
+        {
+          name:'G12',
+          description:"Trek to the edge of the galaxy with confidence thanks to Origin’s trademark build quality and design. Built with the most extreme environments in mind, the G12 suits all types of planetary travel, from traversing tundras to sightseeing.",
+          role:'Touring',
+        },
+        {
+          name:'G12a',
+          description:"The G12a combines military might with Origin’s unique approach to high-end engineering. Designed for all offensive ground-based operations, it’s the ideal partner for long-range perimeter patrols, intercepting assailants, and exploring dangerous new locales.",
+          role:'Military',
+        },
+        {
+          name:'G12r',
+          description:"Stripped back and meticulously engineering for performance, Origin has taken everything learned from preparing the 350r and M50 ships for competition and added it to the ubiquitous ground racer. Lighter, faster, and with a built-in EMP for protection, it’s ready for anything the outlands can throw at it.",
+          role:'Racing',
+        },
+        {
+          name:'M50',
+          description:"If you want to get from point A to point B as quickly as possible and with as much style as possible then ORIGIN's M50 is for you. Featuring supercharged engines that counter a tiny weapons loadout, the M50 is a ship for going FAST.",
+          role:'Racing',
+        },
+        {
+          name:'X1',
+          description:"Welcome to the next level with the X1, Origin Jumpwork's new high performance open-canopy vehicle. Built from lightweight polymers, the X1 takes speed and agility to the next level thanks to seamlessly integrated engine technology and joint vector thruster placement. Innovative design and high quality engineering weave together to create a flight experience like no other.",
+          role:'Touring',
+        },
+        {
+          name:'X1 Force',
+          description:"Built to endure tougher environments and look good doing it, the X1 Force is a modified version of the base X1 model, featuring additional defensive elements to toughen up this speedy and agile open canopy bike, allowing it to serve in a variety of roles, from exploring worlds to potential security infiltration ops.",
+          role:'Pathfinder',
+        },
+        {
+          name:'X1 Velocity',
+          description:"How do you make fast go faster? Origin Jumpworks X1 Velocity dares to push the boundaries of speed by stripping down the base X1 to its core elements; eliminating the weapon mount and incorporating new Syntek composites to create a lighter chassis for overall weight loss.",
+          role:'Racing',
+        },
         ],
       rsi: [
         'Aurora CL','Aurora ES','Aurora LN','Aurora LX','Aurora MR','Constellation Andromeda','Constellation Aquila','Constellation Phoenix','Constellation Taurus','Mantis','Scorpius','Scorpius Antares','Ursa'
