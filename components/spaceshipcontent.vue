@@ -16,8 +16,8 @@
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
     <span v-for="ships in aegis">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
@@ -266,7 +266,7 @@
       </h4>
       <div class="vehicleText">
         <p>
-        Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
+        {{vehicleDescription}}
         </p>
       </div>
       <va-divider />
@@ -275,7 +275,7 @@
           <td class="shipRole">
             <h4>Role</h4>
             <br>
-            <p>Value</p>
+            <p>{{vehicleRole}}</p>
           </td>
           <td class="shipSize">
             <h4>Size</h4>
@@ -354,12 +354,128 @@ export default {
       coolers: false,
       quantumdrives: false,
       selectedCompany: '',
-      vehicleName:'Vehicle Name',
+      vehicleName:'Please select a vehicle',
+      vehicleDescription:'Please select a vehicle to see their description.',
+      vehicleRole:'',
       companies: [
         'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
         ],
       aegis: [
-        'Avenger Stalker','Avenger Titan','Avenger Warlock','Eclipse','Gladius','Hammerhead','Idris-K','Idris-M','Idris-P','Javelin','Nautilus','Reclaimer','Redeemer','Retaliator Base','Retaliator Bomber','Sabre','Sabre Comet','Sabre Raven','Vanguard Harbinger','Vanguard Hoplite','Vanguard Sentinel','Vanguard Warden','Vulcan'
+        {
+          name:'Avenger Stalker',
+          description:'Initially designed as a frontline carrier for the military, the Avenger Stalker took a different path, ultimately having a long and storied career as the standard patrol craft of the UEE Advocacy. Utilizing its cargo hold for prisoner transport, the Avenger features a sturdy, reliable hull and the capacity for larger-than-expected engine mounts.',
+          role:'Interdiction',
+        },
+        {
+          name:'Avenger Titan',
+          description:'With extra room in the back, the Titan’s hold is free to carry cargo. Couple that with the Avenger’s tried and true combat abilities and you’ve got a light cargo hauler that’s more than capable of handling itself in a fight.',
+          role:'Light freight',
+        },
+        {
+          name:'Avenger Warlock',
+          description:'Outfitted with a Behring REP-8 EMP Generator, the Warlock makes non-lethal suppression possible via a powerful electromagnetic wave capable of disabling any electronics within the blast radius.',
+          role:'Interdiction',
+        },
+        {
+          name:'Eclipse',
+          description:'The Aegis Eclipse is a bomber designed to get in and strike before its even spotted. After extensive service with the UEE, this high-tech military stalwart is making its debut on the civilian market for 2947.',
+          role:'Stealth bomber',
+        },
+        {
+          name:'Gladius',
+          description:'The Gladius is an older design which has been updated over the years to keep up with modern technology. In military circles, the Gladius is beloved for its performance and its simplicity. A fast, light fighter with a laser-focus on dogfighting, the Gladius is an ideal interceptor or escort ship.',
+          role:'Light fighter',
+        },
+        {
+          name:'Hammerhead',
+          description:'A fast patrol ship with multiple turrets designed to combat fighters, the Hammerhead is equally suited to support larger capital ships in a fleet or act as a flagship for fighter groups.',
+          role:'Heavy gunship',
+        },
+        {
+          name:'Idris-K',
+          description:'The Aegis Idris-K is an aftermarket special edition of the Idris-P that features additional equipments tailored to dealing with the swarm threat of carrier-type ships. Compared to the Idris-P, Idris-K has an additional size 10 laser beam, four point defense turrets that replaced the remote turrets, and a missile turret that replaced a manned turret. Both Idris-P and Idris-M can be converted to this variant using the aftermarket kit.',
+          role:'Frigate',
+        },
+        {
+          name:'Idris-M',
+          description:'Larger than a bomber but smaller than a ship of the line, frigates occupy an interesting space in the pantheon of warships. While they lack the heavy armor and the capital weaponry of a cruiser, frigates are more maneuverable and are highly configurable.',
+          role:'Frigate',
+        },
+        {
+          name:'Idris-P',
+          description:'A mark two "peacekeeper" variant developed for the UEE patrol services, the Idris-P strips the standard ships ship-to-ship gun and spinal mount in favor of additional cargo capacity and superior speed.',
+          role:'Frigate',
+        },
+        {
+          name:'Javelin',
+          description:'Designed for use by the UEE military, the Javelin is a massive, modular capital ship that can be appropriated for entrepreneurial use. With a detailed interior, plenty of modular room options and a high crew capacity, the Javelin is a ship that has made a name for itself in a variety of roles.',
+          role:'Destroyer',
+        },
+        {
+          name:'Nautilus',
+          description:'With four centuries of distinguished service under its belt, The Aegis Dynamics Nautilus tactical minelayer represents the ultimate in strategic combat engineering, with fully-integrated mine-deployment, sweeping and disarming capabilities.',
+          role:'Minelayer',
+        },
+        {
+          name:'Reclaimer',
+          description:'The Aegis Reclaimer is an industrial salvage ship. Equipped with a reinforced cargo bay, a long-range jump drive and launch pods for unmanned drones, the Reclaimer is an ideal ship for taking advantage of deep space wrecks. Tractor beams, floodlights, scanner options and docking ports round out the tools on this capable, utilitarian spacecraft.',
+          role:'Heavy salvage',
+        },
+        {
+          name:'Redeemer',
+          description:'Designed by Star Citizens backers, the Aegis Redeemer is a powerful fighting ship capable of holding its own in combat with a powerful weapons payload. Dotted with turrets and missiles, the Redeemer also doubles as an armored landing craft capable of delivering armored soldiers for first person combat!',
+          role:'Gunship',
+        },
+        {
+          name:'Retaliator Base',
+          description:'The Aegis Dynamics’ Retaliator has landed! One of the United Empire of Earth’s most powerful warbirds, the Retaliator was designed as a fearsome weapons platform designed to strike and kill capital ships. A key portion of the UEE’s power projection, Retaliator squadrons have served with distinction against outlaws, the Vanduul and elsewhere. The base version of the Retaliator is customizable with additional modules to fit your needs.',
+          role:'Heavy gunship',
+        },
+        {
+          name:'Retaliator Bomber',
+          description:'The Aegis Dynamics’ Retaliator has landed! One of the United Empire of Earth’s most powerful warbirds, the Retaliator was designed as a fearsome weapons platform designed to strike and kill capital ships. A key portion of the UEE’s power projection, Retaliator squadrons have served with distinction against outlaws, the Vanduul and elsewhere. This version of the Retaliator includes the bomb bay and torpedo launcher.',
+          role:'Heavy bomber',
+        },
+        {
+          name:'Sabre',
+          description:'Part of Aegis Dynamics’ Phase Two of new ship models, the Sabre was designed as a space superiority fighter for those situations where you need to leave a lighter footprint. Designed to be a rapid responder, the Sabre is more than capable of establishing battlefield dominance for any number of combat scenarios.',
+          role:'Stealth fighter',
+        },
+        {
+          name:'Sabre Comet',
+          description:'Created as part of the ‘Masters of Flight’ series in conjunction with the flight-sim Arena Commander, the Comet pays tribute to famed pilot Captain Kamur Dalion for his work with Aegis to usher in a new era of combat ship design. This Sabre comes equipped with a specialized dogfighting focused loadout and a custom special edition livery honoring this iconic ship.',
+          role:'Medium fighter',
+        },
+        {
+          name:'Sabre Raven',
+          description:'Part of Aegis Dynamics’ Phase Two of new ship models, the Sabre was designed as a space superiority fighter for those situations where you need to leave a lighter footprint. They have raised the bar yet again with their Raven variant, maintaining all the speed and maneuverability of its Sabre forebear, but with a lower ship signature, making it a fast, stealthy infiltrator.',
+          role:'Interdiction',
+        },
+        {
+          name:'Vanguard Harbinger',
+          description:'The Vanguard Harbinger is Earth’s standard fighter-bomber, converting the standard Warden model’s escape pod into a potent bomb bay. The extended range of the Vanguard and the relatively small profile mean that it can go where carrier-based planes or larger strategic bombers don’t… and then strike hard and make it back to frontier bases. The Vanguard Harbinger is a powerful bomber that can operate out of the roughest forward operating bases.',
+          role:'Bomber',
+        },
+        {
+          name:'Vanguard Hoplite',
+          description:'The Vanguard Hoplite is a cross between the winning Vanguard deep space fighter and a dedicated boarding ship. Adapted from proven assault ship designs, the Hoplite is the perfect tool for inserting an armored strike team with enough firepower to get them out again.',
+          role:'Dropship',
+        },
+        {
+          name:'Vanguard Sentinel',
+          description:'The Vanguard Sentinel is a ship that’s designed to fight smart instead of taking enemies head on. The conversion features an AR cockpit, an external e-War pod, decoy missiles and a set of EMP charges. Vanguard Sentinels often provide necessary combat support for combined operations. A lone Sentinel assigned wild weasel tasks is frequently paired with Harbinger bombers and Warden escorts for large attack missions.',
+          role:'Interdiction',
+        },
+        {
+          name:'Vanguard Warden',
+          description:'The A3G Vanguard Warden is one of Aegis Dynamics most versatile and deadly long-range fighters. With an extra heavy frame, and an extra nasty loadout, the Warden is an absolute beast on the frontlines of any assault operation.',
+          role:'Heavy fighter',
+        },
+        {
+          name:'Vulcan',
+          description:'Refuel. Repair. Rearm. Become a one-person support crew with Aegis Dynamics’ versatile Vulcan, supplying aid to pilots on the fly. Whether pinned down under heavy fire and in need of ammunition, low on quantum fuel after an ill-planned jump, or stranded in unknown space with a busted thruster, a pilot in distress can always count on a Vulcan and its cadre of drones to lend speedy, efficient assistance. Outfit your Vulcan with eye-catching livery and become a beacon of hope, even in the darkest, most treacherous corners of the ‘verse.',
+          role:'Medium repair/refuel',
+        }
         ],
       anvil: [
         'Arrow','C8 Pisces','C8R Pisces Rescue','C8X Pisces Expedition','Carrack','Crucible','F7A Hornet','F7A Hornet MK II','F7A-R Hornet Tracker','F7C Hornet','F7C-M Super Hornet','F7C-R Hornet Tracker','F7C-S Hornet Ghost','F8A Lightning','F8C Lightning','Gladiator','Hawk','Hurricane','Legionnaire','Liberator','Terrapin','Valkyrie'
@@ -455,6 +571,13 @@ export default {
         'Javelin','Idris','890 Jump'
         ],
     };
+  },
+  methods: {
+    updateInfo(ships) {
+      this.vehicleName = ships.name
+      this.vehicleDescription = ships.description
+      this.vehicleRole = ships.role
+    }
   }
 };
 </script>
