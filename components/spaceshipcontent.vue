@@ -363,47 +363,47 @@ export default {
       aegis: [
         {
           name:'Avenger Stalker',
-          description:'Initially designed as a frontline carrier for the military, the Avenger Stalker took a different path, ultimately having a long and storied career as the standard patrol craft of the UEE Advocacy. Utilizing its cargo hold for prisoner transport, the Avenger features a sturdy, reliable hull and the capacity for larger-than-expected engine mounts.',
+          description:"Initially designed as a frontline carrier for the military, the Avenger Stalker took a different path, ultimately having a long and storied career as the standard patrol craft of the UEE Advocacy. Utilizing its cargo hold for prisoner transport, the Avenger features a sturdy, reliable hull and the capacity for larger-than-expected engine mounts.",
           role:'Interdiction',
         },
         {
           name:'Avenger Titan',
-          description:'With extra room in the back, the Titan’s hold is free to carry cargo. Couple that with the Avenger’s tried and true combat abilities and you’ve got a light cargo hauler that’s more than capable of handling itself in a fight.',
+          description:"With extra room in the back, the Titan’s hold is free to carry cargo. Couple that with the Avenger’s tried and true combat abilities and you’ve got a light cargo hauler that’s more than capable of handling itself in a fight.",
           role:'Light freight',
         },
         {
           name:'Avenger Warlock',
-          description:'Outfitted with a Behring REP-8 EMP Generator, the Warlock makes non-lethal suppression possible via a powerful electromagnetic wave capable of disabling any electronics within the blast radius.',
+          description:"Outfitted with a Behring REP-8 EMP Generator, the Warlock makes non-lethal suppression possible via a powerful electromagnetic wave capable of disabling any electronics within the blast radius.",
           role:'Interdiction',
         },
         {
           name:'Eclipse',
-          description:'The Aegis Eclipse is a bomber designed to get in and strike before its even spotted. After extensive service with the UEE, this high-tech military stalwart is making its debut on the civilian market for 2947.',
+          description:"The Aegis Eclipse is a bomber designed to get in and strike before its even spotted. After extensive service with the UEE, this high-tech military stalwart is making its debut on the civilian market for 2947.",
           role:'Stealth bomber',
         },
         {
           name:'Gladius',
-          description:'The Gladius is an older design which has been updated over the years to keep up with modern technology. In military circles, the Gladius is beloved for its performance and its simplicity. A fast, light fighter with a laser-focus on dogfighting, the Gladius is an ideal interceptor or escort ship.',
+          description:"The Gladius is an older design which has been updated over the years to keep up with modern technology. In military circles, the Gladius is beloved for its performance and its simplicity. A fast, light fighter with a laser-focus on dogfighting, the Gladius is an ideal interceptor or escort ship.",
           role:'Light fighter',
         },
         {
           name:'Hammerhead',
-          description:'A fast patrol ship with multiple turrets designed to combat fighters, the Hammerhead is equally suited to support larger capital ships in a fleet or act as a flagship for fighter groups.',
+          description:"A fast patrol ship with multiple turrets designed to combat fighters, the Hammerhead is equally suited to support larger capital ships in a fleet or act as a flagship for fighter groups.",
           role:'Heavy gunship',
         },
         {
           name:'Idris-K',
-          description:'The Aegis Idris-K is an aftermarket special edition of the Idris-P that features additional equipments tailored to dealing with the swarm threat of carrier-type ships. Compared to the Idris-P, Idris-K has an additional size 10 laser beam, four point defense turrets that replaced the remote turrets, and a missile turret that replaced a manned turret. Both Idris-P and Idris-M can be converted to this variant using the aftermarket kit.',
+          description:"The Aegis Idris-K is an aftermarket special edition of the Idris-P that features additional equipments tailored to dealing with the swarm threat of carrier-type ships. Compared to the Idris-P, Idris-K has an additional size 10 laser beam, four point defense turrets that replaced the remote turrets, and a missile turret that replaced a manned turret. Both Idris-P and Idris-M can be converted to this variant using the aftermarket kit.",
           role:'Frigate',
         },
         {
           name:'Idris-M',
-          description:'Larger than a bomber but smaller than a ship of the line, frigates occupy an interesting space in the pantheon of warships. While they lack the heavy armor and the capital weaponry of a cruiser, frigates are more maneuverable and are highly configurable.',
+          description:"Larger than a bomber but smaller than a ship of the line, frigates occupy an interesting space in the pantheon of warships. While they lack the heavy armor and the capital weaponry of a cruiser, frigates are more maneuverable and are highly configurable.",
           role:'Frigate',
         },
         {
           name:'Idris-P',
-          description:'A mark two "peacekeeper" variant developed for the UEE patrol services, the Idris-P strips the standard ships ship-to-ship gun and spinal mount in favor of additional cargo capacity and superior speed.',
+          description:"A mark two 'peacekeeper' variant developed for the UEE patrol services, the Idris-P strips the standard ships ship-to-ship gun and spinal mount in favor of additional cargo capacity and superior speed.",
           role:'Frigate',
         },
         {
@@ -478,13 +478,160 @@ export default {
         }
         ],
       anvil: [
-        'Arrow','C8 Pisces','C8R Pisces Rescue','C8X Pisces Expedition','Carrack','Crucible','F7A Hornet','F7A Hornet MK II','F7A-R Hornet Tracker','F7C Hornet','F7C-M Super Hornet','F7C-R Hornet Tracker','F7C-S Hornet Ghost','F8A Lightning','F8C Lightning','Gladiator','Hawk','Hurricane','Legionnaire','Liberator','Terrapin','Valkyrie'
+        {
+          name:'Arrow',
+          description:"Meet Anvils ‘light fighter of the future’. Featuring an ultra-aerodynamic frame, slight profile, and the most advanced manoeuvring thruster tech available, it’s the most agile ship in its class. It can also hold its own in a knock-down-drag-out thanks to a generous standard weapons package that includes quad missile racks and a full complement of countermeasures. The Arrow is designed specifically to leave would-be interlopers thoroughly bewildered. After all, how can they kill what they can't catch?",
+          role:'Light fighter',
+        },
+        {
+          name:'Ballista',
+          description:"",
+          role:'Military',
+        },
+        {
+          name:'C8 Pisces',
+          description:"Additional firepower turns the base Pisces into a highly capable mini-explorer. Ideal for inter-system travel or investigating tight spots inaccessible to larger ships, it’s a small ship ready for big adventures.",
+          role:'Exploration',
+        },
+        {
+          name:'C8R Pisces Rescue',
+          description:"With the addition of an onboard Tier 3 Medical Bed, the C8R Pisces can treat minor injuries and keep a patient stable while transporting them to the safety of a larger ship, station, or nearby medical facility, making it an invaluable asset for short-range search and rescue.",
+          role:'Medical',
+        },
+        {
+          name:'C8X Pisces Expedition',
+          description:"Additional firepower turns the base Pisces into a highly capable mini-explorer. Ideal for inter-system travel or investigating tight spots inaccessible to larger ships, it’s a small ship ready for big adventures.",
+          role:'Exploration',
+        },
+        {
+          name:'Carrack',
+          description:"The Anvil Carrack features reinforced fuel tanks for long-duration flight, an advanced jump drive, and a dedicated computer core for jump charting operations. Originally a military exclusive, the Carrack is now available for civilian use. On-board accommodations include crew medical and repair facilities, and a mapping-oriented sensor suite.",
+          role:'Expedition',
+        },
+        {
+          name:'Centurion',
+          description:"Built on Anvil’s popular Atlas Platform, the Centurion presents a tactical solution for short-range anti-aircraft operations. Dominate any combat zone by assuring immediate threats from above are dealt with quickly and efficiently, thanks to the Centurion’s custom energy-based AA turret.",
+          role:'Combat',
+        },
+        {
+          name:'Crucible',
+          description:"A so-called “flying toolbox,” the Crucible is Anvil Aerospace’s first dedicated repair ship. Featuring a rotating control bridge and a detachable pressurized workspace, the Crucible is a versatile mobile garage equipped with repair arms, a drone operation center and all the equipment needed to overhaul a damaged craft back into fighting shape.",
+          role:'Heavy repair',
+        },
+        {
+          name:'F7A Hornet',
+          description:"The UEE Navys premier carrier-based fighter craft, the F7A is the front-line attack ship for military combat missions. While not outfitted for long range runs, the Hornet can take her share of hits... and dish out a consistent, powerful response.",
+          role:'Medium fighter',
+        },
+        {
+          name:'F7A Hornet MK II',
+          description:"The Anvil F7A Hornet Mk II is the cutting-edge carrier-based fighter revamped from the older F7A Hornet model, the UEE military version of the Hornet.",
+          role:'Medium fighter',
+        },
+        {
+          name:'F7C Hornet',
+          description:"To the enemy, it is a weapon never to be underestimated. To allies, it's a savior. The F7C Hornet is the same dependable and resilient multi-purpose fighter that has become the face of the UEE Navy. The F7C is the foundation to build on and meet whatever requirements you have in mind.",
+          role:'Medium fighter',
+        },
+        {
+          name:'F7C-M Super Hornet',
+          description:"The closest to the Military load-out as is legally possible for a Civilian model, the F7C-M Super Hornet reattaches the ball turret and offers near milspec parts under the hood. Proving that two heads are better than one, a second seat has been added to split the logistic and combat duty, making the Super Hornet a truly terrifying mark to engage.",
+          role:'Medium fighter',
+        },
+        {
+          name:'F7C-R Hornet Tracker',
+          description:"If the Ghost is made to hide, the Tracker is made to seek. The F7C-R Tracker boasts an advanced radar suite making it ideal for deep-space explorers who require depth and accuracy in their scan packages. Local militia and larger merc units will also repurpose Trackers to act as mobile C&C ships for their squadrons.",
+          role:'Pathfinder',
+        },
+        {
+          name:'F7C-S Hornet Ghost',
+          description:"Through a combination of low-emission drives, low-draw weapons, and Void Armor technology capable of diffusing scans, the F7C-S Ghost is built for the pilot who wants to keep a low profile. The Ghost is capable of slipping past the most ardent of observers to accomplish whatever goal you need to accomplish. Don't worry, we won't ask.",
+          role:'Stealth fighter',
+        },
+        {
+          name:'Gladiator',
+          description:"The civilian model of the Gladiator appeals to those that want explore the ‘Verse with a bit of added security. Supporting a maximum of two, the Gladiator is perfectly equipped to explore and fight with or without a wingman. The Civilian model allows pilots to choose between an extra cargo hold or a bomb bay.",
+          role:'Bomber',
+        },
+        {
+          name:'Hawk',
+          description:"A small, light fighter with an emphasis on weaponry, the Hawk boasts an impressive arsenal of lethal and non-lethal weapons, making it a perfect ship for independent bounty hunters or local security looking for a little more punch.",
+          role:'Light fighter',
+        },
+        {
+          name:'Hurricane',
+          description:"Big things do come in small packages: the Hurricane is a fighting spacecraft that packs a deadly punch into a slight fuselage. The spacecraft compensates for its lack of creature comforts with its powerful armament - six guns capable of blasting their way through nearly anything. Hurricane pilots have yet to find an enemy shield they can't knock down.",
+          role:'Heavy fighter',
+        },
+        {
+          name:'Legionnaire',
+          description:"The Anvil Legionnaire presents the civilian market with a military style boarding vessel capable of occupying ships of varying sizes, crews, and capacities. High-performance jump seats safely transport a boarding party of up to ten into the action, while integrated systems let your copilot bypass security protocols on the target vessel, mitigating risk like never before.",
+          role:'Boarding',
+        },
+        {
+          name:'Liberator',
+          description:"Anvil continues its tradition of excellence with the Liberator, an open-air vehicle carrier that applies the tradition of long-range transport to a smaller scale. Designed with the same quantum drive and long-distance capabilities of military-spec carriers and pathfinders but tailored to the civilian market, the Liberator puts your fleet on the front lines of any operation.",
+          role:'Light carrier',
+        },
+        {
+          name:'Spartan',
+          description:"",
+          role:'Transport',
+        },
+        {
+          name:'Terrapin',
+          description:"Outfitted with long-range scanners and encased in heavy armor and oversized shields, the U4A-3 Terrapin can face potentially hazardous circumstances with confidence, making it the ultimate combat scout and reconnaissance vehicle, at least according to Anvil.",
+          role:'Pathfinder',
+        },
+        {
+          name:'Valkyrie',
+          description:"In the days of antiquity, the Valkyrie were believed to choose who would live and who would die on the field of war. Now, Anvil is putting that choice in your hands. Seize fate and turn the tide of battle. Rugged, high-performance jump seats safely transport up to twenty personnel into and out of the fray. A vehicle bay and speed ramp efficiently launch ground-based transport or reconnaissance vehicles for unmatched support. Four powerful VTOL thrusters facilitate surgically precise take-offs and landings, while a devastating array of weaponry blurs the line between dropship and gunship.",
+          role:'Dropship',
+        },
         ],
       aopoa: [
-        'Khartu-al','Nox','Santok-yai'
+        {
+          name:'Khartu-al',
+          description:"The Xi'an Aopoa corporation manufactures an export model of the Qhire Khartu, the Khartu-al, for sale to Human civilians. The export model features the same Xi'an maneuvering rig, but control surfaces modified for Human use and a more limited armament.",
+          role:'Light fighter',
+        },
+        {
+          name:'Nox',
+          description:"Hit the skids with the 2947 Nox. This speedy and maneuverable open-canopy racer from Aopoa is capable of zipping along planet surfaces or deep space. Available for the first time in Human space, the Nox has been specifically redesigned for Human pilots, so grab your ship and head to the racetrack today.",
+          role:'Racing',
+        },
+        {
+          name:"San'Tok.Yai",
+          description:"Harnessing the power of next-generation Xi'an flight systems, upgraded dual-vector thrusters, and a daunting weapons package, Aopoa has crafted a fighter that retains the nimble dexterity and tight handling the brand is known for. All with the added ability to pack a serious wallop when the situation calls for it. Welcome to the future of spaceflight, courtesy of the Xi'an Empire and Aopoa.",
+          role:'Medium fighter',
+        },
         ],
       argo: [
-        'MOLE','MPUV Cargo','MPUV Personnel','RAFT','SRV'
+        {
+          name:'MOLE',
+          description:"ARGO’s pragmatic no-nonsense approach to ship design is celebrated in the unmistakable silhouette of the MOLE. Just one look at this machine and you know it means business. Tap into your full potential with the combined force of ARGO’s patented trilateral mining system. The MOLE has a total of 24 mineral pods, each holding 12 SCU. Eight pods are usable at one time – when they’re full, either head home or jettison them for collection by another vessel and carry on mining. Three independently controlled articulated extraction stations allow for maximum power and near-limitless versatility. The MOLE lives by the adage ’many hands make for light work’.",
+          role:'Prospecting & Mining',
+        },
+        {
+          name:'MPUV Cargo',
+          description:"The ARGO Astronautics MPUV-1C (commonly ‘Argo Cargo’) is a dedicated merchant transfer ship, a ubiquitous intergalactic stevedore. Vast numbers of Argo Cargos are responsible for loading and unloading goods onto massive long-haul transports and miners that cannot otherwise land on planets or drydocks, such as the Hull D and the Orion. Some captains choose to own and operate their own Argo, while others pay privately owned ships operating as port services a rental fee for performing the unloading process. Boaty McBoatface.",
+          role:'Light freight',
+        },
+        {
+          name:'MPUV Personnel',
+          description:"The ARGO Astronautics MPUV-1P (commonly ‘Argo Personnel.’) is geared towards a simple but incredibly important responsibility: moving groups of people from place to place. The UEE Navy uses MPUV-1Ps extensively, and any new recruit can likely recall those terrifying moments in which such a ship carried them to their first space assignment. In civilian hands, Argo Personnel ships are adapted for everything from standard taxi services to use as makeshift combat dropships. The ARGO is capable of carrying up to eight Humans and their equipment.",
+          role:'Passenger',
+        },
+        {
+          name:'RAFT',
+          description:"As it does with all its industrial concerns, Argo takes cargo transport very seriously, on every scale. The RAFT is no exception, able to carry three standardized 32-SCU cargo containers for a total hauling capacity of 96 SCU. Perfect for entry-level haulers and old pros alike, the RAFT is an ideal solution for reliable local freight transport. Once again, Argo gets the job done.",
+          role:'Medium freight',
+        },
+        {
+          name:'SRV',
+          description:"When it comes to getting the job done, ARGO doesn’t mess around. From simple freight and cargo towing to harrowing search-and-rescue operations, the SRV handles whatever you can throw at it. The bespoke tractor system utilizes an innovative plate and arm combination, allowing for effortless solo use as well as precision team towing for bigger jobs. Your crew and passengers stay safe too thanks to durable shields and heavy-duty armor that keep the cockpit and components secure when the situation gets hairy.",
+          role:'Recovery',
+        },
         ],
       banu: [
         'Defender','Merchantman'
