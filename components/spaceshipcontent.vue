@@ -261,70 +261,76 @@
 <!-- Ship Information Card -->
   <div class="rightcard">
     <div class="col-md-3">
-    <h4>
-    {{vehicleName}}
-    </h4>
-    <div class="vehicleText">
-    <p>
-    Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
-    </p>
-    </div>
+      <h4>
+      {{vehicleName}}
+      </h4>
+      <div class="vehicleText">
+        <p>
+        Vehicle information can go here, there's quite a lot of it to be fair, but it still belongs here.
+        </p>
+      </div>
       <va-divider />
       <table class="infoCard">
-      <tr>
-        <td class="shipRole">
-        <h4>Role</h4><br><p>Value</p>
-        </td>
-        <td class="shipSize">
-        <h4>Size</h4><br><p>Value</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="shipDimensions">
-        <h4>Dimensions</h4><br><p>Length x<br>Width x<br>Height x</p>
-        </td>
-        <td class="shipFuel">
-        <h4>Fuel Capacity</h4>
-        <br>
-        <p>Quantum Value<br>Hydrogen Value</p>
-        </td>
-      </tr>
-      <tr>
-      <td class="shipShields">
-      <h4>Shield Capacity</h4>
-      <br>
-      <p>Shield Value</p>
-      </td>
-      <td class="shipHealth">
-      <h4>Hull Health</h4>
-      <br>
-      <p>Hitpoint Value</p>
-      </td>
-      </tr>
-      <tr>
-      <td class="shipPower">
-      <h4>Power</h4>
-      <br>
-      <p>Power Value</p>
-      </td>
-      <td class="shipCooling">
-      <h4>Cooling Capacity</h4>
-      <br>
-      <p>Cooling Value</p>
-      </td>
-      </tr>
-      <tr>
-      <td class="shipEM">
-      <h4>EM Emissions</h4>
-      <br>
-      <p>EM Value</p>
-      </td>
-      <td class="shipIR">
-      <h4>IR Emissions</h4>
-      <br>
-      <p>IR Value</p>
-      </td>
-      </tr>
+        <tr>
+          <td class="shipRole">
+            <h4>Role</h4>
+            <br>
+            <p>Value</p>
+          </td>
+          <td class="shipSize">
+            <h4>Size</h4>
+            <br>
+            <p>Value</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="shipDimensions">
+            <h4>Dimensions</h4>
+            <br>
+            <p>Length x<br>Width x<br>Height x</p>
+          </td>
+          <td class="shipFuel">
+            <h4>Fuel Capacity</h4>
+            <br>
+            <p>Quantum Value<br>Hydrogen Value</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="shipShields">
+            <h4>Shield Capacity</h4>
+            <br>
+            <p>Shield Value</p>
+          </td>
+          <td class="shipHealth">
+            <h4>Hull Health</h4>
+            <br>
+            <p>Hitpoint Value</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="shipPower">
+            <h4>Power</h4>
+            <br>
+            <p>Power Value</p>
+          </td>
+          <td class="shipCooling">
+            <h4>Cooling Capacity</h4>
+            <br>
+            <p>Cooling Value</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="shipEM">
+            <h4>EM Emissions</h4>
+            <br>
+            <p>EM Value</p>
+          </td>
+          <td class="shipIR">
+            <h4>IR Emissions</h4>
+            <br>
+            <p>IR Value</p>
+          </td>
+        </tr>
     </table>
     </div>
   </div>
