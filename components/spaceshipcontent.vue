@@ -24,120 +24,120 @@
   <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
     <span v-for="ships in anvil">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="aopoa" v-if="selectedCompany === 'AopoA'">
     <span v-for="ships in aopoa">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
     <span v-for="ships in argo">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="banu" v-if="selectedCompany === 'Banu Souli'">
     <span v-for="ships in banu">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
     <span v-for="ships in consol">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
     <span v-for="ships in crusader">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="drake" v-if="selectedCompany === 'Drake Interplanetary'">
     <span v-for="ships in drake">
       <td>
-      <button></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
     <span v-for="ships in esperia">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
     <span v-for="ships in gatac">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
     <span v-for="ships in greycat">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
     <span v-for="ships in kruger">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
     <span v-for="ships in misc">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
     <span v-for="ships in origin">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
     <span v-for="ships in rsi">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
   <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
     <span v-for="ships in tumbril">
       <td>
-      <button :key="ships" @click="vehicleName = ships"></button>
-      <p> {{ ships }} </p>
+      <button :key="ships.name" @click="updateInfo(ships)"></button>
+      <p> {{ ships.name }} </p>
       </td>
     </span>
   </div>
@@ -688,13 +688,155 @@ export default {
         },
         ],
       crusader: [
-        'A1 Spirit','A2 Hercules','Ares Inferno','Ares Ion','C1 Spirit','C2 Hercules','E1 Spirit','Genesis Starliner','M2 Hercules','Mercury Star Runner'
+        {
+          name:'A1 Spirit',
+          description:"Crusader Industries brings its usual commitment to excellence directly to the civilian market with the A1 Spirit, a mid-size multi-purpose starship equipped as a light bomber but packing enough versatility to tackle multiple roles and unpredictable jobs.",
+          role:'Bomber',
+        },
+        {
+          name:'A2 Hercules',
+          description:"The A2 gunship has been used to devastating effect in airborne assaults, search and rescue operations, and landing initiatives. With more than double the firepower of the M2, and a custom bomb bay capable of delivering a staggering payload, the A2 caters to anyone hauling massive amounts of cargo through potentially unfriendly skies.",
+          role:'Heavy bomber/transport',
+        },
+        {
+          name:'Ares Inferno',
+          description:"Whether heading up a crew or hunting big ships solo, the Ares Inferno is a force to be reckoned with. This ballistic Gatling-equipped variant tears through gunship armor and turns smaller fighters to dust in seconds.",
+          role:'Heavy fighter',
+        },
+        {
+          name:'Ares Ion',
+          description:"Spark fear in the corridors of the most formidable gunships and frigates with the Ares Ion. This laser-equipped variant delivers extremely powerful shots to quickly disable the shields of even the biggest enemy vessels.",
+          role:'Heavy fighter',
+        },
+        {
+          name:'C1 Spirit',
+          description:"Crusader Industries brings its usual commitment to excellence directly to the civilian market with the C1 Spirit, a mid-size multi-purpose starship built for cargo transport and delivery but packing enough versatility to tackle multiple roles and unpredictable jobs.",
+          role:'Medium freight',
+        },
+        {
+          name:'C2 Hercules',
+          description:"Utilizing the patented Hercules military-grade spaceframe and expanding cargo capacity, while sacrificing barely any firepower, the C2 has taken the private sector by storm. It has become the industry standard for racing teams, ship dealers and manufacturers, construction orgs, mining corporations, and even large-scale touring entertainment outfits.",
+          role:'Transport',
+        },
+        {
+          name:'E1 Spirit',
+          description:"Crusader Industries brings its usual commitment to excellence directly to the civilian market with the E1 Spirit, a mid-size multi-purpose starship aiming to redefine executive travel with VIP accommodations while packing enough versatility to tackle multiple roles and unpredictable jobs.",
+          role:'Passenger',
+        },
+        {
+          name:'Genesis Starliner',
+          description:"The Genesis is yet another landmark in Crusader Industries’ proud history of transport designs. This ship utilizes award-winning manufacturing techniques and the highest quality parts to create one thing; a next-generation passenger ship at a price that won’t break your budget. Crusader Industries’ proprietary NeoG engine technology offers some of the most efficient flight for a ship of its size.",
+          role:'Passenger',
+        },
+        {
+          name:'M2 Hercules',
+          description:"The M2 Hercules is the UEE's premier tactical starlifter. The ship's potent combination of capacity, maneuverability, and durability make it the obvious choice in large-scale transport, and a robust weapons package assures your cargo, and crew, gets to where they’re going in one piece.",
+          role:'Military transport',
+        },
+        {
+          name:'Mercury Star Runner',
+          description:"The Mercury checks all the boxes expected of a dependable courier vessel, and then some. If you need it there fast and unscathed, you can’t do better than the Mercury. Built with the same engineering and design principals that has made Crusader the go-to manufacturer for galactic transport on any scale, the Star Runner chassis sets new standards for data and cargo conveyance.",
+          role:'Medium cargo/data',
+        },
         ],
       drake: [
-        'Buccaneer','Caterpillar','Corsair','Cutlass Black','Cutlass Blue','Cutlass Red','Cutlass Steel','Cutter','Dragonfly','Herald','Kraken','Kraken Privateer','Mule','Vulture'
+        {
+          name:'Buccaneer',
+          description:"The Buccaneer has been designed from the ground up to fly and fight the way you live. No leather interiors or hyperpillows here: the ‘Bucc is a scrapper designed to maneuver and fight above its weight class. This rough-and-tumble frontier fighter can be maintained in the worst of conditions in order to keep real, working space crews alive.",
+          role:'Interdiction',
+        },
+        {
+          name:'Caterpillar',
+          description:"First introduced in 2871, Drake Interplanetary’s Caterpillar has long proven to be a reliable, cost-effective multi-role vessel, capable of being outfitted for everything from mercantile operations to combat support. Long hailed as a hard-fought alternative to the ubiquitous Hull series, the Caterpillar is a freighter that doesn’t skimp on weaponry or customization.",
+          role:'Heavy freight',
+        },
+        {
+          name:'Corsair',
+          description:"Heed the call of uncharted space and harness the spirit of exploration with the Drake Corsair, a worthy companion, supporting you in battle, discovery, and delivery, wherever the winds of adventure may steer you.",
+          role:'Exploration',
+        },
+        {
+          name:'Cutlass Black',
+          description:"Drake Interplanetary claims that the Cutlass Black is a low-cost, easy-to-maintain solution for local in-system militia units. The larger-than-average cargo hold, RIO seat and dedicated tractor mount are, the company literature insists, for facilitating search and rescue operations.",
+          role:'Medium fighter/freight',
+        },
+        {
+          name:'Cutlass Blue',
+          description:"Sleek, mean, and royal. The Cutlass Blue adds missiles, a more aggressive engine, and Durasteel holding cells in the cargo bay to the standard model. The Cutlass Blue is the outworld militia standard ship of choice for patrols.",
+          role:'Interdiction',
+        },
+        {
+          name:'Cutlass Red',
+          description:"Is there a doctor in the house? The Cutlass Red converts the standard cargo hold to a well-equipped medical facility including two Medical Beds. This star bound ambulance features the Nav-E7 Long Range Scanner, and Secure Plus Docking Collar making it ideal for search and rescue. This model contains emergency light-bars and a red emergency themed paint job for easy identification.",
+          role:'Medical',
+        },
+        {
+          name:'Cutlass Steel',
+          description:"Drake knows that it’s a dog-eat-dog ‘verse out there. Away from the so-called protection of the UEE the law of the jungle prevails – whoever has the guns, and the personnel makes the rules. Drake has your back in both of those departments with the Cutlass Steel.",
+          role:'Dropship',
+        },
+        {
+          name:'Cutter',
+          description:"Designed for hard-working folks of all stripes, the Cutter packs 4 SCU of cargo room and plenty of wallop into a rough and tumble, compact frame. It’s a ship that truly embodies the spirit of Drake: that no matter who you are or what you do, you can reach the stars.",
+          role:'Light freight',
+        },
+        {
+          name:'Dragonfly',
+          description:"The Drake Dragonfly is the perfect snub ship for anyone looking to live on the edge. With nothing separating the pilot from the dangers of space, the Dragonfly is as much an adventure as a ship! Dual-mode conversion allows the Dragonfly to operate on the ground or in space, and a rear-facing second seat means you can even take a passenger! This black model is Drake's standard production version.",
+          role:'Racing',
+        },
+        {
+          name:'Herald',
+          description:"The Drake Herald is a small, armored ship designed to safely get information from Point A to Point B. Featuring a powerful central engine (for high speed transit and generating the power needed for effective data encryption/containment), advanced encryption software and an armored computer core, the Herald is unique among personal spacecraft in that it is designed to be easily ‘cleaned’ when in danger of capture.",
+          role:'Medium data',
+        },
+        {
+          name:'Kraken',
+          description:"The Kraken is a protector and a beacon of freedom in a too-often cruel universe. For those tasked with safekeeping Citizens unable to protect themselves, the Kraken is both a sanctuary and a self-contained war machine ready to take on the most daunting adversaries. Drake has thrown out the rule book to redefine private-use capital-class ships, attack carriers, and the very nature of personal freedom. It's nothing if not a testament to the empowerment of the people.",
+          role:'Light carrier',
+        },
+        {
+          name:'Kraken Privateer',
+          description:"The Kraken is a protector and a beacon of freedom in a too-often cruel universe. For those tasked with safekeeping Citizens unable to protect themselves, the Kraken is both a sanctuary and a self-contained war machine ready to take on the most daunting adversaries. Drake has thrown out the rule book to redefine private-use capital-class ships, attack carriers, and the very nature of personal freedom. It's nothing if not a testament to the empowerment of the people.",
+          role:'Light carrier',
+        },
+        {
+          name:'Mule',
+          description:"The Drake Mule is your go-to workhorse for all sort of loading and hauling jobs, a six-wheeled beast of burden that’s always determined to execute the mission at hand. Whether you need to transport cargo over the roughest terrain possible or load it onto larger vessels and cargo decks, the Mule works. Plain and simple.",
+          role:'Transport',
+        },
+        {
+          name:'Vulture',
+          description:"Answer to no one, cut out the middle man, and throw caution to the wind. Rip wrecks like a pro and carve out your own place in the great big empty behind the stick of this rough, rugged salvage machine from Drake Interplanetary.",
+          role:'Light salvage',
+        },
         ],
       esperia: [
-        'Blade','Glaive','Prowler','Scythe','Talon','Talon Shrike'
+        {
+          name:'Blade',
+          description:"Vanduul light fighters, designated 'Blade', are often used as scouts and first wave assault crafts. Over the decades of conflict, they have been increasingly used to take out comm arrays and early warning systems. They have also served well as skirmisher units as their speed allows them to chase down ships attempting to flee. If engaged, expect the Blade to utilize its speed and agility to wear down your defenses.",
+          role:'Light fighter',
+        },
+        {
+          name:'Glaive',
+          description:"The Glaive is a symmetrical version of the Scythe. Generally flown by Vanduul with more combat experience, they are better armed and have two huge blades/wings as opposed to one on the standard Scythe. This model is a human reproduction created by the manufacturer Esperia.",
+          role:'Medium fighter',
+        },
+        {
+          name:'Prowler',
+          description:"Named after the UPE military designation, the Prowler is a modernized version of the infamous Tevarin armored personnel carrier. Esperia’s astroengineers were given unmitigated access to study original versions of the ship recently discovered in the Kabal system to help meticulously reconstruct the vehicle. Now, the Prowler is the perfect fusion of two cultures: the elegance and effectiveness of the Tevarin war machine combined with the reliability of modern Human technology.",
+          role:'Dropship',
+        },
+        {
+          name:'Talon',
+          description:"This ship is a recreation of the Tevarin Talon by Esperia. The Talon is the Tevarin equivalent to the Aegis Gladius or Vanduul Blade; a single-seat combat ship. The Talon is the perfect example of the Tevarin way of building a spaceship: maneuverable with powerful, directional 'Phalanx' shields but weak physical armour, as the Tevarin way of war was to strike first and strike hard, before using their Phalanx shields to cover their escape.",
+          role:'Light fighter',
+        },
+        {
+          name:'Talon Shrike',
+          description:"This ship is a recreation of the Tevarin Talon by Esperia. The Talon is the Tevarin equivalent to the Aegis Gladius or Vanduul Blade; a single-seat combat ship. The Talon is the perfect example of the Tevarin way of building a spaceship: maneuverable with powerful, directional 'Phalanx' shields but weak physical armour, as the Tevarin way of war was to strike first and strike hard, before using their Phalanx shields to cover their escape.",
+          role:'Light fighter',
+        },
         ],
       gatac: [
         'Railen'
