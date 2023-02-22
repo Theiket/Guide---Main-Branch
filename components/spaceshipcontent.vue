@@ -839,7 +839,11 @@ export default {
         },
         ],
       gatac: [
-        'Railen'
+        {
+          name:'Railen',
+          description:"Gatac’s first foray into the human market, the Railen is an elegant interspecies vessel perfect for any Human or Xi’an pilot looking for a safe, reliable solution for commercial-grade medium cargo hauling. Utilizing patented grav-lev technology, and time-tested designs updated for 2951 and beyond, the Railen is a prime example of why the Xi’an Empire has trusted House Gatac with production of its industrial vessels for centuries.",
+          role:'Medium freight',
+        },
         ],
       greycat: [
         'PTV','ROC','ROC-DS','STV','UTV'
