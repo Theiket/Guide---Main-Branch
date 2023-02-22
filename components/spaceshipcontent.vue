@@ -646,7 +646,46 @@ export default {
         },
         ],
       consol: [
-        'HoverQuad','Mustang Alpha','Mustang Beta','Mustang Delta','Mustang Gamma','Mustang Omega','Nomad','Pioneer'
+        {
+          name:'HoverQuad',
+          description:"You know that place where the roads end, and sky runs out? That little place at the very edge of adventure, where there’s nowhere to go but forward? Where over every dune, and around every patch of weird flora, you might tumble headlong into glorious unfamiliarity? That’s HoverQuad country, and it’s begging to be explored.",
+          role:'Racing',
+        },
+        {
+          name:'Mustang Alpha',
+          description:"Inspired by Consolidated Outland CEO Silas Koerner’s cutting edge vision, the Mustang Alpha is a sleek, stylish spacecraft that uses ultralight alloys to push power ratios to the limits, albeit sometimes unsafely. And now, with the optional Cargo Carrier, you can have the Alpha’s advantages without sacrificing carrying capacity.",
+          role:'Cargo',
+        },
+        {
+          name:'Mustang Beta',
+          description:"The Mustang Beta, with its unprecedented range, is made for long duration flights. The factory standard Tarsus Leaper Jump Engine enables the Beta to travel to the galaxy’s farthest systems with ease, while the ship’s unique Com4T living quarters will make the journey feel like you never left home.",
+          role:'Pathfinder',
+        },
+        {
+          name:'Mustang Delta',
+          description:"While it may not be able to go toe to toe with some of the military specific ships, by reinforcing the Mustang’s already strong hull construction with Consolidated Outland’s own line of Cavalry Class Mass Reduction Armor, the Delta has a reduced cross-sectional signature that evens the playing field.",
+          role:'Light fighter',
+        },
+        {
+          name:'Mustang Gamma',
+          description:"Consolidated Outland’s design and engineering teams have managed to tweak and refine the Mustang into an admirable racer. The end result, the Mustang Gamma, has smooth acceleration, and power on demand thanks to an innovative package featuring three powerful Magma Jet engines for maximum thrust.",
+          role:'Racing',
+        },
+        {
+          name:'Mustang Omega',
+          description:"Consolidated Outland teamed up with custom tuning company Accelerated Mass Design to create a limited edition racer that features a ramped up fuel intake for faster recycling of the ship’s already impressive boost system. To cap off the collaboration, AMD enlisted resident underground artist Sektor8 to design the dynamic paint job.",
+          role:'Racing',
+        },
+        {
+          name:'Nomad',
+          description:"Imagine the versatility of a medium-sized, multi-purpose freighter packed into a compact frame. Imagine a ship designed for lone pilots finding their way across a galaxy teeming with possibilities. The Nomad is ready to go anywhere and do anything - the perfect solution for anyone yearning to start a brand-new adventure.",
+          role:'Light freight',
+        },
+        {
+          name:'Pioneer',
+          description:"After their auspicious debut with the Mustang, Consolidated Outland has gone and changed the game again with the reveal of the Pioneer. This self-contained mobile construction yard is capable of creating planetary modular structures, ushering a new wave of aspiring colonists to customize their new homes on the frontier.",
+          role:'Heavy construction',
+        },
         ],
       crusader: [
         'A1 Spirit','A2 Hercules','Ares Inferno','Ares Ion','C1 Spirit','C2 Hercules','E1 Spirit','Genesis Starliner','M2 Hercules','Mercury Star Runner'
