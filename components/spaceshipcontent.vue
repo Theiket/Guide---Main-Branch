@@ -14,9 +14,9 @@
     </select>
     <br><br><br>
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
-    <span v-for="ships in aegis" :key="ships">
+    <span v-for="ships in aegis">
       <td>
-      <button @click=""></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
