@@ -634,7 +634,16 @@ export default {
         },
         ],
       banu: [
-        'Defender','Merchantman'
+        {
+          name:'Defender',
+          description:"Meet the Banu Defender, a multi-crew fighter whose patchwork design highlights technology from a variety of species. Featuring modest accommodations for its crew and easy access to components, the Defender gets its name from the role it serves: the first line of defense against enemy attacks. That's why the Defender makes the ideal companion to the Merchantman: one to do the heavy hauling and the other to perform the deadly dogfighting.",
+          role:'Light fighter',
+        },
+        {
+          name:'Merchantman',
+          description:"Banu traders are renowned for their merchant prowess, traveling the spacelanes and trading with everyone from humans to the Vanduul! Their sturdy, dedicated trading ships are prized beyond all other transports, sometimes passing from generation to generation of Banu.",
+          role:'Heavy freight',
+        },
         ],
       consol: [
         'HoverQuad','Mustang Alpha','Mustang Beta','Mustang Delta','Mustang Gamma','Mustang Omega','Nomad','Pioneer'
