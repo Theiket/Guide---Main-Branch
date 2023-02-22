@@ -846,10 +846,43 @@ export default {
         },
         ],
       greycat: [
-        'PTV','ROC','ROC-DS','STV','UTV'
+        {
+          name:'PTV',
+          description:"",
+          role:'Transport',
+        },
+        {
+          name:'ROC',
+          description:"At Greycat, we understand that mining isn't a one-size-fits-all operation, so we designed the ROC to be as hard-working and versatile as the miners who use it. Small enough to access hard-to-reach ore deposits, but with enough power to get through the tough jobs, the ROC perfectly complements any mining enterprise. It's perfectly at home supporting full-scale operations, and a first-rate starter vehicle for fledgling diggers. Whatever the task, with Greycat, you have the right tool for the job.",
+          role:'Mining',
+        },
+        {
+          name:'ROC-DS',
+          description:"At Greycat, we understand that mining isn't a one-size-fits-all operation, so we designed the ROC-DS to be as hard-working and versatile as the miners who use it. With more than double the ore capacity of the standard ROC, and a dedicated boom seat for manual laser operation, the ROC-DS makes big jobs manageable. Its the perfect compliment to any mining enterprise, from full-scale digs to fledgling operations. Whatever the task, with Greycat, mining duos now have the right tool to comfortably collect more ore.",
+          role:'Mining',
+        },
+        {
+          name:'STV',
+          description:"Get ready to have some serious fun on the job with the STV from Greycat. This Sport Terrain Vehicle was built by pros for pros and features blazing speed and convenient built-in storage.",
+          role:'Transport',
+        },
+        {
+          name:'UTV',
+          description:"",
+          role:'Transport',
+        },
         ],
       kruger: [
-        'P-52 Merlin','P-72 Archimedes'
+        {
+          name:'P-52 Merlin',
+          description:"Originally designed to pair with the RSI Constellation, the P-52 Merlin is now available to all pilots! A dedicated parasite fighter, the Merlin is designed to be transported from place to place aboard a larger ship. Boasting a centerline Gatling cannon and a Lightning Power engine, the Merlin is a fast, maneuverable ship that packs a surprising punch! Ideal for racing, local reconnaissance and fast combat.",
+          role:'Snub fighter',
+        },
+        {
+          name:'P-72 Archimedes',
+          description:"If you’re looking for something a little more agile, blaze among the stars with Kruger Intergalactic’s P-72 Archimedes. Whether for added security, exploring a system or simply the joy of flying, the Archimedes is the perfect companion snub craft. Featuring an extra intake and a lighter hull than its sister ship, the Archimedes delivers exceptional handling and boost capabilities in a sleek package you’ll want along for the ride.",
+          role:'Racing',
+        },
         ],
       misc: [
         'Expanse','Freelancer','Freelancer DUR','Freelancer MAX','Freelancer MIS','Hull A','Prospector','Razor','Razor EX','Razor LX','Reliant Kore','Reliant Mako','Reliant Sen','Reliant Tana','Starfarer','Starfarer Gemini'
