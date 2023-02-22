@@ -14,7 +14,7 @@
     </select>
     <br><br><br>
   <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
-    <span v-for="ships in aegis">
+    <span v-for="ships in aegis" :key="ships">
       <td>
       <button @click=""></button>
       <p> {{ ships }} </p>
@@ -24,7 +24,7 @@
   <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
     <span v-for="ships in anvil">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -32,7 +32,7 @@
   <div class="aopoa" v-if="selectedCompany === 'AopoA'">
     <span v-for="ships in aopoa">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -40,7 +40,7 @@
   <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
     <span v-for="ships in argo">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -48,7 +48,7 @@
   <div class="banu" v-if="selectedCompany === 'Banu Souli'">
     <span v-for="ships in banu">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -56,7 +56,7 @@
   <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
     <span v-for="ships in consol">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -64,7 +64,7 @@
   <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
     <span v-for="ships in crusader">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -80,7 +80,7 @@
   <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
     <span v-for="ships in esperia">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -88,7 +88,7 @@
   <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
     <span v-for="ships in gatac">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -96,7 +96,7 @@
   <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
     <span v-for="ships in greycat">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -104,7 +104,7 @@
   <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
     <span v-for="ships in kruger">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -112,7 +112,7 @@
   <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
     <span v-for="ships in misc">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -120,7 +120,7 @@
   <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
     <span v-for="ships in origin">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -128,7 +128,7 @@
   <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
     <span v-for="ships in rsi">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
@@ -136,7 +136,7 @@
   <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
     <span v-for="ships in tumbril">
       <td>
-      <button></button>
+      <button :key="ships" @click="vehicleName = ships"></button>
       <p> {{ ships }} </p>
       </td>
     </span>
