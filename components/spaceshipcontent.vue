@@ -885,7 +885,86 @@ export default {
         },
         ],
       misc: [
-        'Expanse','Freelancer','Freelancer DUR','Freelancer MAX','Freelancer MIS','Hull A','Prospector','Razor','Razor EX','Razor LX','Reliant Kore','Reliant Mako','Reliant Sen','Reliant Tana','Starfarer','Starfarer Gemini'
+        {
+          name:'Expanse',
+          description:"",
+          role:'Refinery',
+        },
+        {
+          name:'Freelancer',
+          description:"Freelancers are used as long haul merchant ships by major corporations, but they are just as frequently repurposed as dedicated exploration vessels by independent captains who want to operate on the fringes of the galaxy.",
+          role:'Medium freight',
+        },
+        {
+          name:'Freelancer DUR',
+          description:"The Freelancer DUR variant specializes in exploration. Sacrificing some of the cargo capacity of the standard Freelancer for an enhanced jump drive, a more advanced scanner, and an expanded fuel tank may seem like a bad call to some, but those who value discovery over profit will find it to be their ship of choice.",
+          role:'Expedition',
+        },
+        {
+          name:'Freelancer MAX',
+          description:"The Freelancer MAX variant is for those who prize increased cargo capacity over everything else. Combine that additional storage with MISC’s unrivaled dependability and reputation, and you can see why the MAX is the preferred transport for many independent haulers in Empire today.",
+          role:'Medium freight',
+        },
+        {
+          name:'Freelancer MIS',
+          description:"The Freelancer MIS is a limited edition militarized variant of the classic mercantile ship developed by the UEE. These were produced in very small quantity due to some early payload incidents. This version sacrifices the majority of the cargo capacity to make way for missiles.",
+          role:'Gunship',
+        },
+        {
+          name:'Hull A',
+          description:"The smallest, most affordable Hull. The Hull A is great for those just striking out in the galaxy on their own. The Hull A is most similar to the Aurora and Mustang, but lacks the ‘jack of all trades’ nature. Where the others trade cargo capacity for firepower or speed, the Hull A is 100% on-mission transport! Additionally, Hull A (and B) are often used as station-to-orbit ferries.",
+          role:'Medium freight',
+        },
+        {
+          name:'Prospector',
+          description:"For years, the Prospector has been the universe’s preferred mining vessel for solo operators. Featuring MISC’s sleek design sensibility and a bevy of upgraded high-tech mining tools, the 2947 Prospector perfectly balances form and functionality.",
+          role:'Prospecting & Mining',
+        },
+        {
+          name:'Razor',
+          description:"MISC makes a bid for the next Murray Cup with the all-new Razor. This advanced racer features an advanced composite spaceframe that puts pure speed ahead of everything else... it's the ship for pilots who want to leave the competition in the dust.",
+          role:'Racing',
+        },
+        {
+          name:'Razor EX',
+          description:"Outfitted with signature-reducing materials, the RAZOR-EX was a specialty build for the UEE Advocacy for use in surveillance and extraction operations. Although the EX was ultimately rejected for widespread use, MISC released a variation of the model for the public who were looking to keep a lower profile.",
+          role:'Stealth',
+        },
+        {
+          name:'Razor LX',
+          description:"The Razor gets supercharged. The LX features an overclocked engine to unleash blazing top speeds perfect. This power comes at a cost with reduced maneuverability and armaments making it ideal for straight-shot racing. But who needs weapons when you’re leaving your competition in the dust.",
+          role:'Luxury',
+        },
+        {
+          name:'Reliant Kore',
+          description:"Small supply runs from a planet's surface to a nearby orbital station have become commonplace. With bigger ships focusing more on the long-haul, the Reliant's standard 'Kore' loadout gives it enough carrying capacity for starting out with smaller runs while complementing MISC's Hull-series as a long-haul support ship.",
+          role:'Light freight',
+        },
+        {
+          name:'Reliant Mako',
+          description:"The Empire depends on up-to-the-second information, which is why reporters need to be able to go where the news is happening: wherever, whenever. Enter the Mako, all the flexibility and dependability of a MISC Reliant combined with a state of the art Image Enhancement suite and turret-mounted optics to capture every moment as it happens with the clarity and accuracy that makes headlines.",
+          role:'Reporting',
+        },
+        {
+          name:'Reliant Sen',
+          description:"Magellan, Pierce, Croshaw, names that echo through history thanks to their adventurous spirit, a curious nature and a reliable ship. The Reliant Sen is a versatile mobile science platform; outfitted with long range capabilities to take you further, longer, and an advanced sensor suite. Perfect for the aspiring explorer who wants to whisper their name into the halls of history.",
+          role:'Light science',
+        },
+        {
+          name:'Reliant Tana',
+          description:"With Humanity ever-expanding through the universe, the need for a versatile lightweight fighter has expanded with it. Easy to maintain with a rugged construction, the Reliant Tana makes for an ideal choice for frontier and outpost defense thanks to its custom high-yield power plant, stronger shields and additional weapon mounts.",
+          role:'Light fighter',
+        },
+        {
+          name:'Starfarer',
+          description:"The Starfarer differs from traditional bulk freighters in one key way: it is a dedicated fuel platform. The Starfarer is designed not only to load, store and protect fuel stasis units, it is designed to take in spaceborne gases and refine them for use without landing. And while it excels at this, the Starfarer can also be used to ferry traditional bulk cargo pods.",
+          role:'Heavy refuelling',
+        },
+        {
+          name:'Starfarer Gemini',
+          description:"The UEE military uses an adapted ‘rough and tumble’ Gemini variant of the Starfarer for their front-line operations, trading some cargo capacity and maneuverability for reinforced armor, increased shielding, more powerful engines and stronger manned turrets. The Gemini also includes an optional missile pod, which can be swapped for the fuel intake unit on either Starfarer variant’s nose.",
+          role:'Heavy refuelling',
+        },
         ],
       origin: [
         '100i','125a','135c','300i','315p','325a','350r','400i','600i Explorer','600i Touring','85X','890 Jump','G12','G12a','G12r','M50','X1','X1 Force','X1 Velocity'
