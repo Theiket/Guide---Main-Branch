@@ -1276,13 +1276,13 @@ export default {
           coolingrate:'232000',
         },
         ],
-      s2coolers:[
+      s2coolers: [
         'AbsoluteZero','Arctic','Aufeis','Avalanche','Boreal','Coldsnap','CoolCore','CryoStarEx','FrostStarEx','FullFrost','Graupel','Heatsink','HydroJet','Icebox','IceDive','Nightfall','Permafrost','RapidCool','Snowfall','Snowpack','Taiga','Whiteout','WinterStarEx'
         ],
-      s3coolers:[
+      s3coolers: [
         'Blizzard','Chillmax','CryoStarXL','Draug','Elsen','FrostStarXL','Galinstan','Hydropulse','Iceflush','Kragen','Mercury','Tempest','ThermalCore','WinterStarXL'
         ],
-      s4coolers:[
+      s4coolers: [
         'Idris','Javelin','890 Jump','Bengal'
         ],
       s1powerplants: [
@@ -1393,7 +1393,94 @@ export default {
         'Bengal','890 Jump','Idris','Reclaimer'
         ],
       s1shields: [
-        '5SA','6SA','7SA','AllStop','Banu Placeholder','Bulwark','Cloak','Falco','ForceWall','FR66','Guardian','Hex','Ink','Jaghte','Mirage','Palisade','SecureHyde','Shimmer','Steward','Targa','Veil','Web'
+        {
+          name:'5SA',
+          capacity:'',
+        },
+        {
+          name:'6SA',
+          capacity:'',
+        },
+        {
+          name:'7SA',
+          capacity:'',
+        },
+        {
+          name:'AllStop',
+          capacity:'',
+        },
+        {
+          name:'Banu Placeholder',
+          capacity:'',
+        },
+        {
+          name:'Bulwark',
+          capacity:'',
+        },
+        {
+          name:'Cloak',
+          capacity:'',
+        },
+        {
+          name:'Falco',
+          capacity:'',
+        },
+        {
+          name:'ForceWall',
+          capacity:'',
+        },
+        {
+          name:'FR66',
+          capacity:'',
+        },
+        {
+          name:'Guardian',
+          capacity:'',
+        },
+        {
+          name:'Hex',
+          capacity:'',
+        },
+        {
+          name:'Ink',
+          capacity:'',
+        },
+        {
+          name:'Jaghte',
+          capacity:'',
+        },
+        {
+          name:'Mirage',
+          capacity:'',
+        },
+        {
+          name:'Palisade',
+          capacity:'',
+        },
+        {
+          name:'SecureHyde',
+          capacity:'',
+        },
+        {
+          name:'Shimmer',
+          capacity:'',
+        },
+        {
+          name:'Steward',
+          capacity:'',
+        },
+        {
+          name:'Targa',
+          capacity:'',
+        },
+        {
+          name:'Veil',
+          capacity:'',
+        },
+        {
+          name:'Web',
+          capacity:'',
+        },
         ],
       s2shields: [
         '5MA','6MA','7MA','Armada','Aspis','Bamoty','Banu Placeholder','Bloc','Citadel','Coverall','FR76','FullStop','Haltur','Obscura','Rampart','RPel','SecureShield','Sheut','Shroud','Stop','Trenta','Umbra'
@@ -1405,7 +1492,66 @@ export default {
         'Bengal','Idris','Idris-Pirate','Javelin','890 Jump'
         ],
       s1quantumdrives: [
-        'Atlas','Beacon','Burst','Colossus','Drift','Eos','Expedition','Flood','FoxFire','Goliath','Hyperion','LightFire','Rush','Siren','Spectre','VK-00','Voyage','Vulcan','Wayfare','Zephyr'
+        {
+          name:'Atlas',
+        },
+        {
+          name:'Beacon',
+        },
+        {
+          name:'Burst',
+        },
+        {
+          name:'Colossus',
+        },
+        {
+          name:'Drift',
+        },
+        {
+          name:'Eos',
+        },
+        {
+          name:'Expedition',
+        },
+        {
+          name:'Flood',
+        },
+        {
+          name:'FoxFire',
+        },
+        {
+          name:'Goliath',
+        },
+        {
+          name:'Hyperion',
+        },
+        {
+          name:'LightFire',
+        },
+        {
+          name:'Rush',
+        },
+        {
+          name:'Siren',
+        },
+        {
+          name:'Spectre',
+        },
+        {
+          name:'VK-00',
+        },
+        {
+          name:'Voyage',
+        },
+        {
+          name:'Vulcan',
+        },
+        {
+          name:'Wayfare',
+        },
+        {
+          name:'Zephyr',
+        },
         ],
       s2quantumdrives: [
         'Aither','Bolon','Bolt','Cascade','Crossfield','Flash','Hemera','Huracan','Khaos','Nova','Odyssey','Quest','Sojourn','SparkFire','Spicule','SunFire','Torrent','XL1','Yaluk','Yeager'
