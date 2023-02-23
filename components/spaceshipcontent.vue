@@ -150,15 +150,15 @@
       <p>Weapons</p>
       <br>
       <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button @click="weapons = !weapons">
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
+        <va-button-group preset="plain" class="mb-6">
+          <va-button @click="weapons = !weapons">
+            <Icon name="bxs:caret-down-circle" />
+          </va-button>
+        </va-button-group>
       </div>
       <div v-if="weapons">
-      <br>
-      <p>Become Visible</p>
+        <br>
+        <p>Become Visible</p>
       </div>
     </div>
     <div class="shields">
@@ -166,19 +166,19 @@
       <p>Shields</p>
       <br>
       <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button @click="shields = !shields">
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
+        <va-button-group preset="plain" class="mb-6">
+          <va-button @click="shields = !shields">
+            <Icon name="bxs:caret-down-circle" />
+          </va-button>
+        </va-button-group>
       </div>
       <div class="componentSelect" v-if="shields">
         <span class="coolerButton" v-for="shield in s1shields">
           <button>
-          <h4> {{shield}} </h4>
+          <h4> {{shield.name}} </h4>
           <p>
           Grade | Class <br>
-          Capacity: numVal
+          Capacity: {{shield.capacity}}
           </p>
           </button>
         </span>
@@ -190,19 +190,19 @@
       <p>Power Plants</p>
       <br>
       <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button @click="powerplants = !powerplants">
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
+        <va-button-group preset="plain" class="mb-6">
+          <va-button @click="powerplants = !powerplants">
+            <Icon name="bxs:caret-down-circle" />
+          </va-button>
+        </va-button-group>
       </div>
       <div class="componentSelect" v-if="powerplants">
         <span class="coolerButton" v-for="powerplant in s1powerplants">
           <button>
-          <h4> {{powerplant}} </h4>
+          <h4> {{powerplant.name}} </h4>
           <p>
           Grade | Class <br>
-          Power: numVal
+          Power: {{powerplant.capacity}}
           </p>
           </button>
         </span>
@@ -215,19 +215,19 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-        <va-button @click="coolers = !coolers">
-        <Icon name="bxs:caret-down-circle" />
-        </va-button>
+          <va-button @click="coolers = !coolers">
+            <Icon name="bxs:caret-down-circle" />
+          </va-button>
         </va-button-group>
       </div>
       <div class="componentSelect" v-if="coolers">
         <span class="coolerButton" v-for="cooler in s1coolers">
           <button>
-          <h4> {{cooler}} </h4>
-          <p>
-          Grade | Class <br>
-          Cooling: numVal
-          </p>
+            <h4> {{cooler.name}} </h4>
+            <p>
+            Grade | Class <br>
+            Cooling: {{cooler.coolingrate}}
+            </p>
           </button>
         </span>
         <br>
@@ -238,20 +238,20 @@
       <p>Quantum Drives</p>
       <br>
       <div class="dropdown">
-      <va-button-group preset="plain" class="mb-6">
-      <va-button @click="quantumdrives = !quantumdrives">
-      <Icon name="bxs:caret-down-circle" />
-      </va-button>
-      </va-button-group>
+        <va-button-group preset="plain" class="mb-6">
+          <va-button @click="quantumdrives = !quantumdrives">
+            <Icon name="bxs:caret-down-circle" />
+          </va-button>
+        </va-button-group>
       </div>
       <div class="componentSelect" v-if="quantumdrives">
       <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
           <button>
-          <h4> {{quantumdrive}} </h4>
-          <p>
-          Grade | Class <br>
-          Values Go Here
-          </p>
+            <h4> {{quantumdrive.name}} </h4>
+            <p>
+            Grade | Class <br>
+            Values Go Here
+            </p>
           </button>
         </span>
         <br>
@@ -1183,7 +1183,98 @@ export default {
         },
         ],
       s1coolers: [
-        'ArcticStorm','Berian','BlastChill','Bracer','CryoStar','Ecoflow','Endo','FlashFreeze','FrostStar','Gelid','Glacier','Heatsafe','Hydrocel','Polar','QuickCool','Snowblind','Thermax','Tundra','Ultraflow','Vaporblock','WinterStar','ZeroRush','IcePlunge'
+        {
+          name:'ArcticStorm',
+          coolingrate:'200000',
+        },
+        {
+          name:'Berian',
+          coolingrate:'186000',
+        },
+        {
+          name:'BlastChill',
+          coolingrate:'190000',
+        },
+        {
+          name:'Bracer',
+          coolingrate:'260000',
+        },
+        {
+          name:'CryoStar',
+          coolingrate:'228000',
+        },
+        {
+          name:'Ecoflow',
+          coolingrate:'420000',
+        },
+        {
+          name:'Endo',
+          coolingrate:'196000',
+        },
+        {
+          name:'FlashFreeze',
+          coolingrate:'220000',
+        },
+        {
+          name:'FrostStar',
+          coolingrate:'214000',
+        },
+        {
+          name:'Gelid',
+          coolingrate:'204000',
+        },
+        {
+          name:'Glacier',
+          coolingrate:'290000',
+        },
+        {
+          name:'Heatsafe',
+          coolingrate:'130000',
+        },
+        {
+          name:'Hydrocel',
+          coolingrate:'380000',
+        },
+        {
+          name:'Polar',
+          coolingrate:'280000',
+        },
+        {
+          name:'QuickCool',
+          coolingrate:'288000',
+        },
+        {
+          name:'Snowblind',
+          coolingrate:'170000',
+        },
+        {
+          name:'Thermax',
+          coolingrate:'400000',
+        },
+        {
+          name:'Tundra',
+          coolingrate:'240000',
+        },
+        {
+          name:'Ultraflow',
+          coolingrate:'440000',
+        },
+        {
+          name:'Vaporblock',
+          coolingrate:'150000',
+        },
+        {
+          name:'WinterStar',
+          coolingrate:'194000',
+        },
+        {
+          name:'ZeroRush',
+          coolingrate:'238000',
+        },
+        {
+          name:'IcePlunge',
+          coolingrate:'232000',
+        },
         ],
       s2coolers:[
         'AbsoluteZero','Arctic','Aufeis','Avalanche','Boreal','Coldsnap','CoolCore','CryoStarEx','FrostStarEx','FullFrost','Graupel','Heatsink','HydroJet','Icebox','IceDive','Nightfall','Permafrost','RapidCool','Snowfall','Snowpack','Taiga','Whiteout','WinterStarEx'
@@ -1195,7 +1286,102 @@ export default {
         'Idris','Javelin','890 Jump','Bengal'
         ],
       s1powerplants: [
-        'Breton','Charger','Deltamax','Dynaflux','Endurance','FierellCascade','Fortitude','Hypergen','Ionburst','JS300','Lightblossom','Lumacore','Magnabloom','Overdrive','Powerbolt','Quadracell','Regulus','Roughneck','SlipStream','SonicLite','Starheart','Sunflare','Whiterose','Zapjet'
+        {
+	        name:'Breton',
+	        capacity:'',
+        },
+        {
+	        name:'Charger',
+	        capacity:'',
+        },
+        {
+	        name:'Deltamax',
+	        capacity:'',
+        },
+        {
+	        name:'Dynaflux',
+	        capacity:'',
+        },
+        {
+	        name:'Endurance',
+	        capacity:'',
+        },
+        {
+	        name:'FierellCascade',
+	        capacity:'',
+        },
+        {
+	        name:'Fortitude',
+	        capacity:'',
+        },
+        {
+	        name:'Hypergen',
+	        capacity:'',
+        },
+        {
+	        name:'Ionburst',
+	        capacity:'',
+        },
+        {
+	        name:'JS300',
+	        capacity:'',
+        },
+        {
+	        name:'Lightblossom',
+	        capacity:'',
+        },
+        {
+	        name:'Lumacore',
+	        capacity:'',
+        },
+        {
+	        name:'Magnabloom',
+	        capacity:'',
+        },
+        {
+	        name:'Overdrive',
+	        capacity:'',
+        },
+        {
+	        name:'Powerbolt',
+	        capacity:'',
+        },
+        {
+	        name:'Quadracell',
+	        capacity:'',
+        },
+        {
+	        name:'Regulus',
+	        capacity:'',
+        },
+        {
+	        name:'Roughneck',
+	        capacity:'',
+        },
+        {
+	        name:'SlipStream',
+	        capacity:'',
+        },
+        {
+	        name:'SonicLite',
+	        capacity:'',
+        },
+        {
+	        name:'Starheart',
+	        capacity:'',
+        },
+        {
+	        name:'Sunflare',
+	        capacity:'',
+        },
+        {
+	        name:'Whiterose',
+	        capacity:'',
+        },
+        {
+	        name:'Zapjet',
+	        capacity:'',
+        },
         ],
       s2powerplants: [
         'Bolide','Cirrus','Daybreak','Diligence','Eclipse','Exogen','FullForce','GammaMax','Genoa','IonSurge','JS400','Lotus','LuxCore','Maelstrom','QuadracellMT','Radiance','Sedulity','Solarflare','SparkJet','Starburn','Trommel','TurboDrive','UltraFlux','Vortex'
