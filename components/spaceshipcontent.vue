@@ -177,7 +177,7 @@
           <button>
           <h4> {{shield.name}} </h4>
           <p>
-          Grade | Class <br>
+          {{shield.grade}} | Class <br>
           Capacity: {{shield.capacity}}
           </p>
           </button>
@@ -201,7 +201,7 @@
           <button>
           <h4> {{powerplant.name}} </h4>
           <p>
-          Grade | Class <br>
+          {{powerplant.grade}} | Class <br>
           Power: {{powerplant.capacity}}
           </p>
           </button>
@@ -225,7 +225,7 @@
           <button>
             <h4> {{cooler.name}} </h4>
             <p>
-            Grade | Class <br>
+            {{cooler.grade}} | Class <br>
             Cooling: {{cooler.coolingrate}}
             </p>
           </button>
@@ -249,7 +249,7 @@
           <button>
             <h4> {{quantumdrive.name}} </h4>
             <p>
-            Grade | Class <br>
+            {{quantumdrive.grade}} | Class <br>
             Values Go Here
             </p>
           </button>
