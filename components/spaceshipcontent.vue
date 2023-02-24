@@ -2487,63 +2487,103 @@ export default {
       s2quantumdrives: [
         {
           name:'Aither',
+          grade:'2',
+          qfuelreq:'0.009156',
         },
         {
           name:'Bolon',
+          grade:'3',
+          qfuelreq:'0.00654',
         },
         {
           name:'Bolt',
+          grade:'2',
+          qfuelreq:'0.01962',
         },
         {
           name:'Cascade',
+          grade:'4',
+          qfuelreq:'0.011227',
         },
         {
           name:'Crossfield',
+          grade:'3',
+          qfuelreq:'0.02071',
         },
         {
           name:'Flash',
+          grade:'2',
+          qfuelreq:'0.012644',
         },
         {
           name:'Hemera',
+          grade:'1',
+          qfuelreq:'0.008393',
         },
         {
           name:'Huracan',
+          grade:'2',
+          qfuelreq:'0.006104',
         },
         {
           name:'Khaos',
+          grade:'3',
+          qfuelreq:'0.010137',
         },
         {
           name:'Nova',
+          grade:'3',
+          qfuelreq:'0.01853',
         },
         {
           name:'Odyssey',
+          grade:'3',
+          qfuelreq:'0.0109',
         },
         {
           name:'Quest',
+          grade:'4',
+          qfuelreq:'0.011227',
         },
         {
           name:'Sojourn',
+          grade:'2',
+          qfuelreq:'0.01355',
         },
         {
           name:'SparkFire',
+          grade:'3',
+          qfuelreq:'0.00545',
         },
         {
           name:'Spicule',
+          grade:'1',
+          qfuelreq:'0.02071',
         },
         {
           name:'SunFire',
+          grade:'2',
+          qfuelreq:'0.00654',
         },
         {
           name:'Torrent',
+          grade:'3',
+          qfuelreq:'0.011881',
         },
         {
           name:'XL1',
+          grade:'1',
+          qfuelreq:'0.02398',
         },
         {
           name:'Yaluk',
+          grade:'4',
+          qfuelreq:'0.006758',
         },
         {
           name:'Yeager',
+          grade:'2',
+          qfuelreq:'0.02289',
         },
         ],
       s3quantumdrives: [
