@@ -265,9 +265,11 @@
       {{vehicleName}}
       </h4>
       <div class="vehicleText">
+        <center>
         <p>
         {{vehicleDescription}}
         </p>
+        </center>
       </div>
       <va-divider />
       <table class="infoCard">

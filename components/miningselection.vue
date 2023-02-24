@@ -35,11 +35,10 @@
 .mining {
   height:85vh;
   background-color:var(--backgray);
-  align-content:center;
-  vertical-align:center;
-  justify-content:center;
-  padding:20% 25%;
   width:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .button a{

@@ -2,10 +2,11 @@
 <div class="container">
 <!-- Left + Center Area -->
   <div class="centercard">
-  <div class="harvestableGeneration">
-        <va-card
-    color="#1B191E" 
-    class="provider">
+    <div>
+    <div class="harvestableGeneration">
+      <va-card
+        color="#1B191E" 
+        class="provider">
       <h4>
         Planetary Body
       </h4>
@@ -30,36 +31,37 @@
         Generate
         </button>
       </center>
-  </div>
-  <br>
-  <div class="asteroid">
-    <asteroidtest />
-  </div>
-  <br>
-  <div class="instability">
-    <va-card
-    color="#1B191E" 
-    class="provider">
-    <h4>
-    Instability
-    </h4>
+    </div>
     <br>
-    <h3>
-    00.00
-    </h3>
-    </va-card>
-    <va-card
-    color="#1B191E"
-    class="harvestable">
-    <h4>
-    Resistance
-    </h4>
+    <div class="asteroid">
+      <asteroidtest />
+    </div>
     <br>
-    <h3>
-    00.00
-    </h3>
-    </va-card>
-  </div>
+    <div class="instability">
+      <va-card
+      color="#1B191E" 
+      class="provider">
+      <h4>
+      Instability
+      </h4>
+      <br>
+      <h3>
+      00.00
+      </h3>
+      </va-card>
+      <va-card
+      color="#1B191E"
+      class="harvestable">
+      <h4>
+      Resistance
+      </h4>
+      <br>
+      <h3>
+      00.00
+      </h3>
+      </va-card>
+    </div>
+    </div>
   </div>
 <!-- Loadout Selection -->
   <div class="rightcard">
@@ -288,7 +290,9 @@ export default {
   width: 70%;
   height: auto;
   padding-block-start:5px;
-  padding-inline-start:75px;
+  align-items:center;
+  justify-content:center;
+  display:flex;
 }
 .centercard p {
   font-size:18px;
@@ -311,7 +315,6 @@ export default {
   padding-inline-start:15px;
   padding-block-end:5px;
   position:relative;
-  left:100px;
 }
 .harvestableGeneration .provider {
   width:200px;
@@ -330,9 +333,7 @@ export default {
   border-radius:25px;
   padding-inline-start:15px;
   padding-block-end:5px;
-  position:absolute;
-  left:100px;
-  top:700px; 
+  margin-top:700px; 
 }
 .instability .provider {
   width:200px;
@@ -458,10 +459,7 @@ select option {
   --va-card-background-color: var(--va-background-secondary);
   --va-card-padding: 1.25rem;
   width:600px;
-  margin-block-start:100px;
-  margin-inline-start:80px;
-  position:absolute;
-  padding-block-end:;
+  position:relative;
 }
 
 /*Text*/
