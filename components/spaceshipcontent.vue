@@ -1344,94 +1344,117 @@ export default {
       s1coolers: [
         {
           name:'ArcticStorm',
+          grade:'3',
           coolingrate:'200000',
         },
         {
           name:'Berian',
+          grade:'3',
           coolingrate:'186000',
         },
         {
           name:'BlastChill',
+          grade:'4',
           coolingrate:'190000',
         },
         {
           name:'Bracer',
+          grade:'3',
           coolingrate:'260000',
         },
         {
           name:'CryoStar',
+          grade:'2',
           coolingrate:'228000',
         },
         {
-          name:'Ecoflow',
+          name:'EcoFlow',
+          grade:'2',
           coolingrate:'420000',
         },
         {
           name:'Endo',
+          grade:'2',
           coolingrate:'196000',
         },
         {
           name:'FlashFreeze',
+          grade:'2',
           coolingrate:'220000',
         },
         {
           name:'FrostStar',
+          grade:'3',
           coolingrate:'214000',
         },
         {
           name:'Gelid',
+          grade:'1',
           coolingrate:'204000',
         },
         {
           name:'Glacier',
+          grade:'1',
           coolingrate:'290000',
         },
         {
-          name:'Heatsafe',
+          name:'HeatSafe',
+          grade:'3',
           coolingrate:'130000',
         },
         {
           name:'Hydrocel',
+          grade:'4',
           coolingrate:'380000',
         },
         {
           name:'Polar',
+          grade:'2',
           coolingrate:'280000',
         },
         {
           name:'QuickCool',
+          grade:'4',
           coolingrate:'288000',
         },
         {
-          name:'Snowblind',
+          name:'SnowBlind',
+          grade:'1',
           coolingrate:'170000',
         },
         {
           name:'Thermax',
+          grade:'3',
           coolingrate:'400000',
         },
         {
           name:'Tundra',
+          grade:'4',
           coolingrate:'240000',
         },
         {
-          name:'Ultraflow',
+          name:'UltraFlow',
+          grade:'1',
           coolingrate:'440000',
         },
         {
-          name:'Vaporblock',
+          name:'VaporBlock',
+          grade:'2',
           coolingrate:'150000',
         },
         {
           name:'WinterStar',
+          grade:'4',
           coolingrate:'194000',
         },
         {
           name:'ZeroRush',
+          grade:'2',
           coolingrate:'238000',
         },
         {
           name:'IcePlunge',
+          grade:'3',
           coolingrate:'232000',
         },
         ],
