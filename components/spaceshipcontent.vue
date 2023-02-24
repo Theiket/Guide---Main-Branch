@@ -2313,23 +2313,28 @@ export default {
       s4shields: [
         {
           name:'Bengal',
-          capacity:'',
+          capacity:'12084330',
+          grade:'1',
         },
         {
           name:'Idris',
-          capacity:'',
+          capacity:'825565',
+          grade:'1',
         },
         {
           name:'Idris-Pirate',
-          capacity:'',
+          capacity:'715656',
+          grade:'1',
         },
         {
           name:'Javelin',
-          capacity:'',
+          capacity:'1084328',
+          grade:'1',
         },
         {
           name:'890 Jump',
-          capacity:'',
+          capacity:'774520.6',
+          grade:'1',
         },
         ],
       s1quantumdrives: [
