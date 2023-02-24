@@ -344,8 +344,8 @@ export default {
 
 /* Asteroid */
 .asteroid {
-  margin-block-start:10%;
-  margin-inline-start:200px;
+  margin-block-start:15%;
+  margin-inline-start:100px;
   padding-inline-end:400px;
   width:200px;
   height:200px;
