@@ -2589,48 +2589,78 @@ export default {
       s3quantumdrives: [
         {
           name:'Agni',
+          grade:'2',
+          qfuelreq:'',
         },
         {
           name:'Balandin',
+          grade:'2',
+          qfuelreq:'0.13524',
         },
         {
           name:'Drifter',
+          grade:'4',
+          qfuelreq:'0.066332',
         },
         {
           name:'Echo',
+          grade:'4',
+          qfuelreq:'0.049588',
         },
         {
           name:'Erebos',
+          grade:'1',
+          qfuelreq:'0.049588',
         },
         {
           name:'Fissure',
+          grade:'3',
+          qfuelreq:'0.070196',
         },
         {
           name:'Impulse',
+          grade:'2',
+          qfuelreq:'0.074704',
         },
         {
           name:'Kama',
+          grade:'3',
+          qfuelreq:'0.03864',
         },
         {
           name:'Metis',
+          grade:'3',
+          qfuelreq:'0.059892',
         },
         {
           name:'Pontes',
+          grade:'3',
+          qfuelreq:'0.12236',
         },
         {
           name:'Ranger',
+          grade:'2',
+          qfuelreq:'0.06118',
         },
         {
           name:'TS2',
+          grade:'1',
+          qfuelreq:'0.14168',
         },
         {
           name:'Tyche',
+          grade:'2',
+          qfuelreq:'0.054096',
         },
         {
           name:'Vesta',
+          grade:'4',
+          qfuelreq:'0.039928',
         },
         {
           name:'Wanderer',
+          grade:'3',
+          qfuelreq:'0.0644',
         },
         ],
       s4quantumdrives: [
