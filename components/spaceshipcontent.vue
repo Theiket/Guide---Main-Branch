@@ -1642,19 +1642,23 @@ export default {
       s4coolers: [
         {
           name:'Idris',
-          coolingrate:'',
+          coolingrate:'16000000',
+          grade:'1',
         },
         {
           name:'Javelin',
-          coolingrate:'',
+          coolingrate:'180000000',
+          grade:'1',
         },
         {
           name:'890 Jump',
-          coolingrate:'',
+          coolingrate:'16000000',
+          grade:'1',
         },
         {
           name:'Bengal',
-          coolingrate:'',
+          coolingrate:'16000000',
+          grade:'1',
         },
         ],
       s1powerplants: [
