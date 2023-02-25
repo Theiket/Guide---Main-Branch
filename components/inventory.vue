@@ -26,7 +26,6 @@
         { label: 'COMPONENTS', value: 'components' },
       ]"
   />
-    
 </div>
 <div class="container">
   <table class="invlist">
