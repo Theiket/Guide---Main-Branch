@@ -151,12 +151,12 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-          <va-button @click="weapons = !weapons">
+          <va-button @click="toggleItem('weapons')">
             <Icon name="bxs:caret-down-circle" />
           </va-button>
         </va-button-group>
       </div>
-      <div v-if="weapons">
+      <div v-if="componentStates['weapons']">
         <br>
         <p>Become Visible</p>
       </div>
@@ -167,12 +167,12 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-          <va-button @click="shields = !shields">
+          <va-button @click="toggleItem('shields')">
             <Icon name="bxs:caret-down-circle" />
           </va-button>
         </va-button-group>
       </div>
-      <div class="componentSelect" v-if="shields">
+      <div class="componentSelect" v-if="componentStates['shields']">
         <span class="coolerButton" v-for="shield in s1shields">
           <button>
           <h4> {{shield.name}} </h4>
@@ -191,12 +191,12 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-          <va-button @click="powerplants = !powerplants">
+          <va-button @click="toggleItem('powerplants')">
             <Icon name="bxs:caret-down-circle" />
           </va-button>
         </va-button-group>
       </div>
-      <div class="componentSelect" v-if="powerplants">
+      <div class="componentSelect" v-if="componentStates['powerplants']">
         <span class="coolerButton" v-for="powerplant in s1powerplants">
           <button>
           <h4> {{powerplant.name}} </h4>
@@ -215,12 +215,12 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-          <va-button @click="coolers = !coolers">
+          <va-button @click="toggleItem('coolers')">
             <Icon name="bxs:caret-down-circle" />
           </va-button>
         </va-button-group>
       </div>
-      <div class="componentSelect" v-if="coolers">
+      <div class="componentSelect" v-if="componentStates['coolers']">
         <span class="coolerButton" v-for="cooler in s1coolers">
           <button>
             <h4> {{cooler.name}} </h4>
@@ -239,12 +239,12 @@
       <br>
       <div class="dropdown">
         <va-button-group preset="plain" class="mb-6">
-          <va-button @click="quantumdrives = !quantumdrives">
+          <va-button @click="toggleItem('quantumdrives')">
             <Icon name="bxs:caret-down-circle" />
           </va-button>
         </va-button-group>
       </div>
-      <div class="componentSelect" v-if="quantumdrives">
+      <div class="componentSelect" v-if="componentStates['quantumdrives']">
       <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
           <button>
             <h4> {{quantumdrive.name}} </h4>
@@ -350,11 +350,13 @@
 export default {
   data() {
     return {
-      weapons: false,
-      shields: false,
-      powerplants: false,
-      coolers: false,
-      quantumdrives: false,
+      componentStates: {
+        weapons: false,
+        shields: false,
+        powerplants: false,
+        coolers: false,
+        quantumdrives: false,
+      },
       selectedCompany: '',
       vehicleName:'Please select a vehicle',
       vehicleDescription:'Please select a vehicle to see their description.',
@@ -2367,121 +2369,101 @@ export default {
           name:'Atlas',
           grade:'1',
           qfuelreq:'0.007546',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Beacon',
           grade:'3',
           qfuelreq:'0.01862',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Burst',
           grade:'2',
           qfuelreq:'0.011368',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Colossus',
           grade:'2',
           qfuelreq:'0.005488',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Drift',
           grade:'3',
           qfuelreq:'0.01666',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Eos',
           grade:'3',
           qfuelreq:'0.009114',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Expedition',
           grade:'3',
           qfuelreq:'0.0098',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Flood',
           grade:'4',
           qfuelreq:'0.010094',
-          jumprange:'3.402823E+38',
         },
         {
           name:'FoxFire',
           grade:'2',
           qfuelreq:'0.00588',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Goliath',
           grade:'3',
           qfuelreq:'0.0058',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Hyperion',
           grade:'2',
           qfuelreq:'0.008232',
-          jumprange:'3.402823E+38',
         },
         {
           name:'LightFire',
           grade:'3',
           qfuelreq:'0.0049',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Rush',
           grade:'3',
           qfuelreq:'0.010682',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Siren',
           grade:'2',
           qfuelreq:'0.02058',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Spectre',
           grade:'1',
           qfuelreq:'0.01862',
-          jumprange:'3.402823E+38',
         },
         {
           name:'VK-00',
           grade:'1',
           qfuelreq:'0.02156',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Voyage',
           grade:'2',
           qfuelreq:'0.009114',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Vulcan',
           grade:'4',
           qfuelreq:'0.006076',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Wayfare',
           grade:'4',
           qfuelreq:'0.010094',
-          jumprange:'3.402823E+38',
         },
         {
           name:'Zephyr',
           grade:'2',
           qfuelreq:'0.01764',
-          jumprange:'3.402823E+38',
         },
         ],
       s2quantumdrives: [
@@ -2688,8 +2670,16 @@ export default {
       this.vehicleDescription = ships.description
       this.vehicleRole = ships.role
       this.vehicleSize = ships.size
-    }
-  }
+    },
+    toggleItem(itemName) {
+      for (const name in this.componentStates) {
+        if (name !== itemName) {
+          this.componentStates[name] = false;
+        }
+      }
+      this.componentStates[itemName] = !this.componentStates[itemName];
+    },
+  },
 };
 </script>
 
