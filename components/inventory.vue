@@ -31,19 +31,19 @@
   <table class="invlist">
   <tr class="invheading">
     <td>
-    <p>Name</p>
+      <p>Name</p>
     </td>
     <td>
-    <p>Description</p>
+      <p>Description</p>
     </td>
     <td>
-    <p>Category</p>
+      <p>Category</p>
     </td>
     <td>
-    <p>Location</p>
+      <p>Location</p>
     </td>
     <td>
-    <p>Price</p>
+      <p>Price</p>
     </td>
   </tr>
   <tr>
