@@ -2590,7 +2590,7 @@ export default {
         {
           name:'Agni',
           grade:'2',
-          qfuelreq:'',
+          qfuelreq:'0.036064',
         },
         {
           name:'Balandin',
@@ -2666,12 +2666,18 @@ export default {
       s4quantumdrives: [
         {
           name:'Javelin',
+          grade:'1',
+          qfuelreq:'0.0613',
         },
         {
           name:'Idris',
+          grade:'1',
+          qfuelreq:'0.0613',
         },
         {
           name:'890 Jump',
+          grade:'1',
+          qfuelreq:'0.0613',
         },
         ],
     };
