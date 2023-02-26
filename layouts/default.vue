@@ -5,48 +5,48 @@
     <header>
       <nav>
       <table>
-      <td>
-      <NuxtLink to="/">
-        <h1 class="menu">
-        GUIDE
-        </h1>
-      </NuxtLink>
-      </td>
-      <td>
-        <div class="navlinks">
-        <div class="navbutton">
-          <NuxtLink to="/mining">
-          <Icon name="bi:gem" />
+        <td>
+          <NuxtLink to="/">
+            <h1 class="menu">
+            GUIDE
+            </h1>
           </NuxtLink>
-        </div>
-        <div class="navbutton">
-          <NuxtLink to="/trading">
-          <Icon name="material-symbols:currency-exchange" />
-          </NuxtLink>
-        </div>
-        <div class="navbutton">
-          <NuxtLink to="/spaceships">
-          <Icon name="carbon:rocket" />
-          </NuxtLink>
-        </div>
-        <div class="navbutton">
-          <NuxtLink to="/starmap">
-          <Icon name="ph:planet" />
-          </NuxtLink>
-        </div>
-        <div class="navbutton">
-          <NuxtLink to="/catalogue">
-          <Icon name="material-symbols:search" />
-          </NuxtLink>
-        </div>
-        <div class="navbutton">
-          <NuxtLink to="/info">
-          <Icon name="ic:outline-info" />
-          </NuxtLink>
-        </div>
-        </div>
         </td>
-        </table>
+        <td>
+          <div class="navlinks">
+            <div class="navbutton">
+              <NuxtLink to="/mining">
+                <Icon name="bi:gem" />
+              </NuxtLink>
+            </div>
+            <div class="navbutton">
+              <NuxtLink to="/trading">
+                <Icon name="material-symbols:currency-exchange" />
+              </NuxtLink>
+            </div>
+            <div class="navbutton">
+              <NuxtLink to="/spaceships">
+                <Icon name="carbon:rocket" />
+              </NuxtLink>
+            </div>
+            <div class="navbutton">
+              <NuxtLink to="/starmap">
+                <Icon name="ph:planet" />
+              </NuxtLink>
+            </div>
+            <div class="navbutton">
+              <NuxtLink to="/catalogue">
+                <Icon name="material-symbols:search" />
+              </NuxtLink>
+            </div>
+            <div class="navbutton">
+              <NuxtLink to="/info">
+                <Icon name="ic:outline-info" />
+              </NuxtLink>
+            </div>
+          </div>
+        </td>
+      </table>
       </nav>
     </header>
 
