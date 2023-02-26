@@ -160,7 +160,10 @@ export default {
 }
 
 .refineryLocation {
-  margin-inline-start:50px;
+  text-align: center;
+  padding-inline-start:80px;
+  padding-block-start:10px;
+  padding-inline-end:40px;
 }
 .refineryLocation select {
   background-color:var(--lightorange);
@@ -174,7 +177,6 @@ export default {
   font-family:'Segoe UI', sans-serif;
   font-size:20px;
   text-align:center;
-  margin-block-start:15px;
   margin-inline-start:20px;
 }
 .refineryLocation select option {
