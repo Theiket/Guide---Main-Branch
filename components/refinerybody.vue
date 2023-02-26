@@ -38,21 +38,17 @@
     </td>
   </span>
   </div>
-  <span>
   <div class="blocks">
+  <span>
     <div class="outputBlock">
-      <table>
-        <tr>
-        <td>
-        <h3>Mass</h3>
-        <br>
-        <center><p>{{ MassValue * 2}}</p></center>
-        </td>
-        </tr>
-      </table>
+      <td>
+      <h3>Mass</h3>
+      <br>
+      <center><p>{{ MassValue * 2}}</p></center>
+      </td>
     </div>
-  </div>
   </span>
+  </div>
 </div>
 </template>
 
