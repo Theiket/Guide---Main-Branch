@@ -9,13 +9,24 @@ STANTON
 </div>
   <div class="solar-system">
     <div class="microtech-orbit orbit">
-    <div class="planet microtech"></div>
+    <div class="planet microtech">
+      <br>
+        <p>microTech</p>
+    </div>
       <div class="arccorp-orbit orbit">
-      <div class="planet arccorp"></div>
+      <div class="planet arccorp">
+        <br>
+          <p>ArcCorp</p>
+      </div>
         <div class="crusader-orbit orbit">
-        <div class="planet crusader"></div>
+        <div class="planet crusader">
+          <br>
+            <p>Crusader</p>
+        </div>
           <div class="hurston-orbit orbit">
           <div class="planet hurston">
+            <br>
+            <p>Hurston</p>
           </div>
           <NuxtLink to="starmap">
           <div class="sun">
@@ -38,7 +49,7 @@ STANTON
   user-select:none;
 }
 .systemName {
-  animation: 1.5s slideappear;
+  animation: 1.5s slide;
 }
 .solar-system {
   animation: 5s appear;
@@ -158,15 +169,32 @@ p {
   font-size: 5px;
   font-weight:bold;
   letter-spacing:0.3px;
-  color: var(--lightgray);
-  padding-block-end: 15px;
-  padding-inline-start:15px;
-  padding-inline-end:15px;
-  rotate:-140deg;
+  color: var(--lightgray);  
+}
+.planet p {
+  color:transparent;
+}
+.planet:hover p {
+  color:var(--lightgray);
+  padding-block-end:5px;
+  animation: 0.3s appear;
+}
+.planet.hurston p {
+  rotate:-130deg;
+}
+.planet.crusader p {
+  rotate:120deg;
+}
+.planet.arccorp p {
+  rotate:225deg;
+}
+.planet.microtech p {
+  rotate:-50deg;
 }
 
+
 /* Animations */
-@keyframes slideappear {
+@keyframes slide {
   0% {
     opacity: 0;
     left:-500px;
