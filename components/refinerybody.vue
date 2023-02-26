@@ -46,10 +46,10 @@
         <center>
           <h3>Refining Method</h3>
         <br>
-        <span v-for="method in methods" :key="method">
+        <span v-for="method in refmethods" :key="method">
           <td class="methodList">
             <center>
-            <button :key="method.name" @click="updateInfo(methods)">
+            <button :key="method.name" @click="updateInfo(method)" :class="{ 'clicked': method.clicked }">
             </button>
             <br>
             <p>{{method.name}}</p>
@@ -101,8 +101,8 @@
           <br>
           <span v-for="location in locations" :key="location">
             <td>
-            <h4>{{location.name}}</h4>
-            <p>{{selectedCommodity}}</p>
+              <h4>{{location.name}}</h4>
+              <p>{{selectedCommodity}}</p>
             </td>
           </span>
         </div>
@@ -135,33 +135,42 @@ export default {
       selectedCommodity: '',
       commodities: ['Agricium','Aluminium','Beryl','Bexalite','Borase','Copper','Corundum','Diamond','Gold','Hephaestanite','Laranite','Quantanium','Quartz','Taranite','Titanium','Tungsten','Aphorite','Dolivine','Hadanite'],
       selectedMethod:'',
-      methods: [
+      refmethods: [
         {
           name:'Cormack',
+          clicked:false,
         },
         {
           name:'Dinyx Solventation',
+          clicked:false,
         },
         {
           name:'Electrostarolysis',
+          clicked:false,
         },
         {
           name:'Ferron Exchange',
+          clicked:false,
         },
         {
           name:'Gaskin Process',
+          clicked:false,
         },
         {
           name:'Kazen Winnowing',
+          clicked:false,
         },
         {
           name:'Pyrometric Chromalysis',
+          clicked:false,
         },
         {
           name:'Thermonatic Deposition',
+          clicked:false,
         },
         {
           name:'XCR Reaction',
+          clicked:false,
         },
       ],
       locations: [
@@ -181,8 +190,14 @@ export default {
     };
   },
   methods: {
-    updateInfo(methods) {
-      this.selectedMethod = method.name
+    updateInfo(method) {
+      this.selectedMethod = method;
+      this.refmethods.forEach((m) => {
+        if (m.name !== method.name) {
+          m.clicked = false;
+        }
+      });
+      method.clicked = true;
     },
   },
 };
@@ -318,11 +333,15 @@ hr {
   margin-block-start:5px;
 }
 .method button:hover {
-  background-color:var(--lightorange);
-  border-color:var(--lightorange);
+  background-color:var(--orangehover);
+  border-color:var(--orangehover);
 }
 .methodList {
   width:100px;
+}
+button.clicked {
+  background-color:var(--lightorange);
+  border-color:var(--lightorange);
 }
 
 .outputBlock {
