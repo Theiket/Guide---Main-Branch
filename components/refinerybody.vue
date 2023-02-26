@@ -102,7 +102,7 @@
           <span v-for="location in locations" :key="location">
             <td>
             <h4>{{location.name}}</h4>
-            <p>{{commodity.value}}</p>
+            <p>{{selectedCommodity}}</p>
             </td>
           </span>
         </div>
