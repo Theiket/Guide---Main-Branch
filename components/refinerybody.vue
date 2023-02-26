@@ -1,8 +1,7 @@
 <template>
 <div class="container">
   <div class="blocks">
-  <table>
-    <tr>
+  <span>
     <td>
       <div class="commodityInput">
         <h3>
@@ -27,23 +26,20 @@
         >
       </div>
     </td>
-    </tr>
-    <tr>
     <td>
     <div class="refineryLocation">
       <h3>Location</h3>
-    </div>
-    </td>
-    <td>
-    <div class="refineryLocation">
+      <br>
       <select v-model="selectedRefinery">
         <option disabled value="">Select Refinery</option>
         <option v-for="refinery in refineries" :key="refinery">{{ refinery }}</option>
       </select>
     </div>
     </td>
-    </tr>
-  </table>
+  </span>
+  </div>
+  <span>
+  <div class="blocks">
     <div class="outputBlock">
       <table>
         <tr>
@@ -56,6 +52,7 @@
       </table>
     </div>
   </div>
+  </span>
 </div>
 </template>
 
@@ -89,12 +86,26 @@ export default {
 <style scoped>
 .container {
   margin: 0 auto;
-  min-height: 85vh;
+  max-height: 85vh;
   display: flex;
   background-color:var(--backgray);
-  align-items:center;
   justify-content:center;
   user-select:none;
+}
+
+.blocks {
+  animation: 1s appear;
+  background-color:var(--darkgray);
+  margin-block-start:15px;
+  margin-inline-end:20px;
+  height:auto;
+  color:var(--lightorange);
+  font-size:24px;
+  border:3px;
+  border-style:solid;
+  border-color:var(--lightorange);
+  border-radius:50px;
+  z-index:1;
 }
 
 .commodityInput {
@@ -175,23 +186,6 @@ export default {
 .outputBlock {
   padding-inline-start:50px;
   padding-block-start:100px;
-}
-
-.blocks {
-  animation: 1s appear;
-  background-color:var(--darkgray);
-  min-width:90%;
-  height:82vh;
-  margin-inline-end:20px;
-  justify-items:center;
-  align-items:center;
-  color:var(--lightorange);
-  font-size:24px;
-  border:3px;
-  border-style:solid;
-  border-color:var(--lightorange);
-  border-radius:50px;
-  z-index:1;
 }
 
 h3 {
