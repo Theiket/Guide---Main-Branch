@@ -12,7 +12,7 @@
             <br>
             <select v-model="selectedCommodity">
               <option disabled value="">Select Commodity</option>
-              <option v-for="commodity in commodities" :key="commodity">{{ commodity }}</option>
+              <option v-for="commodity in commodities" :key="commodity">{{ commodity.name }}</option>
             </select>
           </div>
         </td>
@@ -84,7 +84,7 @@
           <td>
             <h3>Net Value</h3>
             <br>
-            <p>Value</p>
+            <p>{{ (selectedCommodityValue * MassValue).toFixed(2) }}</p>
           </td>
         </center>
       </div>
@@ -97,14 +97,14 @@
         <div class="purchaseLocations">
           <center>
             <h3>Locations Buying {{selectedCommodity}}</h3>
-          </center>
           <br>
           <span v-for="location in locations" :key="location">
             <td>
               <h4>{{location.name}}</h4>
-              <p>{{selectedCommodity}}</p>
+              <p>{{ selectedCommodityValue }}</p>
             </td>
           </span>
+          </center>
         </div>
       </div>
     </span>
@@ -134,7 +134,82 @@ export default {
       refineries: ['HUR-L1','HUR-L2','CRU-L1','ARC-L1','ARC-L2','ARC-L4','MIC-L1','MIC-L2','MIC-L5'],
       selectedCommodity: '',
       commodities: [
-        'Agricium','Aluminium','Beryl','Bexalite','Borase','Copper','Corundum','Diamond','Gold','Hephaestanite','Laranite','Quantanium','Quartz','Taranite','Titanium','Tungsten','Aphorite','Dolivine','Hadanite'
+        {
+          name:'Agricium',
+          value:'27.5',
+        },
+        {
+          name:'Aluminium',
+          value:'1.29',
+        },
+        {
+          name:'Beryl',
+          value:'4.34',
+        },
+        {
+          name:'Bexalite',
+          value:'44',
+        },
+        {
+          name:'Borase',
+          value:'35.19',
+        },
+        {
+          name:'Copper',
+          value:'6.15',
+        },
+        {
+          name:'Corundum',
+          value:'2.7',
+        },
+        {
+          name:'Diamond',
+          value:'7.35',
+        },
+        {
+          name:'Gold',
+          value:'6.4',
+        },
+        {
+          name:'Hephaestanite',
+          value:'15.83',
+        },
+        {
+          name:'Laranite',
+          value:'30.98',
+        },
+        {
+          name:'Quantanium',
+          value:'88',
+        },
+        {
+          name:'Quartz',
+          value:'1.54',
+        },
+        {
+          name:'Taranite',
+          value:'35.19',
+        },
+        {
+          name:'Titanium',
+          value:'8.9',
+        },
+        {
+          name:'Tungsten',
+          value:'4.05',
+        },
+        {
+          name:'Aphorite',
+          value:'152.5',
+        },
+        {
+          name:'Dolivine',
+          value:'130',
+        },
+        {
+          name:'Hadanite',
+          value:'275',
+        },
         ],
       selectedMethod:'',
       refmethods: [
@@ -200,6 +275,12 @@ export default {
         }
       });
       method.clicked = true;
+    },
+  },
+  computed: {
+    selectedCommodityValue() {
+      const selectedCommodityObject = this.commodities.find(commodity => commodity.name === this.selectedCommodity);
+      return selectedCommodityObject ? selectedCommodityObject.value : '';
     },
   },
 };
@@ -363,6 +444,13 @@ button.clicked {
 
 .purchaseLocations {
   padding-block-end:15px;
+}
+.purchaseLocations h4 {
+  text-decoration-line:underline;
+  text-decoration-color:var(--lightorange);
+}
+.purchaseLocations td {
+  padding-inline-end:10px;
 }
 
 h3 {
