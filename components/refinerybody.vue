@@ -1,75 +1,113 @@
 <template>
 <div class="container">
   <section>
-  <span>
-  <div class="blocks input">
-    <td>
-      <div class="commodityInput">
-        <h3>
-        Commodity
-        </h3>
-        <br>
-        <select v-model="selectedCommodity">
-          <option disabled value="">Select Commodity</option>
-          <option v-for="commodity in commodities" :key="commodity">{{ commodity }}</option>
-        </select>
-      </div>
-    </td>
-    <td>
-      <div class="quantityInput">
-        <h3>Quantity</h3>
-        <br>
-        <input v-model="MassValue"
-        class="inputQuantity"
-        type="number"
-        min="0"
-        placeholder="Input quantity"
-        >
-      </div>
-    </td>
-    <td>
-    <div class="refineryLocation">
-      <h3>Location</h3>
-      <br>
-      <select v-model="selectedRefinery">
-        <option disabled value="">Select Refinery</option>
-        <option v-for="refinery in refineries" :key="refinery">{{ refinery }}</option>
-      </select>
-    </div>
-    </td>
-  </div>
-  </span>
-  <span>
-  <div class="blocks method">
+    <span>
+      <div class="blocks input">
       <center>
-        <h3>Refining Method</h3>
-      <br>
-      <span v-for="method in methods" :key="method">
+        <td>
+          <div class="commodityInput">
+            <h3>
+            Commodity
+            </h3>
+            <br>
+            <select v-model="selectedCommodity">
+              <option disabled value="">Select Commodity</option>
+              <option v-for="commodity in commodities" :key="commodity">{{ commodity }}</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="quantityInput">
+            <h3>Quantity</h3>
+            <br>
+            <input v-model="MassValue"
+            class="inputQuantity"
+            type="number"
+            min="0"
+            placeholder="Input quantity"
+            >
+          </div>
+        </td>
+        <td>
+          <div class="refineryLocation">
+              <h3>Location</h3>
+              <br>
+              <select v-model="selectedRefinery">
+              <option disabled value="">Select Refinery</option>
+              <option v-for="refinery in refineries" :key="refinery">{{ refinery }}</option>
+            </select>
+          </div>
+        </td>
+      </center>
+      </div>
+    </span>
+    <span>
+      <div class="blocks method">
+        <center>
+          <h3>Refining Method</h3>
+        <br>
+        <span v-for="method in methods" :key="method">
           <td class="methodList">
             <center>
-            <button :key="method.name" @click="updateInfo(methods)"></button>
+            <button :key="method.name" @click="updateInfo(methods)">
+            </button>
             <br>
             <p>{{method.name}}</p>
             </center>
-        </td>
-      </span>
-      </center>
-    <br>
-  </div>
-  </span>
+          </td>
+        </span>
+        </center>
+        <br>
+      </div>
+    </span>
   </section>
   <section>
   <span>
-  <div class="blocks output">
-    <div class="outputBlock">
-      <td>
-      <h3>Mass</h3>
-      <br>
-      <center><p>{{ MassValue * 2}}</p></center>
-      </td>
+    <div class="blocks output">
+      <div class="outputBlock">
+        <center>
+          <td>
+            <h3>Yield</h3>
+            <br>
+            <p>Value</p>
+          </td>
+          <td>
+            <h3>Refining Cost</h3>
+            <br>
+            <p>Value</p>
+          </td>
+          <td>
+            <h3>Refining Time</h3>
+            <br>
+            <p>Value</p>
+          </td>
+          <td>
+            <h3>Net Value</h3>
+            <br>
+            <p>Value</p>
+          </td>
+        </center>
+      </div>
     </div>
-  </div>
-  </span>
+    </span>
+  </section>
+  <section>
+    <span>
+      <div class="blocks locations">
+        <div class="purchaseLocations">
+          <center>
+            <h3>Locations Buying {{selectedCommodity}}</h3>
+          </center>
+          <br>
+          <span v-for="location in locations" :key="location">
+            <td>
+            <h4>{{location.name}}</h4>
+            <p>{{commodity.value}}</p>
+            </td>
+          </span>
+        </div>
+      </div>
+    </span>
   </section>
 </div>
 </template>
@@ -124,6 +162,20 @@ export default {
         },
         {
           name:'XCR Reaction',
+        },
+      ],
+      locations: [
+        {
+          name:'Lorville',
+        },
+        {
+          name:'Orison',
+        },
+        {
+          name:'Area 18',
+        },
+        {
+          name:'New Babbage',
         },
       ],
     };
@@ -279,6 +331,18 @@ hr {
   padding-inline-start:20px;
   padding-inline-end:20px;
 }
+.outputBlock td {
+  padding-inline-end:15px;
+  text-align:center;
+}
+.outputBlock p {
+  color:var(--lightorange);
+  font-size:20px;
+}
+
+.purchaseLocations {
+  padding-block-end:15px;
+}
 
 h3 {
   animation: 1s appear;
@@ -286,6 +350,15 @@ h3 {
   color:var(--lightgray);
   letter-spacing:1px;
   margin-block-end:-15px;
+  margin-inline-start:15px;
+}
+
+h4 {
+  animation: 1s appear;
+  font: bold 20px/24px 'Segoe UI', sans-serif;
+  color:var(--lightgray);
+  letter-spacing:1px;
+  margin-block-end:5px;
   margin-inline-start:15px;
 }
 
