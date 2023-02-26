@@ -1,7 +1,8 @@
 <template>
 <div class="container">
-  <div class="blocks">
+  <section>
   <span>
+  <div class="blocks input">
     <td>
       <div class="commodityInput">
         <h3>
@@ -36,10 +37,30 @@
       </select>
     </div>
     </td>
-  </span>
   </div>
-  <div class="blocks">
+  </span>
   <span>
+  <div class="blocks method">
+      <center>
+        <h3>Refining Method</h3>
+      <br>
+      <span v-for="method in methods" :key="method">
+          <td class="methodList">
+            <center>
+            <button :key="method.name" @click="updateInfo(methods)"></button>
+            <br>
+            <p>{{method.name}}</p>
+            </center>
+        </td>
+      </span>
+      </center>
+    <br>
+  </div>
+  </span>
+  </section>
+  <section>
+  <span>
+  <div class="blocks output">
     <div class="outputBlock">
       <td>
       <h3>Mass</h3>
@@ -47,8 +68,9 @@
       <center><p>{{ MassValue * 2}}</p></center>
       </td>
     </div>
-  </span>
   </div>
+  </span>
+  </section>
 </div>
 </template>
 
@@ -73,9 +95,44 @@ export default {
       selectedRefinery: '',
       refineries: ['HUR-L1','HUR-L2','CRU-L1','ARC-L1','ARC-L2','ARC-L4','MIC-L1','MIC-L2','MIC-L5'],
       selectedCommodity: '',
-      commodities: ['Agricium','Aluminium','Beryl','Bexalite','Borase','Copper','Corundum','Diamond','Gold','Hephaestanite','Laranite','Quantanium','Quartz','Taranite','Titanium','Tungsten','Aphorite','Dolivine','Hadanite']
+      commodities: ['Agricium','Aluminium','Beryl','Bexalite','Borase','Copper','Corundum','Diamond','Gold','Hephaestanite','Laranite','Quantanium','Quartz','Taranite','Titanium','Tungsten','Aphorite','Dolivine','Hadanite'],
+      selectedMethod:'',
+      methods: [
+        {
+          name:'Cormack',
+        },
+        {
+          name:'Dinyx Solventation',
+        },
+        {
+          name:'Electrostarolysis',
+        },
+        {
+          name:'Ferron Exchange',
+        },
+        {
+          name:'Gaskin Process',
+        },
+        {
+          name:'Kazen Winnowing',
+        },
+        {
+          name:'Pyrometric Chromalysis',
+        },
+        {
+          name:'Thermonatic Deposition',
+        },
+        {
+          name:'XCR Reaction',
+        },
+      ],
     };
-  }
+  },
+  methods: {
+    updateInfo(methods) {
+      this.selectedMethod = method.name
+    },
+  },
 };
 </script>
 
@@ -83,10 +140,10 @@ export default {
 .container {
   margin: 0 auto;
   max-height: 85vh;
-  display: flex;
   background-color:var(--backgray);
   justify-content:center;
   user-select:none;
+  display:table;
 }
 
 .blocks {
@@ -103,17 +160,28 @@ export default {
   border-radius:50px;
   z-index:1;
 }
+.blocks.input {
+
+}
+.blocks.methods {
+
+}
+
+hr {
+  color:transparent;
+}
 
 .commodityInput {
   width:200px;
   text-align: center;
   padding-inline-start:40px;
   padding-block-start:10px;
+  padding-block-end:10px;
 }
 .commodityInput select {
   background-color:var(--lightorange);
   border-style:solid;
-  border-radius:15px;
+  border-radius:25px;
   border-color:var(--lightorange);
   color:var(--darkgray);
   width:200px;
@@ -134,6 +202,7 @@ export default {
   text-align: center;
   padding-inline-start:80px;
   padding-block-start:10px;
+  padding-block-end:10px;
 }
 .quantityInput h3 {
   margin-inline-start:25px;
@@ -160,11 +229,12 @@ export default {
   padding-inline-start:80px;
   padding-block-start:10px;
   padding-inline-end:40px;
+  padding-block-end:10px;
 }
 .refineryLocation select {
   background-color:var(--lightorange);
   border-style:solid;
-  border-radius:15px;
+  border-radius:25px;
   border-color:var(--lightorange);
   color:var(--darkgray);
   width:200px;
@@ -181,9 +251,33 @@ export default {
   font-size:16px;
 }
 
+.method {
+  padding-block-start:10px;
+}
+.method button {
+  border-style:solid;
+  border-radius:50%;
+  border-width:15px;
+  border-color:var(--lightgray);
+  cursor:pointer;
+  display:inline-flex;
+  padding:5px 5px;
+  background-color:var(--lightgray);
+  margin-block-start:5px;
+}
+.method button:hover {
+  background-color:var(--lightorange);
+  border-color:var(--lightorange);
+}
+.methodList {
+  width:100px;
+}
+
 .outputBlock {
-  padding-inline-start:50px;
-  padding-block-start:100px;
+  padding-block-start:10px;
+  padding-block-end:10px;
+  padding-inline-start:20px;
+  padding-inline-end:20px;
 }
 
 h3 {
@@ -193,6 +287,15 @@ h3 {
   letter-spacing:1px;
   margin-block-end:-15px;
   margin-inline-start:15px;
+}
+
+p {
+  font-weight: 300;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color: var(--lightgray);
 }
 
 @keyframes appear {
