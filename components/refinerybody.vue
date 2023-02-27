@@ -34,7 +34,7 @@
               <br>
               <select v-model="selectedRefinery">
               <option disabled value="">Select Refinery</option>
-              <option v-for="refinery in refineries" :key="refinery">{{ refinery }}</option>
+              <option v-for="refinery in refineries" :key="refinery">{{ refinery.name }}</option>
             </select>
           </div>
         </td>
@@ -69,22 +69,22 @@
           <td>
             <h3>Yield</h3>
             <br>
-            <p>Value</p>
+            <p>{{ ( MassValue * (selectedCommodityYield - methodYield) * yieldModifier ).toFixed(2) }} cSCU</p>
           </td>
           <td>
             <h3>Refining Cost</h3>
             <br>
-            <p>Value aUEC</p>
+            <p>{{ ((MassValue * refiningCost) * methodCost).toFixed(0) }} aUEC</p>
           </td>
           <td>
             <h3>Refining Time</h3>
             <br>
-            <p>Value</p>
+            <p>{{ formatTime(((MassValue * refiningTime)*methodTime).toFixed(0)) }}</p>
           </td>
           <td>
             <h3>Net Value</h3>
             <br>
-            <p>{{ (selectedCommodityValue * MassValue).toFixed(2) }} aUEC</p>
+            <p>{{ (((MassValue * selectedCommodityYield * yieldModifier)* selectedCommodityValue) - ((MassValue * refiningCost))).toFixed(2) }} aUEC</p>
           </td>
         </center>
       </div>
@@ -127,11 +127,502 @@ function handleInputChange(event) {
   MassValue.value = event.target.value
 }
 
+// Function to format time in seconds to HH:MM:SS format
+function formatTime(totalSeconds) {
+  let hours   = Math.floor(totalSeconds / 3600);
+  let minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
+  let seconds = Math.floor(totalSeconds % 60);
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+}
+
+// Function to pad single-digit numbers with a leading zero
+function pad(num) {
+  return (num < 10) ? `0${num}` : num;
+}
+
 export default {
   data() {
     return {
       selectedRefinery: '',
-      refineries: ['HUR-L1','HUR-L2','CRU-L1','ARC-L1','ARC-L2','ARC-L4','MIC-L1','MIC-L2','MIC-L5'],
+      refineries: [
+        {
+          name:'HUR-L1',
+          yieldmodifier: [
+            {
+              agricium:'1.03',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1.03',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1.1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1.04',
+            },
+            {
+              quantanium:'0.94',
+            },
+            {
+              quartz:'0.93',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1.02',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'HUR-L2',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1.02',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'0.97',
+            },
+            {
+              borase:'1.04',
+            },
+            {
+              copper:'1.03',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1.02',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'1',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'0.96',
+            },
+            {
+              titanium:'0.97',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'CRU-L1',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'1.05',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'0.96',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1.04',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'1.03',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1.04',
+            },
+            {
+              tungsten:'1.05',
+            },
+          ],
+        },
+        {
+          name:'ARC-L1',
+          yieldmodifier: [
+            {
+              agricium:'1.02',
+            },
+            {
+              aluminium:'1.04',
+            },
+            {
+              beryl:'0.91',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'0.97',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1.02',
+            },
+            {
+              diamond:'1.04',
+            },
+            {
+              gold:'0.94',
+            },
+            {
+              hephaestanite:'0.98',
+            },
+            {
+              laranite:'1.04',
+            },
+            {
+              quantanium:'1',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1.03',
+            },
+            {
+              titanium:'1',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'ARC-L2',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'0.8',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'ARC-L4',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'0.8',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'MIC-L1',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'0.92',
+            },
+            {
+              beryl:'1.03',
+            },
+            {
+              bexalite:'1.04',
+            },
+            {
+              borase:'1.04',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1.05',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1.05',
+            },
+            {
+              laranite:'0.94',
+            },
+            {
+              quantanium:'1.02',
+            },
+            {
+              quartz:'1.03',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1',
+            },
+            {
+              tungsten:'0.97',
+            },
+          ],
+        },
+        {
+          name:'MIC-L2',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'0.8',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'1',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+        {
+          name:'MIC-L5',
+          yieldmodifier: [
+            {
+              agricium:'1',
+            },
+            {
+              aluminium:'1',
+            },
+            {
+              beryl:'1',
+            },
+            {
+              bexalite:'1',
+            },
+            {
+              borase:'1',
+            },
+            {
+              copper:'1',
+            },
+            {
+              corundum:'1',
+            },
+            {
+              diamond:'1',
+            },
+            {
+              gold:'1',
+            },
+            {
+              hephaestanite:'1',
+            },
+            {
+              laranite:'1',
+            },
+            {
+              quantanium:'0.75',
+            },
+            {
+              quartz:'1',
+            },
+            {
+              taranite:'1',
+            },
+            {
+              titanium:'0.95',
+            },
+            {
+              tungsten:'1',
+            },
+          ],
+        },
+      ],
       selectedCommodity: '',
       commodities: [
         {
@@ -246,44 +737,74 @@ export default {
           timeperunit:'2.1',
           costperunit:'0.1',
         },
-        ],
+      ],
       selectedMethod:'',
+      methodTime:'',
+      methodCost:'',
+      methodYield:'',
       refmethods: [
         {
           name:'Cormack',
           clicked:false,
+          timemultiplier:'0.25',
+          costmultiplier:'2',
+          yieldadditive:'0.27',
         },
         {
           name:'Dinyx Solventation',
           clicked:false,
+          timemultiplier:'12',
+          costmultiplier:'1',
+          yieldadditive:'0',
         },
         {
           name:'Electrostarolysis',
           clicked:false,
+          timemultiplier:'1.05',
+          costmultiplier:'2',
+          yieldadditive:'0.145',
         },
         {
           name:'Ferron Exchange',
           clicked:false,
+          timemultiplier:'4',
+          costmultiplier:'2',
+          yieldadditive:'0',
         },
         {
           name:'Gaskin Process',
           clicked:false,
+          timemultiplier:'0.5',
+          costmultiplier:'6',
+          yieldadditive:'0.145',
         },
         {
           name:'Kazen Winnowing',
           clicked:false,
+          timemultiplier:'0.75',
+          costmultiplier:'1',
+          yieldadditive:'0.27',
         },
         {
           name:'Pyrometric Chromalysis',
           clicked:false,
+          timemultiplier:'2',
+          costmultiplier:'6',
+          yieldadditive:'0',
         },
         {
           name:'Thermonatic Deposition',
           clicked:false,
+          timemultiplier:'3',
+          costmultiplier:'1',
+          yieldadditive:'0.145',
         },
         {
           name:'XCR Reaction',
           clicked:false,
+          timemultiplier:'0.125',
+          costmultiplier:'6',
+          yieldadditive:'0.27',
         },
       ],
       locations: [
@@ -304,7 +825,10 @@ export default {
   },
   methods: {
     updateInfo(method) {
-      this.selectedMethod = method;
+      this.methodTime = method.timemultiplier
+      this.methodCost = method.costmultiplier
+      this.methodYield = method.yieldadditive
+      this.selectedMethod = method.name;
       this.refmethods.forEach((m) => {
         if (m.name !== method.name) {
           m.clicked = false;
@@ -317,6 +841,28 @@ export default {
     selectedCommodityValue() {
       const selectedCommodityObject = this.commodities.find(commodity => commodity.name === this.selectedCommodity);
       return selectedCommodityObject ? selectedCommodityObject.value : '';
+    },
+    selectedCommodityYield() {
+      const selectedCommodityObject = this.commodities.find(commodity => commodity.name === this.selectedCommodity);
+      return selectedCommodityObject ? selectedCommodityObject.yieldperunit : '';
+    },
+    refiningCost() {
+      const selectedCommodityObject = this.commodities.find(commodity => commodity.name === this.selectedCommodity);
+      return selectedCommodityObject ? selectedCommodityObject.costperunit : '';
+    },
+    refiningTime() {
+      const selectedCommodityObject = this.commodities.find(commodity => commodity.name === this.selectedCommodity);
+      return selectedCommodityObject ? selectedCommodityObject.timeperunit : '';
+    },
+    yieldModifier() {
+      if (this.selectedRefinery && this.selectedCommodity) {
+        const refinery = this.refineries.find(r => r.name === this.selectedRefinery);
+        const commodity = this.commodities.find(c => c.name === this.selectedCommodity);
+        const yieldModifierObj = refinery.yieldmodifier.find(ym => ym.hasOwnProperty(commodity.name.toLowerCase()));
+        return yieldModifierObj[commodity.name.toLowerCase()];
+      } else {
+      return '1';
+      }
     },
   },
 };
