@@ -3,7 +3,7 @@
   <section>
     <span>
       <div class="blocks input">
-      <center>
+        <center>
         <td>
           <div class="commodityInput">
             <h3>
@@ -38,7 +38,7 @@
             </select>
           </div>
         </td>
-      </center>
+        </center>
       </div>
     </span>
     <span>
@@ -74,7 +74,7 @@
           <td>
             <h3>Refining Cost</h3>
             <br>
-            <p>Value</p>
+            <p>Value aUEC</p>
           </td>
           <td>
             <h3>Refining Time</h3>
@@ -84,7 +84,7 @@
           <td>
             <h3>Net Value</h3>
             <br>
-            <p>{{ (selectedCommodityValue * MassValue).toFixed(2) }}</p>
+            <p>{{ (selectedCommodityValue * MassValue).toFixed(2) }} aUEC</p>
           </td>
         </center>
       </div>
@@ -137,78 +137,114 @@ export default {
         {
           name:'Agricium',
           value:'27.5',
+          yieldperunit:'0.95',
+          timeperunit:'3',
+          costperunit:'0.65',
         },
         {
           name:'Aluminium',
           value:'1.29',
+          yieldperunit:'0.95',
+          timeperunit:'2',
+          costperunit:'0.03',
         },
         {
           name:'Beryl',
           value:'4.34',
+          yieldperunit:'0.95',
+          timeperunit:'2.3',
+          costperunit:'0.1',
         },
         {
           name:'Bexalite',
           value:'44',
+          yieldperunit:'0.95',
+          timeperunit:'2.9',
+          costperunit:'1',
         },
         {
           name:'Borase',
           value:'35.19',
+          yieldperunit:'0.95',
+          timeperunit:'2.8',
+          costperunit:'0.8',
         },
         {
           name:'Copper',
           value:'6.15',
+          yieldperunit:'0.95',
+          timeperunit:'2.3',
+          costperunit:'0.14',
         },
         {
           name:'Corundum',
           value:'2.7',
+          yieldperunit:'0.95',
+          timeperunit:'2.1',
+          costperunit:'0.06',
         },
         {
           name:'Diamond',
           value:'7.35',
+          yieldperunit:'0.95',
+          timeperunit:'2.3',
+          costperunit:'0.16',
         },
         {
           name:'Gold',
           value:'6.4',
+          yieldperunit:'0.95',
+          timeperunit:'2.5',
+          costperunit:'0.15',
         },
         {
           name:'Hephaestanite',
           value:'15.83',
+          yieldperunit:'0.95',
+          timeperunit:'2.6',
+          costperunit:'0.35',
         },
         {
           name:'Laranite',
           value:'30.98',
+          yieldperunit:'0.95',
+          timeperunit:'3.1',
+          costperunit:'0.7',
         },
         {
           name:'Quantanium',
           value:'88',
+          yieldperunit:'0.95',
+          timeperunit:'4',
+          costperunit:'2',
         },
         {
           name:'Quartz',
           value:'1.54',
+          yieldperunit:'0.95',
+          timeperunit:'2.7',
+          costperunit:'0.03',
         },
         {
           name:'Taranite',
           value:'35.19',
+          yieldperunit:'0.95',
+          timeperunit:'3.2',
+          costperunit:'0.8',
         },
         {
           name:'Titanium',
           value:'8.9',
+          yieldperunit:'0.95',
+          timeperunit:'2.2',
+          costperunit:'0.2',
         },
         {
           name:'Tungsten',
           value:'4.05',
-        },
-        {
-          name:'Aphorite',
-          value:'152.5',
-        },
-        {
-          name:'Dolivine',
-          value:'130',
-        },
-        {
-          name:'Hadanite',
-          value:'275',
+          yieldperunit:'0.95',
+          timeperunit:'2.1',
+          costperunit:'0.1',
         },
         ],
       selectedMethod:'',
