@@ -23,7 +23,7 @@
       </h4>
       <select v-model="selectDeposit">
         <option disabled value="">Select Deposit</option>
-        <option v-for="deposit in deposits" :value="deposit">{{ deposit.name }}</option>
+        <option v-for="deposit in deposits" :key="deposit" :value="deposit">{{ deposit.name }}</option>
         </select>
       </va-card>
       <center>
@@ -32,6 +32,12 @@
         </button>
       </center>
     </div>
+    <br>
+    <ul>
+      <li v-for="mineral in generatedMinerals" :key="mineral.name">
+        <h4>{{ mineral.name }}:</h4> <h3>{{ mineral.percentage }}%</h3>
+      </li>
+    </ul>
     <br>
     <div class="asteroid">
       <asteroidtest />
@@ -231,6 +237,8 @@
 </script>
 
 <script>
+import { generateDeposit } from '~/utils/depositGenerator'
+
 export default {
   data() {
     return {
@@ -239,12 +247,18 @@ export default {
       leftLaser: '',
       centralLaser: '',
       rightLaser: '',
-      s2lasers: ['Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'],
+      s2lasers: [
+        'Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'
+        ],
       prospectorLaser: '',
-      s1lasers: ['Arbor S1','Lancet S1', 'Hofstede S1','Klein S1','Helix S1','Impact S1'],
+      s1lasers: [
+        'Arbor S1','Lancet S1', 'Hofstede S1','Klein S1','Helix S1','Impact S1'
+        ],
       selectPlanet: '',
-      planets: ['Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'],
-      selectDeposit: null,
+      planets: [
+        'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+        ],
+      selectDeposit: '',
       deposits: [
         { name: 'C Type',
           minerals: [
@@ -769,6 +783,7 @@ export default {
           minCount: 1,
           },
         ],
+      generatedMinerals: [],
       p1laserModule: '',
       p2laserModule: '',
       p3laserModule: '',
@@ -781,13 +796,17 @@ export default {
       r1laserModule: '',
       r2laserModule: '',
       r3laserModule: '',
-      lasermodules: ['Brandt','Forel','Lifeline','Optimum','Rime','Stampede','Surge','Torpid','FLTR MK1','FLTR MK2','FLTR MK3','Focus MK1','Focus MK2','Focus MK3','Reiger MK1','Reiger MK2','Reiger MK3','Torrent MK1','Torrent MK2','Torrent MK3','Vaux MK1','Vaux MK2','Vaux MK3','XTR MK1','XTR MK2','XTR MK3'],
+      lasermodules: [
+        'Brandt','Forel','Lifeline','Optimum','Rime','Stampede','Surge','Torpid','FLTR MK1','FLTR MK2','FLTR MK3','Focus MK1','Focus MK2','Focus MK3','Reiger MK1','Reiger MK2','Reiger MK3','Torrent MK1','Torrent MK2','Torrent MK3','Vaux MK1','Vaux MK2','Vaux MK3','XTR MK1','XTR MK2','XTR MK3'
+        ],
     }
   },
   methods: {
     generateDeposit() {
       if (this.selectedDeposit) {
         const deposit = generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
+        // Set the new data property to the minerals of the generated deposit
+        this.generatedMinerals = deposit.minerals;
         this.$emit('deposit-generated', deposit);
       }
     },
