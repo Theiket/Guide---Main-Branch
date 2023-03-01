@@ -1,28 +1,26 @@
 import * as math from 'mathjs';
 
-function generateDeposit(selectedDeposit) {
+function generateDeposit(minerals, minCount) {
   let includedMinerals = [];
   let totalPercentage = 0;
 
   // select minerals for the deposit based on their probabilities
   for (let mineral of minerals) {
-    if (selectedDeposit.minerals.includes(mineral.name)) {
-      const randomValueOverProbability = Math.random() / mineral.probability;
-      if (randomValueOverProbability <= 1) {
-        includedMinerals.push(mineral);
-        if (includedMinerals.length >= selectedDeposit.minCount) {
-          break;
-        }
+    const randomValueOverProbability = Math.random() / mineral.probability;
+    if (randomValueOverProbability <= 1) {
+      includedMinerals.push(mineral);
+      if (includedMinerals.length >= minCount) {
+        break;
       }
     }
   }
 
   // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
-  while (includedMinerals.length < selectedDeposit.minCount) {
+  while (includedMinerals.length < minCount) {
     let closestMineral = null;
     let closestValue = Infinity;
     for (let mineral of minerals) {
-      if (selectedDeposit.minerals.includes(mineral.name) && !includedMinerals.includes(mineral)) {
+      if (!includedMinerals.includes(mineral)) {
         const randomValueOverProbability = Math.random() / mineral.probability;
         const value = Math.abs(randomValueOverProbability - 1);
         if (value < closestValue) {
@@ -36,8 +34,9 @@ function generateDeposit(selectedDeposit) {
 
   // calculate percentage of each included mineral in the deposit
   for (let mineral of includedMinerals) {
-    mineral.percentage = calculatePercentage(mineral);
-    totalPercentage += mineral.percentage;
+    const percentage = calculatePercentage(mineral);
+    totalPercentage += percentage;
+    mineral.percentage = percentage;
   }
 
   // if total percentage is over 100, regenerate percentages for included minerals
@@ -45,7 +44,7 @@ function generateDeposit(selectedDeposit) {
     for (let mineral of includedMinerals) {
       mineral.percentage = null;
     }
-    return generateDeposit(selectedDeposit);
+    return generateDeposit(minerals, minCount);
   }
 
   // if total percentage is less than 100, add inert material to the deposit
@@ -58,5 +57,8 @@ function generateDeposit(selectedDeposit) {
 }
 
 function calculatePercentage(mineral) {
-  return Math.ceil((-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage);
+  const percentage = Math.ceil((-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage);
+  return percentage;
 }
+
+module.exports = { generateDeposit, calculatePercentage };
