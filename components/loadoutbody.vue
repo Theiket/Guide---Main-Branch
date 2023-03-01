@@ -807,8 +807,8 @@ export default {
         if (!this.selectedDeposit) {
           throw new Error('No deposit selected');
         }
-        const deposit = await generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
-        this.generatedMinerals = deposit.minerals;
+        const deposit = await generateDeposit(this.selectedDeposit);
+        this.generatedMinerals = deposit;
         this.$emit('deposit-generated', deposit);
       } catch (error) {
         console.error(error);
