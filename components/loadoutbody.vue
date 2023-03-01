@@ -34,7 +34,7 @@
     </div>
     <br>
     <ul>
-      <li v-for="mineral in generatedMinerals" :key="mineral" :value="mineral">
+      <li v-for="mineral in generatedMinerals" :key="mineral.name" :value="mineral">
         <h4>{{ mineral.name }}:</h4> <h3>{{ mineral.percentage }}%</h3>
       </li>
     </ul>
@@ -813,7 +813,7 @@ export default {
       } catch (error) {
         console.error(error);
       }
-    }
+    },
   },
 };
 </script>
