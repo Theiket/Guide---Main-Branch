@@ -21,7 +21,7 @@
       <h4>
         Deposit Type
       </h4>
-      <select v-model="selectDeposit">
+      <select v-model="selectedDeposit">
         <option disabled value="">Select Deposit</option>
         <option v-for="deposit in deposits" :key="deposit" :value="deposit">{{ deposit.name }}</option>
         </select>
@@ -237,7 +237,7 @@
 </script>
 
 <script>
-import { generateDeposit } from '~/utils/depositGenerator'
+import { generateDeposit } from '~/utils/depositGenerator';
 
 export default {
   data() {
@@ -258,7 +258,7 @@ export default {
       planets: [
         'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
         ],
-      selectDeposit: '',
+      selectedDeposit: '',
       deposits: [
         { name: 'C Type',
           minerals: [
@@ -802,14 +802,18 @@ export default {
     }
   },
   methods: {
-    generateDeposit() {
-      if (this.selectedDeposit) {
-        const deposit = generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
-        // Set the new data property to the minerals of the generated deposit
+    async generateDeposit() {
+      try {
+        if (!this.selectedDeposit) {
+          throw new Error('No deposit selected');
+        }
+        const deposit = await generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
         this.generatedMinerals = deposit.minerals;
         this.$emit('deposit-generated', deposit);
+      } catch (error) {
+        console.error(error);
       }
-    },
+    }
   },
 };
 </script>

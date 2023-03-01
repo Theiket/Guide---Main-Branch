@@ -1,6 +1,3 @@
-// Import the required functions from lodash library
-import { ceil, log, random, reduce, round } from 'lodash';
-
 // Define a function that generates a deposit
 function generateDeposit(minerals, minCount) {
   // Initialize an empty deposit object
