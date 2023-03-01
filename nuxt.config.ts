@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@vuestic/nuxt',
   ],
+  buildModules: [
+    'mathjs',
+  ],
   app: {
     head: {
       title: 'GUIDE',
