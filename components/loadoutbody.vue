@@ -998,16 +998,19 @@ export default {
           const percentage = (-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
           totalPercentage += percentage;
           mineral.percentage = percentage;
+
+          console.log(percentage)
         }
+        
 
         // calculate instability and resistance values of the deposit
         for (let mineral of includedMinerals) {
-          const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
-          totalInstability += instability
+          const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
+          totalInstability += instability;
         }
         for (let mineral of includedMinerals) {
-          const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
-          totalResistance += resistance
+          const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
+          totalResistance += resistance;
         }
         
         // if total percentage is over 100, regenerate percentages for included minerals
