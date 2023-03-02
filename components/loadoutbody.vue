@@ -18,12 +18,12 @@
       <va-card
       color="#1B191E"
       class="harvestable">
-      <h4>
-        Deposit Type
-      </h4>
-      <select v-model="selectedDeposit">
-        <option disabled value="">Select Deposit</option>
-        <option v-for="deposit in deposits" :key="deposit" :value="deposit">{{ deposit.name }}</option>
+        <h4>
+          Deposit Type
+        </h4>
+        <select v-model="selectedDeposit">
+          <option disabled value="">Select Deposit</option>
+          <option v-for="deposit in deposits" :key="deposit.name" :value="deposit">{{ deposit.name }}</option>
         </select>
       </va-card>
       <center>
@@ -34,7 +34,7 @@
     </div>
     <br>
     <ul>
-      <li v-for="mineral in generatedMinerals" :key="mineral.name" :value="mineral">
+      <li v-for="(mineral, index) in generatedMinerals" :key="index">
         <h4>{{ mineral.name }}:</h4> <h3>{{ mineral.percentage }}%</h3>
       </li>
     </ul>
@@ -237,7 +237,7 @@
 </script>
 
 <script>
-const { generateDeposit } = require('../utils/depositGenerator');
+import { generateDeposit } from '~/utils/depositGenerator';
 
 export default {
   data() {
@@ -807,8 +807,8 @@ export default {
         if (!this.selectedDeposit) {
           throw new Error('No deposit selected');
         }
-        const deposit = await generateDeposit(this.selectedDeposit);
-        this.generatedMinerals = deposit;
+        const deposit = await generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
+        this.generatedMinerals = deposit.minerals;
         this.$emit('deposit-generated', deposit);
       } catch (error) {
         console.error(error);
