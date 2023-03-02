@@ -995,13 +995,26 @@ export default {
         
         // calculate percentage of each included mineral in the deposit
         for (let mineral of includedMinerals) {
-          const percentage = (-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
-          totalPercentage += percentage;
-          mineral.percentage = percentage;
+        // generate a uniform random number between 0 and 1
+        const uniform = Math.random();
 
-          console.log(percentage)
+        // calculate the upper and lower bounds of the desired range
+        const a = mineral.minPercentage;
+        const b = mineral.maxPercentage;
+
+        // calculate the scaling factor for the inverse transform
+        const scale = -Math.log(1 - uniform) / mineral.exponent;
+
+        // apply the inverse transform to get an exponential random number
+        const exponential = scale / Math.exp(-mineral.exponent * a);
+
+        // calculate the percentage value based on the exponential distribution
+        const percentage = exponential * (b - a) + a;
+        totalPercentage += percentage;
+        mineral.percentage = percentage;
+
+        console.log(percentage);
         }
-        
 
         // calculate instability and resistance values of the deposit
         for (let mineral of includedMinerals) {
