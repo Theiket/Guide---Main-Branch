@@ -36,7 +36,7 @@
       <div class="mineralList" 
         style="margin-block-start:15%;">
         <span style="position:absolute; display:flex; align-content:center; justify-content:space-between; left: 50%; transform: translateX(-50%);">
-          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center;">
+          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center; width:160px;">
             <h4>{{ mineral.name }}</h4>
             <br>
             <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
@@ -933,8 +933,8 @@ export default {
         ],
       selectedDeposit: '',
       generatedDeposit: [],
-      generatedInstability:'',
-      generatedResistance:'',
+      generatedInstability: 0,
+      generatedResistance: 0,
       p1laserModule: '',
       p2laserModule: '',
       p3laserModule: '',
@@ -1001,11 +1001,11 @@ export default {
         }
 
         // calculate instability and resistance values of the deposit
-        for (let mineral of minerals) {
+        for (let mineral of includedMinerals) {
           const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
           totalInstability += instability
         }
-        for (let mineral of minerals) {
+        for (let mineral of includedMinerals) {
           const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
           totalResistance += resistance
         }
@@ -1031,6 +1031,8 @@ export default {
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
         console.log(this.generatedDeposit)
+        console.log(this.generatedInstability)
+        console.log(this.generatedResistance)
       },
     },
   };
