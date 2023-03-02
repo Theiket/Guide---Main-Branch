@@ -3,71 +3,76 @@
 <!-- Left + Center Area -->
   <div class="centercard">
     <div>
-    <div class="harvestableGeneration">
-      <va-card
+      <div class="harvestableGeneration">
+        <va-card
+          color="#1B191E" 
+          class="provider">
+        <h4>
+          Planetary Body
+        </h4>
+        <select v-model="selectPlanet">
+          <option disabled value="">Select Planet</option>
+          <option v-for="planet in planets" :key="planet">{{ planet }}</option>
+          </select>
+        </va-card>
+        <va-card
+        color="#1B191E"
+        class="harvestable">
+          <h4>
+            Deposit Type
+          </h4>
+          <select v-model="selectedDeposit">
+            <option disabled value="">Select Deposit</option>
+            <option v-for="deposit in deposits" :value="deposit">{{ deposit.name }}</option>
+          </select>
+        </va-card>
+        <center>
+          <button class="button Generate" @click="generateDeposit">
+          Generate
+          </button>
+        </center>
+      </div>
+      <br>
+      <div style="margin-block-start:15%;">
+        <span style="position:absolute;">
+          <center>
+          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="padding-inline-end:30px; animation: 0.5s appear; position:relative; text-align:center;">
+            <h4>{{ mineral.name }}</h4>
+            <br>
+            <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
+          </td>
+          </center>
+        </span>
+        <br>
+        <div class="asteroid">
+          <asteroidtest />
+        </div>
+      </div>
+      <br>
+      <div class="instability">
+        <va-card
         color="#1B191E" 
         class="provider">
-      <h4>
-        Planetary Body
-      </h4>
-      <select v-model="selectPlanet">
-        <option disabled value="">Select Planet</option>
-        <option v-for="planet in planets" :key="planet">{{ planet }}</option>
-        </select>
-      </va-card>
-      <va-card
-      color="#1B191E"
-      class="harvestable">
-        <h4>
-          Deposit Type
-        </h4>
-        <select v-model="selectedDeposit">
-          <option disabled value="">Select Deposit</option>
-          <option v-for="deposit in deposits" :value="deposit">{{ deposit.name }}</option>
-        </select>
-      </va-card>
-      <center>
-        <button class="button Generate" @click="generateDeposit">
-        Generate
-        </button>
-      </center>
-    </div>
-    <br>
-    <div style="padding-block-start:50px; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: flex-start;">
-      <span v-for="(mineral, index) in generatedDeposit" :key="index" style="flex: 0 0 25%; padding: 0 15px; text-align:center;">
-        <h4>{{ mineral.name }}</h4>
-        <br>
-        <h3>{{ mineral.percentage }}%</h3>
-      </span>
-    </div>
-    <div class="asteroid" style="position: relative;">
-        <asteroidtest style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;" />
-    </div>
-    <br>
-    <div class="instability">
-      <va-card
-      color="#1B191E" 
-      class="provider">
-        <h4>
-        Instability
-        </h4>
-        <br>
-        <h3>
-        00.00
-        </h3>
-      </va-card>
-      <va-card
-      color="#1B191E"
-      class="harvestable">
-        <h4>
-        Resistance
-        </h4>
-        <br>
-        <h3>
-        00.00
-        </h3>
-      </va-card>
-    </div>
+          <h4>
+          Instability
+          </h4>
+          <br>
+          <h3>
+          00.00
+          </h3>
+        </va-card>
+        <va-card
+        color="#1B191E"
+        class="harvestable">
+          <h4>
+          Resistance
+          </h4>
+          <br>
+          <h3>
+          00.00
+          </h3>
+        </va-card>
+      </div>
     </div>
   </div>
 <!-- Loadout Selection -->
@@ -313,12 +318,14 @@ export default {
       let totalPercentage = 0;
 
         // select minerals for the deposit based on their probabilities
-        for(let i=0; i < minerals.length; i++) {
-          const randomValueOverProbability = Math.random() / minerals[i].probability;
-          if (randomValueOverProbability <= 1) {
-            includedMinerals.push(minerals[i]);
-            if (includedMinerals.length >= minCount) {
-              break;
+        for (let mineral of minerals) {
+          if (this.selectedDeposit.minerals.includes(mineral.name)) {
+            const randomValueOverProbability = Math.random() / mineral.probability;
+            if (randomValueOverProbability <= 1) {
+              includedMinerals.push(mineral);
+              if (includedMinerals.length >= selectedDeposit.minCount) {
+                break;
+              }
             }
           }
         }
@@ -342,7 +349,7 @@ export default {
         
         // calculate percentage of each included mineral in the deposit
         for (let mineral of includedMinerals) {
-          const percentage = Math.ceil((-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral. minPercentage);
+          const percentage = (-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
           totalPercentage += percentage;
           mineral.percentage = percentage;
         }
@@ -352,14 +359,18 @@ export default {
           for (let mineral of includedMinerals) {
             mineral.percentage = null;
           }
-          //return this.generateDeposit(minerals, minCount);
+          return this.generateDeposit(minerals, minCount);
         }
 
+        // sort includedMaterials to be alphabetical
+        includedMinerals.sort((a, b) => a.name.localeCompare(b.name));
+
         // if total percentage is less than 100, add inert material to the deposit
-        //if (totalPercentage < 100) {
+        if (totalPercentage < 100) {
           const inertPercentage = 100 - totalPercentage;
           includedMinerals.push({ name: 'Inert Material', percentage: inertPercentage });
-        //}
+        }
+        
         this.generatedDeposit = includedMinerals
         console.log(this.generatedDeposit)
 
@@ -459,7 +470,7 @@ export default {
   border-color:var(--lightorange);
   border-width:2px;
   border-radius:40px;
-  position:absolute;
+  position:relative;
 }
 
 /* Buttons */
