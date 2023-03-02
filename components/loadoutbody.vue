@@ -237,7 +237,7 @@
 </script>
 
 <script>
-import { generateDeposit } from '~/utils/depositGenerator';
+import generateDeposit from '~/utils/depositGenerator';
 
 export default {
   data() {

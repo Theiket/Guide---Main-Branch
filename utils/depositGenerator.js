@@ -61,4 +61,4 @@ function calculatePercentage(mineral) {
   return percentage;
 }
 
-module.exports = { generateDeposit, calculatePercentage };
+export default generateDeposit;
