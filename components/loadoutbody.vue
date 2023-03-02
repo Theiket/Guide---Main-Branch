@@ -34,14 +34,12 @@
       </div>
       <br>
       <div style="margin-block-start:15%;">
-        <span style="position:absolute;">
-          <center>
-          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="padding-inline-end:30px; animation: 0.5s appear; position:relative; text-align:center;">
+        <span style="position:absolute; display:flex; align-content:center; justify-content:space-between; left: 50%; transform: translateX(-50%);">
+          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center; width:165px;">
             <h4>{{ mineral.name }}</h4>
             <br>
             <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
           </td>
-          </center>
         </span>
         <br>
         <div class="asteroid">
