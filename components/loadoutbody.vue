@@ -36,7 +36,7 @@
     <div style="margin-block-start:15%; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
       <center>
       <span v-for="(mineral, index) in generatedDeposit" :key="index" style="flex: 1 0 30%;">
-        <td>
+        <td style="width:200px">
           <h4>{{ mineral.name }}</h4>
           <br>
           <h3>{{ mineral.percentage }}%</h3>
