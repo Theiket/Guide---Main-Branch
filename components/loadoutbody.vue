@@ -33,20 +33,15 @@
       </center>
     </div>
     <br>
-    <div style="margin-block-start:15%; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
-      <center>
-      <span v-for="(mineral, index) in generatedDeposit" :key="index" style="flex: 1 0 30%;">
-        <td style="width:200px">
-          <h4>{{ mineral.name }}</h4>
-          <br>
-          <h3>{{ mineral.percentage }}%</h3>
-        </td>
+    <div style="padding-block-start:50px; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: flex-start;">
+      <span v-for="(mineral, index) in generatedDeposit" :key="index" style="flex: 0 0 25%; padding: 0 15px; text-align:center;">
+        <h4>{{ mineral.name }}</h4>
+        <br>
+        <h3>{{ mineral.percentage }}%</h3>
       </span>
-      <br>
-      <div class="asteroid">
-        <asteroidtest />
-      </div>
-      </center>
+    </div>
+    <div class="asteroid" style="position: relative;">
+        <asteroidtest style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;" />
     </div>
     <br>
     <div class="instability">
@@ -443,7 +438,7 @@ export default {
   border-radius:25px;
   padding-inline-start:15px;
   padding-block-end:5px;
-  margin-top:600px; 
+  margin-top:300px; 
 }
 .instability .provider {
   width:200px;

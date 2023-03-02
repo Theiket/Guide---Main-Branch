@@ -80,6 +80,7 @@ scene.add(pointLight, ambientLight)
 
 // Create a new TrackballControls object
     const controls = new TrackballControls(camera, renderer.domElement)
+    controls.noZoom = true;
 
     // Animation loop
     function animate() {
