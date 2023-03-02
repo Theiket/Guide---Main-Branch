@@ -1,6 +1,7 @@
 import * as math from 'mathjs';
 
 function generateDeposit(minerals, minCount) {
+  console.log(this.selectedDeposit);
   let includedMinerals = [];
   let totalPercentage = 0;
 
@@ -62,3 +63,11 @@ function calculatePercentage(mineral) {
 }
 
 export default generateDeposit;
+
+
+methods: {
+  generateDeposit(minCount) {
+    console.log(this.selectedDeposit);
+    const minerals = this.deposits.find(item => item.name === this.selectedDeposit);
+    console.log(minerals);
+    

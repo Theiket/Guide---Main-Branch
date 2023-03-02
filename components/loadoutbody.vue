@@ -23,7 +23,7 @@
         </h4>
         <select v-model="selectedDeposit">
           <option disabled value="">Select Deposit</option>
-          <option v-for="deposit in deposits" :key="deposit.name" :value="deposit">{{ deposit.name }}</option>
+          <option v-for="deposit in deposits" :value="deposit">{{ deposit.name }}</option>
         </select>
       </va-card>
       <center>
@@ -34,9 +34,9 @@
     </div>
     <br>
     <ul>
-      <li v-for="(mineral, index) in generatedMinerals" :key="index">
-        <h4>{{ mineral.name }}:</h4> <h3>{{ mineral.percentage }}%</h3>
-      </li>
+    <li v-for="(mineral, index) in generatedDeposit" :key="index">
+      <h4>{{ mineral.name }}:</h4> <h3>{{ mineral.percentage }}%</h3>
+    </li>
     </ul>
     <br>
     <div class="asteroid">
@@ -237,7 +237,7 @@
 </script>
 
 <script>
-import generateDeposit from '~/utils/depositGenerator';
+import * as math from 'mathjs';
 
 export default {
   data() {
@@ -258,7 +258,6 @@ export default {
       planets: [
         'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
         ],
-      selectedDeposit: '',
       deposits: [
         { name: 'C Type',
           minerals: [
@@ -283,507 +282,9 @@ export default {
           ],
           minCount: 2,
           },
-        { name: 'E Type',
-          minerals: [
-            { name: 'Borase',
-              minPercentage: 1.2,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name: 'Corundum',
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Diamond',
-              minPercentage: 1,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 2,
-              },
-            { name: 'Gold',
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 2,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'M Type',
-          minerals: [
-            { name: 'Hephaestanite',
-              minPercentage: 1.1,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Laranite',
-              minPercentage: 1.2,
-              maxPercentage: 30,
-              probability: 0.2,
-              exponent: 5,
-              },
-            { name: 'Tungsten',
-              minPercentage: 3,
-              maxPercentage: 45,
-              probability: 0.5,
-              exponent: 2,
-              },
-          ],
-          minCount: 2,
-          },
-        { name: 'P Type',
-          minerals: [
-            { name: 'Aluminium',
-              minPercentage: 3,
-              maxPercentage: 55,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Bexalite', 
-              minPercentage: 1.1,
-              maxPercentage: 20,
-              probability: 0.5,
-              exponent: 5,
-              },
-            { name: 'Corundum', 
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 1.5,
-              },
-            { name: 'Diamond', 
-              minPercentage: 1.15,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Titanium', 
-              minPercentage: 5,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 3,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Q Type',
-          minerals: [
-            { name: 'Beryl',
-              minPercentage: 1.5,
-              maxPercentage: 30,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Borase', 
-              minPercentage: 1.12,
-              maxPercentage: 15,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Quantanium', 
-              minPercentage: 2.1,
-              maxPercentage: 50,
-              probability: 1,
-              exponent: 6,
-              },
-            { name: 'Quartz', 
-              minPercentage: 20,
-              maxPercentage: 40,
-              probability: 0.7,
-              exponent: 3,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'S Type',
-          minerals: [
-            { name: 'Borase',
-              minPercentage: 1,
-              maxPercentage: 20,
-              probability: 0.0625,
-              exponent: 4,
-              },
-            { name: 'Copper', 
-              minPercentage: 2,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 2,
-              },
-            { name: 'Titanium', 
-              minPercentage: 1,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 2,
-              },
-          ],
-          minCount: 2,
-          },
-        { name: 'Atacamite',
-          minerals: [
-            { name: 'Agricium',
-              minPercentage: 1,
-              maxPercentage: 15,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name: 'Beryl', 
-              minPercentage: 3,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 1.5,
-              },
-            { name: 'Diamond', 
-              minPercentage: 2,
-              maxPercentage: 40,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Quartz', 
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 1.5,
-              },
-            { name: 'Taranite', 
-              minPercentage: 1.16,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 5,
-              },
-          ],
-          minCount: 2,
-          },
-        { name: 'Felsic',
-          minerals: [
-            { name: 'Bexalite',
-              minPercentage: 1,
-              maxPercentage: 30,
-              probability: 0.2,
-              exponent: 6,
-              },
-            { name: 'Hephaestanite', 
-              minPercentage: 2,
-              maxPercentage: 25,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Quartz', 
-              minPercentage: 3,
-              maxPercentage: 55,
-              probability: 0.5,
-              exponent: 1.5,
-              },
-            { name: 'Tungsten', 
-              minPercentage: 3,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 2.5,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Gneiss',
-          minerals: [
-            { name: 'Agricium',
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name: 'Aluminium', 
-              minPercentage: 3,
-              maxPercentage: 65,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Beryl', 
-              minPercentage: 2,
-              maxPercentage: 20,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Diamond', 
-              minPercentage: 1,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 2,
-              },
-            { name: 'Taranite', 
-              minPercentage: 1,
-              maxPercentage: 30,
-              probability: 0.2,
-              exponent: 6,
-              },
-            { name: 'Tungsten',
-              minPercentage: 2,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 2,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Granite',
-          minerals: [
-            { name: 'Agricium',
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name: 'Copper', 
-              minPercentage: 3,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Corundum', 
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Diamond', 
-              minPercentage: 3,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Laranite', 
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name:'Tungsten',
-              minPercentage: 3,
-              maxPercentage: 45,
-              probability: 0.5,
-              exponent: 2,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Igneous',
-          minerals: [
-            { name: 'Copper',
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.5,
-              exponent: 3,
-              },
-            { name: 'Gold',
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Taranite',
-              minPercentage: 3,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Titanium',
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Tungsten',
-              minPercentage: 3,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 3,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Obsidian',
-          minerals: [
-            { name: 'Beryl',
-              minPercentage: 2,
-              maxPercentage: 40,
-              probability: 0.25,
-              exponent: 2,
-              },
-            { name: 'Bexalite', 
-              minPercentage: 3,
-              maxPercentage: 30,
-              probability: 0.2,
-              exponent: 5,
-              },
-            { name: 'Corundum', 
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Diamond',
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.35,
-              exponent: 3,
-              },
-            { name: 'Hephaestanite', 
-              minPercentage: 3,
-              maxPercentage: 30,
-              probability: 0.2,
-              exponent: 4,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Quantanium',
-          minerals: [
-            { name: 'Aluminium',
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 3,
-              },
-            { name: 'Beryl', 
-              minPercentage: 2,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Borase', 
-              minPercentage: 1,
-              maxPercentage: 15,
-              probability: 0.15,
-              exponent: 4,
-              },
-            { name: 'Quantanium', 
-              minPercentage: 2.1,
-              maxPercentage: 50,
-              probability: 1,
-              exponent: 5,
-              },
-            { name: 'Quartz', 
-              minPercentage: 20,
-              maxPercentage: 60,
-              probability: 0.7,
-              exponent: 2,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Quartzite',
-          minerals: [
-            { name: 'Beryl',
-              minPercentage: 2,
-              maxPercentage: 40,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Copper', 
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Diamond', 
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Gold', 
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 3,
-              },
-            { name: 'Quartz', 
-              minPercentage: 20,
-              maxPercentage: 65,
-              probability: 1,
-              exponent: 2,
-              },
-            { name: 'Taranite',
-              minPercentage: 1,
-              maxPercentage: 15,
-              probability: 0.25,
-              exponent: 4,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Shale',
-          minerals: [
-            { name: 'Agricium',
-              minPercentage: 2,
-              maxPercentage: 30,
-              probability: 0.25,
-              exponent: 4,
-              },
-            { name: 'Aluminium', 
-              minPercentage: 3,
-              maxPercentage: 50,
-              probability: 0.5,
-              exponent: 2,
-              },
-            { name: 'Gold', 
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 2,
-              },
-            { name: 'Laranite', 
-              minPercentage: 2,
-              maxPercentage: 20,
-              probability: 0.25,
-              exponent: 5,
-              },
-            { name: 'Titanium', 
-              minPercentage: 2,
-              maxPercentage: 35,
-              probability: 0.25,
-              exponent: 3,
-              },
-          ],
-          minCount: 3,
-          },
-        { name: 'Aphorite',
-          minerals: [
-            { name: 'Aphorite',
-              minPercentage: 50,
-              maxPercentage: 100,
-              probability: 1,
-              exponent: 1,
-              },
-          ],
-          minCount: 1,
-          },
-        { name: 'Dolivine',
-          minerals: [
-            { name: 'Dolivine',
-              minPercentage: 50,
-              maxPercentage: 100,
-              probability: 1,
-              exponent: 1,
-              },
-          ],
-          minCount: 1,
-          },
-        { name: 'Hadanite',
-          minerals: [
-            { name: 'Hadanite',
-              minPercentage: 50,
-              maxPercentage: 100,
-              probability: 1,
-              exponent: 1,
-              },
-          ],
-          minCount: 1,
-          },
         ],
-      generatedMinerals: [],
+      selectedDeposit: '',
+      generatedDeposit: [],
       p1laserModule: '',
       p2laserModule: '',
       p3laserModule: '',
@@ -802,20 +303,69 @@ export default {
     }
   },
   methods: {
-    async generateDeposit() {
-      try {
-        if (!this.selectedDeposit) {
-          throw new Error('No deposit selected');
+    generateDeposit() {
+      console.log(this.selectedDeposit);
+      const minerals = this.selectedDeposit.minerals
+      console.log(minerals);
+      const minCount = this.selectedDeposit.minCount
+      let includedMinerals = [];
+      let totalPercentage = 0;
+
+        // select minerals for the deposit based on their probabilities
+        for(let i=0; i < minerals.length; i++) {
+          const randomValueOverProbability = Math.random() / minerals[i].probability;
+          if (randomValueOverProbability <= 1) {
+            includedMinerals.push(minerals[i]);
+            if (includedMinerals.length >= minCount) {
+              break;
+            }
+          }
         }
-        const deposit = await generateDeposit(this.selectedDeposit.minerals, this.selectedDeposit.minCount);
-        this.generatedMinerals = deposit.minerals;
-        this.$emit('deposit-generated', deposit);
-      } catch (error) {
-        console.error(error);
-      }
+
+        // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
+        while (includedMinerals.length < minCount) {
+          let closestMineral = null;
+          let closestValue = Infinity;
+          for (let mineral of minerals) {
+            if (!includedMinerals.includes(mineral)) {
+              const randomValueOverProbability = Math.random() / mineral.probability;
+              const value = Math.abs(randomValueOverProbability - 1);
+              if (value < closestValue) {
+                closestValue = value;
+                closestMineral = mineral;
+              }
+            }
+          }
+          includedMinerals.push(closestMineral);
+        }
+        
+        // calculate percentage of each included mineral in the deposit
+        for (let mineral of includedMinerals) {
+          const percentage = Math.ceil((-mineral.exponent * Math.log(Math.random())) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral. minPercentage);
+          totalPercentage += percentage;
+          mineral.percentage = percentage;
+        }
+
+        // if total percentage is over 100, regenerate percentages for included minerals
+        if (totalPercentage > 100) {
+          for (let mineral of includedMinerals) {
+            mineral.percentage = null;
+          }
+          //return this.generateDeposit(minerals, minCount);
+        }
+
+        // if total percentage is less than 100, add inert material to the deposit
+        //if (totalPercentage < 100) {
+          const inertPercentage = 100 - totalPercentage;
+          includedMinerals.push({ name: 'Inert Material', percentage: inertPercentage });
+        //}
+        this.generatedDeposit = includedMinerals
+        console.log(this.generatedDeposit)
+
+      },
     },
-  },
-};
+  };
+
 </script>
 
 <style scoped>
