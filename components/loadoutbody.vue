@@ -36,7 +36,7 @@
       <div class="mineralList" 
         style="margin-block-start:15%;">
         <span style="position:absolute; display:flex; align-content:center; justify-content:space-between; left: 50%; transform: translateX(-50%);">
-          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center; width:165px;">
+          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center;">
             <h4>{{ mineral.name }}</h4>
             <br>
             <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
@@ -56,19 +56,19 @@
           Instability
           </h4>
           <br>
-          <h3 v-for="instability in generatedDeposit" :key="totalInstability">
-          {{ (generatedDeposit.totalInstability).toFixed(2) }}
+          <h3>
+          {{ (generatedInstability).toFixed(2) }}
           </h3>
         </va-card>
         <va-card
         color="#1B191E"
         class="harvestable">
-          <h4 v-for="resistance in generatedDeposit" :key="totalResistance">
+          <h4>
           Resistance
           </h4>
           <br>
           <h3>
-          {{ (generatedDeposit.totalResistance).toFixed(2) }}
+          {{ (generatedResistance).toFixed(2) }}
           </h3>
         </va-card>
       </div>
@@ -933,8 +933,8 @@ export default {
         ],
       selectedDeposit: '',
       generatedDeposit: [],
-      generatedInstability: 0,
-      generatedResistance: 0,
+      generatedInstability:'',
+      generatedResistance:'',
       p1laserModule: '',
       p2laserModule: '',
       p3laserModule: '',
@@ -966,11 +966,18 @@ export default {
         // select minerals for the deposit based on their probabilities
         for (let mineral of minerals) {
           if (this.selectedDeposit.minerals.includes(mineral.name)) {
-            const randomValueOverProbability = Math.random() / mineral.probability;
-            if (randomValueOverProbability <= 1) {
+            if (mineral.probability === 1) {
               includedMinerals.push(mineral);
               if (includedMinerals.length >= selectedDeposit.minCount) {
                 break;
+              }
+            } else {
+              const randomValueOverProbability = Math.random() / mineral.probability;
+              if (randomValueOverProbability <= 1) {
+                includedMinerals.push(mineral);
+                if (includedMinerals.length >= selectedDeposit.minCount) {
+                  break;
+                }
               }
             }
           }
@@ -1001,17 +1008,16 @@ export default {
         }
 
         // calculate instability and resistance values of the deposit
-        for (let mineral of includedMinerals) {
-          const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
-          const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
+        for (let mineral of minerals) {
+          if (includedMinerals.includes(mineral.name)) {
+            const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
+            const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
 
-          totalInstability += instability;
-          totalResistance += resistance;
-
-          this.generatedInstability = totalInstability;
-          this.generatedResistance = totalResistance;
+            totalInstability += instability
+            totalResistance += resistance
+          }
         }
-
+        
         // if total percentage is over 100, regenerate percentages for included minerals
         if (totalPercentage > 100) {
           for (let mineral of includedMinerals) {
@@ -1029,8 +1035,12 @@ export default {
           includedMinerals.push({ name: 'Inert Material', percentage: inertPercentage });
         }
         
+        this.generatedInstability = totalInstability
+        this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
         console.log(this.generatedDeposit)
+        console.log(this.generatedInstability)
+        console.log(this.generatedResistance)
 
       },
     },
