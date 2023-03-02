@@ -965,23 +965,16 @@ export default {
 
         // select minerals for the deposit based on their probabilities
         for (let mineral of minerals) {
-          if (this.selectedDeposit.minerals.includes(mineral.name)) {
-            if (mineral.probability === 1) {
+          if (mineral.probability === 1) {
+            includedMinerals.push(mineral);
+          } else {
+            const randomValueOverProbability = Math.random() / mineral.probability;
+            if (randomValueOverProbability <= 1) {
               includedMinerals.push(mineral);
-              if (includedMinerals.length >= selectedDeposit.minCount) {
-                break;
-              }
-            } else {
-              const randomValueOverProbability = Math.random() / mineral.probability;
-              if (randomValueOverProbability <= 1) {
-                includedMinerals.push(mineral);
-                if (includedMinerals.length >= selectedDeposit.minCount) {
-                  break;
-                }
-              }
             }
           }
         }
+        console.log(includedMinerals)
 
         // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
         while (includedMinerals.length < minCount) {
@@ -1009,13 +1002,12 @@ export default {
 
         // calculate instability and resistance values of the deposit
         for (let mineral of minerals) {
-          if (includedMinerals.includes(mineral.name)) {
-            const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
-            const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
-
-            totalInstability += instability
-            totalResistance += resistance
-          }
+          const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
+          totalInstability += instability
+        }
+        for (let mineral of minerals) {
+          const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage))
+          totalResistance += resistance
         }
         
         // if total percentage is over 100, regenerate percentages for included minerals
@@ -1039,9 +1031,6 @@ export default {
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
         console.log(this.generatedDeposit)
-        console.log(this.generatedInstability)
-        console.log(this.generatedResistance)
-
       },
     },
   };
