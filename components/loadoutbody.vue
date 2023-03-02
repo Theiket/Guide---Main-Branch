@@ -56,19 +56,19 @@
           Instability
           </h4>
           <br>
-          <h3>
-          00.00
+          <h3 v-for="instability in generatedDeposit" :key="totalInstability">
+          {{ (generatedDeposit.totalInstability).toFixed(2) }}
           </h3>
         </va-card>
         <va-card
         color="#1B191E"
         class="harvestable">
-          <h4>
+          <h4 v-for="resistance in generatedDeposit" :key="totalResistance">
           Resistance
           </h4>
           <br>
           <h3>
-          00.00
+          {{ (generatedDeposit.totalResistance).toFixed(2) }}
           </h3>
         </va-card>
       </div>
@@ -933,6 +933,8 @@ export default {
         ],
       selectedDeposit: '',
       generatedDeposit: [],
+      generatedInstability: 0,
+      generatedResistance: 0,
       p1laserModule: '',
       p2laserModule: '',
       p3laserModule: '',
@@ -999,15 +1001,15 @@ export default {
         }
 
         // calculate instability and resistance values of the deposit
-        for  (let mineral of includedMinerals) {
+        for (let mineral of includedMinerals) {
           const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
           const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
 
           totalInstability += instability;
           totalResistance += resistance;
 
-          includedMinerals.push(totalInstability);
-          includedMinerals.push(totalResistance);
+          this.generatedInstability = totalInstability;
+          this.generatedResistance = totalResistance;
         }
 
         // if total percentage is over 100, regenerate percentages for included minerals
@@ -1015,7 +1017,7 @@ export default {
           for (let mineral of includedMinerals) {
             mineral.percentage = null;
           }
-          return this.generateDeposit(minerals, minCount);
+          return this.generateDeposit();
         }
 
         // sort includedMaterials to be alphabetical
