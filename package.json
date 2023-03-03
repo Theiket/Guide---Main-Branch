@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^0.7.1",
+    "@stdlib/stats-base-dists-exponential-pdf": "^0.0.7",
     "@vuestic/nuxt": "^1.0.9",
     "mathjs": "^11.6.0",
     "nuxt-icon": "^0.2.7",
