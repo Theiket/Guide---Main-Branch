@@ -100,21 +100,21 @@
         v-if="prospectorLaser !== ''">
           <select v-model="p1laserModule">
             <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
           </select>
         </div>
         <div class="moduleSelect" 
         v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1' || prospectorLaser === 'Impact S1' ">
           <select v-model="p2laserModule">
             <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
           </select>
         </div>
         <div class="moduleSelect" 
         v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1'">
           <select v-model="p3laserModule">
             <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
           </select>
         </div>
         </center>
@@ -134,28 +134,28 @@
           <select v-model="leftLaser">
             <option disabled value="">Select Laser</option>
             <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
-            </select>
+          </select>
           <br><br>
           <span class="moduleSelect" 
           v-if="leftLaser !== ''">
             <select v-model="l1laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </span>
           <span class="moduleSelect" 
           v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2' || leftLaser === 'Impact S2' ">
             <select v-model="l2laserModule">
               <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </span>
           <span class="moduleSelect" 
           v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2'">
             <select v-model="l3laserModule">
               <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
+            </select>
           </span>
         </td>
         <td>
@@ -163,29 +163,29 @@
         <p>Central Turret</p>
           <br>
           <select v-model="centralLaser">
-          <option disabled value="">Select Laser</option>
-          <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
           </select>
           <br><br>
           <div class="moduleSelect" 
           v-if="centralLaser !== ''">
             <select v-model="c1laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
           <div class="moduleSelect" 
           v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2' || centralLaser === 'Impact S2' ">
             <select v-model="c2laserModule">
               <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
           <div class="moduleSelect" 
           v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2'">
             <select v-model="c3laserModule">
               <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
         </td>
@@ -194,29 +194,29 @@
         <p>Right Turret</p>
           <br>
           <select v-model="rightLaser">
-          <option disabled value="">Select Laser</option>
-          <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
           </select>
           <br><br>
           <div class="moduleSelect" 
           v-if="rightLaser !== ''">
             <select v-model="c1laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
           <div class="moduleSelect" 
           v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2' || rightLaser === 'Impact S2' ">
             <select v-model="c2laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+                <option disabled value="">Select Module</option>
+                <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
           <div class="moduleSelect" 
           v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2'">
             <select v-model="c3laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+                <option disabled value="">Select Module</option>
+                <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
             </select>
           </div>
         </td>
@@ -955,7 +955,110 @@ export default {
       r2laserModule: '',
       r3laserModule: '',
       lasermodules: [
-        'Brandt','Forel','Lifeline','Optimum','Rime','Stampede','Surge','Torpid','FLTR MK1','FLTR MK2','FLTR MK3','Focus MK1','Focus MK2','Focus MK3','Reiger MK1','Reiger MK2','Reiger MK3','Torrent MK1','Torrent MK2','Torrent MK3','Vaux MK1','Vaux MK2','Vaux MK3','XTR MK1','XTR MK2','XTR MK3'
+        { name:'Brandt',
+          instability: -75,
+          resistance: 0,
+        },
+        { name:'Forel',
+          instability: 10,
+          resistance: -0.2,
+        },
+        { name:'Lifeline',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'Optimum',
+          instability: 10,
+          resistance: 0,
+        },
+        { name:'Rime',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'Stampede',
+          instability: 10,
+          resistance: 0,
+        },
+        { name:'Surge',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'Torpid',
+          instability: 0,
+          resistance: -0.2,
+        },
+        { name:'FLTR MK1',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'FLTR MK2',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'FLTR MK3',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'Focus MK1',
+          instability: 6,
+          resistance: -0.06,
+        },
+        { name:'Focus MK2',
+          instability: 5,
+          resistance: -0.08,
+        },
+        { name:'Focus MK3',
+          instability: 4,
+          resistance: -0.1,
+        },
+        { name:'Reiger MK1',
+          instability: 0,
+          resistance: 0.04,
+        },
+        { name:'Reiger MK2',
+          instability: 0,
+          resistance: 0.05,
+        },
+        { name:'Reiger MK3',
+          instability: 0,
+          resistance: 0.06,
+        },
+        { name:'Torrent MK1',
+          instability: 5,
+          resistance: 0,
+        },
+        { name:'Torrent MK2',
+          instability: 4,
+          resistance: 0,
+        },
+        { name:'Torrent MK3',
+          instability: 3,
+          resistance: 0,
+        },
+        { name:'Vaux MK1',
+          instability: -6,
+          resistance: 0,
+        },
+        { name:'Vaux MK2',
+          instability: -8,
+          resistance: 0,
+        },
+        { name:'Vaux MK3',
+          instability: -10,
+          resistance: 0,
+        },
+        { name:'XTR MK1',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'XTR MK2',
+          instability: 0,
+          resistance: 0,
+        },
+        { name:'XTR MK3',
+          instability: 0,
+          resistance: 0,
+        },
         ],
     }
   },
