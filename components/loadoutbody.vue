@@ -243,7 +243,7 @@
 
 <script>
 import * as math from 'mathjs';
-import pdf  from '@stdlib/stats-base-dists-exponential';
+import pdf  from '@stdlib/stats-base-dists-exponential-pdf';
 
 export default {
   data() {
@@ -996,7 +996,7 @@ export default {
         
         // calculate percentage of each included mineral in the deposit
         for (let mineral of includedMinerals) {
-          const percentage = pdf(rand(),mineral.exponent) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
+          const percentage = pdf(Math.random(),mineral.exponent) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
           
           totalPercentage += percentage;
           mineral.percentage = percentage;
