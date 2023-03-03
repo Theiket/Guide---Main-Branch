@@ -85,19 +85,18 @@
     <div class="rightcol">
       <div class="prospectorCard" v-if="prospector">
         <center>
-          <button class="button Alternate" @click="prospector = !prospector">
+          <button class="button Alternate" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = [];">
             Prospector
           </button>
           <br><br>
           <p>Mining Laser</p>
           <br>
           <select v-model="prospectorLaser">
-            <option disabled value="">Select Laser</option>
-            <option v-for="laser in s1lasers" :key="laser.name">
-            {{ laser.name }}
-            </option>
+            <option value="" disabled>Select Laser</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">{{ laser.name }}</option>
           </select>
           <br><br>
+          <div v-if="prospectorLaser">
           <div v-for="n in prospectorLaser.consumables">
             <div class="moduleSelect">
               <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
@@ -108,6 +107,7 @@
               </select>
             </div>
             <br>
+          </div>
           </div>
         </center>
       </div>
