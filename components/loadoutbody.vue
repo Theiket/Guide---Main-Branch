@@ -72,166 +72,172 @@
           </h3>
         </va-card>
       </div>
+      <br>
+      <center>
+        <p style="font-size:10px;">
+        Generation is based on the mechanics of Star Citizen but may not be 100% accurate
+        </p>
+      </center>
     </div>
   </div>
 <!-- Loadout Selection -->
   <div class="rightcard">
-  <div class="rightcol">
-    <div class="prospectorCard" v-if="prospector">
-      <center>
-      <button class="button Alternate" @click="prospector = !prospector">
-      Prospector
-      </button>
-      <br><br>
-      <p>Mining Laser</p>
-      <br>
-      <select v-model="prospectorLaser">
-        <option disabled value="">Select Laser</option>
-        <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
-      </select>
-      <br><br>
-      <div class="moduleSelect" 
-      v-if="prospectorLaser !== ''">
-        <select v-model="p1laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-        </select>
-      </div>
-      <div class="moduleSelect" 
-      v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1' || prospectorLaser === 'Impact S1' ">
-        <select v-model="p2laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-        </select>
-      </div>
-      <div class="moduleSelect" 
-      v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1'">
-        <select v-model="p3laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-        </select>
-      </div>
-      </center>
-    </div>
-    <div class="moleCard" v-else-if="mole">
-      <center>
-      <button class="button Alternate" 
-      @click="mole = !mole">
-      MOLE
-      </button>
-      <table>
-      <tr>
-      <td>
-      <br><br>
-      <p>Left Turret</p>
+    <div class="rightcol">
+      <div class="prospectorCard" v-if="prospector">
+        <center>
+        <button class="button Alternate" @click="prospector = !prospector">
+        Prospector
+        </button>
+        <br><br>
+        <p>Mining Laser</p>
         <br>
-        <select v-model="leftLaser">
+        <select v-model="prospectorLaser">
+          <option disabled value="">Select Laser</option>
+          <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
+        </select>
+        <br><br>
+        <div class="moduleSelect" 
+        v-if="prospectorLaser !== ''">
+          <select v-model="p1laserModule">
+            <option disabled value="">Select Module</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+          </select>
+        </div>
+        <div class="moduleSelect" 
+        v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1' || prospectorLaser === 'Impact S1' ">
+          <select v-model="p2laserModule">
+            <option disabled value="">Select Module</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+          </select>
+        </div>
+        <div class="moduleSelect" 
+        v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1'">
+          <select v-model="p3laserModule">
+            <option disabled value="">Select Module</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+          </select>
+        </div>
+        </center>
+      </div>
+      <div class="moleCard" v-else-if="mole">
+        <center>
+        <button class="button Alternate" 
+        @click="mole = !mole">
+        MOLE
+        </button>
+        <table>
+        <tr>
+        <td>
+        <br><br>
+        <p>Left Turret</p>
+          <br>
+          <select v-model="leftLaser">
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            </select>
+          <br><br>
+          <span class="moduleSelect" 
+          v-if="leftLaser !== ''">
+            <select v-model="l1laserModule">
+            <option disabled value="">Select Module</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </span>
+          <span class="moduleSelect" 
+          v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2' || leftLaser === 'Impact S2' ">
+            <select v-model="l2laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </span>
+          <span class="moduleSelect" 
+          v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2'">
+            <select v-model="l3laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+          </select>
+          </span>
+        </td>
+        <td>
+        <br><br>
+        <p>Central Turret</p>
+          <br>
+          <select v-model="centralLaser">
           <option disabled value="">Select Laser</option>
           <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
           </select>
+          <br><br>
+          <div class="moduleSelect" 
+          v-if="centralLaser !== ''">
+            <select v-model="c1laserModule">
+            <option disabled value="">Select Module</option>
+            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </div>
+          <div class="moduleSelect" 
+          v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2' || centralLaser === 'Impact S2' ">
+            <select v-model="c2laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </div>
+          <div class="moduleSelect" 
+          v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2'">
+            <select v-model="c3laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </div>
+        </td>
+        <td>
         <br><br>
-        <span class="moduleSelect" 
-        v-if="leftLaser !== ''">
-          <select v-model="l1laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+        <p>Right Turret</p>
+          <br>
+          <select v-model="rightLaser">
+          <option disabled value="">Select Laser</option>
+          <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
           </select>
-        </span>
-        <span class="moduleSelect" 
-        v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2' || leftLaser === 'Impact S2' ">
-          <select v-model="l2laserModule">
+          <br><br>
+          <div class="moduleSelect" 
+          v-if="rightLaser !== ''">
+            <select v-model="c1laserModule">
             <option disabled value="">Select Module</option>
             <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </span>
-        <span class="moduleSelect" 
-        v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2'">
-          <select v-model="l3laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-        </select>
-        </span>
-      </td>
-      <td>
-      <br><br>
-      <p>Central Turret</p>
+            </select>
+          </div>
+          <div class="moduleSelect" 
+          v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2' || rightLaser === 'Impact S2' ">
+            <select v-model="c2laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </div>
+          <div class="moduleSelect" 
+          v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2'">
+            <select v-model="c3laserModule">
+              <option disabled value="">Select Module</option>
+              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
+            </select>
+          </div>
+        </td>
+        </tr>
+        </table>
+        </center>
+      </div>
+      <div class="mainButtons" v-else>
+        <center>
+        <button class="button Prospector" @click="prospector = !prospector">
+        Prospector
+        </button>
         <br>
-        <select v-model="centralLaser">
-        <option disabled value="">Select Laser</option>
-        <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
-        </select>
-        <br><br>
-        <div class="moduleSelect" 
-        v-if="centralLaser !== ''">
-          <select v-model="c1laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2' || centralLaser === 'Impact S2' ">
-          <select v-model="c2laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2'">
-          <select v-model="c3laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-      </td>
-      <td>
-      <br><br>
-      <p>Right Turret</p>
-        <br>
-        <select v-model="rightLaser">
-        <option disabled value="">Select Laser</option>
-        <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
-        </select>
-        <br><br>
-        <div class="moduleSelect" 
-        v-if="rightLaser !== ''">
-          <select v-model="c1laserModule">
-          <option disabled value="">Select Module</option>
-          <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2' || rightLaser === 'Impact S2' ">
-          <select v-model="c2laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2'">
-          <select v-model="c3laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule }}</option>
-          </select>
-        </div>
-      </td>
-      </tr>
-      </table>
-      </center>
-    </div>
-    <div class="mainButtons" v-else>
-      <center>
-      <button class="button Prospector" @click="prospector = !prospector">
-      Prospector
-      </button>
-      <br>
-      <button class="button MOLE" @click="
-      mole = !mole">
-      MOLE
-      </button>
-      </center>
+        <button class="button MOLE" @click="
+        mole = !mole">
+        MOLE
+        </button>
+        </center>
+      </div>
     </div>
   </div>
-</div>
 </div>
 </template>
 
