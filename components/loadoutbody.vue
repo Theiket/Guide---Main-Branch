@@ -117,8 +117,7 @@
         @click="mole = !mole">
         MOLE
         </button>
-        <table>
-        <tr>
+        <span>
         <td>
         <br><br>
         <p>Left Turret</p>
@@ -212,8 +211,7 @@
             </select>
           </div>
         </td>
-        </tr>
-        </table>
+        </span>
         </center>
       </div>
       <div class="mainButtons" v-else>
