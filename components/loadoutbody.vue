@@ -85,38 +85,30 @@
     <div class="rightcol">
       <div class="prospectorCard" v-if="prospector">
         <center>
-        <button class="button Alternate" @click="prospector = !prospector">
-        Prospector
-        </button>
-        <br><br>
-        <p>Mining Laser</p>
-        <br>
-        <select v-model="prospectorLaser">
-          <option disabled value="">Select Laser</option>
-          <option v-for="laser in s1lasers" :key="laser">{{ laser }}</option>
-        </select>
-        <br><br>
-        <div class="moduleSelect" 
-        v-if="prospectorLaser !== ''">
-          <select v-model="p1laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
+          <button class="button Alternate" @click="prospector = !prospector">
+            Prospector
+          </button>
+          <br><br>
+          <p>Mining Laser</p>
+          <br>
+          <select v-model="prospectorLaser">
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s1lasers" :key="laser.name">
+            {{ laser.name }}
+            </option>
           </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1' || prospectorLaser === 'Impact S1' ">
-          <select v-model="p2laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-          </select>
-        </div>
-        <div class="moduleSelect" 
-        v-if="prospectorLaser === 'Lancet S1' || prospectorLaser === 'Helix S1'">
-          <select v-model="p3laserModule">
-            <option disabled value="">Select Module</option>
-            <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-          </select>
-        </div>
+          <br><br>
+          <div v-for="n in prospectorLaser.consumables">
+            <div class="moduleSelect">
+              <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
+                <option disabled value="">Select Module</option>
+                <option v-for="module in lasermodules" :key="module.name">
+                {{ module.name }}
+                </option>
+              </select>
+            </div>
+            <br>
+          </div>
         </center>
       </div>
       <div class="moleCard" v-else-if="mole">
@@ -133,7 +125,7 @@
           <br>
           <select v-model="leftLaser">
             <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
           </select>
           <br><br>
           <span class="moduleSelect" 
@@ -164,7 +156,7 @@
           <br>
           <select v-model="centralLaser">
             <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
           </select>
           <br><br>
           <div class="moduleSelect" 
@@ -195,7 +187,7 @@
           <br>
           <select v-model="rightLaser">
             <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser }}</option>
+            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
           </select>
           <br><br>
           <div class="moduleSelect" 
@@ -260,11 +252,185 @@ export default {
       centralLaser: '',
       rightLaser: '',
       s2lasers: [
-        'Arbor S2','Lancet S2', 'Hofstede S2','Klein S2','Helix S2','Impact S2'
+        { name:'Arbor S2',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S2',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S2',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S2',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
         ],
       prospectorLaser: '',
       s1lasers: [
-        'Arbor S1','Lancet S1', 'Hofstede S1','Klein S1','Helix S1','Impact S1'
+        { name:'Arbor S1',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S1',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S1',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S1',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
+        ],
+      prospectorLaserModules: ['', '', ''],
+      l1laserModule: '',
+      l2laserModule: '',
+      l3laserModule: '',
+      c1laserModule: '',
+      c2laserModule: '',
+      c3laserModule: '',
+      r1laserModule: '',
+      r2laserModule: '',
+      r3laserModule: '',
+      lasermodules: [
+        { name:'Brandt',
+          instability: -75,
+          resistance: 0,
+          },
+        { name:'Forel',
+          instability: 10,
+          resistance: -0.2,
+          },
+        { name:'Lifeline',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Optimum',
+          instability: 10,
+          resistance: 0,
+          },
+        { name:'Rime',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Stampede',
+          instability: 10,
+          resistance: 0,
+          },
+        { name:'Surge',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Torpid',
+          instability: 0,
+          resistance: -0.2,
+          },
+        { name:'FLTR MK1',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'FLTR MK2',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'FLTR MK3',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Focus MK1',
+          instability: 6,
+          resistance: -0.06,
+          },
+        { name:'Focus MK2',
+          instability: 5,
+          resistance: -0.08,
+          },
+        { name:'Focus MK3',
+          instability: 4,
+          resistance: -0.1,
+          },
+        { name:'Reiger MK1',
+          instability: 0,
+          resistance: 0.04,
+          },
+        { name:'Reiger MK2',
+          instability: 0,
+          resistance: 0.05,
+          },
+        { name:'Reiger MK3',
+          instability: 0,
+          resistance: 0.06,
+          },
+        { name:'Torrent MK1',
+          instability: 5,
+          resistance: 0,
+          },
+        { name:'Torrent MK2',
+          instability: 4,
+          resistance: 0,
+          },
+        { name:'Torrent MK3',
+          instability: 3,
+          resistance: 0,
+          },
+        { name:'Vaux MK1',
+          instability: -6,
+          resistance: 0,
+          },
+        { name:'Vaux MK2',
+          instability: -8,
+          resistance: 0,
+          },
+        { name:'Vaux MK3',
+          instability: -10,
+          resistance: 0,
+          },
+        { name:'XTR MK1',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'XTR MK2',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'XTR MK3',
+          instability: 0,
+          resistance: 0,
+          },
         ],
       selectPlanet: '',
       planets: [
@@ -942,124 +1108,6 @@ export default {
       generatedDeposit: [],
       generatedInstability: 0,
       generatedResistance: 0,
-      p1laserModule: '',
-      p2laserModule: '',
-      p3laserModule: '',
-      l1laserModule: '',
-      l2laserModule: '',
-      l3laserModule: '',
-      c1laserModule: '',
-      c2laserModule: '',
-      c3laserModule: '',
-      r1laserModule: '',
-      r2laserModule: '',
-      r3laserModule: '',
-      lasermodules: [
-        { name:'Brandt',
-          instability: -75,
-          resistance: 0,
-        },
-        { name:'Forel',
-          instability: 10,
-          resistance: -0.2,
-        },
-        { name:'Lifeline',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'Optimum',
-          instability: 10,
-          resistance: 0,
-        },
-        { name:'Rime',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'Stampede',
-          instability: 10,
-          resistance: 0,
-        },
-        { name:'Surge',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'Torpid',
-          instability: 0,
-          resistance: -0.2,
-        },
-        { name:'FLTR MK1',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'FLTR MK2',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'FLTR MK3',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'Focus MK1',
-          instability: 6,
-          resistance: -0.06,
-        },
-        { name:'Focus MK2',
-          instability: 5,
-          resistance: -0.08,
-        },
-        { name:'Focus MK3',
-          instability: 4,
-          resistance: -0.1,
-        },
-        { name:'Reiger MK1',
-          instability: 0,
-          resistance: 0.04,
-        },
-        { name:'Reiger MK2',
-          instability: 0,
-          resistance: 0.05,
-        },
-        { name:'Reiger MK3',
-          instability: 0,
-          resistance: 0.06,
-        },
-        { name:'Torrent MK1',
-          instability: 5,
-          resistance: 0,
-        },
-        { name:'Torrent MK2',
-          instability: 4,
-          resistance: 0,
-        },
-        { name:'Torrent MK3',
-          instability: 3,
-          resistance: 0,
-        },
-        { name:'Vaux MK1',
-          instability: -6,
-          resistance: 0,
-        },
-        { name:'Vaux MK2',
-          instability: -8,
-          resistance: 0,
-        },
-        { name:'Vaux MK3',
-          instability: -10,
-          resistance: 0,
-        },
-        { name:'XTR MK1',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'XTR MK2',
-          instability: 0,
-          resistance: 0,
-        },
-        { name:'XTR MK3',
-          instability: 0,
-          resistance: 0,
-        },
-        ],
     }
   },
   methods: {
