@@ -102,7 +102,7 @@
             <div class="moduleSelect">
               <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
                 <option disabled value="">Select Module</option>
-                <option v-for="module in lasermodules" :key="module.name">
+                <option v-for="module in laserModules" :key="module.name">
                 {{ module.name }}
                 </option>
               </select>
@@ -326,7 +326,7 @@ export default {
       r1laserModule: '',
       r2laserModule: '',
       r3laserModule: '',
-      lasermodules: [
+      laserModules: [
         { name:'Brandt',
           instability: -75,
           resistance: 0,
