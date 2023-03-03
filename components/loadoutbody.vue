@@ -243,7 +243,7 @@
 
 <script>
 import * as math from 'mathjs';
-import * as d3 from 'd3';
+import pdf  from '@stdlib/stats-base-dists-exponential';
 
 export default {
   data() {
@@ -996,13 +996,8 @@ export default {
         
         // calculate percentage of each included mineral in the deposit
         for (let mineral of includedMinerals) {
-          // generate a uniform random number between 0 and 1
-          const uniform = Math.random();
-
-          // apply the inverse transform to get an exponential random number
-          const exponential = -Math.log(1 - uniform) / mineral.exponent;
-
-          const percentage = exponential * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
+          const percentage = pdf(rand(),mineral.exponent) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
+          
           totalPercentage += percentage;
           mineral.percentage = percentage;
 
