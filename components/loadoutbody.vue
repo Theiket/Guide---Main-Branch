@@ -123,15 +123,17 @@
         <p>Left Turret</p>
           <br>
           <select v-model="leftLaser">
-            <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
+            <option value="" disabled>Select Laser</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">{{ laser.name }}</option>
           </select>
           <br><br>
           <span class="moduleSelect" 
           v-if="leftLaser !== ''">
             <select v-model="l1laserModule">
               <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
+              <option v-for="module in laserModules" :key="module.name">
+              {{ module.name }}
+              </option>
             </select>
           </span>
           <span class="moduleSelect" 
