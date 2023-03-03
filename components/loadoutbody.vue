@@ -243,6 +243,7 @@
 
 <script>
 import * as math from 'mathjs';
+import * as d3 from 'd3';
 
 export default {
   data() {
@@ -995,25 +996,17 @@ export default {
         
         // calculate percentage of each included mineral in the deposit
         for (let mineral of includedMinerals) {
-        // generate a uniform random number between 0 and 1
-        const uniform = Math.random();
+          // generate a uniform random number between 0 and 1
+          const uniform = Math.random();
 
-        // calculate the upper and lower bounds of the desired range
-        const a = mineral.minPercentage;
-        const b = mineral.maxPercentage;
+          // apply the inverse transform to get an exponential random number
+          const exponential = -Math.log(1 - uniform) / mineral.exponent;
 
-        // calculate the scaling factor for the inverse transform
-        const scale = -Math.log(1 - uniform) / mineral.exponent;
+          const percentage = exponential * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
+          totalPercentage += percentage;
+          mineral.percentage = percentage;
 
-        // apply the inverse transform to get an exponential random number
-        const exponential = scale / Math.exp(-mineral.exponent * a);
-
-        // calculate the percentage value based on the exponential distribution
-        const percentage = exponential * (b - a) + a;
-        totalPercentage += percentage;
-        mineral.percentage = percentage;
-
-        console.log(percentage);
+          console.log(percentage)
         }
 
         // calculate instability and resistance values of the deposit
@@ -1047,8 +1040,6 @@ export default {
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
         console.log(this.generatedDeposit)
-        console.log(this.generatedInstability)
-        console.log(this.generatedResistance)
       },
     },
   };
