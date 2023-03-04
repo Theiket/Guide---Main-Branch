@@ -57,7 +57,7 @@
           </h4>
           <br>
           <h3>
-          {{ ((((generatedInstability * (prospectorLaser.instability ? prospectorLaser.instability : 1)) * (((prospectorLaserModules[0].instability ? prospectorLaserModules[0].instability : 1) / 100) + 1)) * (((prospectorLaserModules[1].instability ? prospectorLaserModules[1].instability : 1) / 100) + 1)) * (((prospectorLaserModules[2].instability ? prospectorLaserModules[2].instability : 1) / 100) + 1)).toFixed(2) }}
+          {{ totalInstability }}
           </h3>
         </va-card>
         <va-card
@@ -69,7 +69,6 @@
           <br>
           <h3>
           {{ (generatedResistance * (prospectorLaser.resistance ? prospectorLaser.resistance + 1 : 1) * prospectorLaserModules.reduce((acc, module) => module.resistance ? acc * (module.resistance + 1) : acc, 1)).toFixed(2) }}
-
           </h3>
         </va-card>
       </div>
@@ -104,7 +103,7 @@
               <div class="moduleSelect">
                 <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
                   <option disabled value="">Select Module</option>
-                  <option v-for="module in laserModules" :key="module.name">
+                  <option v-for="module in laserModules" :key="module.name" :value="module">
                     {{ module.name }}
                   </option>
                 </select>
@@ -1085,6 +1084,48 @@ export default {
       generatedInstability: 0,
       generatedResistance: 0,
     }
+  },
+  computed : {
+    totalInstability() {
+      const laserInstability = (((this.prospectorLaser.instability ?? 0)/100)+1);
+      const laserModule0 = (((this.prospectorLaserModules[0].instability ?? 0)/100)+1);
+      const laserModule1 = (((this.prospectorLaserModules[1].instability ?? 0)/100)+1);
+      const laserModule2 = (((this.prospectorLaserModules[2].instability ?? 0)/100)+1);
+      const leftLaser = (((this.leftLaser.instability ?? 0)/100)+1)
+      const leftModule0 = (((this.leftLaserModules[0].instability ?? 0)/100)+1);
+      const leftModule1 = (((this.leftLaserModules[1].instability ?? 0)/100)+1);
+      const leftModule2 = (((this.leftLaserModules[2].instability ?? 0)/100)+1);
+      const centralLaser = (((this.centralLaser.instability ?? 0)/100)+1)
+      const centralModule0 = (((this.centralLaserModules[0].instability ?? 0)/100)+1);
+      const centralModule1 = (((this.centralLaserModules[1].instability ?? 0)/100)+1);
+      const centralModule2 = (((this.centralLaserModules[2].instability ?? 0)/100)+1);
+      const rightLaser = (((this.rightLaser.instability ?? 0)/100)+1)
+      const rightModule0 = (((this.rightLaserModules[0].instability ?? 0)/100)+1)
+      const rightModule1 = (((this.rightLaserModules[1].instability ?? 0)/100)+1)
+      const rightModule2 = (((this.rightLaserModules[2].instability ?? 0)/100)+1)
+
+      return (this.generatedInstability * laserInstability * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
+    },
+    totalResistance() {
+      const laserResistance = (((this.prospectorLaser.resistance ?? 0)/100)+1);
+      const laserModule0 = ((this.prospectorLaserModules[0].resistance ?? 0)+1);
+      const laserModule1 = ((this.prospectorLaserModules[1].resistance ?? 0)+1);
+      const laserModule2 = ((this.prospectorLaserModules[2].resistance ?? 0)+1);
+      const leftLaser = ((this.leftLaser.resistance ?? 0)+1)
+      const leftModule0 = ((this.leftLaserModules[0].resistance ?? 0)+1);
+      const leftModule1 = ((this.leftLaserModules[1].resistance ?? 0)+1);
+      const leftModule2 = ((this.leftLaserModules[2].resistance ?? 0)+1);
+      const centralLaser = ((this.centralLaser.resistance ?? 0)+1)
+      const centralModule0 = ((this.centralLaserModules[0].resistance ?? 0)+1);
+      const centralModule1 = ((this.centralLaserModules[1].resistance ?? 0)+1);
+      const centralModule2 = ((this.centralLaserModules[2].resistance ?? 0)+1);
+      const rightLaser = ((this.rightLaser.resistance ?? 0)+1)
+      const rightModule0 = ((this.rightLaserModules[0].resistance ?? 0)+1)
+      const rightModule1 = ((this.rightLaserModules[1].resistance ?? 0)+1)
+      const rightModule2 = ((this.rightLaserModules[2].resistance ?? 0)+1)
+
+      return (this.generatedResistance * laserInstability * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
+    },
   },
   methods: {
     generateDeposit() {
