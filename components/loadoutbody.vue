@@ -8,12 +8,12 @@
           color="#1B191E" 
           class="provider">
         <h4>
-          Planetary Body
+          Location
         </h4>
-        <select v-model="selectPlanet">
-          <option disabled value="">Select Planet</option>
-          <option v-for="planet in planets" :key="planet">
-          {{ planet }}
+        <select v-model="selectedLocation">
+          <option disabled value="">Select Location</option>
+          <option v-for="location in locations" :key="location">
+          {{ location }}
           </option>
           </select>
         </va-card>
@@ -25,7 +25,7 @@
           </h4>
           <select v-model="selectedDeposit">
             <option disabled value="">Select Deposit</option>
-            <option v-for="deposit in deposits" :value="deposit">
+            <option v-for="deposit in filteredDeposits" :value="deposit">
             {{ deposit.name }}
             </option>
           </select>
@@ -411,9 +411,8 @@ export default {
       r1laserModule: '',
       r2laserModule: '',
       r3laserModule: '',
-      selectPlanet: '',
-      planets: [
-        'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+      locations: [
+        'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe','Aaron Halo'
         ],
       deposits: [
         { name: 'C Type',
@@ -444,6 +443,9 @@ export default {
               },
           ],
           minCount: 2,
+          found:[
+            'Lagrange B'
+            ],
           },
         { name: 'E Type',
           minerals: [
@@ -481,6 +483,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange E','Lagrange F','Lagrange G','Lagrange Occupied','Yela Belt'
+            ],
           },
         { name: 'M Type',
           minerals: [
@@ -510,6 +515,9 @@ export default {
               },
           ],
           minCount: 2,
+          found:[
+            'Aaron Halo','Lagrange A','Lagrange C','Lagrange Occupied','Yela Belt'
+            ],
           },
         { name: 'P Type',
           minerals: [
@@ -555,6 +563,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange B','Lagrange D','Lagrange F','Lagrange G','Lagrange Occupied','Yela Belt'
+            ],
           },
         { name: 'Q Type',
           minerals: [
@@ -592,6 +603,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange A','Lagrange Occupied','Yela Belt'
+            ],
           },
         { name: 'S Type',
           minerals: [
@@ -621,6 +635,9 @@ export default {
               },
           ],
           minCount: 2,
+          found:[
+            'Lagrange C','Lagrange D','Lagrange E'
+            ],
           },
         { name: 'Atacamite',
           minerals: [
@@ -666,6 +683,9 @@ export default {
               },
           ],
           minCount: 2,
+          found:[
+            'Wala'
+            ],
           },
         { name: 'Felsic',
           minerals: [
@@ -703,6 +723,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Arial',
+            ],
           },
         { name: 'Gneiss',
           minerals: [
@@ -756,6 +779,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Arial','Aberdeen','Ita','Wala','Daymar','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Granite',
           minerals: [
@@ -809,6 +835,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aberdeen','Lyria','Cellin','Yela','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Igneous',
           minerals: [
@@ -854,6 +883,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Arial','Magda','Ita','Cellin','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Obsidian',
           minerals: [
@@ -899,6 +931,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aberdeen','Magda','Ita','Cellin','Daymar','Lyria','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Quantanium',
           minerals: [
@@ -944,6 +979,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Cellin','Daymar','Yela','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Quartzite',
           minerals: [
@@ -997,6 +1035,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Arial','Ita','Cellin','Daymar','Yela','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Shale',
           minerals: [
@@ -1042,6 +1083,9 @@ export default {
               },
           ],
           minCount: 3,
+          found:[
+            'Aberdeen','Magda','Daymar','Yela','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Aphorite',
           minerals: [
@@ -1055,6 +1099,9 @@ export default {
               },
           ],
           minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Dolivine',
           minerals: [
@@ -1068,6 +1115,9 @@ export default {
               },
           ],
           minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         { name: 'Hadanite',
 		      minerals: [
@@ -1081,8 +1131,12 @@ export default {
               },
           ],
           minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
           },
         ],
+      selectedLocation: '',
       selectedDeposit: '',
       generatedDeposit: [],
       generatedInstability: 0,
@@ -1130,12 +1184,17 @@ export default {
 
       return (this.generatedResistance * laserResistance * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
     },
+    filteredDeposits() {
+      if (!this.selectedLocation) {
+        return [{name:'Select Location'}];
+      } else {
+      return this.deposits.filter(deposit => deposit.found.includes(this.selectedLocation));
+    }
+  }
   },
   methods: {
     generateDeposit() {
-      console.log(this.selectedDeposit);
       const minerals = this.selectedDeposit.minerals
-      console.log(minerals);
       const minCount = this.selectedDeposit.minCount
       let includedMinerals = [];
       let totalPercentage = 0;
@@ -1153,7 +1212,6 @@ export default {
             }
           }
         }
-        console.log(includedMinerals)
 
         // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
         while (includedMinerals.length < minCount) {
@@ -1179,7 +1237,6 @@ export default {
           totalPercentage += percentage;
           mineral.percentage = percentage;
 
-          console.log(percentage)
         }
 
         // calculate instability and resistance values of the deposit
@@ -1212,7 +1269,6 @@ export default {
         this.generatedInstability = totalInstability
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
-        console.log(this.generatedDeposit)
       },
     },
   };
@@ -1374,7 +1430,7 @@ select option {
   font-size:16px;
 }
 .moleCard select {
-  width:100%;
+  width:130px;
 }
 .moduleSelect {
   padding-block-end:5px;
