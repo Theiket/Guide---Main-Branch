@@ -57,7 +57,7 @@
           </h4>
           <br>
           <h3>
-          {{ (generatedInstability).toFixed(2) }}
+          {{ (generatedInstability * prospectorLaser.instability * prospectorLaserModules.reduce((acc, module) => module.instability ? acc * ((module.instability / 100) + 1) : acc, 1)).toFixed(2) }}
           </h3>
         </va-card>
         <va-card
