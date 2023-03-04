@@ -12,7 +12,9 @@
         </h4>
         <select v-model="selectPlanet">
           <option disabled value="">Select Planet</option>
-          <option v-for="planet in planets" :key="planet">{{ planet }}</option>
+          <option v-for="planet in planets" :key="planet">
+          {{ planet }}
+          </option>
           </select>
         </va-card>
         <va-card
@@ -23,7 +25,9 @@
           </h4>
           <select v-model="selectedDeposit">
             <option disabled value="">Select Deposit</option>
-            <option v-for="deposit in deposits" :value="deposit">{{ deposit.name }}</option>
+            <option v-for="deposit in deposits" :value="deposit">
+            {{ deposit.name }}
+            </option>
           </select>
         </va-card>
         <center>
