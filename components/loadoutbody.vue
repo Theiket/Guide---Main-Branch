@@ -1128,7 +1128,7 @@ export default {
       const rightModule1 = ((this.rightLaserModules[1].resistance ?? 0)+1)
       const rightModule2 = ((this.rightLaserModules[2].resistance ?? 0)+1)
 
-      return (this.generatedResistance * laserInstability * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
+      return (this.generatedResistance * laserResistance * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
     },
   },
   methods: {
