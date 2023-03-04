@@ -57,7 +57,7 @@
           </h4>
           <br>
           <h3>
-          {{ (generatedInstability * prospectorLaser.instability * prospectorLaserModules.reduce((acc, module) => module.instability ? acc * ((module.instability / 100) + 1) : acc, 1)).toFixed(2) }}
+          {{ ((((generatedInstability * (prospectorLaser.instability ? prospectorLaser.instability : 1)) * (((prospectorLaserModules[0].instability ? prospectorLaserModules[0].instability : 1) / 100) + 1)) * (((prospectorLaserModules[1].instability ? prospectorLaserModules[1].instability : 1) / 100) + 1)) * (((prospectorLaserModules[2].instability ? prospectorLaserModules[2].instability : 1) / 100) + 1)).toFixed(2) }}
           </h3>
         </va-card>
         <va-card
@@ -68,7 +68,8 @@
           </h4>
           <br>
           <h3>
-          {{ (generatedResistance).toFixed(2) }}
+          {{ (generatedResistance * (prospectorLaser.resistance ? prospectorLaser.resistance + 1 : 1) * prospectorLaserModules.reduce((acc, module) => module.resistance ? acc * (module.resistance + 1) : acc, 1)).toFixed(2) }}
+
           </h3>
         </va-card>
       </div>
@@ -85,7 +86,7 @@
     <div class="rightcol">
       <div class="prospectorCard" v-if="prospector">
         <center>
-          <button class="button Alternate" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = [];">
+          <button class="button Alternate" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = ['','',''];">
             Prospector
           </button>
           <br><br>
@@ -115,7 +116,7 @@
       </div>
       <div class="moleCard" v-else-if="mole">
         <center>
-        <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = []; centralLaser = ''; centralLaserModules = []; rightLaser = ''; rightLaserModules = [];">
+        <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
         MOLE
         </button>
         <span>
