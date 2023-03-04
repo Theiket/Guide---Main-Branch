@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-  <table>
-  <tbody>
-  <tr>
-  <td><starmapPyro /></td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-  <td><starmapStanton /></td>
-  </tr>
-  </tbody>
-  </table>
+    <table>
+      <tbody>
+        <tr>
+          <td><starmapPyro /></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td><starmapStanton /></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
