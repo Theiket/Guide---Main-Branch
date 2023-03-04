@@ -93,7 +93,9 @@
           <br>
           <select v-model="prospectorLaser">
             <option value="" disabled>Select Laser</option>
-            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">{{ laser.name }}</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
+            {{ laser.name }}
+            </option>
           </select>
           <br><br>
           <div v-if="prospectorLaser">
@@ -113,8 +115,7 @@
       </div>
       <div class="moleCard" v-else-if="mole">
         <center>
-        <button class="button Alternate" 
-        @click="mole = !mole">
+        <button class="button Alternate" @click="mole = !mole">
         MOLE
         </button>
         <span>
@@ -124,31 +125,20 @@
           <br>
           <select v-model="leftLaser">
             <option value="" disabled>Select Laser</option>
-            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">{{ laser.name }}</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
+            {{ laser.name }}
+            </option>
           </select>
           <br><br>
-          <span class="moduleSelect" 
-          v-if="leftLaser !== ''">
-            <select v-model="l1laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="module in laserModules" :key="module.name">
-              {{ module.name }}
-              </option>
-            </select>
-          </span>
-          <span class="moduleSelect" 
-          v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2' || leftLaser === 'Impact S2' ">
-            <select v-model="l2laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </span>
-          <span class="moduleSelect" 
-          v-if="leftLaser === 'Lancet S2' || leftLaser === 'Helix S2'">
-            <select v-model="l3laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
+          <span class="moduleSelect" v-if="leftLaser">
+            <div v-for="n in leftLaser.consumables" style="padding-block-start:5px">
+              <select :id="'leftLaserModule' + n" v-model="leftLaserModules[n-1]">
+                <option disabled value="">Select Module</option>
+                <option v-for="module in laserModules" :key="module.name" :value="module">
+                {{ module.name }}
+                </option>
+              </select>
+            </div>
           </span>
         </td>
         <td>
@@ -156,62 +146,44 @@
         <p>Central Turret</p>
           <br>
           <select v-model="centralLaser">
-            <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
+            <option value="" disabled>Select Laser</option>
+            <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+            {{ laser.name }}
+            </option>
           </select>
           <br><br>
-          <div class="moduleSelect" 
-          v-if="centralLaser !== ''">
-            <select v-model="c1laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
-          <div class="moduleSelect" 
-          v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2' || centralLaser === 'Impact S2' ">
-            <select v-model="c2laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
-          <div class="moduleSelect" 
-          v-if="centralLaser === 'Lancet S2' || centralLaser === 'Helix S2'">
-            <select v-model="c3laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
+          <span class="moduleSelect" v-if="centralLaser">
+            <div v-for="n in centralLaser.consumables" style="padding-block-start:5px">
+              <select :id="'centralLaserModule' + n" v-model="centralLaserModules[n-1]">
+                <option disabled value="">Select Module</option>
+                <option v-for="module in laserModules" :key="module.name" :value="module">
+                {{ module.name }}
+                </option>
+              </select>
+            </div>
+          </span>
         </td>
         <td>
         <br><br>
         <p>Right Turret</p>
           <br>
           <select v-model="rightLaser">
-            <option disabled value="">Select Laser</option>
-            <option v-for="laser in s2lasers" :key="laser">{{ laser.name }}</option>
+            <option value="" disabled>Select Laser</option>
+            <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+            {{ laser.name }}
+            </option>
           </select>
           <br><br>
-          <div class="moduleSelect" 
-          v-if="rightLaser !== ''">
-            <select v-model="c1laserModule">
-              <option disabled value="">Select Module</option>
-              <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
-          <div class="moduleSelect" 
-          v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2' || rightLaser === 'Impact S2' ">
-            <select v-model="c2laserModule">
+          <span class="moduleSelect" v-if="rightLaser">
+            <div v-for="n in rightLaser.consumables" style="padding-block-start:5px">
+              <select :id="'rightLaserModule' + n" v-model="rightLaserModules[n-1]">
                 <option disabled value="">Select Module</option>
-                <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
-          <div class="moduleSelect" 
-          v-if="rightLaser === 'Lancet S2' || rightLaser === 'Helix S2'">
-            <select v-model="c3laserModule">
-                <option disabled value="">Select Module</option>
-                <option v-for="lasermodule in lasermodules" :key="lasermodule">{{ lasermodule.name }}</option>
-            </select>
-          </div>
+                <option v-for="module in laserModules" :key="module.name" :value="module">
+                {{ module.name }}
+                </option>
+              </select>
+            </div>
+          </span>
         </td>
         </span>
         </center>
@@ -248,42 +220,6 @@ export default {
     return {
       prospector: false,
       mole: false,
-      leftLaser: '',
-      centralLaser: '',
-      rightLaser: '',
-      s2lasers: [
-        { name:'Arbor S2',
-          instability: 0,
-          resistance: 0,
-          consumables: 1,
-          },
-        { name:'Lancet S2',
-          instability: -75,
-          resistance: -0.75,
-          consumables: 3,
-          },
-        { name:'Hofstede S2',
-          instability: -30,
-          resistance: -0.1,
-          consumables: 1,
-          },
-        { name:'Klein S2',
-          instability: 20,
-          resistance: -0.2,
-          consumables: 1,
-          },
-        { name:'Helix S2',
-          instability: -30,
-          resistance: -0.1,
-          consumables: 3,
-          },
-        { name:'Impact S2',
-          instability: 10,
-          resistance: -0.25,
-          consumables: 2,
-          },
-        ],
-      prospectorLaser: '',
       s1lasers: [
         { name:'Arbor S1',
           instability: 0,
@@ -316,16 +252,38 @@ export default {
           consumables: 2,
           },
         ],
-      prospectorLaserModules: ['', '', ''],
-      l1laserModule: '',
-      l2laserModule: '',
-      l3laserModule: '',
-      c1laserModule: '',
-      c2laserModule: '',
-      c3laserModule: '',
-      r1laserModule: '',
-      r2laserModule: '',
-      r3laserModule: '',
+      s1lasers: [
+        { name:'Arbor S1',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S1',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S1',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S1',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
+        ],
       laserModules: [
         { name:'Brandt',
           instability: -75,
@@ -432,6 +390,55 @@ export default {
           resistance: 0,
           },
         ],
+      leftLaser: '',
+      leftLaserModules: ['', '', ''],
+      centralLaser: '',
+      centralLaserModules: ['', '', ''],
+      rightLaser: '',
+      rightLaserModules: ['', '', ''],
+      s2lasers: [
+        { name:'Arbor S2',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S2',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S2',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S2',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
+        ],
+      prospectorLaser: '',
+      prospectorLaserModules: ['', '', ''],
+      l1laserModule: '',
+      l2laserModule: '',
+      l3laserModule: '',
+      c1laserModule: '',
+      c2laserModule: '',
+      c3laserModule: '',
+      r1laserModule: '',
+      r2laserModule: '',
+      r3laserModule: '',
       selectPlanet: '',
       planets: [
         'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
