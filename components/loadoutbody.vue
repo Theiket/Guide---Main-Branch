@@ -92,24 +92,24 @@
           <p>Mining Laser</p>
           <br>
           <select v-model="prospectorLaser">
-            <option value="" disabled>Select Laser</option>
+            <option disabled value="">Select Laser</option>
             <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
-            {{ laser.name }}
+              {{ laser.name }}
             </option>
           </select>
           <br><br>
           <div v-if="prospectorLaser">
-          <div v-for="n in prospectorLaser.consumables">
-            <div class="moduleSelect">
-              <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
-                <option disabled value="">Select Module</option>
-                <option v-for="module in laserModules" :key="module.name">
-                {{ module.name }}
-                </option>
-              </select>
+            <div v-for="n in prospectorLaser.consumables">
+              <div class="moduleSelect">
+                <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="module in laserModules" :key="module.name">
+                    {{ module.name }}
+                  </option>
+                </select>
+              </div>
+              <br>
             </div>
-            <br>
-          </div>
           </div>
         </center>
       </div>
@@ -125,7 +125,7 @@
             <br>
             <select v-model="leftLaser">
               <option value="" disabled>Select Laser</option>
-              <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
               {{ laser.name }}
               </option>
             </select>
@@ -252,33 +252,33 @@ export default {
           consumables: 2,
           },
         ],
-      s1lasers: [
-        { name:'Arbor S1',
+      s2lasers: [
+        { name:'Arbor S2',
           instability: 0,
           resistance: 0,
           consumables: 1,
           },
-        { name:'Lancet S1',
+        { name:'Lancet S2',
           instability: -75,
           resistance: -0.75,
           consumables: 3,
           },
-        { name:'Hofstede S1',
+        { name:'Hofstede S2',
           instability: -30,
           resistance: -0.1,
           consumables: 1,
           },
-        { name:'Klein S1',
+        { name:'Klein S2',
           instability: 20,
           resistance: -0.2,
           consumables: 1,
           },
-        { name:'Helix S1',
+        { name:'Helix S2',
           instability: -30,
           resistance: -0.1,
           consumables: 3,
           },
-        { name:'Impact S1',
+        { name:'Impact S2',
           instability: 10,
           resistance: -0.25,
           consumables: 2,
@@ -396,38 +396,6 @@ export default {
       centralLaserModules: ['', '', ''],
       rightLaser: '',
       rightLaserModules: ['', '', ''],
-      s2lasers: [
-        { name:'Arbor S2',
-          instability: 0,
-          resistance: 0,
-          consumables: 1,
-          },
-        { name:'Lancet S2',
-          instability: -75,
-          resistance: -0.75,
-          consumables: 3,
-          },
-        { name:'Hofstede S2',
-          instability: -30,
-          resistance: -0.1,
-          consumables: 1,
-          },
-        { name:'Klein S2',
-          instability: 20,
-          resistance: -0.2,
-          consumables: 1,
-          },
-        { name:'Helix S2',
-          instability: -30,
-          resistance: -0.1,
-          consumables: 3,
-          },
-        { name:'Impact S2',
-          instability: 10,
-          resistance: -0.25,
-          consumables: 2,
-          },
-        ],
       prospectorLaser: '',
       prospectorLaserModules: ['', '', ''],
       l1laserModule: '',
