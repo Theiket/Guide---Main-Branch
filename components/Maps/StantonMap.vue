@@ -1,44 +1,42 @@
 <template>
-<div class="container">
-<div class="systemName">
-<NuxtLink to="/starmap">
-<h1>
-STANTON
-</h1>
-</NuxtLink>
-</div>
-  <div class="solar-system">
-    <div class="microtech-orbit orbit">
-    <div class="planet microtech">
-      <br>
-        <p>microTech</p>
+  <div class="container">
+    <div class="systemName">
+      <NuxtLink to="/starmap">
+        <h1>STANTON</h1>
+      </NuxtLink>
     </div>
-      <div class="arccorp-orbit orbit">
-      <div class="planet arccorp">
+    <div class="solar-system">
+      <div class="orbit microtech-orbit">
+        <div class="planet microtech">
         <br>
-          <p>ArcCorp</p>
+        <p>microTech</p>
+        </div>
       </div>
-        <div class="crusader-orbit orbit">
+      <div class="orbit arccorp-orbit">
+        <div class="planet arccorp">
+        <br>
+        <p>ArcCorp</p>
+        </div>
+      </div>
+      <div class="orbit crusader-orbit">
         <div class="planet crusader">
-          <br>
-            <p>Crusader</p>
-        </div>
-          <div class="hurston-orbit orbit">
-          <div class="planet hurston">
-            <br>
-            <p>Hurston</p>
-          </div>
-          <NuxtLink to="starmap">
-          <div class="sun">
-          </div>
-          </NuxtLink>
-          </div>
+        <br>
+        <p>Crusader</p>
         </div>
       </div>
+      <div class="orbit hurston-orbit">
+        <div class="planet hurston">
+        <br>
+        <p>Hurston</p>
+        </div>
+      </div>
+      <NuxtLink to="starmap">
+        <div class="sun"></div>
+      </NuxtLink>
     </div>
   </div>
-</div>
 </template>
+
 
 <script>
 </script>
@@ -49,7 +47,7 @@ STANTON
   user-select:none;
 }
 .systemName {
-  animation: 1.5s slide;
+  animation: 1.5s slideappear;
 }
 .solar-system {
   animation: 5s appear;
@@ -68,12 +66,13 @@ STANTON
 }
 
 .orbit {
-	position: relative;
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: 1px solid var(--lightorange);
 	border-radius: 50%;
+  z-index:0;
 } 
 .microtech-orbit {
   width: 210px;
@@ -83,17 +82,17 @@ STANTON
 .arccorp-orbit {
 	width: 165px;
 	height: 165px;
-  rotate:85deg;
+  rotate:135deg;
 }
 .crusader-orbit {
 	width: 120px;
 	height: 120px;
-  rotate:105deg;
+  rotate:240deg;
 }
 .hurston-orbit {
 	width: 90px;
 	height: 90px;
-  rotate:-110deg;
+  rotate:130deg;
 }
 
 
@@ -104,24 +103,37 @@ STANTON
   height: 10px;
 	border-radius: 50%;
   background-color: #3ff9dc;
+  z-index:1;
 }
 .planet.hurston {
   background-color:#CF3A2F;
+  rotate:-130deg;
 }
 .planet.crusader {
   background-color:#2FCFA9;
+  rotate:-240deg;
 }
 .planet.arccorp {
   background-color:#CF2F55;
+  rotate:-135deg;
 }
 .planet.microtech {
   background-color:white;
+  rotate:-50deg;
 }
 .planet:hover {
   box-shadow:0px 0px 5px black;
   top:-6.5px;
   width:13px;
   height:13px;
+}
+.planet p {
+  color:transparent;
+  z-index:2;
+  rotate:0deg;
+}
+.planet:hover p {
+  color:var(--lightgray)
 }
 
 .sun {
@@ -136,6 +148,7 @@ STANTON
   height:35px;
 }
 
+/* Text */
 .systemName {
   color: var(--lightorange);
   letter-spacing:1px;
@@ -169,32 +182,15 @@ p {
   font-size: 5px;
   font-weight:bold;
   letter-spacing:0.3px;
-  color: var(--lightgray);  
+  color: var(--lightgray);
+  padding-block-end: 15px;
+  padding-inline-start:15px;
+  padding-inline-end:15px;
+  rotate:-140deg;
 }
-.planet p {
-  color:transparent;
-}
-.planet:hover p {
-  color:var(--lightgray);
-  padding-block-end:5px;
-  animation: 0.3s appear;
-}
-.planet.hurston p {
-  rotate:-130deg;
-}
-.planet.crusader p {
-  rotate:120deg;
-}
-.planet.arccorp p {
-  rotate:225deg;
-}
-.planet.microtech p {
-  rotate:-50deg;
-}
-
 
 /* Animations */
-@keyframes slide {
+@keyframes slideappear {
   0% {
     opacity: 0;
     left:-500px;

@@ -145,8 +145,7 @@ export default {
     return {
       selectedRefinery: '',
       refineries: [
-        {
-          name:'HUR-L1',
+        {name:'HUR-L1',
           yieldmodifier: [
             {
               agricium:'1.03',
@@ -196,10 +195,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'HUR-L2',
+            ],
+          },
+        { name:'HUR-L2',
           yieldmodifier: [
             {
               agricium:'1',
@@ -249,10 +247,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'CRU-L1',
+            ],
+          },
+        { name:'CRU-L1',
           yieldmodifier: [
             {
               agricium:'1',
@@ -302,10 +299,9 @@ export default {
             {
               tungsten:'1.05',
             },
-          ],
-        },
-        {
-          name:'ARC-L1',
+            ],
+          },
+        { name:'ARC-L1',
           yieldmodifier: [
             {
               agricium:'1.02',
@@ -355,10 +351,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'ARC-L2',
+            ],
+          },
+        { name:'ARC-L2',
           yieldmodifier: [
             {
               agricium:'1',
@@ -408,10 +403,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'ARC-L4',
+            ],
+          },
+        { name:'ARC-L4',
           yieldmodifier: [
             {
               agricium:'1',
@@ -461,10 +455,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'MIC-L1',
+            ],
+          },
+        { name:'MIC-L1',
           yieldmodifier: [
             {
               agricium:'1',
@@ -514,10 +507,9 @@ export default {
             {
               tungsten:'0.97',
             },
-          ],
-        },
-        {
-          name:'MIC-L2',
+            ],
+          },
+        { name:'MIC-L2',
           yieldmodifier: [
             {
               agricium:'1',
@@ -567,10 +559,9 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-        {
-          name:'MIC-L5',
+            ],
+          },
+        { name:'MIC-L5',
           yieldmodifier: [
             {
               agricium:'1',
@@ -620,207 +611,178 @@ export default {
             {
               tungsten:'1',
             },
-          ],
-        },
-      ],
+            ],
+          },
+        ],
       selectedCommodity: '',
       commodities: [
-        {
-          name:'Agricium',
+        { name:'Agricium',
           value:'27.5',
           yieldperunit:'0.95',
           timeperunit:'3',
           costperunit:'0.65',
-        },
-        {
-          name:'Aluminium',
+          },
+        { name:'Aluminium',
           value:'1.29',
           yieldperunit:'0.95',
           timeperunit:'2',
           costperunit:'0.03',
-        },
-        {
-          name:'Beryl',
+          },
+        { name:'Beryl',
           value:'4.34',
           yieldperunit:'0.95',
           timeperunit:'2.3',
           costperunit:'0.1',
-        },
-        {
-          name:'Bexalite',
+          },
+        { name:'Bexalite',
           value:'44',
           yieldperunit:'0.95',
           timeperunit:'2.9',
           costperunit:'1',
-        },
-        {
-          name:'Borase',
+          },
+        { name:'Borase',
           value:'35.19',
           yieldperunit:'0.95',
           timeperunit:'2.8',
           costperunit:'0.8',
-        },
-        {
-          name:'Copper',
+          },
+        { name:'Copper',
           value:'6.15',
           yieldperunit:'0.95',
           timeperunit:'2.3',
           costperunit:'0.14',
-        },
-        {
-          name:'Corundum',
+          },
+        { name:'Corundum',
           value:'2.7',
           yieldperunit:'0.95',
           timeperunit:'2.1',
           costperunit:'0.06',
-        },
-        {
-          name:'Diamond',
+          },
+        { name:'Diamond',
           value:'7.35',
           yieldperunit:'0.95',
           timeperunit:'2.3',
           costperunit:'0.16',
-        },
-        {
-          name:'Gold',
+          },
+        { name:'Gold',
           value:'6.4',
           yieldperunit:'0.95',
           timeperunit:'2.5',
           costperunit:'0.15',
-        },
-        {
-          name:'Hephaestanite',
+          },
+        { name:'Hephaestanite',
           value:'15.83',
           yieldperunit:'0.95',
           timeperunit:'2.6',
           costperunit:'0.35',
-        },
-        {
-          name:'Laranite',
+          },
+        { name:'Laranite',
           value:'30.98',
           yieldperunit:'0.95',
           timeperunit:'3.1',
           costperunit:'0.7',
-        },
-        {
-          name:'Quantanium',
+          },
+        { name:'Quantanium',
           value:'88',
           yieldperunit:'0.95',
           timeperunit:'4',
           costperunit:'2',
-        },
-        {
-          name:'Quartz',
+          },
+        { name:'Quartz',
           value:'1.54',
           yieldperunit:'0.95',
           timeperunit:'2.7',
           costperunit:'0.03',
-        },
-        {
-          name:'Taranite',
+          },
+        { name:'Taranite',
           value:'35.19',
           yieldperunit:'0.95',
           timeperunit:'3.2',
           costperunit:'0.8',
-        },
-        {
-          name:'Titanium',
+          },
+        { name:'Titanium',
           value:'8.9',
           yieldperunit:'0.95',
           timeperunit:'2.2',
           costperunit:'0.2',
-        },
-        {
-          name:'Tungsten',
+          },
+        { name:'Tungsten',
           value:'4.05',
           yieldperunit:'0.95',
           timeperunit:'2.1',
           costperunit:'0.1',
-        },
-      ],
+          },
+        ],
       selectedMethod:'',
       methodTime:'',
       methodCost:'',
       methodYield:'',
       refmethods: [
-        {
-          name:'Cormack',
+        { name:'Cormack',
           clicked:false,
           timemultiplier:'0.25',
           costmultiplier:'2',
           yieldadditive:'0.27',
-        },
-        {
-          name:'Dinyx Solventation',
+          },
+        { name:'Dinyx Solventation',
           clicked:false,
           timemultiplier:'12',
           costmultiplier:'1',
           yieldadditive:'0',
-        },
-        {
-          name:'Electrostarolysis',
+          },
+        { name:'Electrostarolysis',
           clicked:false,
           timemultiplier:'1.05',
           costmultiplier:'2',
           yieldadditive:'0.145',
-        },
-        {
-          name:'Ferron Exchange',
+          },
+        { name:'Ferron Exchange',
           clicked:false,
           timemultiplier:'4',
           costmultiplier:'2',
           yieldadditive:'0',
-        },
-        {
-          name:'Gaskin Process',
+          },
+        { name:'Gaskin Process',
           clicked:false,
           timemultiplier:'0.5',
           costmultiplier:'6',
           yieldadditive:'0.145',
-        },
-        {
-          name:'Kazen Winnowing',
+          },
+        { name:'Kazen Winnowing',
           clicked:false,
           timemultiplier:'0.75',
           costmultiplier:'1',
           yieldadditive:'0.27',
-        },
-        {
-          name:'Pyrometric Chromalysis',
+          },
+        { name:'Pyrometric Chromalysis',
           clicked:false,
           timemultiplier:'2',
           costmultiplier:'6',
           yieldadditive:'0',
-        },
-        {
-          name:'Thermonatic Deposition',
+          },
+        { name:'Thermonatic Deposition',
           clicked:false,
           timemultiplier:'3',
           costmultiplier:'1',
           yieldadditive:'0.145',
-        },
-        {
-          name:'XCR Reaction',
+          },
+        { name:'XCR Reaction',
           clicked:false,
           timemultiplier:'0.125',
           costmultiplier:'6',
           yieldadditive:'0.27',
-        },
-      ],
+          },
+        ],
       locations: [
-        {
-          name:'Lorville',
-        },
-        {
-          name:'Orison',
-        },
-        {
-          name:'Area 18',
-        },
-        {
-          name:'New Babbage',
-        },
-      ],
+        { name:'Lorville',
+          },
+        { name:'Orison',
+          },
+        { name:'Area 18',
+          },
+        { name:'New Babbage',
+          },
+        ],
     };
   },
   methods: {
