@@ -68,7 +68,7 @@
           </h4>
           <br>
           <h3>
-          {{ (generatedResistance * (prospectorLaser.resistance ? prospectorLaser.resistance + 1 : 1) * prospectorLaserModules.reduce((acc, module) => module.resistance ? acc * (module.resistance + 1) : acc, 1)).toFixed(2) }}
+          {{ totalResistance }}
           </h3>
         </va-card>
       </div>
