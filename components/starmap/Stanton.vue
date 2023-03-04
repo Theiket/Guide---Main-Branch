@@ -1,13 +1,13 @@
 <template>
 <div>
-<NuxtLink to="/MapStanton">
+  <NuxtLink to="/MapStanton">
     <div class="systemStanton">
-    <Icon name="mdi:circle-slice-8" />
-    <br>
-    <p class="planetText">STANTON</p>
-    <p class="systemText">SYSTEM</p>
+      <Icon name="mdi:circle-slice-8" />
+      <br>
+      <p class="planetText">STANTON</p>
+      <p class="systemText">SYSTEM</p>
     </div>
-    </NuxtLink>
+  </NuxtLink>
 </div>
 </template>
 

@@ -1,16 +1,16 @@
 <template>
 <div>
   <NuxtLink to="/MapPyro">
-  <div class="systemPyro">
-  <Icon name="game-icons:anarchy" />
-  <p class="planetText">PYRO</p>
-  <p class="systemText">SYSTEM</p>
-  <div class="unavailable">
-  <p class="warningText">
-  SCAN UNAVAILABLE
-  </p>
-  </div>
-  </div>
+    <div class="systemPyro">
+      <Icon name="game-icons:anarchy" />
+      <p class="planetText">PYRO</p>
+      <p class="systemText">SYSTEM</p>
+      <div class="unavailable">
+        <p class="warningText">
+        SCAN UNAVAILABLE
+        </p>
+      </div>
+    </div>
   </NuxtLink>
 </div>
 </template>
