@@ -199,16 +199,15 @@
     0% {
       opacity: 0;
       left:-500px;
-    }
+      }
     75% {
       opacity:0;
-    }
+      }
     100% {
       opacity: 1;
       left:25px;
+      }
     }
-  }
-
   @keyframes appear1 {
     0% {
       opacity: 0;
@@ -266,18 +265,18 @@
 
   .sun {
     animation: 1s appear1;
-  }
+    }
   .hurston-orbit {
     animation: 2s appear2;
-  }
+    }
   .crusader-orbit {
     animation: 3s appear3;
-  }
+    }
   .arccorp-orbit {
     animation: 4s appear4;
-  }
+    }
   .microtech-orbit {
     animation: 4.5s appear5;
-  }
+    }
 
 </style>
