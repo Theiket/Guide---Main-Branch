@@ -81,16 +81,19 @@
     width: 30px;
     height: 30px;
     rotate:10deg;
+    z-index:-1;
     }
   .pyroII-orbit {
     width: 50px;
     height: 50px;
     rotate:-20deg;
+    z-index:-1;
     }
   .pyroIII-orbit {
     width: 70px;
     height: 70px;
     rotate:20deg;
+    z-index:-1;
     } 
   .pyroIV-orbit {
     width: 215px;
@@ -98,17 +101,20 @@
     rotate:4deg;
     border-color:transparent;
     border-style:hidden;
+    z-index:-1;
     }
   .pyroV-orbit {
     width:210px;
     height:210px;
     rotate:290deg;
+    z-index:-1;
     }
   .pyroVI-orbit {
     width:360px;
     height:360px;
     rotate:267deg;
-  }
+    z-index:-1;
+    }
 
 /* Planets */
   .planet {
@@ -154,13 +160,17 @@
     cursor:pointer;
     }
   .planet p {
-    color:transparent;
-    z-index:2;
+    visibility:hidden;
+    z-index:1;
+    width:50px;
     rotate:0deg;
     margin-block-start:-5px;
     letter-spacing:0.5px;
+    padding-inline-start:12px;
+    padding-block-start:7px;
     }
   .planet:hover p {
+    visibility:visible;
     color:var(--lightgray);
     }
 /* Sun */
@@ -213,11 +223,7 @@
     font-weight:bold;
     letter-spacing:0.3px;
     color: var(--lightgray);
-    padding-block-end: 15px;
-    padding-inline-start:15px;
-    padding-inline-end:15px;
     }
-
 /* Animations */
   @keyframes slideappear {
     0% {

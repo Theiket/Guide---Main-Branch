@@ -71,27 +71,27 @@
     border: 1px solid var(--lightorange);
     border-radius: 50%;
     z-index:-1;
-  } 
+    } 
   .microtech-orbit {
     width: 210px;
     height: 210px;
     rotate:50deg;
-  }
+    }
   .arccorp-orbit {
     width: 165px;
     height: 165px;
     rotate:135deg;
-  }
+    }
   .crusader-orbit {
     width: 120px;
     height: 120px;
     rotate:240deg;
-  }
+    }
   .hurston-orbit {
     width: 90px;
     height: 90px;
     rotate:130deg;
-  }
+    }
 
 /* Planets */
   .planet {
@@ -127,7 +127,7 @@
     cursor:pointer;
     }
   .planet p {
-    color:transparent;
+    visibility:hidden;
     z-index:2;
     rotate:0deg;
     margin-inline-start:-20px;
@@ -136,6 +136,7 @@
     }
   .planet:hover p {
     color:var(--lightgray);
+    visibility:visible;
     }
 
 /* Sun */
@@ -145,13 +146,13 @@
     border-radius: 50%;
     background-color: #CF9A2F;
     z-index:1;
-  }
+    }
   .sun:hover {
     box-shadow:0px 0px 5px black;
     width:35px;
     height:35px;
     cursor:pointer;
-  }
+    }
 
 /* Text */
   .systemName {
@@ -169,17 +170,17 @@
     border-color:var(--lightgray);
     padding-inline-start:10px;
     z-index:1;
-  }
+    }
   .systemName h1 {
     font: 35px 'Segoe UI', sans-serif;
     font-weight:bold;
-  }
+    }
   .systemName a {
     color:var(--lightorange);
-  }
+    }
   .systemName a:hover {
     color:var(--orangehover);
-  }
+    }
 
   p {
     font-weight: 300;
@@ -192,7 +193,7 @@
     padding-inline-start:15px;
     padding-inline-end:15px;
     rotate:-140deg;
-  }
+    }
 
 /* Animations */
   @keyframes slideappear {
