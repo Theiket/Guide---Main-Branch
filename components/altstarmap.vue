@@ -135,7 +135,7 @@
       width:100px;
       }
 
-    .icon {
+    .systemStanton .icon {
       scale:300%;
       border-style:dashed;
       border-color:transparent;
@@ -200,8 +200,9 @@
       width:100px;
       padding-block-start:15px;
       }
-    .systemPyro:hover .planetText{
+    .systemPyro:hover p {
       opacity:1;
+      cursor:default;
       }
 
     .systemPyro .systemText {
@@ -219,7 +220,7 @@
       width:100px;
       }
 
-    .icon {
+    .systemPyro .icon {
       scale:300%;
       border-style:dashed;
       border-color:transparent;
@@ -256,12 +257,12 @@
       z-index:2;
       }
     .systemPyro.zoomed .systemText,
-    .systemPyro.zoomed .planetText, .systemPyro .unavailable {
+    .systemPyro.zoomed .planetText, .systemPyro.zoomed .unavailable {
       transition: all 0.1s ease-in-out;
       opacity:0;
       }
   /* Fade Effect */
-    .systemPyro.fade, .systemPyro.fade .icon, .systemPyro p {
+    .systemPyro.fade, .systemPyro.fade .icon, .systemPyro.fade p {
       transition: all 0.2s ease-in-out;
       opacity:0;
       }
