@@ -1,14 +1,14 @@
 <template>
-<div>
-  <NuxtLink to="/MapStanton">
-    <div class="systemStanton">
-      <Icon name="mdi:circle-slice-8" />
-      <br>
-      <p class="planetText">STANTON</p>
-      <p class="systemText">SYSTEM</p>
-    </div>
-  </NuxtLink>
-</div>
+  <transition name="fade">
+    <NuxtLink to="/MapStanton">
+      <div class="systemStanton">
+        <Icon name="mdi:circle-slice-8" />
+        <br>
+        <p class="planetText">STANTON</p>
+        <p class="systemText">SYSTEM</p>
+      </div>
+    </NuxtLink>
+  </transition>
 </template>
 
 <script>
@@ -76,23 +76,12 @@
   border-radius:50%;
   animation:1s appear;
 }
-
-.systemStanton:hover,
-.router-link-active .systemStanton {
-  color: var(--greensafety);
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
 }
 
-.systemStanton:hover .planetText,
-.router-link-active .systemStanton .planetText {
-  opacity: 1;
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
-.systemStanton:hover .icon,
-.router-link-active .systemStanton .icon {
-  border-style: dashed;
-  border-color: var(--orangehover);
-  border-width: thin;
-  border-radius: 50%;
-  animation: 1s appear;
-}
 </style>
