@@ -145,472 +145,184 @@ export default {
     return {
       selectedRefinery: '',
       refineries: [
-        {name:'HUR-L1',
+        { name:'HUR-L1',
           yieldmodifier: [
-            {
-              agricium:'1.03',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1.03',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1.1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1.04',
-            },
-            {
-              quantanium:'0.94',
-            },
-            {
-              quartz:'0.93',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1.02',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1.03' },
+            { aluminium:'1' },
+            { beryl:'1.03' },
+            { bexalite:'1' },
+            { borase:'1' },
+            { copper:'1.1' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1' },
+            { laranite:'1.04' },
+            { quantanium:'0.94' },
+            { quartz:'0.93' },
+            { taranite:'1' },
+            { titanium:'1.02' },
+            { tungsten:'1' }
             ],
           },
         { name:'HUR-L2',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1.02',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'0.97',
-            },
-            {
-              borase:'1.04',
-            },
-            {
-              copper:'1.03',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1.02',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'1',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'0.96',
-            },
-            {
-              titanium:'0.97',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1' },
+            { aluminium:'1.02' },
+            { beryl:'1' },
+            { bexalite:'0.97' },
+            { borase:'1.04' },
+            { copper:'1.03' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1.02' },
+            { laranite:'1' },
+            { quantanium:'1' },
+            { quartz:'1' },
+            { taranite:'0.96' },
+            { titanium:'0.97' },
+            { tungsten:'1' }
             ],
           },
         { name:'CRU-L1',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'1.05',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'0.96',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1.04',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'1.03',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1.04',
-            },
-            {
-              tungsten:'1.05',
-            },
+            { agricium:'1' },
+            { aluminium:'1' },
+            { beryl:'1' },
+            { bexalite:'1.05' },
+            { borase:'1' },
+            { copper:'1' },
+            { corundum:'0.96' },
+            { diamond:'1' },
+            { gold:'1.04' },
+            { hephaestanite:'1' },
+            { laranite:'1' },
+            { quantanium:'1.03' },
+            { quartz:'1' },
+            { taranite:'1' },
+            { titanium:'1.04' },
+            { tungsten:'1.05' }
             ],
           },
         { name:'ARC-L1',
           yieldmodifier: [
-            {
-              agricium:'1.02',
-            },
-            {
-              aluminium:'1.04',
-            },
-            {
-              beryl:'0.91',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'0.97',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1.02',
-            },
-            {
-              diamond:'1.04',
-            },
-            {
-              gold:'0.94',
-            },
-            {
-              hephaestanite:'0.98',
-            },
-            {
-              laranite:'1.04',
-            },
-            {
-              quantanium:'1',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1.03',
-            },
-            {
-              titanium:'1',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1.02' },
+            { aluminium:'1.04' },
+            { beryl:'0.91' },
+            { bexalite:'1' },
+            { borase:'0.97' },
+            { copper:'1' },
+            { corundum:'1.02' },
+            { diamond:'1.04' },
+            { gold:'0.94' },
+            { hephaestanite:'0.98' },
+            { laranite:'1.04' },
+            { quantanium:'1' },
+            { quartz:'1' },
+            { taranite:'1.03' },
+            { titanium:'1' },
+            { tungsten:'1' }
             ],
           },
         { name:'ARC-L2',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'0.8',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1' },
+            { aluminium:'1' },
+            { beryl:'1' },
+            { bexalite:'1' },
+            { borase:'1' },
+            { copper:'1' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1' },
+            { laranite:'1' },
+            { quantanium:'0.8' },
+            { quartz:'1' },
+            { taranite:'1' },
+            { titanium:'1' },
+            { tungsten:'1' }
             ],
           },
         { name:'ARC-L4',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'0.8',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1' },
+            { aluminium:'1' },
+            { beryl:'1' },
+            { bexalite:'1' },
+            { borase:'1' },
+            { copper:'1' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1' },
+            { laranite:'1' },
+            { quantanium:'0.8' },
+            { quartz:'1' },
+            { taranite:'1' },
+            { titanium:'1' },
+            { tungsten:'1' }
             ],
           },
         { name:'MIC-L1',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'0.92',
-            },
-            {
-              beryl:'1.03',
-            },
-            {
-              bexalite:'1.04',
-            },
-            {
-              borase:'1.04',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1.05',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1.05',
-            },
-            {
-              laranite:'0.94',
-            },
-            {
-              quantanium:'1.02',
-            },
-            {
-              quartz:'1.03',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1',
-            },
-            {
-              tungsten:'0.97',
-            },
+            { agricium:'1' },
+            { aluminium:'0.92' },
+            { beryl:'1.03' },
+            { bexalite:'1.04' },
+            { borase:'1.04' },
+            { copper:'1' },
+            { corundum:'1' },
+            { diamond:'1.05' },
+            { gold:'1' },
+            { hephaestanite:'1.05' },
+            { laranite:'0.94' },
+            { quantanium:'1.02' },
+            { quartz:'1.03' },
+            { taranite:'1' },
+            { titanium:'1' },
+            { tungsten:'0.97' }
             ],
           },
         { name:'MIC-L2',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'0.8',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'1',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1' },
+            { aluminium:'1' },
+            { beryl:'1' },
+            { bexalite:'1' },
+            { borase:'1' },
+            { copper:'1' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1' },
+            { laranite:'1' },
+            { quantanium:'0.8' },
+            { quartz:'1' },
+            { taranite:'1' },
+            { titanium:'1' },
+            { tungsten:'1' }
             ],
           },
         { name:'MIC-L5',
           yieldmodifier: [
-            {
-              agricium:'1',
-            },
-            {
-              aluminium:'1',
-            },
-            {
-              beryl:'1',
-            },
-            {
-              bexalite:'1',
-            },
-            {
-              borase:'1',
-            },
-            {
-              copper:'1',
-            },
-            {
-              corundum:'1',
-            },
-            {
-              diamond:'1',
-            },
-            {
-              gold:'1',
-            },
-            {
-              hephaestanite:'1',
-            },
-            {
-              laranite:'1',
-            },
-            {
-              quantanium:'0.75',
-            },
-            {
-              quartz:'1',
-            },
-            {
-              taranite:'1',
-            },
-            {
-              titanium:'0.95',
-            },
-            {
-              tungsten:'1',
-            },
+            { agricium:'1' },
+            { aluminium:'1' },
+            { beryl:'1' },
+            { bexalite:'1' },
+            { borase:'1' },
+            { copper:'1' },
+            { corundum:'1' },
+            { diamond:'1' },
+            { gold:'1' },
+            { hephaestanite:'1' },
+            { laranite:'1' },
+            { quantanium:'0.75' },
+            { quartz:'1' },
+            { taranite:'1' },
+            { titanium:'0.95' },
+            { tungsten:'1' },
             ],
           },
         ],
@@ -781,7 +493,7 @@ export default {
         { name:'Area 18',
           },
         { name:'New Babbage',
-          },
+          }
         ],
     };
   },

@@ -1145,52 +1145,40 @@ export default {
   },
   computed : {
     totalInstability() {
-      const laserInstability = (((this.prospectorLaser.instability ?? 0)/100)+1);
-      const laserModule0 = (((this.prospectorLaserModules[0].instability ?? 0)/100)+1);
-      const laserModule1 = (((this.prospectorLaserModules[1].instability ?? 0)/100)+1);
-      const laserModule2 = (((this.prospectorLaserModules[2].instability ?? 0)/100)+1);
-      const leftLaser = (((this.leftLaser.instability ?? 0)/100)+1)
-      const leftModule0 = (((this.leftLaserModules[0].instability ?? 0)/100)+1);
-      const leftModule1 = (((this.leftLaserModules[1].instability ?? 0)/100)+1);
-      const leftModule2 = (((this.leftLaserModules[2].instability ?? 0)/100)+1);
-      const centralLaser = (((this.centralLaser.instability ?? 0)/100)+1)
-      const centralModule0 = (((this.centralLaserModules[0].instability ?? 0)/100)+1);
-      const centralModule1 = (((this.centralLaserModules[1].instability ?? 0)/100)+1);
-      const centralModule2 = (((this.centralLaserModules[2].instability ?? 0)/100)+1);
-      const rightLaser = (((this.rightLaser.instability ?? 0)/100)+1)
-      const rightModule0 = (((this.rightLaserModules[0].instability ?? 0)/100)+1)
-      const rightModule1 = (((this.rightLaserModules[1].instability ?? 0)/100)+1)
-      const rightModule2 = (((this.rightLaserModules[2].instability ?? 0)/100)+1)
+      const lasers = [this.prospectorLaser, this.leftLaser, this.centralLaser, this.rightLaser];
+      const laserInstabilities = lasers.map(laser => ((laser.instability ?? 0)/100)+1);
+      
+      const laserModules = [
+        ...this.prospectorLaserModules,
+        ...this.leftLaserModules,
+        ...this.centralLaserModules,
+        ...this.rightLaserModules
+      ];
+      const moduleInstabilities = laserModules.map(laserModule => ((laserModule.instability ?? 0)/100)+1);
 
-      return (this.generatedInstability * laserInstability * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
+      return (this.generatedInstability * laserInstabilities.reduce((a, b) => a * b, 1) * moduleInstabilities.reduce((a, b) => a * b, 1)).toFixed(2);
     },
     totalResistance() {
-      const laserResistance = (((this.prospectorLaser.resistance ?? 0)/100)+1);
-      const laserModule0 = ((this.prospectorLaserModules[0].resistance ?? 0)+1);
-      const laserModule1 = ((this.prospectorLaserModules[1].resistance ?? 0)+1);
-      const laserModule2 = ((this.prospectorLaserModules[2].resistance ?? 0)+1);
-      const leftLaser = ((this.leftLaser.resistance ?? 0)+1)
-      const leftModule0 = ((this.leftLaserModules[0].resistance ?? 0)+1);
-      const leftModule1 = ((this.leftLaserModules[1].resistance ?? 0)+1);
-      const leftModule2 = ((this.leftLaserModules[2].resistance ?? 0)+1);
-      const centralLaser = ((this.centralLaser.resistance ?? 0)+1)
-      const centralModule0 = ((this.centralLaserModules[0].resistance ?? 0)+1);
-      const centralModule1 = ((this.centralLaserModules[1].resistance ?? 0)+1);
-      const centralModule2 = ((this.centralLaserModules[2].resistance ?? 0)+1);
-      const rightLaser = ((this.rightLaser.resistance ?? 0)+1)
-      const rightModule0 = ((this.rightLaserModules[0].resistance ?? 0)+1)
-      const rightModule1 = ((this.rightLaserModules[1].resistance ?? 0)+1)
-      const rightModule2 = ((this.rightLaserModules[2].resistance ?? 0)+1)
+      const lasers = [this.prospectorLaser, this.leftLaser, this.centralLaser, this.rightLaser];
+      const laserResistances = lasers.map(laser => ((laser.resistance ?? 0)+1));
+      
+      const laserModules = [
+        ...this.prospectorLaserModules,
+        ...this.leftLaserModules,
+        ...this.centralLaserModules,
+        ...this.rightLaserModules
+      ];
+      const moduleResistances = laserModules.map(laserModules => ((laserModules.resistance ?? 0)+1));
 
-      return (this.generatedResistance * laserResistance * laserModule0 * laserModule1 * laserModule2 * leftLaser * leftModule0 * leftModule1 * leftModule2 * centralLaser * centralModule0 * centralModule1 * centralModule2 * rightLaser * rightModule0 * rightModule1 * rightModule2).toFixed(2)
+      return (this.generatedResistance * laserResistances.reduce((a, b) => a * b, 1) * moduleResistances.reduce((a, b) => a * b, 1)).toFixed(2);
     },
     filteredDeposits() {
       if (!this.selectedLocation) {
         return [{name:'Select Location'}];
       } else {
       return this.deposits.filter(deposit => deposit.found.includes(this.selectedLocation));
+      }
     }
-  }
   },
   methods: {
     generateDeposit() {
@@ -1202,76 +1190,76 @@ export default {
       let totalResistance = 0;
 
         // select minerals for the deposit based on their probabilities
-        for (let mineral of minerals) {
-          if (mineral.probability === 1) {
-            includedMinerals.push(mineral);
-          } else {
-            const randomValueOverProbability = Math.random() / mineral.probability;
-            if (randomValueOverProbability <= 1) {
-              includedMinerals.push(mineral);
-            }
-          }
-        }
-
-        // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
-        while (includedMinerals.length < minCount) {
-          let closestMineral = null;
-          let closestValue = Infinity;
           for (let mineral of minerals) {
-            if (!includedMinerals.includes(mineral)) {
+            if (mineral.probability === 1) {
+              includedMinerals.push(mineral);
+            } else {
               const randomValueOverProbability = Math.random() / mineral.probability;
-              const value = Math.abs(randomValueOverProbability - 1);
-              if (value < closestValue) {
-                closestValue = value;
-                closestMineral = mineral;
+              if (randomValueOverProbability <= 1) {
+                includedMinerals.push(mineral);
               }
             }
           }
-          includedMinerals.push(closestMineral);
-        }
+
+        // if minimum number of minerals is not reached, push the mineral with the closest value to 1 but exceeding 1
+          while (includedMinerals.length < minCount) {
+            let closestMineral = null;
+            let closestValue = Infinity;
+            for (let mineral of minerals) {
+              if (!includedMinerals.includes(mineral)) {
+                const randomValueOverProbability = Math.random() / mineral.probability;
+                const value = Math.abs(randomValueOverProbability - 1);
+                if (value < closestValue) {
+                  closestValue = value;
+                  closestMineral = mineral;
+                }
+              }
+            }
+            includedMinerals.push(closestMineral);
+          }
         
         // calculate percentage of each included mineral in the deposit
-        for (let mineral of includedMinerals) {
-          const percentage = pdf(Math.random(),mineral.exponent) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
-          
-          totalPercentage += percentage;
-          mineral.percentage = percentage;
+          for (let mineral of includedMinerals) {
+            const percentage = pdf(Math.random(),mineral.exponent) * (mineral.maxPercentage - mineral.minPercentage) / mineral.exponent + mineral.minPercentage;
+            
+            totalPercentage += percentage;
+            mineral.percentage = percentage;
 
-        }
+          }
 
         // calculate instability and resistance values of the deposit
-        for (let mineral of includedMinerals) {
-          const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
-          totalInstability += instability;
-        }
-        for (let mineral of includedMinerals) {
-          const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
-          totalResistance += resistance;
-        }
+          for (let mineral of includedMinerals) {
+            const instability = mineral.instability * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
+            totalInstability += instability;
+          }
+          for (let mineral of includedMinerals) {
+            const resistance = mineral.resistance * (mineral.percentage / (mineral.maxPercentage - mineral.minPercentage));
+            totalResistance += resistance;
+          }
         
         // if total percentage is over 100, regenerate percentages for included minerals
-        if (totalPercentage > 100) {
-          for (let mineral of includedMinerals) {
-            mineral.percentage = null;
+          if (totalPercentage > 100) {
+            for (let mineral of includedMinerals) {
+              mineral.percentage = null;
+            }
+            return this.generateDeposit();
           }
-          return this.generateDeposit();
-        }
 
         // sort includedMaterials to be alphabetical
-        includedMinerals.sort((a, b) => a.name.localeCompare(b.name));
+          includedMinerals.sort((a, b) => a.name.localeCompare(b.name));
 
         // if total percentage is less than 100, add inert material to the deposit
-        if (totalPercentage < 100) {
-          const inertPercentage = 100 - totalPercentage;
-          includedMinerals.push({ name: 'Inert Material', percentage: inertPercentage });
-        }
+          if (totalPercentage < 100) {
+            const inertPercentage = 100 - totalPercentage;
+            includedMinerals.push({ name: 'Inert Material', percentage: inertPercentage });
+          }
         
         this.generatedInstability = totalInstability
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
       },
-    },
-  };
+  },
+};
 
 </script>
 
