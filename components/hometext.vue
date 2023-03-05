@@ -1,9 +1,17 @@
 <template>
 <div class="container">
     <div>
+      <div>
       <h1 class="title">
-        Meet GUIDE.<br>Your personal space companion.
+        Meet GUIDE
       </h1>
+      </div>
+      <br>
+      <div style="border-top:1px solid var(--lightorange); border-radius:2%;">
+      <h1 class="title">
+        Your personal space companion
+      </h1>
+      </div>
     </div>
   </div>
 </template>
@@ -22,8 +30,8 @@
 .title {
   width:1000px;
   animation: 1s appear;
-  font: bold 64px/70px 'Segoe UI', sans-serif;
-  display: flex;
+  font: bold 64px/64px 'Segoe UI', sans-serif;
+  display: inline;
   color: var(--lightorange);
   letter-spacing: 1px;
   user-select:none;
