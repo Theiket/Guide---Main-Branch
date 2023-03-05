@@ -102,30 +102,30 @@
     border-radius: 50%;
     background-color: #3ff9dc;
     z-index:1;
-  }
+    }
   .planet.hurston {
     background-color:#CF3A2F;
     rotate:-130deg;
-  }
+    }
   .planet.crusader {
     background-color:#2FCFA9;
     rotate:-240deg;
-  }
+    }
   .planet.arccorp {
     background-color:#CF2F55;
     rotate:-135deg;
-  }
+    }
   .planet.microtech {
     background-color:white;
     rotate:-50deg;
-  }
+    }
   .planet:hover {
     box-shadow:0px 0px 5px black;
     top:-6.5px;
     width:13px;
     height:13px;
     cursor:pointer;
-  }
+    }
   .planet p {
     color:transparent;
     z-index:2;
@@ -133,10 +133,10 @@
     margin-inline-start:-20px;
     margin-block-start:-3px;
     letter-spacing:0.5px;
-  }
+    }
   .planet:hover p {
     color:var(--lightgray);
-  }
+    }
 
 /* Sun */
   .sun {
