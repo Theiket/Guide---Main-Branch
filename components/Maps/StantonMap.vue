@@ -65,6 +65,7 @@
   margin-inline-start:40%;
 }
 
+/* Orbit */
 .orbit {
 	position: absolute;
 	display: flex;
@@ -95,7 +96,7 @@
   rotate:130deg;
 }
 
-
+/* Planets */
 .planet {
 	position: absolute;
 	top: -5px;
@@ -131,11 +132,15 @@
   color:transparent;
   z-index:2;
   rotate:0deg;
+  margin-inline-start:-20px;
+  margin-block-start:-3px;
+  letter-spacing:0.5px;
 }
 .planet:hover p {
-  color:var(--lightgray)
+  color:var(--lightgray);
 }
 
+/* Sun */
 .sun {
 	width: 30px;
 	height: 30px;
