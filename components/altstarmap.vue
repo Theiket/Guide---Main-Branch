@@ -53,7 +53,7 @@
         setTimeout(() => {
           this.$router.push('/MapStanton')
         }, 600)
-      },
+        },
       zoomP() {
         const stanton = document.getElementById('stanton-system')
         const pyro = document.getElementById('pyro-system')
@@ -62,7 +62,7 @@
         setTimeout(() => {
           this.$router.push('/MapPyro')
         }, 600)
-      }
+        }
     }
   }
 </script>
