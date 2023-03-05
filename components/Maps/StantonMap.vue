@@ -42,25 +42,25 @@
 </script>
 
 <style scoped>
+/* General */
+  .container {
+    user-select:none;
+    }
+  .systemName {
+    animation: 1.5s slideappear;
+    }
 
-.container {
-  user-select:none;
-  }
-.systemName {
-  animation: 1.5s slideappear;
-  }
-
-.solar-system {
-  width: 250px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scale:285%;
-  position:absolute;
-  margin-block-start:20%;
-  margin-inline-start:40%;
-  }
+  .solar-system {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale:285%;
+    position:absolute;
+    margin-block-start:20%;
+    margin-inline-start:40%;
+    }
 
 /* Orbit */
   .orbit {
