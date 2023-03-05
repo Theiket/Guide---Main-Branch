@@ -29,10 +29,10 @@
   left:-70px;
   bottom:60px;
   user-select:none;
-}
+  }
 .systemPyro:hover {
   color: var(--reddanger);
-}
+  }
 .systemPyro .planetText {
   font: bold 15px 'Segoe UI', sans-serif;
   letter-spacing:1px;
@@ -46,10 +46,10 @@
   transition: all 400ms ease-out;
   width:100px;
   padding-block-start:15px;
-}
+  }
 .systemPyro:hover .planetText{
   opacity:1;
-}
+  }
 
 .systemPyro .systemText {
   font: 550 15px 'Segoe UI', sans-serif;
@@ -64,7 +64,7 @@
   -ms-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
   width:100px;
-}
+  }
 
 .icon {
   scale:300%;
@@ -72,7 +72,7 @@
   border-color:transparent;
   border-width:thin;
   border-radius:50%;
-}
+  }
 
 .systemPyro:hover .icon {
   border-style:dashed;
@@ -80,7 +80,7 @@
   border-width:thin;
   border-radius:50%;
   animation:1s appear;
-}
+  }
 
 .systemPyro .warningText {
   opacity:0;
@@ -89,9 +89,9 @@
   letter-spacing:1px;
   text-align:left;
   right:50px;
-}
+  }
 .systemPyro:hover .warningText {
   opacity:1;
   animation:1s appear;
-}
+  }
 </style>
