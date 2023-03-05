@@ -11,17 +11,7 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      zoom() {
-        const element = document.getElementById('solar-system')
-        element.classList.add('zoomed')
-        setTimeout(() => {
-          this.$router.push('/MapStanton')
-        }, 750)
-      }
-    }
-  }
+
 </script>
 
 <style scoped>

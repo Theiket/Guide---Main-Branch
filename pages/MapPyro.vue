@@ -1,7 +1,7 @@
 <template>
-<div>
-<MapsPyroMap />
-</div>
+  <div>
+    <MapsPyroMap />
+  </div>
 </template>
 
 <script>

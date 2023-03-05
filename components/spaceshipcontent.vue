@@ -1,342 +1,342 @@
 <template>
-<div class="container">
-<!-- Ship Selection Card -->
-  <div class="leftcard">
-    <div class="col-md-3">
-      <h4>
-      Manufacturer
-      </h4>
-      <br>
-    <center>
-    <select v-model="selectedCompany">
-      <option disabled value="">Choose a manufacturer</option>
-      <option v-for="company in companies" :key="company">{{ company }}</option>
-    </select>
-    <br><br><br>
-  <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
-    <span v-for="ships in aegis">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
-    <span v-for="ships in anvil">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="aopoa" v-if="selectedCompany === 'AopoA'">
-    <span v-for="ships in aopoa">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
-    <span v-for="ships in argo">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="banu" v-if="selectedCompany === 'Banu Souli'">
-    <span v-for="ships in banu">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
-    <span v-for="ships in consol">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
-    <span v-for="ships in crusader">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="drake" v-if="selectedCompany === 'Drake Interplanetary'">
-    <span v-for="ships in drake">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
-    <span v-for="ships in esperia">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
-    <span v-for="ships in gatac">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
-    <span v-for="ships in greycat">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
-    <span v-for="ships in kruger">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
-    <span v-for="ships in misc">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
-    <span v-for="ships in origin">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
-    <span v-for="ships in rsi">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-  <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
-    <span v-for="ships in tumbril">
-      <td>
-      <button :key="ships.name" @click="updateInfo(ships)"></button>
-      <p> {{ ships.name }} </p>
-      </td>
-    </span>
-  </div>
-    </center>
-    </div>
-  </div>
-<!-- Component Selection Card -->
-  <div class="centercard">
-    <div class="weapons">
-      <p>Weapons</p>
-      <br>
-      <div class="dropdown">
-        <va-button-group preset="plain" class="mb-6">
-          <va-button @click="toggleItem('weapons')">
-            <Icon name="bxs:caret-down-circle" />
-          </va-button>
-        </va-button-group>
-      </div>
-      <div v-if="componentStates['weapons']">
+  <div class="container">
+  <!-- Ship Selection Card -->
+    <div class="leftcard">
+      <div class="col-md-3">
+        <h4>
+        Manufacturer
+        </h4>
         <br>
-        <p>Become Visible</p>
+      <center>
+      <select v-model="selectedCompany">
+        <option disabled value="">Choose a manufacturer</option>
+        <option v-for="company in companies" :key="company">{{ company }}</option>
+      </select>
+      <br><br><br>
+    <div class="aegis" v-if="selectedCompany === 'Aegis Dynamics'">
+      <span v-for="ships in aegis">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
+      <span v-for="ships in anvil">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="aopoa" v-if="selectedCompany === 'AopoA'">
+      <span v-for="ships in aopoa">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
+      <span v-for="ships in argo">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="banu" v-if="selectedCompany === 'Banu Souli'">
+      <span v-for="ships in banu">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
+      <span v-for="ships in consol">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
+      <span v-for="ships in crusader">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="drake" v-if="selectedCompany === 'Drake Interplanetary'">
+      <span v-for="ships in drake">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
+      <span v-for="ships in esperia">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
+      <span v-for="ships in gatac">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
+      <span v-for="ships in greycat">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
+      <span v-for="ships in kruger">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
+      <span v-for="ships in misc">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
+      <span v-for="ships in origin">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
+      <span v-for="ships in rsi">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+    <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
+      <span v-for="ships in tumbril">
+        <td>
+        <button :key="ships.name" @click="updateInfo(ships)"></button>
+        <p> {{ ships.name }} </p>
+        </td>
+      </span>
+    </div>
+      </center>
       </div>
     </div>
-    <div class="shields">
-      <br>
-      <p>Shields</p>
-      <br>
-      <div class="dropdown">
-        <va-button-group preset="plain" class="mb-6">
-          <va-button @click="toggleItem('shields')">
-            <Icon name="bxs:caret-down-circle" />
-          </va-button>
-        </va-button-group>
-      </div>
-      <div class="componentSelect" v-if="componentStates['shields']">
-        <span class="coolerButton" v-for="shield in s1shields">
-          <button>
-          <h4> {{shield.name}} </h4>
-          <p>
-          {{shield.grade}} | Class <br>
-          Capacity: {{shield.capacity}}
-          </p>
-          </button>
-        </span>
+  <!-- Component Selection Card -->
+    <div class="centercard">
+      <div class="weapons">
+        <p>Weapons</p>
         <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('weapons')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div v-if="componentStates['weapons']">
+          <br>
+          <p>Become Visible</p>
+        </div>
       </div>
-    </div>
-    <div class="powerplants">
-      <br>
-      <p>Power Plants</p>
-      <br>
-      <div class="dropdown">
-        <va-button-group preset="plain" class="mb-6">
-          <va-button @click="toggleItem('powerplants')">
-            <Icon name="bxs:caret-down-circle" />
-          </va-button>
-        </va-button-group>
-      </div>
-      <div class="componentSelect" v-if="componentStates['powerplants']">
-        <span class="coolerButton" v-for="powerplant in s1powerplants">
-          <button>
-          <h4> {{powerplant.name}} </h4>
-          <p>
-          {{powerplant.grade}} | Class <br>
-          Power: {{powerplant.capacity}}
-          </p>
-          </button>
-        </span>
+      <div class="shields">
         <br>
-      </div>
-    </div>
-    <div class="coolers">
-      <br>
-      <p>Coolers</p>
-      <br>
-      <div class="dropdown">
-        <va-button-group preset="plain" class="mb-6">
-          <va-button @click="toggleItem('coolers')">
-            <Icon name="bxs:caret-down-circle" />
-          </va-button>
-        </va-button-group>
-      </div>
-      <div class="componentSelect" v-if="componentStates['coolers']">
-        <span class="coolerButton" v-for="cooler in s1coolers">
-          <button>
-            <h4> {{cooler.name}} </h4>
+        <p>Shields</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('shields')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['shields']">
+          <span class="coolerButton" v-for="shield in s1shields">
+            <button>
+            <h4> {{shield.name}} </h4>
             <p>
-            {{cooler.grade}} | Class <br>
-            Cooling: {{cooler.coolingrate}}
+            {{shield.grade}} | Class <br>
+            Capacity: {{shield.capacity}}
             </p>
-          </button>
-        </span>
+            </button>
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="powerplants">
         <br>
-      </div>
-    </div>
-    <div class="quantumdrives">
-      <br>
-      <p>Quantum Drives</p>
-      <br>
-      <div class="dropdown">
-        <va-button-group preset="plain" class="mb-6">
-          <va-button @click="toggleItem('quantumdrives')">
-            <Icon name="bxs:caret-down-circle" />
-          </va-button>
-        </va-button-group>
-      </div>
-      <div class="componentSelect" v-if="componentStates['quantumdrives']">
-      <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
-          <button>
-            <h4> {{quantumdrive.name}} </h4>
+        <p>Power Plants</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('powerplants')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['powerplants']">
+          <span class="coolerButton" v-for="powerplant in s1powerplants">
+            <button>
+            <h4> {{powerplant.name}} </h4>
             <p>
-            {{quantumdrive.grade}} | Class <br>
-            Values Go Here
+            {{powerplant.grade}} | Class <br>
+            Power: {{powerplant.capacity}}
             </p>
-          </button>
-        </span>
+            </button>
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="coolers">
         <br>
+        <p>Coolers</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('coolers')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['coolers']">
+          <span class="coolerButton" v-for="cooler in s1coolers">
+            <button>
+              <h4> {{cooler.name}} </h4>
+              <p>
+              {{cooler.grade}} | Class <br>
+              Cooling: {{cooler.coolingrate}}
+              </p>
+            </button>
+          </span>
+          <br>
+        </div>
+      </div>
+      <div class="quantumdrives">
+        <br>
+        <p>Quantum Drives</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('quantumdrives')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['quantumdrives']">
+        <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
+            <button>
+              <h4> {{quantumdrive.name}} </h4>
+              <p>
+              {{quantumdrive.grade}} | Class <br>
+              Values Go Here
+              </p>
+            </button>
+          </span>
+          <br>
+        </div>
+      </div>
+    </div>
+  <!-- Ship Information Card -->
+    <div class="rightcard">
+      <div class="col-md-3">
+        <h4>
+        {{vehicleName}}
+        </h4>
+        <div class="vehicleText">
+          <center>
+          <p>
+          {{vehicleDescription}}
+          </p>
+          </center>
+        </div>
+        <va-divider />
+        <table class="infoCard">
+          <tr>
+            <td class="shipRole">
+              <h4>Role</h4>
+              <br>
+              <p>{{vehicleRole}}</p>
+            </td>
+            <td class="shipSize">
+              <h4>Size</h4>
+              <br>
+              <p>{{vehicleSize}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="shipDimensions">
+              <h4>Dimensions</h4>
+              <br>
+              <p>Length x<br>Width x<br>Height x</p>
+            </td>
+            <td class="shipFuel">
+              <h4>Fuel Capacity</h4>
+              <br>
+              <p>Quantum Value<br>Hydrogen Value</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="shipShields">
+              <h4>Shield Capacity</h4>
+              <br>
+              <p>Shield Value</p>
+            </td>
+            <td class="shipHealth">
+              <h4>Hull Health</h4>
+              <br>
+              <p>Hitpoint Value</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="shipPower">
+              <h4>Power</h4>
+              <br>
+              <p>Power Value</p>
+            </td>
+            <td class="shipCooling">
+              <h4>Cooling Capacity</h4>
+              <br>
+              <p>Cooling Value</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="shipEM">
+              <h4>EM Emissions</h4>
+              <br>
+              <p>EM Value</p>
+            </td>
+            <td class="shipIR">
+              <h4>IR Emissions</h4>
+              <br>
+              <p>IR Value</p>
+            </td>
+          </tr>
+      </table>
       </div>
     </div>
   </div>
-<!-- Ship Information Card -->
-  <div class="rightcard">
-    <div class="col-md-3">
-      <h4>
-      {{vehicleName}}
-      </h4>
-      <div class="vehicleText">
-        <center>
-        <p>
-        {{vehicleDescription}}
-        </p>
-        </center>
-      </div>
-      <va-divider />
-      <table class="infoCard">
-        <tr>
-          <td class="shipRole">
-            <h4>Role</h4>
-            <br>
-            <p>{{vehicleRole}}</p>
-          </td>
-          <td class="shipSize">
-            <h4>Size</h4>
-            <br>
-            <p>{{vehicleSize}}</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="shipDimensions">
-            <h4>Dimensions</h4>
-            <br>
-            <p>Length x<br>Width x<br>Height x</p>
-          </td>
-          <td class="shipFuel">
-            <h4>Fuel Capacity</h4>
-            <br>
-            <p>Quantum Value<br>Hydrogen Value</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="shipShields">
-            <h4>Shield Capacity</h4>
-            <br>
-            <p>Shield Value</p>
-          </td>
-          <td class="shipHealth">
-            <h4>Hull Health</h4>
-            <br>
-            <p>Hitpoint Value</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="shipPower">
-            <h4>Power</h4>
-            <br>
-            <p>Power Value</p>
-          </td>
-          <td class="shipCooling">
-            <h4>Cooling Capacity</h4>
-            <br>
-            <p>Cooling Value</p>
-          </td>
-        </tr>
-        <tr>
-          <td class="shipEM">
-            <h4>EM Emissions</h4>
-            <br>
-            <p>EM Value</p>
-          </td>
-          <td class="shipIR">
-            <h4>IR Emissions</h4>
-            <br>
-            <p>IR Value</p>
-          </td>
-        </tr>
-    </table>
-    </div>
-  </div>
-</div>
 </template>
 
 <script setup>

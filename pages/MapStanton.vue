@@ -1,7 +1,7 @@
 <template>
-<div>
-<MapsStantonMap />
-</div>
+  <div>
+    <MapsStantonMap />
+  </div>
 </template>
 
 <script>
