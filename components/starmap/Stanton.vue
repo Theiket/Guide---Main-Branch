@@ -1,13 +1,12 @@
 <template>
   <div>
-    <NuxtLink to="/MapStanton">
-      <div id="solar-system" class="systemStanton" @click="zoom()">
-        <Icon name="mdi:circle-slice-8" />
-        <br>
-        <p class="planetText">STANTON</p>
-        <p class="systemText">SYSTEM</p>
-      </div>
-    </NuxtLink>
+    <div id="solar-system" class="systemStanton" @click="zoom()">
+      <Icon name="mdi:circle-slice-8" />
+      <br>
+      <p class="planetText">STANTON</p>
+      <p class="systemText">SYSTEM</p>
+      <div class="overlay"></div>
+    </div>
   </div>
 </template>
 
@@ -16,12 +15,10 @@
     methods: {
       zoom() {
         const element = document.getElementById('solar-system')
-        element.style.transition = 'all 0.5s ease-in-out'
-        element.style.opacity = '0'
-        element.style.transform = 'scale(2)'
+        element.classList.add('zoomed')
         setTimeout(() => {
           this.$router.push('/MapStanton')
-        }, 500)
+        }, 750)
       }
     }
   }
@@ -39,6 +36,7 @@
     }
   .systemStanton:hover {
     color: var(--greensafety);
+    cursor:pointer;
     }
 
   .systemStanton .planetText {
@@ -56,8 +54,8 @@
     width:100px;
     padding-block-start:15px;
     }
-  .systemStanton:hover .planetText{
-    opacity:1;
+  .systemStanton:hover p {
+    cursor:default;
     }
 
   .systemStanton .systemText {
@@ -89,8 +87,20 @@
     border-radius:50%;
     animation:1s appear;
     }
-  .router-link-active {
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.2);
+  .systemStanton.zoomed, .systemStanton.zoomed .icon {
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    transform: scale(4);
+    border-style:none;
+    z-index:2;
     }
+  .systemStanton.zoomed {
+    background-color:rgba(36, 38, 43, 1);
+  }
+
+  .systemStanton.zoomed .systemText,
+  .systemStanton.zoomed .planetText {
+    transition: all 0.1s ease-in-out;
+    opacity:0;
+  }
 </style>

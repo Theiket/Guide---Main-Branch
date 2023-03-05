@@ -4,14 +4,31 @@
       <tbody>
         <tr>
           <td>
-            <starmapPyro class="starmapPyro" />
+            <div id="pyro-system" class="systemPyro" @click="zoomP()">
+              <Icon name="game-icons:anarchy" />
+              <p class="planetText">PYRO</p>
+              <p class="systemText">SYSTEM</p>
+              <div class="unavailable">
+                <p class="warningText">
+                SCAN UNAVAILABLE
+                </p>
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
         </tr>
         <tr>
           <td>
-            <starmapStanton class="starmapStanton" />
+            <div>
+              <div id="stanton-system" class="systemStanton" @click="zoomS()">
+                <Icon name="mdi:circle-slice-8" />
+                <br>
+                <p class="planetText">STANTON</p>
+                <p class="systemText">SYSTEM</p>
+                <div class="overlay"></div>
+              </div>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -25,7 +42,33 @@
   })
 </script>
 
+<script>
+  export default {
+    methods: {
+      zoomS() {
+        const stanton = document.getElementById('stanton-system')
+        const pyro = document.getElementById('pyro-system')
+        stanton.classList.add('zoomed')
+        pyro.classList.add('fade')
+        setTimeout(() => {
+          this.$router.push('/MapStanton')
+        }, 500)
+      },
+      zoomP() {
+        const stanton = document.getElementById('stanton-system')
+        const pyro = document.getElementById('pyro-system')
+        pyro.classList.add('zoomed')
+        stanton.classList.add('fade')
+        setTimeout(() => {
+          this.$router.push('/MapPyro')
+        }, 500)
+      }
+    }
+  }
+</script>
+
 <style scoped>
+/* General */
   .container {
     margin: 0 auto;
     min-height: 85vh;
@@ -41,5 +84,183 @@
     0% {
       opacity: 0;
     }
-  }
+    }
+</style>
+
+<style scoped>
+/* Stanton */
+  .systemStanton {
+    position:relative;
+    height: 50px;
+    width: 50px;
+    color: var(--lightgray);
+    border-radius: 50%;
+    margin:10px 10px;
+    user-select:none;
+    }
+  .systemStanton:hover {
+    color: var(--greensafety);
+    cursor:pointer;
+    }
+  .systemStanton .planetText {
+    font: bold 15px 'Segoe UI', sans-serif;
+    letter-spacing:1px;
+    text-transform:capitalize;
+    opacity:1;
+    position:relative;
+    color:var(--lightorange);
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    width:100px;
+    padding-block-start:15px;
+    }
+  .systemStanton:hover p {
+    cursor:default;
+    }
+
+  .systemStanton .systemText {
+    font: 550 15px 'Segoe UI', sans-serif;
+    letter-spacing:1px;
+    text-transform:capitalize;
+    opacity:0.7;
+    position:relative;
+    color:var(--lightorange);
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    width:100px;
+    }
+
+  .icon {
+    scale:300%;
+    border-style:dashed;
+    border-color:transparent;
+    border-width:thin;
+    border-radius:50%;
+    }
+  .systemStanton:hover .icon {
+    border-style:dashed;
+    border-color:var(--orangehover);
+    border-width:thin;
+    border-radius:50%;
+    animation:1s appear;
+    }
+  .systemStanton.zoomed, .systemStanton.zoomed .icon {
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    transform: scale(4);
+    border-style:none;
+    z-index:2;
+    }
+  .systemStanton.zoomed .systemText,
+  .systemStanton.zoomed .planetText {
+    transition: all 0.1s ease-in-out;
+    opacity:0;
+    }
+  .systemStanton.fade {
+    transition: all 0.5s ease-in-out;
+    opacity:0;
+    }
+
+</style>
+
+<style scoped>
+/* Pyro */
+  .systemPyro {
+    position:relative;
+    height: 50px;
+    width: 50px;
+    color: var(--lightgray);
+    border-radius: 50%;
+    margin:10px 10px;
+    left:-70px;
+    bottom:60px;
+    user-select:none;
+    }
+  .systemPyro:hover {
+    color: var(--reddanger);
+    cursor:pointer;
+    }
+  .systemPyro .planetText {
+    font: bold 15px 'Segoe UI', sans-serif;
+    letter-spacing:1px;
+    text-transform:capitalize;
+    opacity:1;
+    color:var(--lightorange);
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    width:100px;
+    padding-block-start:15px;
+    }
+  .systemPyro:hover .planetText{
+    opacity:1;
+    }
+
+  .systemPyro .systemText {
+    font: 550 15px 'Segoe UI', sans-serif;
+    letter-spacing:1px;
+    text-transform:capitalize;
+    opacity:0.7;
+    position:relative;
+    color:var(--lightorange);
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    width:100px;
+    }
+
+  .icon {
+    scale:300%;
+    border-style:dashed;
+    border-color:transparent;
+    border-width:thin;
+    border-radius:50%;
+    }
+
+  .systemPyro:hover .icon {
+    border-style:dashed;
+    border-color:var(--orangehover);
+    border-width:thin;
+    border-radius:50%;
+    animation:1s appear;
+    }
+
+  .systemPyro .warningText {
+    opacity:0;
+    font: bold 15px 'Segoe UI', sans-serif;
+    width:200px;
+    letter-spacing:1px;
+    text-align:left;
+    right:50px;
+    }
+  .systemPyro:hover .warningText {
+    opacity:1;
+    animation:1s appear;
+    }
+  .systemPyro.zoomed, .systemPyro.zoomed .icon {
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    transform: scale(4);
+    border-style:none;
+    z-index:2;
+    }
+  .systemPyro.zoomed .systemText,
+  .systemPyro.zoomed .planetText, .systemPyro .unavailable {
+    transition: all 0.1s ease-in-out;
+    opacity:0;
+    }
+  .systemPyro.fade {
+    transition: all 0.5s ease-in-out;
+    opacity:0;
+    }
 </style>
