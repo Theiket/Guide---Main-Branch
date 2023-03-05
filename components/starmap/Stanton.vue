@@ -76,4 +76,23 @@
   border-radius:50%;
   animation:1s appear;
 }
+
+.systemStanton:hover,
+.router-link-active .systemStanton {
+  color: var(--greensafety);
+}
+
+.systemStanton:hover .planetText,
+.router-link-active .systemStanton .planetText {
+  opacity: 1;
+}
+
+.systemStanton:hover .icon,
+.router-link-active .systemStanton .icon {
+  border-style: dashed;
+  border-color: var(--orangehover);
+  border-width: thin;
+  border-radius: 50%;
+  animation: 1s appear;
+}
 </style>
