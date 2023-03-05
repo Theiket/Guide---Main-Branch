@@ -45,10 +45,10 @@
 
 .container {
   user-select:none;
-}
+  }
 .systemName {
   animation: 1.5s slideappear;
-}
+  }
 
 .solar-system {
   width: 250px;
@@ -60,7 +60,7 @@
   position:absolute;
   margin-block-start:20%;
   margin-inline-start:40%;
-}
+  }
 
 /* Orbit */
   .orbit {
@@ -276,7 +276,7 @@
     animation: 4s appear4;
     }
   .microtech-orbit {
-    animation: 4.5s appear5;
+    animation: 4.2s appear5;
     }
 
 </style>

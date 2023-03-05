@@ -3,12 +3,16 @@
     <table>
       <tbody>
         <tr>
-          <td><starmapPyro /></td>
+          <td>
+            <starmapPyro class="starmapPyro" />
+          </td>
         </tr>
         <tr>
         </tr>
         <tr>
-          <td><starmapStanton /></td>
+          <td>
+            <starmapStanton class="starmapStanton" />
+          </td>
         </tr>
       </tbody>
     </table>
@@ -21,21 +25,21 @@
   })
 </script>
 
-  <style scoped>
-.container {
-  margin: 0 auto;
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color:var(--backgray);
-  animation: 1s appear;
-}
+<style scoped>
+  .container {
+    margin: 0 auto;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:var(--backgray);
+    animation: 1s appear;
+    }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
   }
-}
 </style>
