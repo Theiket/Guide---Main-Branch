@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <canvas ref="canvas" />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     init() {
     // Set up the renderer
       this.renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas });
-      this.renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.85);
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.renderer.setPixelRatio(window.devicePixelRatio);
 
     // Set up the camera
@@ -33,20 +33,70 @@ export default {
 
       const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
       this.scene.add(directionalLight);
-
-    // Create the star
-      const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
-      const sunMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
-        emissive: 0xffff00,
-        emissiveIntensity: 1.5
+    
+    // Create the sun
+      const sunGeometry = new THREE.SphereGeometry(5, 128, 128);
+      const sunMaterial = new THREE.MeshPhongMaterial({
+        emissive: 0xfdb813,
+        emissiveIntensity: 1,
+        map: new THREE.TextureLoader().load('https://threejsfundamentals.org/threejs/resources/images/lava/lavatile.jpg'),
+        shininess: 10,
+        specular: 0xfdb813
       });
       this.sun = new THREE.Mesh(sunGeometry, sunMaterial);
+      this.sun.position.set(0, 0, 0);
       this.scene.add(this.sun);
 
-      // Add a point light to simulate the star's emission of light
-      const sunLight = new THREE.PointLight(0xffff00, 1.5, 100);
-      this.sun.add(sunLight);
+      // Add a point light to the sun
+      const pointLight = new THREE.PointLight(0xfdb813, 1, 100);
+      pointLight.position.set(0, 0, 0);
+      this.sun.add(pointLight);
+
+      // Create the sun glow effect
+      const sunGlowGeometry = new THREE.SphereGeometry(6, 64, 64);
+      const sunGlowMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          glowColor: { value: new THREE.Color(0xfdb813) },
+          viewVector: { value: new THREE.Vector3() }
+        },
+        vertexShader: `
+          varying vec3 vNormal;
+          void main() 
+          {
+            vNormal = normalize(normalMatrix * normal);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 glowColor;
+          varying vec3 vNormal;
+          void main() 
+          {
+            float intensity = pow(0.4 - dot(vNormal, vec3(0, 0, 1.0)), 2.0);
+            gl_FragColor = vec4(glowColor * intensity, intensity);
+          }
+        `,
+        side: THREE.BackSide,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+      });
+      this.sunGlow = new THREE.Mesh(sunGlowGeometry, sunGlowMaterial);
+      this.sunGlow.position.set(0, 0, 0);
+      this.scene.add(this.sunGlow);
+
+      // Create a solar flare
+      const flareGeometry = new THREE.ConeGeometry(0.4, 4, 32);
+      const flareMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 });
+      const flare = new THREE.Mesh(flareGeometry, flareMaterial);
+      flare.position.set(1, 0, 0);
+      this.sun.add(flare);
+
+      // Create a prominence
+      const prominenceGeometry = new THREE.TorusGeometry(1.5, 0.1, 16, 100);
+      const prominenceMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 0.8 });
+      const prominence = new THREE.Mesh(prominenceGeometry, prominenceMaterial);
+      prominence.position.set(-2, 0, 0);
+      this.sun.add(prominence);
 
     // Create planet #1
       const hurstonGeometry = new THREE.SphereGeometry(2, 32, 32);
@@ -56,7 +106,7 @@ export default {
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
-      flatShading: true,
+      flatShading: false,
     });
       this.hurston = new THREE.Mesh(hurstonGeometry, hurstonMaterial);
       this.hurston.position.x = 17;
@@ -70,7 +120,7 @@ export default {
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
-      flatShading: true,
+      flatShading: false,
     });
       this.crusader = new THREE.Mesh(crusaderGeometry, crusaderMaterial);
       this.crusader.position.x = 25;
@@ -85,7 +135,7 @@ export default {
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
-      flatShading: true,
+      flatShading: false,
     });
       this.arccorp = new THREE.Mesh(arccorpGeometry, arccorpMaterial);
       this.arccorp.position.x = 34;
@@ -100,7 +150,7 @@ export default {
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
-      flatShading: true,
+      flatShading: false,
     });
       this.microtech = new THREE.Mesh(microtechGeometry, microtechMaterial);
       this.microtech.position.x = 50;
@@ -151,3 +201,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .container {
+    height:85vh;
+    overflow:hidden;
+  }
+
+
+</style>
