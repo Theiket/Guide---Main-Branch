@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/starmap">
+      <NuxtLink to="/MapStanton>">
         <h1>HURSTON</h1>
       </NuxtLink>
     </div>
     <div class="solar-system">
-      <div class="orbit it-orbit">
+      <div class="orbit ita-orbit">
         <div class="planet ita">
         <br>
         <p>Ita</p>
@@ -75,24 +75,23 @@
   .ita-orbit {
     width: 210px;
     height: 210px;
-    rotate:50deg;
+    rotate:-10deg;
     }
   .magda-orbit {
     width: 165px;
     height: 165px;
-    rotate:135deg;
+    rotate:225deg;
     }
   .aberdeen-orbit {
     width: 120px;
     height: 120px;
-    rotate:240deg;
+    rotate:60deg;
     }
   .arial-orbit {
     width: 90px;
     height: 90px;
-    rotate:130deg;
+    rotate:125deg;
     }
-
 /* Moons */
   .planet {
     position: absolute;
@@ -104,20 +103,23 @@
     z-index:1;
     }
   .planet.arial {
-    background-color:#CF3A2F;
-    rotate:-130deg;
+    background-color:#C5703B;
+    rotate:-125deg;
+    z-index:1;
     }
   .planet.aberdeen {
-    background-color:#2FCFA9;
-    rotate:-240deg;
+    background-color:#D2BC61;
+    rotate:-60deg;
+    z-index:1;
     }
   .planet.magda {
-    background-color:#CF2F55;
-    rotate:-135deg;
+    background-color:#C9B090;
+    rotate:-225deg;
     }
   .planet.ita {
-    background-color:white;
-    rotate:-50deg;
+    background-color:#D2A061;
+    rotate:10deg;
+    z-index:1;
     }
   .planet:hover {
     box-shadow:0px 0px 5px black;
@@ -127,24 +129,34 @@
     cursor:pointer;
     }
   .planet p {
+    position:relative;
     visibility:hidden;
-    z-index:2;
     rotate:0deg;
-    margin-inline-start:-20px;
     margin-block-start:-3px;
-    letter-spacing:0.5px;
+    letter-spacing:0.75px;
     }
   .planet:hover p {
     color:var(--lightgray);
     visibility:visible;
     }
-
+  .planet.arial p {
+    margin-inline-start:-15px;
+    }
+  .planet.aberdeen p {
+    margin-inline-start:-22px;
+    }
+  .planet.magda p {
+    margin-inline-start:-17px;
+    }
+  .planet.ita p {
+    margin-inline-start:-12px;
+    }
 /* Hurston */
   .hurston {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF9A2F;
+    background-color: #CF3A2F;
     z-index:1;
     }
   .hurston:hover {
