@@ -1,258 +1,118 @@
 <template>
-  <div class="container">
-    <div class="systemName">
-      <NuxtLink to="/MapStanton">
-        <h1>CRUSADER</h1>
-      </NuxtLink>
-    </div>
-    <div class="solar-system">
-      <div class="orbit yela-orbit">
-        <div class="planet yela">
-        <br>
-        <p>Yela</p>
-        </div>
-      </div>
-      <div class="orbit daymar-orbit">
-        <div class="planet daymar">
-        <br>
-        <p>Daymar</p>
-        </div>
-      </div>
-      <div class="orbit cellin-orbit">
-        <div class="planet cellin">
-        <br>
-        <p>Cellin</p>
-        </div>
-      </div>
-      <NuxtLink to="/MapStanton">
-        <div class="crusader"></div>
-      </NuxtLink>
-    </div>
+  <div ref="canvasWrapper" @click="onSolarSystemClicked">
+    <canvas ref="canvas"></canvas>
   </div>
 </template>
 
 
 <script>
+import * as THREE from 'three';
+import OrbitControls from 'three/examples/jsm/controls/OrbitControls.js';
+
+export default {
+  data() {
+    return {
+      cameraPosition: new THREE.Vector3(0, 0, 50),
+      isZoomedIn: false,
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+    // Set up the renderer
+      this.renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas });
+      this.renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.85);
+      this.renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Set up the camera
+      this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      this.camera.position.z = 70;
+
+    // Create the scene
+      const scene = new THREE.Scene()
+      scene.background = new THREE.Color(0x24262B);
+
+    // Add lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+      scene.add(directionalLight);
+
+    // Create the solar system sphere
+      const solarSystemGeometry = new THREE.SphereGeometry(10, 32, 32);
+      const solarSystemMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const solarSystemSphere = new THREE.Mesh(solarSystemGeometry, solarSystemMaterial);
+      this.scene.add(solarSystemSphere);
+
+    // Create the orbit lines for the planets
+      const orbitLineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+      const orbitLineGeometry = new THREE.BufferGeometry();
+      const orbitLineVertices = [];
+
+      for (let i = 0; i < 64; i++) {
+        const angle = (i / 64) * Math.PI * 2;
+        orbitLineVertices.push(new THREE.Vector3(Math.cos(angle) * 10, 0, Math.sin(angle) * 10));
+      }
+
+      orbitLineGeometry.setFromPoints(orbitLineVertices);
+
+      for (let i = 0; i < 4; i++) {
+        const orbitLine = new THREE.LineLoop(orbitLineGeometry, orbitLineMaterial);
+        orbitLine.position.z = -5 - i * 5;
+        this.scene.add(orbitLine);
+      }
+
+    // Create the four planets
+      const planetGeometry = new THREE.SphereGeometry(1, 32, 32);
+      const planetMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      const planetDistances = [3, 5, 7, 9];
+      for (let i = 0; i < 4; i++) {
+        const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+        planet.position.z = -5 - i * 5;
+        planet.position.x = planetDistances[i];
+        this.scene.add(planet);
+      }
+
+    // Add interactivity
+      this.controls = new OrbitControls(this.camera, this.$refs.canvas);
+      this.controls.enableDamping = true;
+      this.controls.dampingFactor = 0.05;
+      this.controls.rotateSpeed = 0.5;
+      this.controls.maxDistance = 100;
+      this.controls.minDistance = 10;
+      this.controls.enableZoom = true;
+
+    // Update controls
+      this.controls.update();
+
+    // Animate the scene
+      const animate = () => {
+        requestAnimationFrame(animate);
+        if (this.isZoomedIn) {
+          const targetPosition = new THREE.Vector3(0, 0, 20);
+          const newPosition = this.camera.position.clone().lerp(targetPosition, 0.1);
+          this.camera.position.copy(newPosition);
+        }
+        this.renderer.render(this.scene, this.camera);
+      };
+
+    onSolarSystemClicked() {
+      // Zoom in on the solar system when it's clicked
+      this.isZoomedIn = true;
+      this.animateCamera();
+    },
+
+    animateCamera() {
+      if (this.isZoomedIn) {
+        requestAnimationFrame(this.animateCamera);
+        const targetPosition = new THREE.Vector3(0, 0, 20);
+        const newPosition = this.cameraPosition.clone().lerp(targetPosition, 0.1);
+        this.cameraPosition.copy(newPosition);
+      }
+    },
+  },
+};
 </script>
-
-<style scoped>
-/* General */
-  .container {
-    user-select:none;
-    }
-  .systemName {
-    animation: 1.5s slideappear;
-    }
-
-  .solar-system {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scale:285%;
-    position:absolute;
-    margin-block-start:20%;
-    margin-inline-start:40%;
-    }
-
-/* Orbit */
-  .orbit {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--lightorange);
-    border-radius: 50%;
-    z-index:-1;
-    }  
-  .yela-orbit {
-    width: 180px;
-    height: 180px;
-    rotate:225deg;
-    }
-  .daymar-orbit {
-    width: 120px;
-    height: 120px;
-    rotate:60deg;
-    }
-  .cellin-orbit {
-    width: 90px;
-    height: 90px;
-    rotate:125deg;
-    }
-/* Moons */
-  .planet {
-    position: absolute;
-    top: -5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #3ff9dc;
-    z-index:1;
-    }
-  .planet.cellin {
-    background-color:#C5703B;
-    rotate:-125deg;
-    z-index:1;
-    }
-  .planet.daymar {
-    background-color:#D2BC61;
-    rotate:-60deg;
-    z-index:1;
-    }
-  .planet.yela {
-    background-color:#C9B090;
-    rotate:-225deg;
-    }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
-    cursor:pointer;
-    }
-  .planet p {
-    visibility:hidden;
-    rotate:0deg;
-    margin-block-start:-3px;
-    }
-  .planet:hover p {
-    color:var(--lightgray);
-    visibility:visible;
-    }
-  .planet.cellin p {
-    margin-inline-start:-15px;
-    }
-  .planet.daymar p {
-    margin-inline-start:-22px;
-    margin-block-start:-22px;
-    }
-  .planet.yela p {
-    margin-inline-start:-17px;
-    }
-/* Crusader */
-  .crusader {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #CF3A2F;
-    z-index:1;
-    }
-  .crusader:hover {
-    box-shadow:0px 0px 5px black;
-    width:35px;
-    height:35px;
-    cursor:pointer;
-    }
-
-/* Text */
-  .systemName {
-    color: var(--lightorange);
-    letter-spacing:1px;
-    margin-block-start:0px;
-    text-decoration:none;
-    display:inline-block;
-    width:15%;
-    position:absolute;
-    margin-inline-start:20%;
-    margin-block-start:5%;
-    border-bottom-style:solid;
-    border-width:2px;
-    border-color:var(--lightgray);
-    padding-inline-start:10px;
-    z-index:1;
-    }
-  .systemName h1 {
-    font: 35px 'Segoe UI', sans-serif;
-    font-weight:bold;
-    }
-  .systemName a {
-    color:var(--lightorange);
-    }
-  .systemName a:hover {
-    color:var(--orangehover);
-    }
-
-  p {
-    font-weight: 300;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 5px;
-    font-weight:bold;
-    letter-spacing:0.5px;
-    color: var(--lightgray);
-    padding-block-end: 15px;
-    padding-inline-start:15px;
-    padding-inline-end:15px;
-    }
-
-/* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear4 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  .crusader {
-    animation: 1s appear1;
-    }
-  .cellin-orbit {
-    animation: 2s appear2;
-    }
-  .daymar-orbit {
-    animation: 3s appear3;
-    }
-  .yela-orbit {
-    animation: 4s appear4;
-    }
-</style>
