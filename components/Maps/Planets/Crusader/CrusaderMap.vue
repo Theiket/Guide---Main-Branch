@@ -1,45 +1,31 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/starmap">
-        <h1>STANTON</h1>
+      <NuxtLink to="/MapStanton">
+        <h1>CRUSADER</h1>
       </NuxtLink>
     </div>
     <div class="solar-system">
-      <div class="orbit microtech-orbit">
-        <NuxtLink to="/PlanetMaps/microtech">
-          <div class="planet microtech">
-            <br>
-            <p>microTech</p>
-          </div>
-        </NuxtLink>
+      <div class="orbit yela-orbit">
+        <div class="planet yela">
+        <br>
+        <p>Yela</p>
+        </div>
       </div>
-      <div class="orbit arccorp-orbit">
-        <NuxtLink to="/PlanetMaps/arccorp">
-          <div class="planet arccorp">
-            <br>
-            <p>ArcCorp</p>
-          </div>
-        </NuxtLink>
+      <div class="orbit daymar-orbit">
+        <div class="planet daymar">
+        <br>
+        <p>Daymar</p>
+        </div>
       </div>
-      <div class="orbit crusader-orbit">
-        <NuxtLink to="/PlanetMaps/crusader">
-          <div class="planet crusader">
-            <br>
-            <p>Crusader</p>
-          </div>
-        </NuxtLink>
+      <div class="orbit cellin-orbit">
+        <div class="planet cellin">
+        <br>
+        <p>Cellin</p>
+        </div>
       </div>
-      <div class="orbit hurston-orbit">
-        <NuxtLink to="/PlanetMaps/hurston">
-          <div class="planet hurston">
-            <br>
-            <p>Hurston</p>
-          </div>
-        </NuxtLink>
-      </div>
-      <NuxtLink to="starmap">
-        <div class="sun"></div>
+      <NuxtLink to="/MapStanton">
+        <div class="crusader"></div>
       </NuxtLink>
     </div>
   </div>
@@ -79,29 +65,23 @@
     border: 1px solid var(--lightorange);
     border-radius: 50%;
     z-index:-1;
-    } 
-  .microtech-orbit {
-    width: 210px;
-    height: 210px;
-    rotate:50deg;
+    }  
+  .yela-orbit {
+    width: 180px;
+    height: 180px;
+    rotate:225deg;
     }
-  .arccorp-orbit {
-    width: 165px;
-    height: 165px;
-    rotate:135deg;
-    }
-  .crusader-orbit {
+  .daymar-orbit {
     width: 120px;
     height: 120px;
-    rotate:240deg;
+    rotate:60deg;
     }
-  .hurston-orbit {
+  .cellin-orbit {
     width: 90px;
     height: 90px;
-    rotate:130deg;
+    rotate:125deg;
     }
-
-/* Planets */
+/* Moons */
   .planet {
     position: absolute;
     top: -5px;
@@ -111,21 +91,19 @@
     background-color: #3ff9dc;
     z-index:1;
     }
-  .planet.hurston {
-    background-color:#CF3A2F;
-    rotate:-130deg;
+  .planet.cellin {
+    background-color:#C5703B;
+    rotate:-125deg;
+    z-index:1;
     }
-  .planet.crusader {
-    background-color:#2FCFA9;
-    rotate:-240deg;
+  .planet.daymar {
+    background-color:#D2BC61;
+    rotate:-60deg;
+    z-index:1;
     }
-  .planet.arccorp {
-    background-color:#CF2F55;
-    rotate:-135deg;
-    }
-  .planet.microtech {
-    background-color:white;
-    rotate:-50deg;
+  .planet.yela {
+    background-color:#C9B090;
+    rotate:-225deg;
     }
   .planet:hover {
     box-shadow:0px 0px 5px black;
@@ -136,26 +114,32 @@
     }
   .planet p {
     visibility:hidden;
-    z-index:2;
     rotate:0deg;
-    margin-inline-start:-20px;
     margin-block-start:-3px;
-    letter-spacing:0.5px;
     }
   .planet:hover p {
     color:var(--lightgray);
     visibility:visible;
     }
-
-/* Sun */
-  .sun {
+  .planet.cellin p {
+    margin-inline-start:-15px;
+    }
+  .planet.daymar p {
+    margin-inline-start:-22px;
+    margin-block-start:-22px;
+    }
+  .planet.yela p {
+    margin-inline-start:-17px;
+    }
+/* Crusader */
+  .crusader {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF9A2F;
+    background-color: #CF3A2F;
     z-index:1;
     }
-  .sun:hover {
+  .crusader:hover {
     box-shadow:0px 0px 5px black;
     width:35px;
     height:35px;
@@ -195,12 +179,11 @@
     font-family: 'Segoe UI', sans-serif;
     font-size: 5px;
     font-weight:bold;
-    letter-spacing:0.3px;
+    letter-spacing:0.5px;
     color: var(--lightgray);
     padding-block-end: 15px;
     padding-inline-start:15px;
     padding-inline-end:15px;
-    rotate:-140deg;
     }
 
 /* Animations */
@@ -220,7 +203,7 @@
   @keyframes appear1 {
     0% {
       opacity: 0;
-      scale:0.3;
+      scale:0;
       }
     60% {
       opacity:0;
@@ -260,32 +243,16 @@
       rotate:0deg;
       }
     }
-  @keyframes appear5 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    80% {
-      opacity:0;
-      scale:0.8;
-      rotate:0deg;
-      }
-    }
-
-  .sun {
+  .crusader {
     animation: 1s appear1;
     }
-  .hurston-orbit {
+  .cellin-orbit {
     animation: 2s appear2;
     }
-  .crusader-orbit {
+  .daymar-orbit {
     animation: 3s appear3;
     }
-  .arccorp-orbit {
+  .yela-orbit {
     animation: 4s appear4;
     }
-  .microtech-orbit {
-    animation: 4.2s appear5;
-    }
-
 </style>

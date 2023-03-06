@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MapsPlanetsHurstonMap />
+    <MapsPlanetsArcCorpMap />
   </div>
 </template>
 
