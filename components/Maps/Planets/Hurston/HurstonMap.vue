@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/MapStanton>">
+      <NuxtLink to="/MapStanton">
         <h1>HURSTON</h1>
       </NuxtLink>
     </div>
@@ -71,15 +71,15 @@
     border: 1px solid var(--lightorange);
     border-radius: 50%;
     z-index:-1;
-    } 
+    }  
   .ita-orbit {
-    width: 210px;
-    height: 210px;
+    width: 240px;
+    height: 240px;
     rotate:-10deg;
     }
   .magda-orbit {
-    width: 165px;
-    height: 165px;
+    width: 180px;
+    height: 180px;
     rotate:225deg;
     }
   .aberdeen-orbit {
@@ -129,11 +129,9 @@
     cursor:pointer;
     }
   .planet p {
-    position:relative;
     visibility:hidden;
     rotate:0deg;
     margin-block-start:-3px;
-    letter-spacing:0.75px;
     }
   .planet:hover p {
     color:var(--lightgray);
@@ -144,6 +142,7 @@
     }
   .planet.aberdeen p {
     margin-inline-start:-22px;
+    margin-block-start:-22px;
     }
   .planet.magda p {
     margin-inline-start:-17px;
@@ -199,12 +198,11 @@
     font-family: 'Segoe UI', sans-serif;
     font-size: 5px;
     font-weight:bold;
-    letter-spacing:0.3px;
+    letter-spacing:0.5px;
     color: var(--lightgray);
     padding-block-end: 15px;
     padding-inline-start:15px;
     padding-inline-end:15px;
-    rotate:-140deg;
     }
 
 /* Animations */
@@ -224,7 +222,7 @@
   @keyframes appear1 {
     0% {
       opacity: 0;
-      scale:0.3;
+      scale:0;
       }
     60% {
       opacity:0;
