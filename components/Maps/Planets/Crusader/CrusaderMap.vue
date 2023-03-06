@@ -36,19 +36,23 @@ export default {
 
     // Create the star
       const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
-      const sunMaterial = new THREE.LineBasicMaterial({
-      color: 0x9DA1B2,
-      linewidth: 0.1,
-      linecap: "miter",
-      linejoin: "miter",
-    });
-      this.sun = new THREE.LineSegments(sunGeometry, sunMaterial);
+      const sunMaterial = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        emissive: 0xffff00,
+        emissiveIntensity: 1.5
+      });
+      this.sun = new THREE.Mesh(sunGeometry, sunMaterial);
       this.scene.add(this.sun);
+
+      // Add a point light to simulate the star's emission of light
+      const sunLight = new THREE.PointLight(0xffff00, 1.5, 100);
+      this.sun.add(sunLight);
+
     // Create planet #1
       const hurstonGeometry = new THREE.SphereGeometry(2, 32, 32);
       const hurstonMaterial = new THREE.MeshStandardMaterial({
-      color: 0x9DA1B2,
-      wireframe: true,
+      color: 0xCF3A2F,
+      wireframe: false,
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
@@ -57,11 +61,12 @@ export default {
       this.hurston = new THREE.Mesh(hurstonGeometry, hurstonMaterial);
       this.hurston.position.x = 17;
       this.scene.add(this.hurston);
+
     // Create planet #2
       const crusaderGeometry = new THREE.SphereGeometry(2, 32, 32);
       const crusaderMaterial = new THREE.MeshStandardMaterial({
-      color: 0x9DA1B2,
-      wireframe: true,
+      color: 0x2FCFA9,
+      wireframe: false,
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
@@ -71,11 +76,12 @@ export default {
       this.crusader.position.x = 25;
       this.crusader.position.z = 0;
       this.scene.add(this.crusader);
+
     // Create planet #3
       const arccorpGeometry = new THREE.SphereGeometry(2, 32, 32);
       const arccorpMaterial = new THREE.MeshStandardMaterial({
-      color: 0x9DA1B2,
-      wireframe: true,
+      color: 0xCF2F55,
+      wireframe: false,
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
@@ -85,11 +91,12 @@ export default {
       this.arccorp.position.x = 34;
       this.arccorp.position.z = 0;
       this.scene.add(this.arccorp);
+
     // Create planet #4
       const microtechGeometry = new THREE.SphereGeometry(2, 32, 32);
       const microtechMaterial = new THREE.MeshStandardMaterial({
-      color: 0x9DA1B2,
-      wireframe: true,
+      color: 0xfdfdfd,
+      wireframe: false,
       wireframeLinecap: "square",
       wireframeLinejoin: "miter",
       roughness: 0.8,
@@ -118,6 +125,9 @@ export default {
     // Animate solar system objects
       this.sun.rotation.y += 0.001;
       this.hurston.rotation.y += 0.005;
+      this.crusader.rotation.y += 0.001;
+      this.arccorp.rotation.y += 0.003;
+      this.microtech.rotation.y += 0.002;
 
     // Update controls
       this.controls.update();
