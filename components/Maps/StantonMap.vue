@@ -25,10 +25,12 @@
         </div>
       </div>
       <div class="orbit hurston-orbit">
-        <div class="planet hurston">
-        <br>
-        <p>Hurston</p>
-        </div>
+        <NuxtLink to="/PlanetMaps/hurston">
+          <div class="planet hurston">
+            <br>
+            <p>Hurston</p>
+          </div>
+        </NuxtLink>
       </div>
       <NuxtLink to="starmap">
         <div class="sun"></div>
