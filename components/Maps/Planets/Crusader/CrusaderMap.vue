@@ -31,25 +31,18 @@ export default {
       const context = canvas.getContext('2d')
       const width = 256
       const height = 64
-
       canvas.width = width
       canvas.height = height
-
-      // Background
-      
-
       // Text
       context.font = 'bold 48px Segoe UI'
       context.fillStyle = '#CF6A2F'
       context.textAlign = 'center'
       context.fillText(text, width / 2, height / 1.5)
-
       // Canvas texture
       const texture = new THREE.CanvasTexture(canvas)
       texture.minFilter = THREE.LinearFilter
       texture.wrapS = THREE.ClampToEdgeWrapping
       texture.wrapT = THREE.ClampToEdgeWrapping
-
       // Label mesh
       const geometry = new THREE.PlaneGeometry(width / 32, height / 32)
       const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true })
@@ -68,14 +61,12 @@ export default {
     this.renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas })
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     this.renderer.setPixelRatio(window.devicePixelRatio)
-
   // Add lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
     this.scene.add(ambientLight)
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
     this.scene.add(directionalLight)
-
   // Create the star mesh objects and their name labels
     this.starSystems.forEach(starSystem => {
       const starGeometry = new THREE.SphereGeometry(1, 32, 32)
@@ -91,30 +82,23 @@ export default {
       nameLabel.visible = false
       starMesh.nameLabel = nameLabel
       this.scene.add(nameLabel)
-
     });
-
   // Add click event listener to the star mesh
     this.$refs.canvas.addEventListener('click', () => {
-      // Get the canvas position
+    // Get the canvas position
       const canvasBounds = this.$refs.canvas.getBoundingClientRect()
-
     // Calculate normalized device coordinates
       this.mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
       this.mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
-
     // Update the picking ray with the camera and mouse position
       this.raycaster.setFromCamera(this.mouse, this.camera)
-
     // Check for intersections
       const intersects = this.raycaster.intersectObjects(this.scene.children.filter(child => child.nameLabel))
-
       if (intersects.length > 0) {
         if (this.intersectedObject !== intersects[0].object) {
         // Mouse entered a new object
           if (this.intersectedObject) {
           }
-
           this.intersectedObject = intersects[0].object
         }
       } else {
@@ -125,22 +109,17 @@ export default {
       }
       // TODO: Expand into solar system
     })
-
   // Add mousemove event listener to the canvas
     this.$refs.canvas.addEventListener('mousemove', (event) => {
     // Get the canvas position
       const canvasBounds = this.$refs.canvas.getBoundingClientRect()
-
     // Calculate normalized device coordinates
       this.mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
       this.mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
-
     // Update the picking ray with the camera and mouse position
       this.raycaster.setFromCamera(this.mouse, this.camera)
-
     // Check for intersections
       const intersects = this.raycaster.intersectObjects(this.scene.children.filter(child => child.nameLabel))
-
       if (intersects.length > 0) {
         if (this.intersectedObject !== intersects[0].object) {
         // Mouse entered a new object
@@ -148,7 +127,6 @@ export default {
             this.intersectedObject.material.color.set(0xffffff)
             this.intersectedObject.nameLabel.visible = false
           }
-
           this.intersectedObject = intersects[0].object
           this.intersectedObject.material.color.set(0x0046F5)
           this.intersectedObject.nameLabel.visible = true
@@ -162,7 +140,6 @@ export default {
         }
       }
     })
-
   // Render the scene
     this.animate = () => {
       requestAnimationFrame(this.animate)
