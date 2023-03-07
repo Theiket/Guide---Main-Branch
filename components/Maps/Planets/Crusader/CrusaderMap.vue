@@ -12,11 +12,11 @@ export default {
     return {
       starSystems: [
         { name: 'STANTON',
-          position: new THREE.Vector3(-10, 0, 0),
+          position: new THREE.Vector3(0, 0, 0),
           color: 0xffffff
           },
         { name: 'PYRO',
-          position: new THREE.Vector3(0, 0, 0),
+          position: new THREE.Vector3(-5, 10, 0),
           color: 0xffffff
           },
         ],
@@ -91,31 +91,59 @@ export default {
       nameLabel.visible = false
       starMesh.nameLabel = nameLabel
       this.scene.add(nameLabel)
-    })
+
+    });
 
   // Add click event listener to the star mesh
     this.$refs.canvas.addEventListener('click', () => {
+      // Get the canvas position
+      const canvasBounds = this.$refs.canvas.getBoundingClientRect()
+
+    // Calculate normalized device coordinates
+      this.mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
+      this.mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
+
+    // Update the picking ray with the camera and mouse position
+      this.raycaster.setFromCamera(this.mouse, this.camera)
+
+    // Check for intersections
+      const intersects = this.raycaster.intersectObjects(this.scene.children.filter(child => child.nameLabel))
+
+      if (intersects.length > 0) {
+        if (this.intersectedObject !== intersects[0].object) {
+        // Mouse entered a new object
+          if (this.intersectedObject) {
+          }
+
+          this.intersectedObject = intersects[0].object
+        }
+      } else {
+        // Mouse left the object
+        if (this.intersectedObject) {
+          this.intersectedObject = null
+        }
+      }
       // TODO: Expand into solar system
     })
 
   // Add mousemove event listener to the canvas
     this.$refs.canvas.addEventListener('mousemove', (event) => {
-      // Get the canvas position
+    // Get the canvas position
       const canvasBounds = this.$refs.canvas.getBoundingClientRect()
 
-      // Calculate normalized device coordinates
+    // Calculate normalized device coordinates
       this.mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
       this.mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
 
-      // Update the picking ray with the camera and mouse position
+    // Update the picking ray with the camera and mouse position
       this.raycaster.setFromCamera(this.mouse, this.camera)
 
-      // Check for intersections
+    // Check for intersections
       const intersects = this.raycaster.intersectObjects(this.scene.children.filter(child => child.nameLabel))
 
       if (intersects.length > 0) {
         if (this.intersectedObject !== intersects[0].object) {
-          // Mouse entered a new object
+        // Mouse entered a new object
           if (this.intersectedObject) {
             this.intersectedObject.material.color.set(0xffffff)
             this.intersectedObject.nameLabel.visible = false
