@@ -91,7 +91,7 @@
   --va-divider-color:transparent;
 }
 
-body{
+body, nav, html{
   background-color:var(--backgray)
 }
 
