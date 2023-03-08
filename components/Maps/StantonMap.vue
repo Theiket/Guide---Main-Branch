@@ -8,37 +8,39 @@
     <div class="solar-system">
       <div class="orbit microtech-orbit">
         <NuxtLink to="/PlanetMaps/microtech">
-          <div class="planet microtech">
-            <br>
-            <p>microTech</p>
+          <div class="background microtech">
+            <div class="planet microtech">
+              <p>microTech</p>
+            </div>
           </div>
         </NuxtLink>
       </div>
       <div class="orbit arccorp-orbit">
         <NuxtLink to="/PlanetMaps/arccorp">
-          <div class="planet arccorp">
-            <br>
-            <p>ArcCorp</p>
+          <div class="background arccorp">
+            <div class="planet arccorp">
+              <p>ArcCorp</p>
+            </div>
           </div>
         </NuxtLink>
       </div>
       <div class="orbit crusader-orbit">
         <NuxtLink to="/PlanetMaps/crusader">
-          <div class="planet crusader">
-            <br>
-            <p>Crusader</p>
+          <div class="background crusader">
+            <div class="planet crusader">
+              <p>Crusader</p>
+            </div>
           </div>
         </NuxtLink>
       </div>
       <div class="orbit hurston-orbit">
-        <div class="planet hurston background">
-          <NuxtLink to="/PlanetMaps/hurston">
+        <NuxtLink to="/PlanetMaps/hurston">
+          <div class="background hurston">
             <div class="planet hurston">
-              <br>
               <p>Hurston</p>
             </div>
-          </NuxtLink>
-        </div>
+          </div>
+        </NuxtLink>
       </div>
       <NuxtLink to="starmap">
         <div class="sun"></div>
@@ -85,22 +87,22 @@
   .microtech-orbit {
     width: 210px;
     height: 210px;
-    rotate:50deg;
+    rotate:90deg;
     }
   .arccorp-orbit {
     width: 165px;
     height: 165px;
-    rotate:135deg;
+    rotate:175deg;
     }
   .crusader-orbit {
     width: 120px;
     height: 120px;
-    rotate:240deg;
+    rotate:285deg;
     }
   .hurston-orbit {
     width: 90px;
     height: 90px;
-    rotate:130deg;
+    rotate:155deg;
     }
 
 /* Planets */
@@ -115,47 +117,93 @@
     }
   .planet.hurston {
     background-color:#CF3A2F;
-    rotate:-130deg;
+    top:2px;
+    left:2px;
     }
-  .planet.hurston.background {
-    background-color:var(--backgray);
-    height:15px;
-    width:15px;
-    border-style:solid 2px var(--lightorange);
-    z-index:0;
-  }
   .planet.crusader {
     background-color:#2FCFA9;
-    rotate:-240deg;
+    top:2px;
+    left:2px;
     }
   .planet.arccorp {
     background-color:#CF2F55;
-    rotate:-135deg;
+    top:2px;
+    left:2px;
     }
   .planet.microtech {
     background-color:white;
-    rotate:-50deg;
-    }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
-    cursor:pointer;
-    }
-  .planet p {
-    visibility:hidden;
-    z-index:2;
-    rotate:0deg;
-    margin-inline-start:-20px;
-    margin-block-start:-3px;
-    letter-spacing:0.5px;
-    }
-  .planet:hover p {
-    color:var(--lightgray);
-    visibility:visible;
+    top:2px;
+    left:2px;
     }
 
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:16px;
+    width:16px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    box-shadow:0px 0px 5px black;
+    top:-2px;
+    width:18px;
+    height:18px;
+    cursor:pointer;
+    }
+  .background:hover .planet {
+    top:;
+    left:;
+    width:12px;
+    height:12px;
+    }
+  .background:hover p {
+    color:var(--lightgray);
+    visibility:visible;
+    animation: 0.1s appear1;
+    }
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    }
+  .background.hurston {
+    top:2px;
+    left:8px;
+    rotate:-155deg;
+  }
+  .background.hurston p {
+    margin-inline-start:-20px;
+    margin-block-start:-9px;
+    }
+  .background.crusader {
+    top:0px;
+    left:22px;
+    rotate:-285deg;
+  }
+  .background.crusader p {
+    margin-inline-start:-21px;
+    margin-block-start:14px;
+  }
+  .background.arccorp {
+    top:19px;
+    left:13px;
+    rotate:-175deg;
+  }
+  .background.arccorp p {
+    margin-inline-start:-20px;
+    margin-block-start:14px;
+  }
+  .background.microtech {
+    top:33px;
+    left:13px;
+    rotate:-50deg;
+  }
+  .background.microtech p {
+    margin-inline-start:-20px;
+    margin-block-start:-9px;
+  }
 /* Sun */
   .sun {
     width: 30px;
@@ -209,7 +257,6 @@
     padding-block-end: 15px;
     padding-inline-start:15px;
     padding-inline-end:15px;
-    rotate:-140deg;
     }
 
 /* Animations */
@@ -225,6 +272,14 @@
       opacity: 1;
       left:25px;
       }
+    }
+  @keyframes scale1 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:101%;
+    }
     }
   @keyframes appear1 {
     0% {
