@@ -5,6 +5,7 @@
         <h1>STANTON</h1>
       </NuxtLink>
     </div>
+    <div class="star-container"></div>
     <div class="solar-system" :style="{ transform: 'scale(' + zoom + ')'}">
       <div class="orbit microtech-orbit">
           <div class="background microtech" @click="handlePlanetClick('microtech')">
@@ -34,11 +35,11 @@
             </div>
           </div>
       </div>
-      <NuxtLink to="starmap">
-        <div class="sunwrapper">
+      <div class="sunwrapper">
+        <NuxtLink to="starmap">
           <div class="sun"></div>
-        </div>
-      </NuxtLink>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -54,18 +55,46 @@ export default {
   },
   methods: {
     handlePlanetClick(planetName) {
-      this.selectedPlanet = planetName;
-      this.zoom = 2;
-    },
+    }
+  },
+  mounted() {
+    // Star Generation
+    const starContainer = document.querySelector('.star-container');
+
+    for (let i = 1; i <= 300; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      starContainer.appendChild(star);
+
+      const marginLeft = Math.floor(Math.random() * window.innerWidth);
+      const marginTop = Math.floor(Math.random() * window.innerHeight);
+      const animationDuration = Math.floor(Math.random() * 8) + 2;
+
+      const cssRule = `
+        .star:nth-of-type(${i}) {
+          margin-left: ${marginLeft}px;
+          margin-top: ${marginTop}px;
+          animation: flash ${animationDuration}s linear infinite;
+        }
+      `;
+
+      const style = document.createElement('style');
+      style.textContent = cssRule;
+      document.head.appendChild(style);
+    }
   },
 };
 </script>
+
 
 <style scoped>
 /* General */
   .container {
     user-select:none;
     overflow:hidden;
+    width:100%;
+    height:90vh;
+    position:relative;
     }
   .systemName {
     animation: 1.5s slideappear;
@@ -220,6 +249,24 @@ export default {
     animation:1s scale1;
     }
 
+/* Stars */
+  .star-container {
+    animation: gravity 200s linear infinite;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: -200px 0;
+    }
+
+  .star {
+    background: white;
+    border-radius: 100px;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    filter: brightness(5);
+    }
+
 /* Text */
   .systemName {
     color: var(--lightorange);
@@ -336,7 +383,22 @@ export default {
       rotate:0deg;
       }
     }
-
+  @keyframes gravity {
+      to {
+        transform: rotate(360deg);
+      }
+      }
+  @keyframes flash {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
   .sunwrapper {
     animation: 1s appear1;
     }
