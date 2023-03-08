@@ -2,24 +2,30 @@
   <div class="container">
     <div class="systemName">
       <NuxtLink to="/MapStanton">
-        <h1>ARCCORP</h1>
+        <h1>MICROTECH</h1>
       </NuxtLink>
     </div>
     <div class="solar-system">
-      <div class="orbit wala-orbit">
-        <div class="planet wala">
+      <div class="orbit euterpe-orbit">
+        <div class="planet euterpe">
         <br>
-        <p>Wala</p>
+        <p>Euterpe</p>
         </div>
       </div>
-      <div class="orbit lyria-orbit">
-        <div class="planet lyria">
+      <div class="orbit clio-orbit">
+        <div class="planet clio">
         <br>
-        <p>Lyria</p>
+        <p>Clio</p>
+        </div>
+      </div>
+      <div class="orbit calliope-orbit">
+        <div class="planet calliope">
+        <br>
+        <p>Calliope</p>
         </div>
       </div>
       <NuxtLink to="/MapStanton">
-        <div class="arccorp"></div>
+        <div class="microtech"></div>
       </NuxtLink>
     </div>
   </div>
@@ -60,15 +66,20 @@
     border-radius: 50%;
     z-index:-1;
     }  
-  .wala-orbit {
-    width: 180px;
-    height: 180px;
-    rotate:320deg;
+  .euterpe-orbit {
+    width: 250px;
+    height: 250px;
+    rotate:165deg;
     }
-  .lyria-orbit {
-    width: 100px;
-    height: 100px;
-    rotate:70deg;
+  .clio-orbit {
+    width: 225px;
+    height: 225px;
+    rotate:170deg;
+    }
+  .calliope-orbit {
+    width: 150px;
+    height: 150px;
+    rotate:250deg;
     }
 /* Moons */
   .planet {
@@ -80,15 +91,19 @@
     background-color: #3ff9dc;
     z-index:1;
     }
-  .planet.lyria {
-    background-color:#EEE3F1;
-    rotate:-70deg;
+  .planet.calliope {
+    background-color:grey;
+    rotate:-250deg;
     z-index:1;
     }
-  .planet.wala {
-    background-color:#EFC2A1;
-    rotate:-320deg;
+  .planet.clio {
+    background-color:#bd986f;
+    rotate:-170deg;
     z-index:1;
+    }
+  .planet.euterpe {
+    background-color:#debf9d;
+    rotate:-165deg;
     }
   .planet:hover {
     box-shadow:0px 0px 5px black;
@@ -106,22 +121,25 @@
     color:var(--lightgray);
     visibility:visible;
     }
-  .planet.lyria p {
-    margin-inline-start:-15px;
+  .planet.calliope p {
+    margin-inline-start:-18px;
     }
-  .planet.wala p {
-    margin-inline-start:-15px;
+  .planet.clio p {
+    margin-inline-start:-13px;
     margin-block-start:-3px;
     }
-/* ArcCorp */
-  .arccorp {
+  .planet.euterpe p {
+    margin-inline-start:-18px;
+    }
+/* microTech */
+  .microtech {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color: white;
     z-index:1;
     }
-  .arccorp:hover {
+  .microtech:hover {
     box-shadow:0px 0px 5px black;
     width:35px;
     height:35px;
@@ -214,13 +232,27 @@
       rotate:0deg;
       }
     }
-  .arccorp {
+  @keyframes appear4 {
+    0% {
+      opacity: 0;
+      scale:0;
+      }
+    60% {
+      opacity:0;
+      scale:0.6;
+      rotate:0deg;
+      }
+    }
+  .microtech {
     animation: 1s appear1;
     }
-  .lyria-orbit {
+  .calliope-orbit {
     animation: 2s appear2;
     }
-  .wala-orbit {
+  .clio-orbit {
     animation: 3s appear3;
+    }
+  .euterpe-orbit {
+    animation: 4s appear4;
     }
 </style>

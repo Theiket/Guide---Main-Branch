@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MapsPlanetsmicroTechMap />
+    <MapsPlanetsMicroTechMap />
   </div>
 </template>
 
