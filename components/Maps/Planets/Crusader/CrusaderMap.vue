@@ -6,151 +6,113 @@
 
 <script>
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export default {
   data() {
     return {
-      starSystems: [
-        { name: 'STANTON',
-          position: new THREE.Vector3(0, 0, 0),
-          color: 0xffffff
-          },
-        { name: 'PYRO',
-          position: new THREE.Vector3(-5, 10, 0),
-          color: 0xffffff
-          },
-        ],
-      raycaster: new THREE.Raycaster(),
-      mouse: new THREE.Vector2(),
-      intersectedObject: null,
-    }
-  },
-  methods: {
-    createLabel(text, color) {
-      const canvas = document.createElement('canvas')
-      const context = canvas.getContext('2d')
-      const width = 256
-      const height = 64
-      canvas.width = width
-      canvas.height = height
-      // Text
-      context.font = 'bold 48px Segoe UI'
-      context.fillStyle = '#CF6A2F'
-      context.textAlign = 'center'
-      context.fillText(text, width / 2, height / 1.5)
-      // Canvas texture
-      const texture = new THREE.CanvasTexture(canvas)
-      texture.minFilter = THREE.LinearFilter
-      texture.wrapS = THREE.ClampToEdgeWrapping
-      texture.wrapT = THREE.ClampToEdgeWrapping
-      // Label mesh
-      const geometry = new THREE.PlaneGeometry(width / 32, height / 32)
-      const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true })
-      const mesh = new THREE.Mesh(geometry, material)
-      // Return mesh
-      return mesh
+      objects: [
+        { name: 'Stanton', planets: ['Hurston', 'Crusader', 'ArcCorp', 'microtech'] },
+        { name: 'Pyro', planets: ['Pyro I', 'Pyro II', 'Pyro III', 'Pyro IV', 'Pyro V', 'Pyro VI'] },
+        { name: 'Nyx', planets: ['Delamar'] },
+      ],
+      camera: null,
+      renderer: null,
+      scene: null,
+      spheres: [],
+      solarSystem: null,
     }
   },
   mounted() {
-  // Create the scene, camera, and renderer
-    this.scene = new THREE.Scene()
-    this.scene.background = new THREE.Color(0x24262B)
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    this.camera.position.z = 50
-    this.camera.position.x = 0
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas })
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setPixelRatio(window.devicePixelRatio)
-  // Add lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
-    this.scene.add(ambientLight)
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
-    this.scene.add(directionalLight)
-  // Create the star mesh objects and their name labels
-    this.starSystems.forEach(starSystem => {
-      // Create the stars for each object in starSystem
-      const starGeometry = new THREE.SphereGeometry(1, 32, 32)
-      const starMaterial = new THREE.PointsMaterial({
-        size: 0.5,
-        sizeAttenuation: true,
-        color: starSystem.color,
-        alphaTest: 0.5
-      })
-      const starMesh = new THREE.Mesh(starGeometry, starMaterial)
-      starMesh.position.copy(starSystem.position)
-      starMesh.name = starSystem.name
-      this.scene.add(starMesh)
-    // Create the name labels
-      const nameLabel = this.createLabel(starSystem.name, 0x000000)
-      nameLabel.position.copy(starSystem.position)
-      nameLabel.position.y += 2
-      nameLabel.visible = false
-      starMesh.nameLabel = nameLabel
-      this.scene.add(nameLabel)
-    });
-  // Functions for eventListeners
-    function handleIntersection(event, camera, raycaster, scene, intersectedObject, mouse) {
-    // Get the canvas position
-      const canvasBounds = event.currentTarget.getBoundingClientRect()
-    // Calculate normalized device coordinates
-      mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
-      mouse.y = -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
-    // Update the picking ray with the camera and mouse position
-      raycaster.setFromCamera(mouse, camera)
-    // Check for intersections
-      const intersects = raycaster.intersectObjects(scene.children.filter(child => child.nameLabel))
-      if (intersects.length > 0) {
-        if (intersectedObject !== intersects[0].object) {
-        // Mouse entered a new object
-          if (intersectedObject) {
-            intersectedObject.material.color.set(0xffffff)
-            intersectedObject.nameLabel.visible = false
-          }
-          intersectedObject = intersects[0].object
-          intersectedObject.material.color.set(0x0046F5)
-          intersectedObject.nameLabel.visible = true
-        }
-      } else {
-      // Mouse left the object
-        if (intersectedObject) {
-          intersectedObject.material.color.set(0xffffff)
-          intersectedObject.nameLabel.visible = false
-          intersectedObject = null
-        }
-      }
-      return intersectedObject
-    }
-
-  // Add click event listener to the canvas
-    this.$refs.canvas.addEventListener('click', (event) => {
-      this.intersectedObject = handleIntersection(event, this.camera, this.raycaster, this.scene, this.intersectedObject, this.mouse)
-      // TODO: Expand into solar system
-    })
-
-  // Add mousemove event listener to the canvas
-    this.$refs.canvas.addEventListener('mousemove', (event) => {
-      this.intersectedObject = handleIntersection(event, this.camera, this.raycaster, this.scene, this.intersectedObject, this.mouse)
-    })
-
-  // Add interactivity
-      this.controls = new OrbitControls(this.camera, this.$refs.canvas);
-      this.controls.enableDamping = true;
-      this.controls.dampingFactor = 0.05;
-      this.controls.rotateSpeed = 0.5;
-      this.controls.maxDistance = 1000;
-      this.controls.minDistance = 10;
-      this.controls.enableZoom = true;
-
-  // Render the scene
-    this.animate = () => {
-      requestAnimationFrame(this.animate)
-      this.renderer.render(this.scene, this.camera)
-    }
+    this.init()
     this.animate()
   },
-}
+  methods: {
+    init() {
+    // Create the scene, camera, and renderer
+      this.scene = new THREE.Scene()
+      this.scene.background = new THREE.Color(0x24262B)
+      this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+      this.camera.position.z = 50
+      this.camera.position.x = 0
+      this.renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas })
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+      this.renderer.setPixelRatio(window.devicePixelRatio)
+
+    // Add the renderer to the canvas element
+      this.$refs.canvas.appendChild(this.renderer.domElement)
+
+    // Create a container for the solar system
+      this.solarSystem = new THREE.Object3D()
+
+    // Add spheres to the scene based on the objects array
+      this.objects.forEach((object, index) => {
+        const geometry = new THREE.SphereGeometry(5, 32, 32)
+        const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
+        const sphere = new THREE.Mesh(geometry, material)
+        sphere.position.set(-15 + index * 15, 0, 0)
+        sphere.name = object.name
+        sphere.userData.planets = object.planets // Store planets array as user data
+        this.scene.add(sphere)
+        this.spheres.push(sphere)
+      })
+
+    // Add event listener for clicking on spheres
+      this.renderer.domElement.addEventListener('click', this.onClick.bind(this))
+    },
+    animate() {
+      requestAnimationFrame(this.animate.bind(this))
+      this.spheres.forEach((sphere) => {
+        sphere.rotation.y += 0.01
+      })
+      this.renderer.render(this.scene, this.camera)
+    },
+    onClick(event) {
+    // Check if a sphere was clicked
+      const raycaster = new THREE.Raycaster()
+      const mouse = new THREE.Vector2()
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+      raycaster.setFromCamera(mouse, this.camera)
+      const intersects = raycaster.intersectObjects(this.spheres)
+
+      if (intersects.length > 0) {
+      // Update the camera position to look at the clicked sphere
+        const clickedSphere = intersects[0].object
+        const distance = clickedSphere.position.distanceTo(this.camera.position)
+        const direction = this.camera.position.clone().sub(clickedSphere.position).normalize()
+        const offset = direction.multiplyScalar(distance * 0.5)
+        this.camera.position.copy(clickedSphere.position.clone().add(offset))
+        this.camera.lookAt(clickedSphere.position)
+
+      // Remove the event listener for clicking on spheres
+        this.renderer.domElement.removeEventListener('click', this.onClick.bind(this))
+
+      // Remove the spheres from the scene
+        this.solarSystem.remove(...this.spheres)
+
+      // Create the solar system for the clicked object
+        const planets = clickedSphere.userData.planets
+        const sphereInstances = []
+        const sphereGeometry = new THREE.SphereGeometry(5, 32, 32)
+        const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff })
+
+        for (let i = 0; i < planets.length; i++) {
+          const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
+          sphere.position.set(10 * i, 0, 0)
+          sphere.name = planets[i]
+          sphereInstances.push(sphere)
+        }
+
+        const instanceGroup = new THREE.Group()
+        instanceGroup.add(...sphereInstances)
+        this.solarSystem.add(instanceGroup)
+
+      // Add the solar system to the scene and the spheres array
+        this.scene.add(this.solarSystem)
+        this.spheres = sphereInstances
+      }
+    }
+  },
 </script>
 
 <style scoped>
