@@ -31,12 +31,14 @@
         </NuxtLink>
       </div>
       <div class="orbit hurston-orbit">
-        <NuxtLink to="/PlanetMaps/hurston">
-          <div class="planet hurston">
-            <br>
-            <p>Hurston</p>
-          </div>
-        </NuxtLink>
+        <div class="planet hurston background">
+          <NuxtLink to="/PlanetMaps/hurston">
+            <div class="planet hurston">
+              <br>
+              <p>Hurston</p>
+            </div>
+          </NuxtLink>
+        </div>
       </div>
       <NuxtLink to="starmap">
         <div class="sun"></div>
@@ -115,6 +117,13 @@
     background-color:#CF3A2F;
     rotate:-130deg;
     }
+  .planet.hurston.background {
+    background-color:var(--backgray);
+    height:15px;
+    width:15px;
+    border-style:solid 2px var(--lightorange);
+    z-index:0;
+  }
   .planet.crusader {
     background-color:#2FCFA9;
     rotate:-240deg;
