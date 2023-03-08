@@ -65,6 +65,7 @@ export default {
 /* General */
   .container {
     user-select:none;
+    overflow:hidden;
     }
   .systemName {
     animation: 1.5s slideappear;
@@ -188,7 +189,7 @@ export default {
     margin-block-start:14px;
     }
   .background.arccorp {
-    top:19px;
+    top:20px;
     left:13px;
     rotate:-200deg;
     }
@@ -197,7 +198,7 @@ export default {
     margin-block-start:14px;
     }
   .background.microtech {
-    top:33px;
+    top:36px;
     left:13px;
     rotate:-90deg;
     }
