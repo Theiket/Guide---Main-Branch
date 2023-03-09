@@ -101,7 +101,8 @@ export default {
     align-items: center;
     border: 1px solid var(--lightorange);
     border-radius: 50%;
-    z-index:-1;
+    background:transparent;
+    z-index:0;
     } 
   .microtech-orbit {
     width: 220px;
@@ -241,6 +242,7 @@ export default {
     background:var(--backgray);
     animation: 4.2s appear, gravity 1200s linear infinite;
     opacity:0.7;
+    z-index:0;
     }
   .star {
     position: absolute;
