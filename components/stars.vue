@@ -15,8 +15,8 @@
 <style scoped>
   .star-container {
     position: absolute;
-    top: 0;
-    left: 0;
+    top:-25%;
+    left:-25%;
     width: 150vw;
     height: 150vh;
     overflow: hidden;
@@ -25,6 +25,7 @@
     opacity:0.7;
     z-index:0;
     }
+
   .star {
     position: absolute;
     width: 2px;
@@ -32,9 +33,10 @@
     background-color: white;
     border-radius: 100%;
     }
-    @keyframes gravity {
-        to {
-          transform: rotate(360deg);
-        }
-        }
+
+  @keyframes gravity {
+    to {
+      transform: rotate(360deg);
+    }
+    }
 </style>

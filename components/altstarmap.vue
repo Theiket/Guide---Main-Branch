@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-  <stars />
+  <stars id="stars" />
     <table>
       <tbody>
         <tr>
@@ -49,7 +49,9 @@
       zoomS() {
         const stanton = document.getElementById('stanton-system')
         const pyro = document.getElementById('pyro-system')
+        const stars = document.getElementById('stars')
         stanton.classList.add('zoomed')
+        stars.classList.add('fade')
         pyro.classList.add('fade')
         setTimeout(() => {
           this.$router.push('/MapStanton')
@@ -58,8 +60,10 @@
       zoomP() {
         const stanton = document.getElementById('stanton-system')
         const pyro = document.getElementById('pyro-system')
+        const stars = document.getElementById('stars')
         pyro.classList.add('zoomed')
         stanton.classList.add('fade')
+        stars.classList.add('fade')
         setTimeout(() => {
           this.$router.push('/MapPyro')
         }, 600)
@@ -266,4 +270,9 @@
       transition: all 0.2s ease-in-out;
       opacity:0;
       }
+/* Stars */
+  #stars.fade {
+    transition: all 0.6s ease-in-out;
+    opacity:0;
+  }
 </style>
