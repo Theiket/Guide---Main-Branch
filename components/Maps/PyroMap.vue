@@ -136,13 +136,13 @@
   .pyroV-orbit {
     width:210px;
     height:210px;
-    rotate:320deg;
+    rotate:335deg;
     z-index:-1;
     }
   .pyroVI-orbit {
     width:360px;
     height:360px;
-    rotate:318deg;
+    rotate:328deg;
     z-index:-1;
     }
 /* Backgrounds */
@@ -200,7 +200,7 @@
   .background.pyroIV {
     top:18px;
     left:40px;
-    rotate:-323deg;
+    rotate:-338deg;
     }
   .background.pyroIV p {
     margin-inline-start:-28px;
@@ -209,7 +209,7 @@
   .background.pyroV {
     top:18px;
     left:33px;
-    rotate:-320deg;
+    rotate:-335deg;
     }
   .background.pyroV p {
     margin-inline-start:-27px;
@@ -218,7 +218,7 @@
   .background.pyroVI {
     top:50px;
     left:45px;
-    rotate:-318deg;
+    rotate:-328deg;
     }
   .background.pyroVI p {
     margin-inline-start:-7px;
