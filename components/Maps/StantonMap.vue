@@ -5,7 +5,7 @@
         <h1>STANTON</h1>
       </NuxtLink>
     </div>
-    <div class="star-container"></div>
+    <div class="star-container" @click="createStars()"></div>
     <div class="solar-system" :style="{ transform: 'scale(' + zoom + ')'}">
       <div class="orbit microtech-orbit">
           <div class="background microtech" @click="handlePlanetClick('microtech')">
@@ -55,33 +55,20 @@ export default {
   },
   methods: {
     handlePlanetClick(planetName) {
+    },
+    createStars() {
+      const starContainer = document.querySelector('.star-container');
+      for (let i = 0; i < 300; i++) {
+        const star = document.createElement('div');
+        star.style.left = `${Math.random()*100}%`;
+        star.style.top = `${Math.random()*100}%`;
+        star.style.animation = `flash ${Math.random(10)*2}s linear infinite`;
+        star.classList.add('star');
+        starContainer.appendChild(star);
+      }
     }
   },
-  mounted() {
-    // Star Generation
-    const starContainer = document.querySelector('.star-container');
-
-    for (let i = 1; i <= 300; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      starContainer.appendChild(star);
-
-      const marginLeft = Math.floor(Math.random() * window.innerWidth);
-      const marginTop = Math.floor(Math.random() * window.innerHeight);
-      const animationDuration = Math.floor(Math.random() * 8) + 2;
-
-      const cssRule = `
-        .star:nth-of-type(${i}) {
-          margin-left: ${marginLeft}px;
-          margin-top: ${marginTop}px;
-          animation: flash ${animationDuration}s linear infinite;
-        }
-      `;
-
-      const style = document.createElement('style');
-      style.textContent = cssRule;
-      document.head.appendChild(style);
-    }
+  mounted () {
   },
 };
 </script>
@@ -94,6 +81,7 @@ export default {
     overflow:hidden;
     width:100%;
     height:90vh;
+    margin-inline-start:-0.75%;
     position:relative;
     }
   .systemName {
@@ -251,20 +239,20 @@ export default {
 
 /* Stars */
   .star-container {
-    animation: gravity 200s linear infinite;
-    width: 100%;
-    height: 100%;
     position: absolute;
-    margin: -200px 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background:black;
     }
-
   .star {
-    background: white;
-    border-radius: 100px;
+    position: absolute;
     width: 5px;
     height: 5px;
-    position: absolute;
-    filter: brightness(5);
+    background-color: white;
+    border-radius: 100%;
     }
 
 /* Text */
