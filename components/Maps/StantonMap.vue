@@ -5,40 +5,50 @@
         <h1>STANTON</h1>
       </NuxtLink>
     </div>
-    <div class="star-container" @click="createStars()"></div>
+    <div class="star-container">
+      <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
+        <div class="star"
+          :style="{
+            left: `${star[0]}%`,
+            top: `${star[1]}%`,
+            animation: `${Math.random() * 2}s flash ${Math.random() * 8 + 1}s infinite`,
+          }"
+        ></div>
+      </div>
+    </div>
     <div class="solar-system" :style="{ transform: 'scale(' + zoom + ')'}">
       <div class="orbit microtech-orbit">
-          <div class="background microtech" @click="handlePlanetClick('microtech')">
-            <div class="planet microtech">
-              <p>MICROTECH</p>
-            </div>
+        <div class="background microtech" @click="handlePlanetClick('microtech')">
+          <div class="planet microtech">
+            <p>MICROTECH</p>
           </div>
+        </div>
       </div>
       <div class="orbit arccorp-orbit">
-          <div class="background arccorp" @click="handlePlanetClick('arccorp')">
-            <div class="planet arccorp">
-              <p>ARCCORP</p>
-            </div>
+        <div class="background arccorp" @click="handlePlanetClick('arccorp')">
+          <div class="planet arccorp">
+            <p>ARCCORP</p>
           </div>
+        </div>
       </div>
       <div class="orbit crusader-orbit">
-          <div class="background crusader" @click="handlePlanetClick('crusader')">
-            <div class="planet crusader">
-              <p>CRUSADER</p>
-            </div>
+        <div class="background crusader" @click="handlePlanetClick('crusader')">
+          <div class="planet crusader">
+            <p>CRUSADER</p>
           </div>
+        </div>
       </div>
       <div class="orbit hurston-orbit">
-          <div class="background hurston" @click="handlePlanetClick('hurston')">
-            <div class="planet hurston">
-              <p>HURSTON</p>
-            </div>
+        <div class="background hurston" @click="handlePlanetClick('hurston')">
+          <div class="planet hurston">
+            <p>HURSTON</p>
           </div>
-      </div>
-      <div class="sunwrapper">
-        <NuxtLink to="starmap">
-          <div class="sun"></div>
-        </NuxtLink>
+        </div>
+        <div class="sunwrapper">
+          <NuxtLink to="starmap">
+            <div class="sun"></div>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
@@ -56,32 +66,19 @@ export default {
   methods: {
     handlePlanetClick(planetName) {
     },
-    createStars() {
-      const starContainer = document.querySelector('.star-container');
-      for (let i = 0; i < 300; i++) {
-        const star = document.createElement('div');
-        star.style.left = `${Math.random()*100}%`;
-        star.style.top = `${Math.random()*100}%`;
-        star.style.animation = `flash ${Math.random(10)*2}s linear infinite`;
-        star.classList.add('star');
-        starContainer.appendChild(star);
-      }
-    }
   },
   mounted () {
   },
 };
 </script>
 
-
-<style scoped>
+<style>
 /* General */
   .container {
     user-select:none;
     overflow:hidden;
     width:100%;
     height:90vh;
-    margin-inline-start:-0.75%;
     position:relative;
     }
   .systemName {
@@ -165,7 +162,7 @@ export default {
 
 /* Backgrounds */
   .background {
-    background-color:var(--backgray);
+    /* background-color: var(--backgray); */
     position:absolute;
     height:16px;
     width:16px;
@@ -245,7 +242,7 @@ export default {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background:black;
+    background-color: black;
     }
   .star {
     position: absolute;
@@ -377,16 +374,16 @@ export default {
       }
       }
   @keyframes flash {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
+      0% {
+        opacity: 0;
       }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   .sunwrapper {
     animation: 1s appear1;
     }
