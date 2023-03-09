@@ -79,129 +79,137 @@
 </template>
 
 <style>
+ /* Root */
+  :root{
+    --greensafety:#2FCFA9;
+    --reddanger:#CF3A2F;
+    --lightorange:#CF6A2F;
+    --orangehover:#CF9A2F;
+    --backgray:#24262B;
+    --lightgray:#9DA1B2;
+    --darkgray:#1B191E;
+    --va-divider-color:transparent;
+    }
+/* Body, Nav, & HTML */
+  body, html{
+    background-color:var(--backgray);
+    }
 
-:root{
-  --greensafety:#2FCFA9;
-  --reddanger:#CF3A2F;
-  --lightorange:#CF6A2F;
-  --orangehover:#CF9A2F;
-  --backgray:#24262B;
-  --lightgray:#9DA1B2;
-  --darkgray:#1B191E;
-  --va-divider-color:transparent;
-}
+  nav {
+    background-color:var(--backgray);
+    padding-block-end:10px;
+    }
+/* Top Menu */
+  .topmenu {
+    background-color:var(--backgray);
+    padding-inline-start:25px;
+    letter-spacing:5px;
+    text-decoration:none;
+    padding-block-end:7px;
+    animation: 1s appear;
+    }
+  .menu {
+    color: var(--lightorange);
+    font: bold 45px 'Segoe UI', sans-serif;
+    margin-block-start:0px;
+    text-decoration:none;
+    display:inline-block;
+    animation: 1s appear;
+    user-select:none;
+    width:15%;
+    }
+/* Navlinks */
+  .navlinks {
+    position:absolute;
+    right:10px;
+    padding-inline-start:60%;
+    margin-block-start: -40px;
+    margin-block-end:7px;
+    border-block-start: solid;
+    border-block-end: solid;
+    border-color:var(--lightorange);
+    animation: 1s appear;
+    }
+  /* Nav Buttons */
+    .navbutton {
+      color:var(--lightorange);
+      border-style:none;
+      display: inline-block;
+      scale:150%;
+      padding: 10px 10px;
+      justify-content:center;
+      vertical-align:center;
+      text-decoration:none;
+      padding-inline-end:15px;
+      margin-inline-end:5px;
+      margin-block-end:5px;
+      }
 
-body, html{
-  background-color:var(--backgray);
-}
+    .navbutton a {
+      color:var(--lightorange);
+      }
+    .navbutton a:hover {
+      color:var(--orangehover);
+      }
+/* Nuxt Link */
+  .router-link-exact-active {
+    text-decoration:none;
+    }
+  .nuxt-link-active {
+    text-decoration:none;
+    }
+/* Footer */
+  .bottomcontainer {
+    width:auto;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    background-color:var(--backgray);
+    animation: 1s appear;
+    position:absolute;
+    bottom:15px;
+    }
+  .footer {
+    font: bold 10px 'Segoe UI', sans-serif;
+    display: inline-block;
+    color: var(--lightgray);
+    letter-spacing: 1px;
+    }
+  .copyright {
+    width:800px;
+    user-select:none;
+    }
+  .version {
+    width:800px;
+    user-select:none;
+    }
 
-nav {
-  background-color:var(--backgray);
-  padding-block-end:10px;
-}
+/* Animations */
+  @keyframes slideappear {
+    0% {
+      opacity: 0;
+      left:-50px;
+    }
+    100% {
+      opacity: 1;
+      left:0px;
+    }
+    }
 
-.topmenu {
-  background-color:var(--backgray);
-  padding-inline-start:25px;
-  letter-spacing:5px;
-  text-decoration:none;
-  padding-block-end:7px;
-  animation: 1s appear;
-}
-.menu {
-  color: var(--lightorange);
-  font: bold 45px 'Segoe UI', sans-serif;
-  margin-block-start:0px;
-  text-decoration:none;
-  display:inline-block;
-  animation: 1s appear;
-  user-select:none;
-  width:15%;
-}
-
-@keyframes slideappear {
-  0% {
-    opacity: 0;
-    left:-50px;
-  }
-  100% {
-    opacity: 1;
-    left:0px;
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-}
-
-.navlinks {
-  position:absolute;
-  right:10px;
-  padding-inline-start:60%;
-  margin-block-start: -40px;
-  margin-block-end:7px;
-  border-block-start: solid;
-  border-block-end: solid;
-  border-color:var(--lightorange);
-  animation: 1s appear;
-}
-
-.navbutton {
-  color:var(--lightorange);
-  border-style:none;
-  display: inline-block;
-  scale:150%;
-  padding: 10px 10px;
-  justify-content:center;
-  vertical-align:center;
-  text-decoration:none;
-  padding-inline-end:15px;
-  margin-inline-end:5px;
-  margin-block-end:5px;
-}
-
-.navbutton a {
-  color:var(--lightorange);
-}
-.navbutton a:hover {
-  color:var(--orangehover);
-}
-
-.router-link-exact-active {
-  text-decoration:none;
-}
-
-.nuxt-link-active {
-  text-decoration:none;
-}
-
-.bottomcontainer {
-  width:auto;
-  display: flex;
-  justify-content:center;
-  text-align: center;
-  background-color:var(--backgray);
-  animation: 1s appear;
-  position:absolute;
-  bottom:15px;
-}
-
-.footer {
-  font: bold 10px 'Segoe UI', sans-serif;
-  display: inline-block;
-  color: var(--lightgray);
-  letter-spacing: 1px;
-}
-
-.copyright {
-  width:800px;
-  user-select:none;
-}
-.version {
-  width:800px;
-  user-select:none;
-}
-
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    }
+  @keyframes flash {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }  
 </style>

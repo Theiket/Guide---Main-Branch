@@ -5,7 +5,17 @@
         <h1>STANTON</h1>
       </NuxtLink>
     </div>
-    <div class="star-container" @click="createStars()"></div>
+    <div class="star-container">
+      <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
+        <div class="star"
+          :style="{
+            left: `${star[0]}%`,
+            top: `${star[1]}%`,
+            animation: `${Math.random() * 10+2}s flash linear infinite`,
+          }"
+        ></div>
+      </div>
+    </div>
     <div class="solar-system" :style="{ transform: 'scale(' + zoom + ')'}">
       <div class="orbit microtech-orbit">
           <div class="background microtech" @click="handlePlanetClick('microtech')">
@@ -44,7 +54,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -52,23 +61,6 @@ export default {
       zoom: 1,
       selectedPlanet: null,
     };
-  },
-  methods: {
-    handlePlanetClick(planetName) {
-    },
-    createStars() {
-      const starContainer = document.querySelector('.star-container');
-      for (let i = 0; i < 300; i++) {
-        const star = document.createElement('div');
-        star.style.left = `${Math.random()*100}%`;
-        star.style.top = `${Math.random()*100}%`;
-        star.style.animation = `flash ${Math.random(10)*2}s linear infinite`;
-        star.classList.add('star');
-        starContainer.appendChild(star);
-      }
-    }
-  },
-  mounted () {
   },
 };
 </script>
@@ -186,6 +178,7 @@ export default {
     visibility:hidden;
     z-index:2;
     letter-spacing:0.5px;
+    text-align:center;
     }
   .background.hurston {
     top:2px;
@@ -193,7 +186,7 @@ export default {
     rotate:-175deg;
     }
   .background.hurston p {
-    margin-inline-start:-23px;
+    margin-inline-start:-25px;
     margin-block-start:-9px;
       }
   .background.crusader {
@@ -245,12 +238,14 @@ export default {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background:black;
+    background:var(--backgray);
+    animation: 1s appear1, gravity 1200s linear infinite;
+    opacity:0.7;
     }
   .star {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 2px;
+    height: 2px;
     background-color: white;
     border-radius: 100%;
     }
@@ -376,17 +371,7 @@ export default {
         transform: rotate(360deg);
       }
       }
-  @keyframes flash {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
+
   .sunwrapper {
     animation: 1s appear1;
     }
