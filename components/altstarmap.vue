@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+  <stars />
     <table>
       <tbody>
         <tr>
@@ -69,16 +70,15 @@
 
 <style scoped>
 /* General */
-  .container {
-    margin: 0 auto;
-    min-height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color:var(--backgray);
-    animation: 1s appear;
-    }
+    .container {
+      user-select:none;
+      overflow:hidden;
+      display:flex;
+      width:100%;
+      height:90vh;
+      margin-inline-start:-0.75%;
+      position:relative;
+      }
 
   @keyframes appear {
     0% {
@@ -89,12 +89,13 @@
 /* Stanton */
   /* Objects */
     .systemStanton {
-      position:relative;
+      position:absolute;
       height: 50px;
       width: 50px;
       color: var(--lightgray);
       border-radius: 50%;
-      margin:10px 10px;
+      top:50%;
+      left:50%;
       user-select:none;
       }
     .systemStanton:hover {
@@ -172,14 +173,13 @@
 /* Pyro */
   /* Objects */
     .systemPyro {
-      position:relative;
+      position:absolute;
       height: 50px;
       width: 50px;
       color: var(--lightgray);
       border-radius: 50%;
-      margin:10px 10px;
-      left:-70px;
-      bottom:60px;
+      top:40%;
+      left:40%;
       user-select:none;
       }
     .systemPyro:hover {

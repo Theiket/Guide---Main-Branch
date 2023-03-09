@@ -5,17 +5,7 @@
         <h1>PYRO</h1>
       </NuxtLink>
     </div>
-    <div class="star-container">
-      <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
-        <div class="star"
-          :style="{
-            left: `${star[0]}%`,
-            top: `${star[1]}%`,
-            animation: `${Math.random() * 10+2}s flash linear infinite`,
-          }"
-        ></div>
-      </div>
-    </div>
+    <stars />
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
         <div class="background pyroVI">
@@ -322,26 +312,6 @@
     font-weight:bold;
     letter-spacing:0.3px;
     color: var(--lightgray);
-    }
-/* Stars */
-  .star-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background:var(--backgray);
-    animation: 4.2s appear, gravity 1200s linear infinite;
-    opacity:0.7;
-    z-index:0;
-    }
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    border-radius: 100%;
     }
 
 /* Animations */
