@@ -1,15 +1,15 @@
 <template>
-<div class="star-container">
-      <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
-        <div class="star"
-          :style="{
-            left: `${star[0]}%`,
-            top: `${star[1]}%`,
-            animation: `${Math.random() * 10+2}s flash linear infinite`,
-          }"
-        ></div>
-      </div>
+  <div class="star-container">
+    <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
+      <div class="star"
+        :style="{
+          left: `${star[0]}%`,
+          top: `${star[1]}%`,
+          animation: `${Math.random() * 10+2}s flash linear infinite`,
+        }"
+      ></div>
     </div>
+  </div>
 </template>
 
 <style scoped>

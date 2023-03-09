@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-  <stars id="stars" />
     <table>
       <tbody>
         <tr>
           <td>
-            <div id="pyro-system" class="systemPyro" @click="zoomP()">
+            <div id="pyro-system" class="systemPyro" @click="changeComponent('MapsPlanetsPyroMap')">
               <Icon name="game-icons:anarchy" />
               <p class="planetText">PYRO</p>
               <p class="systemText">SYSTEM</p>
@@ -22,7 +21,7 @@
         <tr>
           <td>
             <div>
-              <div id="stanton-system" class="systemStanton" @click="zoomS()">
+              <div id="stanton-system" class="systemStanton" @click="changeComponent('MapsPlanetsStantonMap')">
                 <Icon name="mdi:circle-slice-8" />
                 <br>
                 <p class="planetText">STANTON</p>
@@ -46,28 +45,6 @@
 <script>
   export default {
     methods: {
-      zoomS() {
-        const stanton = document.getElementById('stanton-system')
-        const pyro = document.getElementById('pyro-system')
-        const stars = document.getElementById('stars')
-        stanton.classList.add('zoomed')
-        stars.classList.add('fade')
-        pyro.classList.add('fade')
-        setTimeout(() => {
-          this.$router.push('/MapStanton')
-        }, 600)
-        },
-      zoomP() {
-        const stanton = document.getElementById('stanton-system')
-        const pyro = document.getElementById('pyro-system')
-        const stars = document.getElementById('stars')
-        pyro.classList.add('zoomed')
-        stanton.classList.add('fade')
-        stars.classList.add('fade')
-        setTimeout(() => {
-          this.$router.push('/MapPyro')
-        }, 600)
-        }
     }
   }
 </script>
