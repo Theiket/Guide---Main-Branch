@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/starmap">
-        <h1>PYRO</h1>
-      </NuxtLink>
+      <h1 @click="changeComponent('altstarmap')">PYRO</h1>
     </div>
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
@@ -50,7 +48,7 @@
       </div>
       <div class="sunwrapper">
         <NuxtLink to="starmap">
-          <div class="sun"></div>
+          <div class="sun" @click="changeComponent('altstarmap')"></div>
         </NuxtLink>
       </div>
     </div>
@@ -58,6 +56,17 @@
 </template>
 
 <script>
+  export default {
+    data() {
+      return {
+      };
+    },
+    methods: {
+      changeComponent(componentName) {
+      this.$emit('component-changed', componentName);
+      },
+    },
+  };
 </script>
 
 <style scoped>
