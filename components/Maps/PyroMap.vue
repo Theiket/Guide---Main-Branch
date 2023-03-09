@@ -18,38 +18,52 @@
     </div>
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
-        <div class="planet pyroVI">
-          <p>Pyro VI</p>
-        </div>
-      </div>
-      <div class="orbit pyroV-orbit">
-        <div class="planet pyroV">
-          <p>Pyro V</p>
-        </div>
-        <div class="orbit pyroIV-orbit">
-          <div class="planet pyroIV">
-            <p>Pyro IV</p>
+        <div class="background pyroVI">
+          <div class="planet pyroVI">
+            <p>PYRO VI</p>
           </div>
         </div>
       </div>
+      <div class="orbit pyroV-orbit">
+        <div class="background pyroV">
+          <div class="planet pyroV">
+            <p>PYRO V</p>
+          </div>
+        </div>
+        <div class="orbit pyroIV-orbit">
+          <div class="background pyroIV">
+          <div class="planet pyroIV">
+            <p>PYRO IV</p>
+          </div>
+        </div>
+        </div>
+      </div>
       <div class="orbit pyroIII-orbit">
-        <div class="planet pyroIII">
-          <p>Pyro III</p>
+        <div class="background pyroIII">
+          <div class="planet pyroIII">
+            <p>PYRO III</p>
+          </div>
         </div>
       </div>
       <div class="orbit pyroII-orbit">
-        <div class="planet pyroII">
-          <p>Pyro II</p>
+        <div class="background pyroII">
+          <div class="planet pyroII">
+            <p>PYRO II</p>
+          </div>
         </div>
       </div>
       <div class="orbit pyroI-orbit">
-        <div class="planet pyroI">
-          <p>Pyro I</p>
+        <div class="background pyroI">
+          <div class="planet pyroI">
+            <p>PYRO I</p>
+          </div>
         </div>
       </div>
-      <NuxtLink to="starmap">
-        <div class="sun"></div>
-      </NuxtLink>
+      <div class="sunwrapper">
+        <NuxtLink to="starmap">
+          <div class="sun"></div>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -96,25 +110,25 @@
   .pyroI-orbit {
     width: 30px;
     height: 30px;
-    rotate:10deg;
+    rotate:80deg;
     z-index:-1;
     }
   .pyroII-orbit {
     width: 50px;
     height: 50px;
-    rotate:-20deg;
+    rotate:65deg;
     z-index:-1;
     }
   .pyroIII-orbit {
     width: 70px;
     height: 70px;
-    rotate:20deg;
+    rotate:90deg;
     z-index:-1;
     } 
   .pyroIV-orbit {
     width: 215px;
-    height: 215px;
-    rotate:4deg;
+    height: 225px;
+    rotate:3deg;
     border-color:transparent;
     border-style:hidden;
     z-index:-1;
@@ -122,22 +136,101 @@
   .pyroV-orbit {
     width:210px;
     height:210px;
-    rotate:290deg;
+    rotate:320deg;
     z-index:-1;
     }
   .pyroVI-orbit {
     width:360px;
     height:360px;
-    rotate:267deg;
+    rotate:318deg;
     z-index:-1;
     }
-
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:10px;
+    width:10px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    animation: 0.5s scale2;
+    scale:120%;
+    cursor:pointer;
+    }
+  .background:hover p {
+    color:var(--lightgray);
+    visibility:visible;
+    animation: 0.1s appear1;
+    }
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    text-align:center;
+    }
+  .background.pyroI {
+    top:-1px;
+    left:0px;
+    rotate:-80deg;
+    }
+  .background.pyroI p {
+    margin-inline-start:-10px;
+    margin-block-start:-7px;
+    }
+  .background.pyroII {
+    top:4px;
+    left:0px;
+    rotate:-65deg;
+    }
+  .background.pyroII p {
+    margin-inline-start:-47px;
+    margin-block-start:-7px;
+    }
+  .background.pyroIII {
+    top:10px;
+    left:0px;
+    rotate:-90deg;
+    }
+  .background.pyroIII p {
+    margin-inline-start:-5px;
+    margin-block-start:-7px;
+    }
+  .background.pyroIV {
+    top:18px;
+    left:40px;
+    rotate:-323deg;
+    }
+  .background.pyroIV p {
+    margin-inline-start:-28px;
+    margin-block-start:-15px;
+    }
+  .background.pyroV {
+    top:18px;
+    left:33px;
+    rotate:-320deg;
+    }
+  .background.pyroV p {
+    margin-inline-start:-27px;
+    margin-block-start:1px;
+    }
+  .background.pyroVI {
+    top:50px;
+    left:45px;
+    rotate:-318deg;
+    }
+  .background.pyroVI p {
+    margin-inline-start:-7px;
+    margin-block-start:-7px;
+    }
 /* Planets */
   .planet {
     position: absolute;
-    top: -3px;
-    width: 5px;
-    height: 5px;
+    top:1px;
+    left:1px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: #3ff9dc;
     z-index:1;
@@ -145,41 +238,30 @@
     }
   .planet.pyroI {
     background-color:#CF3A2F;
-    rotate:-10deg;
     }
   .planet.pyroII {
     background-color:#2FCFA9;
-    rotate:20deg;
     }
   .planet.pyroIII {
     background-color:#CF2F55;
-    rotate:-20deg;
     }
   .planet.pyroIV {
     background-color:white;
-    rotate:-294deg;
     }
   .planet.pyroV {
     background-color:green;
-    rotate:-290deg;
     z-index:2;
     }
   .planet.pyroVI {
     background-color:purple;
-    rotate:-267deg;
     }
   .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-5.5px;
-    width:10px;
-    height:10px;
     cursor:pointer;
     }
   .planet p {
     visibility:hidden;
     z-index:1;
     width:50px;
-    rotate:0deg;
     margin-block-start:-5px;
     letter-spacing:0.5px;
     padding-inline-start:12px;
@@ -201,12 +283,10 @@
     z-index:1;
     }
   .sun:hover {
-    box-shadow:0px 0px 5px black;
-    width:13px;
-    height:13px;
+    scale:120%;
     cursor:pointer;
+    animation:1s scale2;
     }
-
 /* Text */
   .systemName {
     color: var(--lightorange);
@@ -277,6 +357,22 @@
       opacity: 1;
       left:25px;
       }
+    }
+  @keyframes scale1 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:110%;
+    }
+    }
+  @keyframes scale2 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:120%;
+    }
     }
   @keyframes appear1 {
     0% {
@@ -361,7 +457,7 @@
       }
 
 
-  .sun {
+  .sunwrapper {
     animation: 1s appear1;
     }
   .pyroI-orbit {

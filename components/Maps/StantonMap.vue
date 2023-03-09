@@ -112,7 +112,7 @@ export default {
   .arccorp-orbit {
     width: 170px;
     height: 170px;
-    rotate:200deg;
+    rotate:185deg;
     }
   .crusader-orbit {
     width: 120px;
@@ -202,7 +202,7 @@ export default {
   .background.arccorp {
     top:20px;
     left:13px;
-    rotate:-200deg;
+    rotate:-185deg;
     }
   .background.arccorp p {
     margin-inline-start:-23px;
