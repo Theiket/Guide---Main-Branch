@@ -5,6 +5,17 @@
         <h1>PYRO</h1>
       </NuxtLink>
     </div>
+    <div class="star-container">
+      <div v-for="star in Array(300).fill(0).map(_ => [Math.random()*100, Math.random()*100])">
+        <div class="star"
+          :style="{
+            left: `${star[0]}%`,
+            top: `${star[1]}%`,
+            animation: `${Math.random() * 10+2}s flash linear infinite`,
+          }"
+        ></div>
+      </div>
+    </div>
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
         <div class="planet pyroVI">
@@ -50,6 +61,11 @@
 /* General */
   .container {
     user-select:none;
+    overflow:hidden;
+    width:100%;
+    height:90vh;
+    margin-inline-start:-0.75%;
+    position:relative;
     }
   .systemName {
     animation: 1.5s slideappear;
@@ -174,6 +190,9 @@
     color:var(--lightgray);
     }
 /* Sun */
+  .sunwrapper {
+    z-index:1;
+    }
   .sun {
     width: 10px;
     height: 10px;
@@ -224,6 +243,27 @@
     letter-spacing:0.3px;
     color: var(--lightgray);
     }
+/* Stars */
+  .star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background:var(--backgray);
+    animation: 4.2s appear, gravity 1200s linear infinite;
+    opacity:0.7;
+    z-index:0;
+    }
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 100%;
+    }
+
 /* Animations */
   @keyframes slideappear {
     0% {
@@ -314,6 +354,13 @@
       rotate:0deg;
       }
       }
+  @keyframes gravity {
+      to {
+        transform: rotate(360deg);
+      }
+      }
+
+
   .sun {
     animation: 1s appear1;
     }

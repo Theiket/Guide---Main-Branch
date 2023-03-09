@@ -46,7 +46,7 @@
           </div>
       </div>
       <div class="sunwrapper">
-        <NuxtLink to="starmap">
+        <NuxtLink to="/starmap">
           <div class="sun"></div>
         </NuxtLink>
       </div>
@@ -122,7 +122,7 @@ export default {
   .hurston-orbit {
     width: 90px;
     height: 90px;
-    rotate:175deg;
+    rotate:135deg;
     }
 
 /* Planets */
@@ -184,7 +184,7 @@ export default {
   .background.hurston {
     top:2px;
     left:8px;
-    rotate:-175deg;
+    rotate:-135deg;
     }
   .background.hurston p {
     margin-inline-start:-25px;
@@ -218,19 +218,20 @@ export default {
     margin-block-start:-9px;
     }
 /* Sun */
+  .sunwrapper {
+    z-index:1;
+  }
   .sun {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #CF9A2F;
-    z-index:1;
     }
   .sun:hover {
     cursor:pointer;
     scale:110%;
     animation:1s scale1;
     }
-
 /* Stars */
   .star-container {
     position: absolute;
