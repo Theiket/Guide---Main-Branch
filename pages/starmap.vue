@@ -2,15 +2,16 @@
   <div class="container">
     <stars />
       <transition name="zoom">
-        <component :is="currentComponent" @component-changed="changeComponent"></component>
+        <component :is="currentComponent" 
+        @component-changed="changeComponent" />
       </transition>
   </div>
 </template>
 
 <script>
 import altstarmap from '/components/altstarmap.vue'
-import StantonMap from '/components/Maps/Planets/StantonMap.vue'
-import PyroMap from '/components/Maps/Planets/PyroMap.vue'
+import StantonMap from '/components/Maps/StantonMap.vue'
+import PyroMap from '/components/Maps/PyroMap.vue'
 
 export default {
   components: {
@@ -43,20 +44,37 @@ export default {
       }
 /* Animation */
   .zoom-enter-active {
-  animation: bounce-in 1s;
-  }
+  animation: zoomfade 1s reverse;
+    }
   .zoom-leave-active {
-    animation: bounce-in 1s reverse;
+    animation: zoomfade 1s;
     }
-  @keyframes bounce-in {
+  .zoomout-enter-active {
+  animation: zoomfade 1s;
+    }
+  .zoomout-leave-active {
+    animation: zoomout 1s;
+    }
+  
+  @keyframes zoomfade {
     0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.25);
+      transform: scale(1);
+      opacity: 1;
     }
     100% {
+      transform: scale(4);
+      opacity:0;
+    }
+    }
+  @keyframes zoomout {
+    0% {
       transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity:0;
     }
     }
+  
 </style>

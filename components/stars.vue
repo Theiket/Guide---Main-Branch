@@ -32,6 +32,7 @@
     height: 2px;
     background-color: white;
     border-radius: 100%;
+    filter:brightness(5);
     }
 
   @keyframes gravity {

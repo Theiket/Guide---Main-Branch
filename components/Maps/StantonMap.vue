@@ -1,45 +1,40 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/starmap">
-        <h1>STANTON</h1>
-      </NuxtLink>
+        <h1 @click="changeComponent('altstarmap')">STANTON</h1>
     </div>
-    <stars />
-    <div :class="{ zoomed: planetSelected }">
+    <div>
       <div class="solar-system">
         <div class="orbit microtech-orbit">
-            <div class="background microtech" @click="handlePlanetClick('microtech')">
+            <div class="background microtech">
               <div class="planet microtech">
                 <p>MICROTECH</p>
               </div>
             </div>
         </div>
         <div class="orbit arccorp-orbit">
-            <div class="background arccorp" @click="handlePlanetClick('arccorp'), zoomed = !zoomed">
+            <div class="background arccorp">
               <div class="planet arccorp">
                 <p>ARCCORP</p>
               </div>
             </div>
         </div>
         <div class="orbit crusader-orbit">
-            <div class="background crusader" @click="handlePlanetClick('crusader')">
+            <div class="background crusader">
               <div class="planet crusader">
                 <p>CRUSADER</p>
               </div>
             </div>
         </div>
         <div class="orbit hurston-orbit">
-            <div class="background hurston" @click="handlePlanetClick('hurston')">
+            <div class="background hurston">
               <div class="planet hurston">
                 <p>HURSTON</p>
               </div>
             </div>
         </div>
         <div class="sunwrapper">
-          <NuxtLink to="/starmap">
-            <div class="sun"></div>
-          </NuxtLink>
+          <div class="sun" @click="changeComponent('altstarmap')"></div>
         </div>
       </div>
     </div>
@@ -55,13 +50,8 @@
       };
     },
     methods: {
-      handlePlanetClick(planetName) {
-        this.selectedPlanet = planetName;
-        if (zoomed) {
-          this.zoom += 1;
-        } else {
-          this.zoom -= 1;
-        }
+      changeComponent(componentName) {
+      this.$emit('component-changed', componentName);
       },
     },
     computed: {
@@ -261,11 +251,9 @@
       font: 35px 'Segoe UI', sans-serif;
       font-weight:bold;
       }
-    .systemName a {
-      color:var(--lightorange);
-      }
-    .systemName a:hover {
+    .systemName:hover {
       color:var(--orangehover);
+      cursor:pointer;
       }
 
     p {
@@ -300,7 +288,6 @@
         }
       100% {
         opacity: 1;
-        left:25px;
         }
       }
     @keyframes scale1 {

@@ -5,7 +5,6 @@
         <h1>PYRO</h1>
       </NuxtLink>
     </div>
-    <stars />
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
         <div class="background pyroVI">

@@ -4,7 +4,7 @@
       <tbody>
         <tr>
           <td>
-            <div id="pyro-system" class="systemPyro" @click="changeComponent('MapsPlanetsPyroMap')">
+            <div id="pyro-system" class="systemPyro" @click="changeComponent('PyroMap')">
               <Icon name="game-icons:anarchy" />
               <p class="planetText">PYRO</p>
               <p class="systemText">SYSTEM</p>
@@ -21,7 +21,7 @@
         <tr>
           <td>
             <div>
-              <div id="stanton-system" class="systemStanton" @click="changeComponent('MapsPlanetsStantonMap')">
+              <div id="stanton-system" class="systemStanton" @click="changeComponent('StantonMap')">
                 <Icon name="mdi:circle-slice-8" />
                 <br>
                 <p class="planetText">STANTON</p>
@@ -43,10 +43,13 @@
 </script>
 
 <script>
-  export default {
-    methods: {
+export default {
+  methods: {
+    changeComponent(componentName) {
+      this.$emit('component-changed', componentName);
     }
   }
+};
 </script>
 
 <style scoped>
@@ -59,6 +62,7 @@
       height:90vh;
       margin-inline-start:-0.75%;
       position:relative;
+      animation:2s appear;
       }
 
   @keyframes appear {
@@ -131,25 +135,6 @@
       border-radius:50%;
       animation:1s appear;
       }
-  /* Zoom Effect */
-    .systemStanton.zoomed, .systemStanton.zoomed .icon {
-      transition: all 1s ease-in-out;
-      opacity: 0;
-      transform: scale(4);
-      border-style:none;
-      z-index:2;
-      }
-    .systemStanton.zoomed .systemText,
-    .systemStanton.zoomed .planetText {
-      transition: all 0.1s ease-in-out;
-      opacity:0;
-      }
-  /* Fade Effect */  
-    .systemStanton.fade, .systemStanton.fade .icon, .systemStanton p {
-      transition: all 0.2s ease-in-out;
-      opacity:0;
-      }
-
 
 /* Pyro */
   /* Objects */
@@ -228,24 +213,6 @@
     .systemPyro:hover .warningText {
       opacity:1;
       animation:1s appear;
-      }
-  /* Zoom Effect */
-    .systemPyro.zoomed, .systemPyro.zoomed .icon {
-      transition: all 1s ease-in-out;
-      opacity: 0;
-      transform: scale(4);
-      border-style:none;
-      z-index:2;
-      }
-    .systemPyro.zoomed .systemText,
-    .systemPyro.zoomed .planetText, .systemPyro.zoomed .unavailable {
-      transition: all 0.1s ease-in-out;
-      opacity:0;
-      }
-  /* Fade Effect */
-    .systemPyro.fade, .systemPyro.fade .icon, .systemPyro.fade p {
-      transition: all 0.2s ease-in-out;
-      opacity:0;
       }
 /* Stars */
   #stars.fade {
