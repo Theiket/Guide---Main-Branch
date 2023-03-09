@@ -239,7 +239,7 @@ export default {
     height: 100vh;
     overflow: hidden;
     background:var(--backgray);
-    animation: 1s appear1, gravity 1200s linear infinite;
+    animation: 4.2s appear, gravity 1200s linear infinite;
     opacity:0.7;
     }
   .star {
