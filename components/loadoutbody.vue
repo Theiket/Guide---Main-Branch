@@ -8,7 +8,7 @@
           color="#1B191E" 
           class="provider">
         <h4>
-          Location
+          Celestial Body
         </h4>
         <select v-model="selectedLocation">
           <option disabled value="">Select Location</option>
