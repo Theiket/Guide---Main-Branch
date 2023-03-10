@@ -3,18 +3,18 @@
     <NuxtLayout name="default">
       <body>
       <center>
-        <h1>{{ error.statusCode }}</h1>
+          <h1>{{ error.statusCode }}</h1>
         <br>
-        <p>Task failed successfully</p>
+          <p>Task failed successfully</p>
         <br>
-        <p>{{ error.message }}</p>
+          <p>{{ error.message }}</p>
         <br>
         <br>
-        <div class="errorbutton">
-      <NuxtLink to="/">
-          Back to Home
-      </NuxtLink>
-      </div>
+        <NuxtLink to="/">
+          <div class="errorbutton">
+            Back to Home
+          </div>
+        </NuxtLink>
       </center>
       </body>
     </NuxtLayout>
