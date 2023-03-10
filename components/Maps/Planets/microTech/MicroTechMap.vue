@@ -5,24 +5,32 @@
     </div>
     <div class="solar-system">
       <div class="orbit euterpe-orbit">
-        <div class="planet euterpe">
-        <br>
-        <p>Euterpe</p>
+        <div class="background euterpe">
+          <div class="planet euterpe">
+            <br>
+            <p>EUTERPE</p>
+          </div>
         </div>
       </div>
       <div class="orbit clio-orbit">
-        <div class="planet clio">
-        <br>
-        <p>Clio</p>
+        <div class="background clio">
+          <div class="planet clio">
+            <br>
+            <p>CLIO</p>
+          </div>
         </div>
       </div>
       <div class="orbit calliope-orbit">
-        <div class="planet calliope">
-        <br>
-        <p>Calliope</p>
+        <div class="background calliope">
+          <div class="planet calliope">
+            <br>
+            <p>CALLIOPE</p>
+          </div>
         </div>
       </div>
-      <div class="microtech" @click="changeComponent('StantonMap')"></div>
+      <div class="planetwrapper">
+        <div class="microtech" @click="changeComponent('StantonMap')"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -44,24 +52,29 @@
 <style scoped>
 /* General */
   .container {
-    user-select:none;
-    }
+      user-select:none;
+      overflow:hidden;
+      width:100%;
+      height:90vh;
+      margin-inline-start:-0.75%;
+      position:relative;
+      }
   .systemName {
     animation: 1.5s slideappear;
     }
 
   .solar-system {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scale:285%;
-    position:absolute;
-    margin-block-start:20%;
-    margin-inline-start:40%;
-    }
-
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scale:285%;
+      position:absolute;
+      margin-block-start:20%;
+      margin-inline-start:40%;
+      overflow:hidden;
+      }
 /* Orbit */
   .orbit {
     position: absolute;
@@ -75,22 +88,23 @@
   .euterpe-orbit {
     width: 250px;
     height: 250px;
-    rotate:165deg;
+    rotate:232deg;
     }
   .clio-orbit {
     width: 225px;
     height: 225px;
-    rotate:170deg;
+    rotate:240deg;
     }
   .calliope-orbit {
     width: 150px;
     height: 150px;
-    rotate:250deg;
+    rotate:315deg;
     }
 /* Moons */
   .planet {
     position: absolute;
-    top: -5px;
+    top:2px;
+    left:2px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -99,43 +113,66 @@
     }
   .planet.calliope {
     background-color:grey;
-    rotate:-250deg;
     z-index:1;
     }
   .planet.clio {
     background-color:#bd986f;
-    rotate:-170deg;
     z-index:1;
     }
   .planet.euterpe {
     background-color:#debf9d;
-    rotate:-165deg;
     }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:16px;
+    width:16px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    animation: 0.5s scale1;
+    scale:110%;
     cursor:pointer;
     }
-  .planet p {
-    visibility:hidden;
-    rotate:0deg;
-    margin-block-start:-3px;
-    }
-  .planet:hover p {
+  .background:hover p {
     color:var(--lightgray);
     visibility:visible;
+    animation: 0.1s appear1;
     }
-  .planet.calliope p {
-    margin-inline-start:-18px;
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    text-align:center;
     }
-  .planet.clio p {
-    margin-inline-start:-13px;
-    margin-block-start:-3px;
+  .background.calliope {
+    top:33px;
+    left:0px;
+    rotate:-315deg;
     }
-  .planet.euterpe p {
-    margin-inline-start:-18px;
+  .background.calliope p {
+    margin-inline-start:-25px;
+    margin-block-start:-25px;
+    }
+  .background.clio {
+    top:62px;
+    left:0px;
+    rotate:-240deg;
+    }
+  .background.clio p {
+    margin-inline-start:-17px;
+    margin-block-start:-25px;
+    }
+  .background.euterpe {
+    top:71px;
+    left:0px;
+    rotate:-232deg;
+    }
+  .background.euterpe p {
+    margin-inline-start:-21px;
+    margin-block-start:-2px;
     }
 /* microTech */
   .microtech {
@@ -146,9 +183,8 @@
     z-index:1;
     }
   .microtech:hover {
-    box-shadow:0px 0px 5px black;
-    width:35px;
-    height:35px;
+    scale:110%;
+    animation:1s scale1;
     cursor:pointer;
     }
 
@@ -193,63 +229,7 @@
     }
 
 /* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear4 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  .microtech {
+  .planetwrapper {
     animation: 1s appear1;
     }
   .calliope-orbit {

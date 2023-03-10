@@ -5,18 +5,24 @@
     </div>
     <div class="solar-system">
       <div class="orbit wala-orbit">
-        <div class="planet wala">
-        <br>
-        <p>Wala</p>
+        <div class="background wala">
+          <div class="planet wala">
+            <br>
+            <p>WALA</p>
+          </div>
         </div>
       </div>
       <div class="orbit lyria-orbit">
-        <div class="planet lyria">
-        <br>
-        <p>Lyria</p>
+        <div class="background lyria">
+          <div class="planet lyria">
+            <br>
+            <p>LYRIA</p>
+          </div>
         </div>
       </div>
+      <div class="planetwrapper">
         <div class="arccorp" @click="changeComponent('StantonMap')"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,23 +45,29 @@
 <style scoped>
 /* General */
   .container {
-    user-select:none;
-    }
+      user-select:none;
+      overflow:hidden;
+      width:100%;
+      height:90vh;
+      margin-inline-start:-0.75%;
+      position:relative;
+      }
   .systemName {
     animation: 1.5s slideappear;
     }
 
   .solar-system {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scale:285%;
-    position:absolute;
-    margin-block-start:20%;
-    margin-inline-start:40%;
-    }
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scale:285%;
+      position:absolute;
+      margin-block-start:20%;
+      margin-inline-start:40%;
+      overflow:hidden;
+      }
 
 /* Orbit */
   .orbit {
@@ -70,17 +82,18 @@
   .wala-orbit {
     width: 180px;
     height: 180px;
-    rotate:320deg;
+    rotate:20deg;
     }
   .lyria-orbit {
     width: 100px;
     height: 100px;
-    rotate:70deg;
+    rotate:130deg;
     }
 /* Moons */
   .planet {
     position: absolute;
-    top: -5px;
+    top: 2px;
+    left:2px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -89,36 +102,54 @@
     }
   .planet.lyria {
     background-color:#EEE3F1;
-    rotate:-70deg;
     z-index:1;
     }
   .planet.wala {
     background-color:#EFC2A1;
-    rotate:-320deg;
     z-index:1;
     }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:16px;
+    width:16px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    animation: 0.5s scale1;
+    scale:110%;
     cursor:pointer;
     }
-  .planet p {
-    visibility:hidden;
-    rotate:0deg;
-    margin-block-start:-3px;
-    }
-  .planet:hover p {
+  .background:hover p {
     color:var(--lightgray);
     visibility:visible;
+    animation: 0.1s appear1;
     }
-  .planet.lyria p {
-    margin-inline-start:-15px;
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    text-align:center;
     }
-  .planet.wala p {
-    margin-inline-start:-15px;
+  .background.lyria {
+    top:15px;
+    left:0px;
+    rotate:-130deg;
+    }
+  .background.lyria p {
+    margin-inline-start:-18px;
     margin-block-start:-3px;
+    }
+  .background.wala {
+    top:43px;
+    left:0px;
+    rotate:-20deg;
+    }
+  .background.wala p {
+    margin-inline-start:-20px;
+    margin-block-start:-25px;
     }
 /* ArcCorp */
   .arccorp {
@@ -129,9 +160,8 @@
     z-index:1;
     }
   .arccorp:hover {
-    box-shadow:0px 0px 5px black;
-    width:35px;
-    height:35px;
+    scale:110%;
+    animation:1s scale1;
     cursor:pointer;
     }
 
@@ -176,53 +206,8 @@
     }
 
 /* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  .arccorp {
-    animation: 1s appear1;
+  .planetwrapper {
+    animation: 2s appear1;
     }
   .lyria-orbit {
     animation: 2s appear2;

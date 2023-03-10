@@ -5,24 +5,32 @@
     </div>
     <div class="solar-system">
       <div class="orbit yela-orbit">
-        <div class="planet yela">
-        <br>
-        <p>Yela</p>
+        <div class="background yela">
+          <div class="planet yela">
+            <br>
+            <p>YELA</p>
+          </div>
         </div>
       </div>
       <div class="orbit daymar-orbit">
-        <div class="planet daymar">
-        <br>
-        <p>Daymar</p>
+        <div class="background daymar">
+          <div class="planet daymar">
+            <br>
+            <p>DAYMAR</p>
+          </div>
         </div>
       </div>
       <div class="orbit cellin-orbit">
-        <div class="planet cellin">
-        <br>
-        <p>Cellin</p>
+        <div class="background cellin">
+          <div class="planet cellin">
+            <br>
+            <p>CELLIN</p>
+          </div>
         </div>
       </div>
-      <div class="crusader" @click="changeComponent('StantonMap')"></div>
+      <div class="planetwrapper">
+        <div class="crusader" @click="changeComponent('StantonMap')"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -45,23 +53,29 @@
 <style scoped>
 /* General */
   .container {
-    user-select:none;
-    }
+      user-select:none;
+      overflow:hidden;
+      width:100%;
+      height:90vh;
+      margin-inline-start:-0.75%;
+      position:relative;
+      }
   .systemName {
     animation: 1.5s slideappear;
     }
 
   .solar-system {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scale:285%;
-    position:absolute;
-    margin-block-start:20%;
-    margin-inline-start:40%;
-    }
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scale:285%;
+      position:absolute;
+      margin-block-start:20%;
+      margin-inline-start:40%;
+      overflow:hidden;
+      }
 
 /* Orbit */
   .orbit {
@@ -76,22 +90,23 @@
   .yela-orbit {
     width: 230px;
     height: 230px;
-    rotate:320deg;
+    rotate:20deg;
     }
   .daymar-orbit {
     width: 180px;
     height: 180px;
-    rotate:40deg;
+    rotate:100deg;
     }
   .cellin-orbit {
     width: 150px;
     height: 150px;
-    rotate:210deg;
+    rotate:280deg;
     }
 /* Moons */
   .planet {
     position: absolute;
-    top: -5px;
+    top:2px;
+    left:2px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -100,43 +115,66 @@
     }
   .planet.cellin {
     background-color:#EEE3F1;
-    rotate:-210deg;
     z-index:1;
     }
   .planet.daymar {
     background-color:#A2793A;
-    rotate:-40deg;
     z-index:1;
     }
   .planet.yela {
     background-color:#6B6A6A;
-    rotate:-320deg;
     }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:16px;
+    width:16px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    animation: 0.5s scale1;
+    scale:110%;
     cursor:pointer;
     }
-  .planet p {
-    visibility:hidden;
-    rotate:0deg;
-    margin-block-start:-3px;
-    }
-  .planet:hover p {
+  .background:hover p {
     color:var(--lightgray);
     visibility:visible;
+    animation: 0.1s appear1;
     }
-  .planet.cellin p {
-    margin-inline-start:-15px;
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    text-align:center;
     }
-  .planet.daymar p {
-    margin-inline-start:-20px;
-    margin-block-start:-5px;
+  .background.cellin {
+    top:33px;
+    left:0px;
+    rotate:-280deg;
     }
-  .planet.yela p {
-    margin-inline-start:-14px;
+  .background.cellin p {
+    margin-inline-start:-21px;
+    margin-block-start:-26px;
+    }
+  .background.daymar {
+    top:45px;
+    left:0px;
+    rotate:-100deg;
+    }
+  .background.daymar p {
+    margin-inline-start:-24px;
+    margin-block-start:-25px;
+    }
+  .background.yela {
+    top:64px;
+    left:0px;
+    rotate:-20deg;
+    }
+  .background.yela p {
+    margin-inline-start:-17px;
+    margin-block-start:-3px;
     }
 /* Crusader */
   .crusader {
@@ -147,9 +185,8 @@
     z-index:1;
     }
   .crusader:hover {
-    box-shadow:0px 0px 5px black;
-    width:35px;
-    height:35px;
+    scale:110%;
+    animation:1s scale1;
     cursor:pointer;
     }
 
@@ -194,64 +231,8 @@
     }
 
 /* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear4 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  .crusader {
-    animation: 1s appear1;
+  .planetwrapper {
+    animation: 2s appear1;
     }
   .cellin-orbit {
     animation: 2s appear2;

@@ -5,30 +5,40 @@
     </div>
     <div class="solar-system">
       <div class="orbit ita-orbit">
-        <div class="planet ita">
-        <br>
-        <p>Ita</p>
+        <div class="background ita">
+          <div class="planet ita">
+            <br>
+            <p>ITA</p>
+          </div>
         </div>
       </div>
       <div class="orbit magda-orbit">
-        <div class="planet magda">
-        <br>
-        <p>Magda</p>
+        <div class="background magda">
+          <div class="planet magda">
+            <br>
+            <p>MAGDA</p>
+          </div>
         </div>
       </div>
       <div class="orbit aberdeen-orbit">
-        <div class="planet aberdeen">
-        <br>
-        <p>Aberdeen</p>
+        <div class="background aberdeen">
+          <div class="planet aberdeen">
+            <br>
+            <p>ABERDEEN</p>
+          </div>
         </div>
       </div>
       <div class="orbit arial-orbit">
-        <div class="planet arial">
-        <br>
-        <p>Arial</p>
+        <div class="background arial">
+          <div class="planet arial">
+            <br>
+            <p>ARIAL</p>
+          </div>
         </div>
       </div>
-      <div class="hurston" @click="changeComponent('StantonMap')"></div>
+      <div class="planetwrapper">
+        <div class="hurston" @click="changeComponent('StantonMap')"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,113 +61,152 @@
 <style scoped>
 /* General */
   .container {
-    user-select:none;
-    }
+      user-select:none;
+      overflow:hidden;
+      width:100%;
+      height:90vh;
+      margin-inline-start:-0.75%;
+      position:relative;
+      }
   .systemName {
     animation: 1.5s slideappear;
     }
 
   .solar-system {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scale:285%;
-    position:absolute;
-    margin-block-start:20%;
-    margin-inline-start:40%;
-    }
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scale:285%;
+      position:absolute;
+      margin-block-start:20%;
+      margin-inline-start:40%;
+      overflow:hidden;
+      }
 
 /* Orbit */
-  .orbit {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--lightorange);
-    border-radius: 50%;
-    z-index:-1;
-    }  
-  .ita-orbit {
-    width: 240px;
-    height: 240px;
-    rotate:-10deg;
-    }
-  .magda-orbit {
-    width: 180px;
-    height: 180px;
-    rotate:225deg;
-    }
-  .aberdeen-orbit {
-    width: 120px;
-    height: 120px;
-    rotate:60deg;
-    }
-  .arial-orbit {
-    width: 90px;
-    height: 90px;
-    rotate:125deg;
-    }
+    .orbit {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--lightorange);
+      border-radius: 50%;
+      background:transparent;
+      z-index:0;
+      } 
+    .ita-orbit {
+      width: 220px;
+      height: 220px;
+      rotate:345deg;
+      }
+    .magda-orbit {
+      width: 170px;
+      height: 170px;
+      rotate:230deg;
+      }
+    .aberdeen-orbit {
+      width: 120px;
+      height: 120px;
+      rotate:55deg;
+      }
+    .arial-orbit {
+      width: 90px;
+      height: 90px;
+      rotate:125deg;
+      }
 /* Moons */
   .planet {
     position: absolute;
-    top: -5px;
     width: 10px;
     height: 10px;
+    top:2px;
+    left:2px;
     border-radius: 50%;
     background-color: #3ff9dc;
     z-index:1;
     }
   .planet.arial {
     background-color:#C5703B;
-    rotate:-125deg;
     z-index:1;
     }
   .planet.aberdeen {
     background-color:#D2BC61;
-    rotate:-60deg;
     z-index:1;
     }
   .planet.magda {
     background-color:#C9B090;
-    rotate:-225deg;
     }
   .planet.ita {
     background-color:#D2A061;
-    rotate:10deg;
     z-index:1;
     }
-  .planet:hover {
-    box-shadow:0px 0px 5px black;
-    top:-6.5px;
-    width:13px;
-    height:13px;
+/* Backgrounds */
+  .background {
+    background-color:var(--backgray);
+    position:absolute;
+    height:16px;
+    width:16px;
+    border:1px solid var(--lightorange);
+    border-radius:50%;
+    }
+  .background:hover {
+    animation: 0.5s scale1;
+    scale:110%;
     cursor:pointer;
     }
-  .planet p {
-    visibility:hidden;
-    rotate:0deg;
-    margin-block-start:-3px;
-    }
-  .planet:hover p {
+  .background:hover p {
     color:var(--lightgray);
     visibility:visible;
+    animation: 0.1s appear1;
     }
-  .planet.arial p {
-    margin-inline-start:-15px;
+  .background p {
+    visibility:hidden;
+    z-index:2;
+    letter-spacing:0.5px;
+    text-align:center;
     }
-  .planet.aberdeen p {
-    margin-inline-start:-22px;
-    margin-block-start:-22px;
+  .background.arial {
+    top:2px;
+    left:8px;
+    rotate:-125deg;
     }
-  .planet.magda p {
-    margin-inline-start:-17px;
+  .background.arial p {
+    margin-inline-start:-18px;
+    margin-block-start:-3px;
     }
-  .planet.ita p {
-    margin-inline-start:-12px;
+  .background.aberdeen {
+    top:0px;
+    left:22px;
+    rotate:-55deg;
+    }
+  .background.aberdeen p {
+    margin-inline-start:-25px;
+    margin-block-start:-26px;
+    }
+  .background.magda {
+    top:20px;
+    left:13px;
+    rotate:-230deg;
+    }
+  .background.magda p {
+    margin-inline-start:-21px;
+    margin-block-start:-3px;
+    }
+  .background.ita {
+    top:36px;
+    left:13px;
+    rotate:-345deg;
+    }
+  .background.ita p {
+    margin-inline-start:-14px;
+    margin-block-start:-3px;
     }
 /* Hurston */
+  .planetwrapper {
+    z-index:1;
+  }
   .hurston {
     width: 30px;
     height: 30px;
@@ -166,9 +215,7 @@
     z-index:1;
     }
   .hurston:hover {
-    box-shadow:0px 0px 5px black;
-    width:35px;
-    height:35px;
+    scale:110%;
     cursor:pointer;
     }
 
@@ -213,76 +260,11 @@
     }
 
 /* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear4 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-    }
-  @keyframes appear5 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    80% {
-      opacity:0;
-      scale:0.8;
-      rotate:0deg;
-      }
-    }
-
-  .hurston {
-    animation: 1s appear1;
+  .planetwrapper {
+    animation:2s appear1;
+  }
+  .hurston:hover {
+    animation: 1s scale1;
     }
   .arial-orbit {
     animation: 2s appear2;

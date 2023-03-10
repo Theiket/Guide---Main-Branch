@@ -138,7 +138,7 @@
       left:2px;
       }
     .planet.crusader {
-      background-color:#2FCFA9;
+      background-color:#6C4975;
       top:2px;
       left:2px;
       }
@@ -268,94 +268,9 @@
       padding-inline-end:15px;
       }
 
-  /* Zoom Effect */
-    .zoomed :deep(.planet:not(.selected)),
-    .zoomed :deep(.background:not(.selected)),
-    .zoomed :deep(.orbit:not(.selected)) {
-      opacity: 0;
-      animation:2s disappear;
-      }
-
-
   /* Animations */
-    @keyframes slideappear {
-      0% {
-        opacity: 0;
-        left:-500px;
-        }
-      75% {
-        opacity:0;
-        }
-      100% {
-        opacity: 1;
-        }
-      }
-    @keyframes scale1 {
-      0% {
-        scale:100%;
-      }
-      100% {
-        scale:110%;
-      }
-      }
-    @keyframes appear1 {
-      0% {
-        opacity: 0;
-        scale:0.3;
-        }
-      60% {
-        opacity:0;
-        scale:0.6;
-        }
-      }
-    @keyframes appear2 {
-      0% {
-        opacity: 0;
-        scale:0;
-        }
-      60% {
-        opacity:0;
-        scale:0.6;
-        rotate:0deg;
-        }
-      }
-    @keyframes appear3 {
-      0% {
-        opacity: 0;
-        scale:0;
-        }
-      60% {
-        opacity:0;
-        scale:0.6;
-        rotate:0deg;
-        }
-      }
-    @keyframes appear4 {
-      0% {
-        opacity: 0;
-        scale:0;
-        }
-      60% {
-        opacity:0;
-        scale:0.6;
-        rotate:0deg;
-        }
-      }
-    @keyframes appear5 {
-      0% {
-        opacity: 0;
-        scale:0.3;
-        }
-      80% {
-        opacity:0;
-        scale:0.8;
-        rotate:0deg;
-        }
-      }
-
-
     .sunwrapper {
-      animation: 1s appear1;
+      animation: 2s appear1;
       }
     .hurston-orbit {
       animation: 2s appear2;
