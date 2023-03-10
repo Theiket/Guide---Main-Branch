@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <stars />
-      <transition name="pull-in" mode="out-in">
+      <transition :name="transitionName" mode="out-in">
         <component :is="currentComponent" 
         @component-changed="changeComponent" />
       </transition>
@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       currentComponent: 'altstarmap',
-      transitionName:'zoom',
+      transitionName:'pull-in',
     };
   },
   methods: {
@@ -42,6 +42,8 @@ export default {
         this.transitionName = 'pull-out';
       } else if (componentName === 'StantonMap' || componentName === 'PyroMap' || componentName === 'HurstonMap' || componentName === 'CrusaderMap' || componentName === 'ArcCorpMap' || componentName === 'MicroTechMap') {
         this.transitionName = 'pull-in';
+      } else if (componentName === 'altstarmap') {
+        this.transitionName = 'pull-out';
       } else {
         this.transitionName = 'pull-in';
       }
