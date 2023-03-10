@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <stars />
-      <transition name="zoom" mode="out-in">
+      <transition name="pull-in" mode="out-in">
         <component :is="currentComponent" 
         @component-changed="changeComponent" />
       </transition>
@@ -30,13 +30,22 @@ export default {
   },
   data() {
     return {
-      currentComponent: 'altstarmap'
+      currentComponent: 'altstarmap',
+      transitionName:'zoom',
     };
   },
   methods: {
     changeComponent(componentName) {
+      const prevComponent = this.currentComponent;
       this.currentComponent = componentName;
+      if (prevComponent === 'StantonMap' || prevComponent ==='PyroMap' || prevComponent === 'HurstonMap' || prevComponent === 'CrusaderMap' || prevComponent === 'ArcCorpMap' || prevComponent === 'MicroTechMap') {
+        this.transitionName = 'pull-out';
+      } else if (componentName === 'StantonMap' || componentName === 'PyroMap' || componentName === 'HurstonMap' || componentName === 'CrusaderMap' || componentName === 'ArcCorpMap' || componentName === 'MicroTechMap') {
+        this.transitionName = 'pull-in';
+      } else {
+        this.transitionName = 'pull-in';
       }
+    },
   }
 };
 </script>
@@ -53,35 +62,53 @@ export default {
       }
 
 /* Animation */
-  .zoom-enter-from {
-    transform: scale(0.3);
-    opacity:0%
+  /* Pull In */
+    .pull-in-enter-from {
+      transform: scale(0.3);
+      opacity:0%
+      }
+    .pull-in-enter-to {
+      transform: scale(1);
+      opacity:100%;
+      }
+    .pull-in-leave-from {
+      transform: scale(1);
+      opacity:100%;
+      }
+    .pull-in-leave-to {
+      transform: scale(0.3);
+      opacity:0%;
     }
-  .zoom-enter-to {
-    transform: scale(1);
-    opacity:100%;
+    .pull-in-enter-active {
+      transition: all 2s ease;
+      }
+    .pull-in-leave-active {
+      transition: all 2s ease;
+      }
+  /* Pull Out */
+    .pull-out-enter-from {
+      transform: scale(0.3);
+      opacity:0%
+      }
+    .pull-out-enter-to {
+      transform: scale(1);
+      opacity:100%;
+      }
+    .pull-out-leave-from {
+      transform: scale(1);
+      opacity:100%;
+      }
+    .pull-out-leave-to {
+      transform: scale(3);
+      opacity:0%;
     }
-  .zoom-leave-from {
-    transform: scale(1);
-    opacity:100%;
-    }
-  .zoom-leave-to {
-     transform: scale(0.3);
-     opacity:0%;
-   }
-  .zoom-enter-active {
-    transition: all 2s ease;
-    }
-  .zoom-leave-active {
-    transition: all 2s ease;
-    }
-  .zoomout-enter-active {
-    animation: zoomfade 1s;
-    }
-  .zoomout-leave-active {
-    animation: zoomout 1s;
-    }
-  
+    .pull-out-enter-active {
+      transition: all 2s ease;
+      }
+    .pull-out-leave-active {
+      transition: all 2s ease;
+      }
+
   @keyframes zoomfade {
     0% {
       transform: scale(1);
