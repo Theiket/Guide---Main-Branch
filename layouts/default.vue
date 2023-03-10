@@ -185,6 +185,39 @@
     }
 
 /* Animations */
+  .zoom-enter-active {
+    animation: zoomfade 1s reverse;
+    }
+  .zoom-leave-active {
+    animation: zoomfade 1s;
+    }
+  .zoomout-enter-active {
+    animation: zoomfade 1s;
+    }
+  .zoomout-leave-active {
+    animation: zoomout 1s;
+    }
+  
+  @keyframes zoomfade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity:0;
+    }
+    }
+  @keyframes zoomout {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity:0;
+    }
+    }
   @keyframes slideappear {
     0% {
       opacity: 0;

@@ -20,9 +20,9 @@
     width: 150vw;
     height: 150vh;
     overflow: hidden;
-    background:var(--backgray);
+    background:transparent;
     animation: 4.2s appear, gravity 1200s linear infinite;
-    opacity:0.7;
+    opacity:1;
     z-index:0;
     }
 

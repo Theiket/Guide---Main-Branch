@@ -42,6 +42,7 @@ export default {
       margin-inline-start:-0.75%;
       position:relative;
       }
+
 /* Animation */
   .zoom-enter-active {
   animation: zoomfade 1s reverse;
@@ -75,6 +76,5 @@ export default {
       transform: scale(0);
       opacity:0;
     }
-    }
-  
+    }  
 </style>
