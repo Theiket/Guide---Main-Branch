@@ -332,16 +332,16 @@
     animation: 2.5s appear3;
     }
   .pyroIII-orbit {
-    animation: 3s appear4;
+    animation: 2.75s appear4;
     }
   .pyroIV-orbit {
-    animation: 3.5s appear5;
+    animation: 3s appear5;
     }
   .pyroV-orbit {
-    animation: 3.75s appear6;
+    animation: 3.25s appear6;
     }
   .pyroVI-orbit {
-    animation: 4s appear7;
+    animation: 3.5s appear7;
     }
 
 </style>
