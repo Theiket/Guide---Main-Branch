@@ -38,12 +38,14 @@ export default {
     changeComponent(componentName) {
       const prevComponent = this.currentComponent;
       this.currentComponent = componentName;
-      if (prevComponent === 'StantonMap' || prevComponent ==='PyroMap' || prevComponent === 'HurstonMap' || prevComponent === 'CrusaderMap' || prevComponent === 'ArcCorpMap' || prevComponent === 'MicroTechMap') {
-        this.transitionName = 'pull-out';
-      } else if (componentName === 'StantonMap' || componentName === 'PyroMap' || componentName === 'HurstonMap' || componentName === 'CrusaderMap' || componentName === 'ArcCorpMap' || componentName === 'MicroTechMap') {
+      if (prevComponent === 'StantonMap' && (componentName === 'HurstonMap' || componentName === 'CrusaderMap' || componentName === 'ArcCorpMap' || componentName === 'MicroTechMap')) {
         this.transitionName = 'pull-in';
+      } else if ((prevComponent === 'HurstonMap' || prevComponent === 'CrusaderMap' || prevComponent === 'ArcCorpMap' || prevComponent === 'MicroTechMap') && componentName === 'StantonMap') {
+        this.transitionName = 'pull-out';
       } else if (componentName === 'altstarmap') {
         this.transitionName = 'pull-out';
+      } else if (prevComponent === 'altstarmap'){
+        this.transitionName = 'pull-in';
       } else {
         this.transitionName = 'pull-in';
       }
@@ -78,9 +80,9 @@ export default {
       opacity:100%;
       }
     .pull-in-leave-to {
-      transform: scale(0.3);
+      transform: scale(3);
       opacity:0%;
-    }
+      }
     .pull-in-enter-active {
       transition: all 2s ease;
       }
@@ -89,7 +91,7 @@ export default {
       }
   /* Pull Out */
     .pull-out-enter-from {
-      transform: scale(0.3);
+      transform: scale(3);
       opacity:0%
       }
     .pull-out-enter-to {
@@ -101,9 +103,9 @@ export default {
       opacity:100%;
       }
     .pull-out-leave-to {
-      transform: scale(3);
+      transform: scale(0.3);
       opacity:0%;
-    }
+      }
     .pull-out-enter-active {
       transition: all 2s ease;
       }
