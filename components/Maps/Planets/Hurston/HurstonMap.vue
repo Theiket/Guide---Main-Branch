@@ -261,7 +261,6 @@
 
 /* Animations */
   .planetwrapper {
-    animation:2s appear1;
   }
   .hurston:hover {
     animation: 1s scale1;
@@ -270,13 +269,13 @@
     animation: 2s appear2;
     }
   .aberdeen-orbit {
-    animation: 3s appear3;
+    animation: 2.5s appear3;
     }
   .magda-orbit {
-    animation: 4s appear4;
+    animation: 3s appear4;
     }
   .ita-orbit {
-    animation: 4.2s appear5;
+    animation: 3.3s appear5;
     }
 
 </style>

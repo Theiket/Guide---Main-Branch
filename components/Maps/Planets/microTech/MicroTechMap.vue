@@ -230,15 +230,15 @@
 
 /* Animations */
   .planetwrapper {
-    animation: 1s appear1;
     }
   .calliope-orbit {
     animation: 2s appear2;
     }
   .clio-orbit {
-    animation: 3s appear3;
+    animation: 2.5s appear3;
     }
   .euterpe-orbit {
-    animation: 4s appear4;
+    animation: 3s appear4;
     }
+
 </style>

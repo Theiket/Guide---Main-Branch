@@ -323,138 +323,25 @@
     }
 
 /* Animations */
-  @keyframes slideappear {
-    0% {
-      opacity: 0;
-      left:-500px;
-      }
-    75% {
-      opacity:0;
-      }
-    100% {
-      opacity: 1;
-      left:25px;
-      }
-    }
-  @keyframes scale1 {
-    0% {
-      scale:100%;
-    }
-    100% {
-      scale:110%;
-    }
-    }
-  @keyframes scale2 {
-    0% {
-      scale:100%;
-    }
-    100% {
-      scale:120%;
-    }
-    }
-  @keyframes appear1 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      }
-    }
-  @keyframes appear2 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-      }
-  @keyframes appear3 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-      }
-  @keyframes appear4 {
-    0% {
-      opacity: 0;
-      scale:0;
-      }
-    60% {
-      opacity:0;
-      scale:0.6;
-      rotate:0deg;
-      }
-      }
-  @keyframes appear5 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    80% {
-      opacity:0;
-      scale:0.8;
-      rotate:0deg;
-      }
-      }
-  @keyframes appear6 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    80% {
-      opacity:0;
-      scale:0.8;
-      rotate:0deg;
-      }
-      }
-  @keyframes appear7 {
-    0% {
-      opacity: 0;
-      scale:0.3;
-      }
-    80% {
-      opacity:0;
-      scale:0.8;
-      rotate:0deg;
-      }
-      }
-  @keyframes gravity {
-      to {
-        transform: rotate(360deg);
-      }
-      }
-
-
   .sunwrapper {
-    animation: 1s appear1;
     }
   .pyroI-orbit {
     animation: 2s appear2;
     }
   .pyroII-orbit {
-    animation: 3s appear3;
+    animation: 2.5s appear3;
     }
   .pyroIII-orbit {
-    animation: 4s appear4;
+    animation: 3s appear4;
     }
   .pyroIV-orbit {
-    animation: 4.5s appear5;
+    animation: 3.5s appear5;
     }
   .pyroV-orbit {
-    animation: 4.5s appear6;
+    animation: 3.75s appear6;
     }
   .pyroVI-orbit {
-    animation: 5s appear7;
+    animation: 4s appear7;
     }
 
 </style>

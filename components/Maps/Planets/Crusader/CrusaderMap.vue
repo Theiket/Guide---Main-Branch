@@ -232,15 +232,15 @@
 
 /* Animations */
   .planetwrapper {
-    animation: 2s appear1;
     }
   .cellin-orbit {
     animation: 2s appear2;
     }
   .daymar-orbit {
-    animation: 3s appear3;
+    animation: 2.5s appear3;
     }
   .yela-orbit {
-    animation: 4s appear4;
+    animation: 3s appear4;
     }
+
 </style>

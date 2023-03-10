@@ -185,19 +185,6 @@
     }
 
 /* Animations */
-  .zoom-enter-active {
-    animation: zoomfade 1s reverse;
-    }
-  .zoom-leave-active {
-    animation: zoomfade 1s;
-    }
-  .zoomout-enter-active {
-    animation: zoomfade 1s;
-    }
-  .zoomout-leave-active {
-    animation: zoomout 1s;
-    }
-  
   @keyframes zoomfade {
     0% {
       transform: scale(1);
@@ -251,7 +238,7 @@
     100% {
       opacity:0;
     }
-  }
+    }
   @keyframes slideappear {
     0% {
       opacity: 0;
@@ -263,13 +250,21 @@
     100% {
       opacity: 1;
       }
-    }
+      }
   @keyframes scale1 {
     0% {
       scale:100%;
     }
     100% {
       scale:110%;
+    }
+    }
+  @keyframes scale2 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:120%;
     }
     }
   @keyframes appear1 {
@@ -320,10 +315,32 @@
       opacity: 0;
       scale:0.3;
       }
-    80% {
+    70% {
       opacity:0;
       scale:0.8;
       rotate:0deg;
       }
     }
+  @keyframes appear6 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    80% {
+      opacity:0;
+      scale:0.8;
+      rotate:0deg;
+      }
+      }
+  @keyframes appear7 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    80% {
+      opacity:0;
+      scale:0.8;
+      rotate:0deg;
+      }
+      }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <stars />
-      <transition name="zoom">
+      <transition name="zoom" mode="out-in">
         <component :is="currentComponent" 
         @component-changed="changeComponent" />
       </transition>
@@ -9,13 +9,14 @@
 </template>
 
 <script>
-import altstarmap from '/components/altstarmap.vue'
-import StantonMap from '/components/Maps/StantonMap.vue'
-import PyroMap from '/components/Maps/PyroMap.vue'
-import ArcCorpMap from '/components/Maps/Planets/ArcCorp/ArcCorpMap.vue'
-import CrusaderMap from '/components/Maps/Planets/Crusader/CrusaderMap.vue'
-import HurstonMap from '/components/Maps/Planets/Hurston/HurstonMap.vue'
-import MicroTechMap from '/components/Maps/Planets/microTech/MicroTechMap.vue'
+// Import Statements
+  import altstarmap from '/components/altstarmap.vue'
+  import StantonMap from '/components/Maps/StantonMap.vue'
+  import PyroMap from '/components/Maps/PyroMap.vue'
+  import ArcCorpMap from '/components/Maps/Planets/ArcCorp/ArcCorpMap.vue'
+  import CrusaderMap from '/components/Maps/Planets/Crusader/CrusaderMap.vue'
+  import HurstonMap from '/components/Maps/Planets/Hurston/HurstonMap.vue'
+  import MicroTechMap from '/components/Maps/Planets/microTech/MicroTechMap.vue'
 
 export default {
   components: {
@@ -52,11 +53,27 @@ export default {
       }
 
 /* Animation */
+  .zoom-enter-from {
+    transform: scale(0.3);
+    opacity:0%
+    }
+  .zoom-enter-to {
+    transform: scale(1);
+    opacity:100%;
+    }
+  .zoom-leave-from {
+    transform: scale(1);
+    opacity:100%;
+    }
+  .zoom-leave-to {
+     transform: scale(0.3);
+     opacity:0%;
+   }
   .zoom-enter-active {
-    animation: zoomfade 1s reverse;
+    transition: all 2s ease;
     }
   .zoom-leave-active {
-    animation: zoomfade 1s;
+    transition: all 2s ease;
     }
   .zoomout-enter-active {
     animation: zoomfade 1s;

@@ -269,20 +269,20 @@
       }
 
   /* Animations */
-    .sunwrapper {
-      animation: 2s appear1;
+  .sunwrapper {
       }
     .hurston-orbit {
-      animation: 2s appear2;
+      animation: 2.5s appear2;
       }
     .crusader-orbit {
       animation: 3s appear3;
       }
     .arccorp-orbit {
-      animation: 4s appear4;
+      animation: 3.5s appear4;
       }
     .microtech-orbit {
-      animation: 4.2s appear5;
+      animation: 3.7s appear5;
       }
+
 
 </style>
