@@ -12,12 +12,20 @@
 import altstarmap from '/components/altstarmap.vue'
 import StantonMap from '/components/Maps/StantonMap.vue'
 import PyroMap from '/components/Maps/PyroMap.vue'
+import ArcCorpMap from '/components/Maps/Planets/ArcCorp/ArcCorpMap.vue'
+import CrusaderMap from '/components/Maps/Planets/Crusader/CrusaderMap.vue'
+import HurstonMap from '/components/Maps/Planets/Hurston/HurstonMap.vue'
+import MicroTechMap from '/components/Maps/Planets/microTech/MicroTechMap.vue'
 
 export default {
   components: {
     altstarmap,
     StantonMap,
-    PyroMap
+    PyroMap,
+    ArcCorpMap,
+    CrusaderMap,
+    HurstonMap,
+    MicroTechMap
   },
   data() {
     return {

@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <NuxtLink to="/MapStanton">
-        <h1>ARCCORP</h1>
-      </NuxtLink>
+        <h1 @click="changeComponent('StantonMap')">ARCCORP</h1>
     </div>
     <div class="solar-system">
       <div class="orbit wala-orbit">
@@ -18,15 +16,24 @@
         <p>Lyria</p>
         </div>
       </div>
-      <NuxtLink to="/MapStanton">
-        <div class="arccorp"></div>
-      </NuxtLink>
+        <div class="arccorp" @click="changeComponent('StantonMap')"></div>
     </div>
   </div>
 </template>
 
 
 <script>
+  export default {
+    data() {
+      return {
+      };
+    },
+    methods: {
+      changeComponent(componentName) {
+      this.$emit('component-changed', componentName);
+      },
+    },
+  };
 </script>
 
 <style scoped>

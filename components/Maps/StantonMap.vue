@@ -7,28 +7,28 @@
       <div class="solar-system">
         <div class="orbit microtech-orbit">
             <div class="background microtech">
-              <div class="planet microtech">
+              <div class="planet microtech" @click="changeComponent('MicroTechMap')">
                 <p>MICROTECH</p>
               </div>
             </div>
         </div>
         <div class="orbit arccorp-orbit">
             <div class="background arccorp">
-              <div class="planet arccorp">
+              <div class="planet arccorp" @click="changeComponent('ArcCorpMap')">
                 <p>ARCCORP</p>
               </div>
             </div>
         </div>
         <div class="orbit crusader-orbit">
             <div class="background crusader">
-              <div class="planet crusader">
+              <div class="planet crusader" @click="changeComponent('CrusaderMap')">
                 <p>CRUSADER</p>
               </div>
             </div>
         </div>
         <div class="orbit hurston-orbit">
             <div class="background hurston">
-              <div class="planet hurston">
+              <div class="planet hurston" @click="changeComponent('HurstonMap')">
                 <p>HURSTON</p>
               </div>
             </div>
