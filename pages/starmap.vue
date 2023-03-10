@@ -27,7 +27,7 @@ export default {
   methods: {
     changeComponent(componentName) {
       this.currentComponent = componentName;
-    }
+      }
   }
 };
 </script>
@@ -45,13 +45,13 @@ export default {
 
 /* Animation */
   .zoom-enter-active {
-  animation: zoomfade 1s reverse;
+    animation: zoomfade 1s reverse;
     }
   .zoom-leave-active {
     animation: zoomfade 1s;
     }
   .zoomout-enter-active {
-  animation: zoomfade 1s;
+    animation: zoomfade 1s;
     }
   .zoomout-leave-active {
     animation: zoomout 1s;
