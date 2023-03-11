@@ -140,7 +140,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color: white;
     z-index:1;
     }
   .pyroIV:hover {

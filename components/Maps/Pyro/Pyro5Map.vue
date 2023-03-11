@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="systemName">
-        <h1 @click="changeComponent('StantonMap')">PYRO I</h1>
+        <h1 @click="changeComponent('StantonMap')">PYRO V</h1>
     </div>
     <div class="solar-system">
       <div class="orbit wala-orbit">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="planetwrapper">
-        <div class="pyroI" @click="changeComponent('PyroMap')"></div>
+        <div class="pyroV" @click="changeComponent('PyroMap')"></div>
       </div>
     </div>
   </div>
@@ -150,15 +150,15 @@
     margin-inline-start:-20px;
     margin-block-start:-25px;
     }
-/* Pyro I */
-  .pyroI {
+/* Pyro V */
+  .pyroV {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color: white;
     z-index:1;
     }
-  .pyroI:hover {
+  .pyroV:hover {
     scale:110%;
     animation:1s scale1;
     cursor:pointer;

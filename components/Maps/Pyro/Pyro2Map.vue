@@ -140,7 +140,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color: #2FCFA9;
     z-index:1;
     }
   .pyroII:hover {

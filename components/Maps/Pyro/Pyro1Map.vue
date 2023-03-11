@@ -1,27 +1,11 @@
 <template>
   <div class="container">
     <div class="systemName">
-        <h1 @click="changeComponent('StantonMap')">ARCCORP</h1>
+        <h1 @click="changeComponent('PyroMap')">PYRO I</h1>
     </div>
     <div class="solar-system">
-      <div class="orbit wala-orbit">
-        <div class="background wala">
-          <div class="planet wala">
-            <br>
-            <p>WALA</p>
-          </div>
-        </div>
-      </div>
-      <div class="orbit lyria-orbit">
-        <div class="background lyria">
-          <div class="planet lyria">
-            <br>
-            <p>LYRIA</p>
-          </div>
-        </div>
-      </div>
       <div class="planetwrapper">
-        <div class="arccorp" @click="changeComponent('StantonMap')"></div>
+        <div class="pyroI" @click="changeComponent('PyroMap')"></div>
       </div>
     </div>
   </div>
@@ -79,16 +63,7 @@
     border-radius: 50%;
     z-index:-1;
     }  
-  .wala-orbit {
-    width: 180px;
-    height: 180px;
-    rotate:20deg;
-    }
-  .lyria-orbit {
-    width: 100px;
-    height: 100px;
-    rotate:130deg;
-    }
+
 /* Moons */
   .planet {
     position: absolute;
@@ -100,14 +75,7 @@
     background-color: #3ff9dc;
     z-index:1;
     }
-  .planet.lyria {
-    background-color:#EEE3F1;
-    z-index:1;
-    }
-  .planet.wala {
-    background-color:#EFC2A1;
-    z-index:1;
-    }
+
 /* Backgrounds */
   .background {
     background-color:var(--backgray);
@@ -133,33 +101,16 @@
     letter-spacing:0.5px;
     text-align:center;
     }
-  .background.lyria {
-    top:15px;
-    left:0px;
-    rotate:-130deg;
-    }
-  .background.lyria p {
-    margin-inline-start:-18px;
-    margin-block-start:-3px;
-    }
-  .background.wala {
-    top:43px;
-    left:0px;
-    rotate:-20deg;
-    }
-  .background.wala p {
-    margin-inline-start:-20px;
-    margin-block-start:-25px;
-    }
-/* ArcCorp */
-  .arccorp {
+
+/* Pyro I */
+  .pyroI {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color: #CF3A2F;
     z-index:1;
     }
-  .arccorp:hover {
+  .pyroI:hover {
     scale:110%;
     animation:1s scale1;
     cursor:pointer;
@@ -207,12 +158,6 @@
 
 /* Animations */
   .planetwrapper {
-    }
-  .lyria-orbit {
-    animation: 2s appear2;
-    }
-  .wala-orbit {
-    animation: 2.5s appear3;
     }
 
 

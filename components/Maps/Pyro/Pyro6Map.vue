@@ -5,7 +5,7 @@
     </div>
     <div class="solar-system">
       <div class="planetwrapper">
-        <div class="pyroIV" @click="changeComponent('PyroMap')"></div>
+        <div class="pyroVI" @click="changeComponent('PyroMap')"></div>
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #CF2F55;
+    background-color:purple;
     z-index:1;
     }
   .pyroVI:hover {
