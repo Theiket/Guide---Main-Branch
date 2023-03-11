@@ -17,6 +17,13 @@
   import CrusaderMap from '/components/Maps/Stanton/CrusaderMap.vue'
   import HurstonMap from '/components/Maps/Stanton/HurstonMap.vue'
   import MicroTechMap from '/components/Maps/Stanton/MicroTechMap.vue'
+  import Pyro1Map from '/components/Maps/Pyro/Pyro1Map.vue'
+  import Pyro2Map from '/components/Maps/Pyro/Pyro2Map.vue'
+  import Pyro3Map from '/components/Maps/Pyro/Pyro3Map.vue'
+  import Pyro4Map from '/components/Maps/Pyro/Pyro4Map.vue'
+  import Pyro5Map from '/components/Maps/Pyro/Pyro5Map.vue'
+  import Pyro6Map from '/components/Maps/Pyro/Pyro6Map.vue'
+
 
 export default {
   components: {

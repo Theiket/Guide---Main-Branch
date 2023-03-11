@@ -6,20 +6,20 @@
     <div class="solar-system">
       <div class="orbit pyroVI-orbit">
         <div class="background pyroVI">
-          <div class="planet pyroVI">
+          <div class="planet pyroVI" @click="changeComponent('Pyro6Map')">
             <p>PYRO VI</p>
           </div>
         </div>
       </div>
       <div class="orbit pyroV-orbit">
         <div class="background pyroV">
-          <div class="planet pyroV">
+          <div class="planet pyroV" @click="changeComponent('Pyro5Map')">
             <p>PYRO V</p>
           </div>
         </div>
         <div class="orbit pyroIV-orbit">
           <div class="background pyroIV">
-          <div class="planet pyroIV">
+          <div class="planet pyroIV" @click="changeComponent('Pyro4Map')">
             <p>PYRO IV</p>
           </div>
         </div>
@@ -27,21 +27,21 @@
       </div>
       <div class="orbit pyroIII-orbit">
         <div class="background pyroIII">
-          <div class="planet pyroIII">
+          <div class="planet pyroIII" @click="changeComponent('Pyro3Map')">
             <p>PYRO III</p>
           </div>
         </div>
       </div>
       <div class="orbit pyroII-orbit">
         <div class="background pyroII">
-          <div class="planet pyroII">
+          <div class="planet pyroII" @click="changeComponent('Pyro2Map')">
             <p>PYRO II</p>
           </div>
         </div>
       </div>
       <div class="orbit pyroI-orbit">
         <div class="background pyroI">
-          <div class="planet pyroI">
+          <div class="planet pyroI" @click="changeComponent('Pyro1Map')">
             <p>PYRO I</p>
           </div>
         </div>
