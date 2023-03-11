@@ -126,15 +126,6 @@
     margin-inline-start:-18px;
     margin-block-start:-3px;
     }
-  .background.wala {
-    top:43px;
-    left:0px;
-    rotate:-20deg;
-    }
-  .background.wala p {
-    margin-inline-start:-20px;
-    margin-block-start:-25px;
-    }
 /* Pyro I */
   .pyroI {
     width: 30px;
