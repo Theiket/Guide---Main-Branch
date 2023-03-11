@@ -294,23 +294,21 @@
     display:inline-block;
     width:15%;
     position:absolute;
-    margin-inline-start:12.5%;
+    margin-inline-start:20%;
     margin-block-start:5%;
     border-bottom-style:solid;
     border-width:2px;
     border-color:var(--lightgray);
     padding-inline-start:10px;
-    z-index:2;
+    z-index:1;
     }
   .systemName h1 {
     font: 35px 'Segoe UI', sans-serif;
     font-weight:bold;
     }
-  .systemName a {
-    color:var(--lightorange);
-    }
-  .systemName a:hover {
+  .systemName:hover {
     color:var(--orangehover);
+    cursor:pointer;
     }
 
   p {

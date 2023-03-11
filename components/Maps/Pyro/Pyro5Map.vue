@@ -324,10 +324,10 @@
     animation: 2.75s appear5;
     }
   .fuego-orbit {
-    animation: 3s appear6;
+    animation: 2.9s appear6;
     }
   .vuur-orbit {
-    animation: 3.25s appear7;
+    animation: 3.1s appear7;
     }
 
 
