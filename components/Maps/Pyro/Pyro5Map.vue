@@ -1,22 +1,54 @@
 <template>
   <div class="container">
     <div class="systemName">
-        <h1 @click="changeComponent('StantonMap')">PYRO V</h1>
+        <h1 @click="changeComponent('PyroMap')">PYRO V</h1>
     </div>
     <div class="solar-system">
-      <div class="orbit wala-orbit">
-        <div class="background wala">
-          <div class="planet wala">
+    <div class="orbit vuur-orbit">
+        <div class="background vuur">
+          <div class="planet vuur">
             <br>
-            <p>WALA</p>
+            <p>VUUR</p>
           </div>
         </div>
       </div>
-      <div class="orbit lyria-orbit">
-        <div class="background lyria">
-          <div class="planet lyria">
+      <div class="orbit fuego-orbit">
+        <div class="background fuego">
+          <div class="planet fuego">
             <br>
-            <p>LYRIA</p>
+            <p>FUEGO</p>
+          </div>
+        </div>
+      </div>
+      <div class="orbit fairo-orbit">
+        <div class="background fairo">
+          <div class="planet fairo">
+            <br>
+            <p>FAIRO</p>
+          </div>
+        </div>
+      </div>
+      <div class="orbit adir-orbit">
+        <div class="background adir">
+          <div class="planet adir">
+            <br>
+            <p>ADIR</p>
+          </div>
+        </div>
+      </div>
+      <div class="orbit vatra-orbit">
+        <div class="background vatra">
+          <div class="planet vatra">
+            <br>
+            <p>VATRA</p>
+          </div>
+        </div>
+      </div>
+      <div class="orbit ignis-orbit">
+        <div class="background ignis">
+          <div class="planet ignis">
+            <br>
+            <p>IGNIS</p>
           </div>
         </div>
       </div>
@@ -74,19 +106,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--lightorange);
+    border: 1px solid transparent;
     border-radius: 50%;
     z-index:-1;
     }  
-  .wala-orbit {
-    width: 180px;
-    height: 180px;
-    rotate:20deg;
-    }
-  .lyria-orbit {
-    width: 100px;
-    height: 100px;
+  .vuur-orbit {
+    width: 250px;
+    height: 250px;
+    rotate:300deg;
+    }  
+  .fuego-orbit {
+    width: 230px;
+    height: 230px;
+    rotate:240deg;
+    }  
+  .fairo-orbit {
+    width: 210px;
+    height: 210px;
+    rotate:180deg;
+    }  
+  .adir-orbit {
+    width: 190px;
+    height: 190px;
     rotate:130deg;
+    }  
+  .vatra-orbit {
+    width: 170px;
+    height: 170px;
+    rotate:90deg;
+    }
+  .ignis-orbit {
+    width: 150px;
+    height: 150px;
+    rotate:40deg;
     }
 /* Moons */
   .planet {
@@ -99,11 +151,27 @@
     background-color: #3ff9dc;
     z-index:1;
     }
-  .planet.lyria {
+  .planet.ignis {
     background-color:#EEE3F1;
     z-index:1;
     }
-  .planet.wala {
+  .planet.vatra {
+    background-color:#EFC2A1;
+    z-index:1;
+    }
+  .planet.adir {
+    background-color:#EFC2A1;
+    z-index:1;
+    }
+  .planet.fairo {
+    background-color:#EFC2A1;
+    z-index:1;
+    }
+  .planet.fuego {
+    background-color:#EFC2A1;
+    z-index:1;
+    }
+  .planet.vuur {
     background-color:#EFC2A1;
     z-index:1;
     }
@@ -132,22 +200,58 @@
     letter-spacing:0.5px;
     text-align:center;
     }
-  .background.lyria {
-    top:15px;
-    left:0px;
-    rotate:-130deg;
+  .background.ignis {
+    top:45px;
+    left:-45px;
+    rotate:-40deg;
     }
-  .background.lyria p {
+  .background.ignis p {
     margin-inline-start:-18px;
     margin-block-start:-3px;
     }
-  .background.wala {
+  .background.vatra {
     top:43px;
-    left:0px;
-    rotate:-20deg;
+    left:-15px;
+    rotate:-90deg;
     }
-  .background.wala p {
+  .background.vatra p {
     margin-inline-start:-20px;
+    margin-block-start:-25px;
+    }
+  .background.adir {
+    top:43px;
+    left:2px;
+    rotate:-130deg;
+    }
+  .background.adir p {
+    margin-inline-start:-18px;
+    margin-block-start:-4px;
+    }
+  .background.fairo {
+    top:43px;
+    left:6px;
+    rotate:-180deg;
+    }
+  .background.fairo p {
+    margin-inline-start:-19px;
+    margin-block-start:-25px;
+    }
+  .background.fuego {
+    top:43px;
+    left:10px;
+    rotate:-240deg;
+    }
+  .background.fuego p {
+    margin-inline-start:-19px;
+    margin-block-start:-3px;
+    }
+  .background.vuur {
+    top:50px;
+    left:10px;
+    rotate:-300deg;
+    }
+  .background.vuur p {
+    margin-inline-start:-18px;
     margin-block-start:-25px;
     }
 /* Pyro V */
@@ -207,11 +311,23 @@
 /* Animations */
   .planetwrapper {
     }
-  .lyria-orbit {
+  .ignis-orbit {
     animation: 2s appear2;
     }
-  .wala-orbit {
-    animation: 2.5s appear3;
+  .vatra-orbit {
+    animation: 2.25s appear3;
+    }
+  .adir-orbit {
+    animation: 2.5s appear4;
+    }
+  .fairo-orbit {
+    animation: 2.75s appear5;
+    }
+  .fuego-orbit {
+    animation: 3s appear6;
+    }
+  .vuur-orbit {
+    animation: 3.25s appear7;
     }
 
 
