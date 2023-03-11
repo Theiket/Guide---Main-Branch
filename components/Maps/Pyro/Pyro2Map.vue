@@ -3,8 +3,10 @@
     <div class="systemName">
       <h1 @click="changeComponent('PyroMap')">PYRO II</h1>
     </div>
-    <div class="planetwrapper">
-      <div class="pyroII" @click="changeComponent('PyroMap')"></div>
+    <div class="solar-system">
+      <div class="planetwrapper">
+        <div class="pyroII" @click="changeComponent('PyroMap')"></div>
+      </div>
     </div>
   </div>
 </template>

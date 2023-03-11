@@ -49,6 +49,10 @@ export default {
         this.transitionName = 'pull-in';
       } else if ((prevComponent === 'HurstonMap' || prevComponent === 'CrusaderMap' || prevComponent === 'ArcCorpMap' || prevComponent === 'MicroTechMap') && componentName === 'StantonMap') {
         this.transitionName = 'pull-out';
+      } else if (prevComponent === 'PyroMap' && (componentName === 'Pyro1Map' || componentName === 'Pyro2Map' || componentName === 'Pyro3Map' || componentName === 'Pyro4Map' || componentName === 'Pyro5Map' || componentName === 'Pyro6Map')) {
+        this.transitionName = 'pull-in';
+      } else if ((prevComponent === 'Pyro1Map' || prevComponent === 'Pyro2Map' || prevComponent === 'Pyro3Map' || prevComponent === 'Pyro4Map' || prevComponent === 'Pyro5Map' || prevComponent === 'Pyro6Map') && componentName === 'PyroMap') {
+        this.transitionName = 'pull-out';
       } else if (componentName === 'altstarmap') {
         this.transitionName = 'pull-out';
       } else if (prevComponent === 'altstarmap'){
