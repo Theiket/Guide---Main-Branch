@@ -247,7 +247,7 @@
     background-color:white;
     }
   .planet.pyroV {
-    background-color:green;
+    background-color:#2e5423;
     z-index:2;
     }
   .planet.pyroVI {

@@ -156,23 +156,23 @@
     z-index:1;
     }
   .planet.vatra {
-    background-color:#EFC2A1;
+    background-color:#95b16c;
     z-index:1;
     }
   .planet.adir {
-    background-color:#EFC2A1;
+    background-color:#94b3a9;
     z-index:1;
     }
   .planet.fairo {
-    background-color:#EFC2A1;
+    background-color:#872c0f;
     z-index:1;
     }
   .planet.fuego {
-    background-color:#EFC2A1;
+    background-color:#874a0f;
     z-index:1;
     }
   .planet.vuur {
-    background-color:#EFC2A1;
+    background-color:#625450;
     z-index:1;
     }
 /* Backgrounds */
@@ -259,7 +259,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: white;
+    background-color: #2e5423;
     z-index:1;
     }
   .pyroV:hover {
