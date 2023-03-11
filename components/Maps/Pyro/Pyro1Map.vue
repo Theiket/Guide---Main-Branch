@@ -1,11 +1,27 @@
 <template>
   <div class="container">
     <div class="systemName">
-      <h1 @click="changeComponent('PyroMap')">PYRO I</h1>
+        <h1 @click="changeComponent('StantonMap')">ARCCORP</h1>
     </div>
     <div class="solar-system">
+      <div class="orbit wala-orbit">
+        <div class="background wala">
+          <div class="planet wala">
+            <br>
+            <p>WALA</p>
+          </div>
+        </div>
+      </div>
+      <div class="orbit lyria-orbit">
+        <div class="background lyria">
+          <div class="planet lyria">
+            <br>
+            <p>LYRIA</p>
+          </div>
+        </div>
+      </div>
       <div class="planetwrapper">
-        <div class="pyroI" @click="changeComponent('PyroMap')"></div>
+        <div class="arccorp" @click="changeComponent('StantonMap')"></div>
       </div>
     </div>
   </div>
@@ -126,15 +142,24 @@
     margin-inline-start:-18px;
     margin-block-start:-3px;
     }
-/* Pyro I */
-  .pyroI {
+  .background.wala {
+    top:43px;
+    left:0px;
+    rotate:-20deg;
+    }
+  .background.wala p {
+    margin-inline-start:-20px;
+    margin-block-start:-25px;
+    }
+/* ArcCorp */
+  .arccorp {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #CF2F55;
     z-index:1;
     }
-  .pyroI:hover {
+  .arccorp:hover {
     scale:110%;
     animation:1s scale1;
     cursor:pointer;

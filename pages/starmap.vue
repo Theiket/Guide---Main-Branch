@@ -33,7 +33,13 @@ export default {
     ArcCorpMap,
     CrusaderMap,
     HurstonMap,
-    MicroTechMap
+    MicroTechMap,
+    Pyro1Map,
+    Pyro2Map,
+    Pyro3Map,
+    Pyro4Map,
+    Pyro5Map,
+    Pyro6Map
   },
   data() {
     return {

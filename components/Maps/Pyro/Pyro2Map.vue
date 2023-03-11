@@ -192,12 +192,5 @@
 /* Animations */
   .planetwrapper {
     }
-  .lyria-orbit {
-    animation: 2s appear2;
-    }
-  .wala-orbit {
-    animation: 2.5s appear3;
-    }
-
 
 </style>
