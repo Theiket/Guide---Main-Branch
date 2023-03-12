@@ -20,7 +20,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="anvil" v-if="selectedCompany === 'Anvil Aerospace'">
       <span v-for="ships in anvil">
         <td>
@@ -28,7 +28,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="aopoa" v-if="selectedCompany === 'AopoA'">
       <span v-for="ships in aopoa">
         <td>
@@ -36,7 +36,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="argo" v-if="selectedCompany === 'ARGO Astronautics'">
       <span v-for="ships in argo">
         <td>
@@ -44,7 +44,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="banu" v-if="selectedCompany === 'Banu Souli'">
       <span v-for="ships in banu">
         <td>
@@ -52,7 +52,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="consol" v-if="selectedCompany === 'Consolidated Outland'">
       <span v-for="ships in consol">
         <td>
@@ -60,7 +60,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="crusader" v-if="selectedCompany === 'Crusader Industries'">
       <span v-for="ships in crusader">
         <td>
@@ -68,7 +68,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="drake" v-if="selectedCompany === 'Drake Interplanetary'">
       <span v-for="ships in drake">
         <td>
@@ -76,7 +76,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="esperia" v-if="selectedCompany === 'Esperia Inc.'">
       <span v-for="ships in esperia">
         <td>
@@ -84,7 +84,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="gatac" v-if="selectedCompany === 'Gatac Manufacture'">
       <span v-for="ships in gatac">
         <td>
@@ -92,7 +92,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="greycat" v-if="selectedCompany === 'Greycat Industrial'">
       <span v-for="ships in greycat">
         <td>
@@ -100,7 +100,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="kruger" v-if="selectedCompany === 'Kruger Intergalactic'">
       <span v-for="ships in kruger">
         <td>
@@ -108,7 +108,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="misc" v-if="selectedCompany === 'Musashi Industrial (MISC)'">
       <span v-for="ships in misc">
         <td>
@@ -116,7 +116,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="origin" v-if="selectedCompany === 'Origin Jumpworks'">
       <span v-for="ships in origin">
         <td>
@@ -124,7 +124,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="rsi" v-if="selectedCompany === 'Roberts Space Industries'">
       <span v-for="ships in rsi">
         <td>
@@ -132,7 +132,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
     <div class="tumbril" v-if="selectedCompany === 'Tumbril Land Systems'">
       <span v-for="ships in tumbril">
         <td>
@@ -140,7 +140,7 @@
         <p> {{ ships.name }} </p>
         </td>
       </span>
-    </div>
+      </div>
       </center>
       </div>
     </div>
@@ -356,7 +356,7 @@ export default {
         powerplants: false,
         coolers: false,
         quantumdrives: false,
-      },
+        },
       selectedCompany: '',
       vehicleName:'Please select a vehicle',
       vehicleDescription:'Please select a vehicle to see their description.',
@@ -1240,6 +1240,10 @@ export default {
           grade:'4',
           coolingrate:'380000',
           },
+        { name:'IcePlunge',
+          grade:'3',
+          coolingrate:'232000',
+          },
         { name:'Polar',
           grade:'2',
           coolingrate:'280000',
@@ -1276,10 +1280,7 @@ export default {
           grade:'2',
           coolingrate:'238000',
           },
-        { name:'IcePlunge',
-          grade:'3',
-          coolingrate:'232000',
-          },
+        
         ],
       s2coolers: [
         { name:'AbsoluteZero',
@@ -1464,978 +1465,788 @@ export default {
           },
         ],
       s1powerplants: [
-        {
-	        name:'Breton',
+        { name:'Breton',
 	        capacity:'4627.7',
           grade:'1',
-        },
-        {
-	        name:'Charger',
+          },
+        { name:'Charger',
 	        capacity:'2944.9',
           grade:'4',
-        },
-        {
-	        name:'DeltaMax',
+          },
+        { name:'DeltaMax',
 	        capacity:'1577.63',
           grade:'2',
-        },
-        {
-	        name:'DynaFlux',
+          },
+        { name:'DynaFlux',
 	        capacity:'3470.78',
           grade:'2',
-        },
-        {
-	        name:'Endurance',
+          },
+        { name:'Endurance',
 	        capacity:'4417.35',
           grade:'2',
-        },
-        {
-	        name:'FierellCascade',
+          },
+        { name:'FierellCascade',
 	        capacity:'3365.6',
           grade:'2',
-        },
-        {
-	        name:'Fortitude',
+          },
+        { name:'Fortitude',
 	        capacity:'4207',
           grade:'3',
-        },
-        {
-	        name:'HyperGen',
+          },
+        { name:'HyperGen',
 	        capacity:'3050.08',
           grade:'4',
-        },
-        {
-	        name:'IonBurst',
+          },
+        { name:'IonBurst',
 	        capacity:'2313.85',
           grade:'2',
-        },
-        {
-	        name:'JS300',
+          },
+        { name:'JS300',
 	        capacity:'3681.13',
           grade:'1',
-        },
-        {
-	        name:'LightBlossom',
+          },
+        { name:'LightBlossom',
 	        capacity:'1998.33',
           grade:'3',
-        },
-        {
-	        name:'LumaCore',
+          },
+        { name:'LumaCore',
 	        capacity:'1472.45',
           grade:'1',
-        },
-        {
-	        name:'MagnaBloom',
+          },
+        { name:'MagnaBloom',
 	        capacity:'2208.68',
           grade:'2',
-        },
-        {
-	        name:'Overdrive',
+          },
+        { name:'Overdrive',
 	        capacity:'3260.43',
           grade:'3',
-        },
-        {
-	        name:'PowerBolt',
+          },
+        { name:'PowerBolt',
 	        capacity:'2103.5',
           grade:'3',
-        },
-        {
-	        name:'Quadracell',
+          },
+        { name:'Quadracell',
 	        capacity:'3575.95',
           grade:'1',
-        },
-        {
-	        name:'Regulus',
+          },
+        { name:'Regulus',
 	        capacity:'4000',
           grade:'3',
-        },
-        {
-	        name:'Roughneck',
+          },
+        { name:'Roughneck',
 	        capacity:'3996.65',
           grade:'4',
-        },
-        {
-	        name:'Slipstream',
+          },
+        { name:'Slipstream',
 	        capacity:'1787.98',
           grade:'1',
-        },
-        {
-	        name:'SonicLite',
+          },
+        { name:'SonicLite',
 	        capacity:'1367.28',
           grade:'3',
-        },
-        {
-	        name:'StarHeart',
+          },
+        { name:'StarHeart',
 	        capacity:'1262.1',
           grade:'2',
-        },
-        {
-	        name:'SunFlare',
+          },
+        { name:'SunFlare',
 	        capacity:'1051.75',
           grade:'3',
-        },
-        {
-	        name:'WhiteRose',
+          },
+        { name:'WhiteRose',
 	        capacity:'2419.03',
           grade:'1',
-        },
-        {
-	        name:'ZapJet',
+          },
+        { name:'ZapJet',
 	        capacity:'1893.15',
           grade:'4',
-        },
+          },
         ],
       s2powerplants: [
-        {
-          name:'Bolide',
+        { name:'Bolide',
           capacity:'10000',
           grade:'2',
-        },
-        {
-          name:'Cirrus',
+          },
+        { name:'Cirrus',
           capacity:'4062.5',
           grade:'3',
-        },
-        {
-          name:'Daybreak',
+          },
+        { name:'Daybreak',
           capacity:'5937.5',
           grade:'3',
-        },
-        {
-          name:'Diligence',
+          },
+        { name:'Diligence',
           capacity:'12500',
           grade:'3',
-        },
-        {
-          name:'Eclipse',
+          },
+        { name:'Eclipse',
           capacity:'5312.5',
           grade:'1',
-        },
-        {
-          name:'Exogen',
+          },
+        { name:'Exogen',
           capacity:'8750',
           grade:'4',
-        },
-        {
-          name:'FullForce',
+          },
+        { name:'FullForce',
           capacity:'6250',
           grade:'3',
-        },
-        {
-          name:'GammaMax',
+          },
+        { name:'GammaMax',
           capacity:'4687.5',
           grade:'2',
-        },
-        {
-          name:'Genoa',
+          },
+        { name:'Genoa',
           capacity:'13750',
           grade:'1',
-        },
-        {
-          name:'IonSurge',
+          },
+        { name:'IonSurge',
           capacity:'6875',
           grade:'2',
-        },
-        {
-          name:'JS400',
+          },
+        { name:'JS400',
           capacity:'10625',
           grade:'1',
-        },
-        {
-          name:'Lotus',
+          },
+        { name:'Lotus',
           capacity:'7187.5',
           grade:'1',
-        },
-        {
-          name:'LuxCore',
+          },
+        { name:'LuxCore',
           capacity:'4375',
           grade:'1',
-        },
-        {
-          name:'Maelstrom',
+          },
+        { name:'Maelstrom',
           capacity:'9375',
           grade:'3',
-        },
-        {
-          name:'QuadracellMT',
+          },
+        { ame:'QuadracellMT',
           capacity:'10625',
           grade:'1',
-        },
-        {
-          name:'Radiance',
+          },
+        { name:'Radiance',
           capacity:'6562.5',
           grade:'2',
-        },
-        {
-          name:'Sedulity',
+          },
+        { name:'Sedulity',
           capacity:'13125',
           grade:'2',
-        },
-        {
-          name:'SolarFlare',
+          },
+        { name:'SolarFlare',
           capacity:'3125',
           grade:'3',
-        },
-        {
-          name:'SparkJet',
+          },
+        { name:'SparkJet',
           capacity:'5625',
           grade:'4',
-        },
-        {
-          name:'StarBurn',
+          },
+        { name:'StarBurn',
           capacity:'3750',
           grade:'2',
-        },
-        {
-          name:'Trommel',
+          },
+        { name:'Trommel',
           capacity:'11875',
           grade:'4',
-        },
-        {
-          name:'TurboDrive',
+          },
+        { name:'TurboDrive',
           capacity:'9375',
           grade:'3',
-        },
-        {
-          name:'UltraFlux',
+          },
+        { name:'UltraFlux',
           capacity:'10000',
           grade:'2',
-        },
-        {
-          name:'Vortex',
+          },
+        { name:'Vortex',
           capacity:'8750',
           grade:'4',
-        },
+          },
         ],
       s3powerplants: [
-        {
-          name:'Celestial',
+        { name:'Celestial',
           capacity:'26250',
           grade:'2',
-        },
-        {
-          name:'Centurion',
+          },
+        { name:'Centurion',
           capacity:'37500',
           grade:'3',
-        },
-        {
-          name:'Drassik',
+          },
+        { name:'Drassik',
           capacity:'35000',
           grade:'4',
-        },
-        {
-          name:'Durango',
+          },
+        { name:'Durango',
           capacity:'55000',
           grade:'1',
-        },
-        {
-          name:'Fulgur',
+          },
+        { name:'Fulgur',
           capacity:'40000',
           grade:'2',
-        },
-        {
-          name:'FullForcePro',
+          },
+        { name:'FullForcePro',
           capacity:'25000',
           grade:'3',
-        },
-        {
-          name:'Ginzel',
+          },
+        { name:'Ginzel',
           capacity:'50000',
           grade:'3',
-        },
-        {
-          name:'IonSurgePro',
+          },
+        { name:'IonSurgePro',
           capacity:'27500',
           grade:'2',
-        },
-        {
-          name:'JS500',
+          },
+        { name:'JS500',
           capacity:'42500',
           grade:'1',
-        },
-        {
-          name:'MegaFlux',
+          },
+        { name:'MegaFlux',
           capacity:'40000',
           grade:'2',
-        },
-        {
-          name:'NewDawn',
+          },
+        { name:'NewDawn',
           capacity:'23750',
           grade:'3',
-        },
-        {
-          name:'QuadracellMX',
+          },
+        { name:'QuadracellMX',
           capacity:'42500',
           grade:'1',
-        },
-        {
-          name:'Reliance',
+          },
+        { name:'Reliance',
           capacity:'52500',
           grade:'2',
-        },
-        {
-          name:'SmartGen',
+          },
+        { name:'SmartGen',
           capacity:'35000',
           grade:'4',
-        },
-        {
-          name:'SparkJetPro',
+          },
+        { name:'SparkJetPro',
           capacity:'22500',
           grade:'4',
-        },
-        {
-          name:'Superdrive',
+          },
+        { name:'Superdrive',
           capacity:'37500',
           grade:'3',
-        },
-        {
-          name:'TigerLilly',
+          },
+        { name:'TigerLilly',
           capacity:'28750',
           grade:'1',
-        },
+          },
         ],
       s4powerplants: [
-        {
-          name:'Bengal',
+        { name:'Bengal',
           capacity:'27500000',
           grade:'1',
-        },
-        {
-          name:'890 Jump',
+          },
+        { name:'890 Jump',
           capacity:'33750',
           grade:'1',
-        },
-        {
-          name:'Idris',
+          },
+        { name:'Idris',
           capacity:'250000',
           grade:'1',
-        },
-        {
-          name:'Reclaimer',
+          },
+        { name:'Reclaimer',
           capacity:'47500',
           grade:'1',
-        },
+          },
         ],
       s1shields: [
-        {
-          name:'5SA',
+        { name:'5SA',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'6SA',
+          },
+        { name:'6SA',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'7SA',
+          },
+        { name:'7SA',
           capacity:'1725',
           grade:'1',
-        },
-        {
-          name:'AllStop',
+          },
+        { name:'AllStop',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'Banu Placeholder',
+          },
+        { name:'Banu Placeholder',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'Bulwark',
+          },
+        { name:'Bulwark',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'Cloak',
+          },
+        { name:'Cloak',
           capacity:'1350',
           grade:'4',
-        },
-        {
-          name:'Falco',
+          },
+        { name:'Falco',
           capacity:'1350',
           grade:'4',
-        },
-        {
-          name:'ForceWall',
+          },
+        { name:'ForceWall',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'FR66',
+          },
+        { name:'FR66',
           capacity:'1725',
           grade:'1',
-        },
-        {
-          name:'Guardian',
+          },
+        { name:'Guardian',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'HEX',
+          },
+        { name:'HEX',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'INK',
+          },
+        { name:'INK',
           capacity:'1350',
           grade:'4',
-        },
-        {
-          name:'Jaghte',
+          },
+        { name:'Jaghte',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'Mirage',
+          },
+        { name:'Mirage',
           capacity:'1725',
           grade:'1',
-        },
-        {
-          name:'Palisade',
+          },
+        { name:'Palisade',
           capacity:'1725',
           grade:'1',
-        },
-        {
-          name:'SecureHyde',
+          },
+        { name:'SecureHyde',
           capacity:'1350',
           grade:'4',
-        },
-        {
-          name:'Shimmer',
+          },
+        { name:'Shimmer',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'Steward',
+          },
+        { name:'Steward',
           capacity:'1350',
           grade:'4',
-        },
-        {
-          name:'Targa',
+          },
+        { name:'Targa',
           capacity:'1500',
           grade:'3',
-        },
-        {
-          name:'Veil',
+          },
+        { name:'Veil',
           capacity:'1650',
           grade:'2',
-        },
-        {
-          name:'WEB',
+          },
+        { name:'WEB',
           capacity:'1500',
           grade:'3',
-        },
+          },
         ],
       s2shields: [
-        {
-          name:'5MA',
+        { name:'5MA',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'6MA',
+          },
+        { name:'6MA',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'7MA',
+          },
+        { name:'7MA',
           capacity:'10375',
           grade:'1',
-        },
-        {
-          name:'Armada',
+          },
+        { name:'Armada',
           capacity:'7100',
           grade:'4',
-        },
-        {
-          name:'Aspis',
+          },
+        { name:'Aspis',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Bamoty',
+          },
+        { name:'Bamoty',
           capacity:'7100',
           grade:'4',
-        },
-        {
-          name:'Banu Placeholder',
+          },
+        { name:'Banu Placeholder',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Bloc',
+          },
+        { name:'Bloc',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'Citadel',
+          },
+        { name:'Citadel',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'Coverall',
+          },
+        { name:'Coverall',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'FR76',
+          },
+        { name:'FR76',
           capacity:'10375',
           grade:'1',
-        },
-        {
-          name:'FullStop',
+          },
+        { name:'FullStop',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Haltur',
+          },
+        { name:'Haltur',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'Obscura',
+          },
+        { name:'Obscura',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Rampart',
+          },
+        { name:'Rampart',
           capacity:'10375',
           grade:'1',
-        },
-        {
-          name:'RPEL',
+          },
+        { name:'RPEL',
           capacity:'7100',
           grade:'4',
-        },
-        {
-          name:'SecureShield',
+          },
+        { name:'SecureShield',
           capacity:'7100',
           grade:'4',
-        },
-        {
-          name:'Sheut',
+          },
+        { name:'Sheut',
           capacity:'9900',
           grade:'2',
-        },
-        {
-          name:'Shroud',
+          },
+        { name:'Shroud',
           capacity:'7100',
           grade:'4',
-        },
-        {
-          name:'Stop',
+          },
+        { name:'Stop',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Trenta',
+          },
+        { name:'Trenta',
           capacity:'9000',
           grade:'3',
-        },
-        {
-          name:'Umbra',
+          },
+        { name:'Umbra',
           capacity:'10375',
           grade:'1',
-        },
+          },
         ],
       s3shields: [
-        {
-          name:'5CA',
+        { name:'5CA',
           capacity:'100000',
           grade:'3',
-        },
-        {
-          name:'6CA',
+          },
+        { name:'6CA',
           capacity:'110000',
           grade:'2',
-        },
-        {
-          name:'7CA',
+          },
+        { name:'7CA',
           capacity:'115000',
           grade:'1',
-        },
-        {
-          name:'Armor',
+          },
+        { name:'Armor',
           capacity:'110000',
           grade:'2',
-        },
-        {
-          name:'Barbican',
+          },
+        { name:'Barbican',
           capacity:'110000',
           grade:'2',
-        },
-        {
-          name:'FR86',
+          },
+        { name:'FR86',
           capacity:'115000',
           grade:'1',
-        },
-        {
-          name:'FullBlock',
+          },
+        { name:'FullBlock',
           capacity:'110000',
           grade:'2',
-        },
-        {
-          name:'Guard',
+          },
+        { name:'Guard',
           capacity:'100000',
           grade:'3',
-        },
-        {
-          name:'Haven',
+          },
+        { name:'Haven',
           capacity:'90000',
           grade:'4',
-        },
-        {
-          name:'Parapet',
+          },
+        { name:'Parapet',
           capacity:'115000',
           grade:'1',
-        },
-        {
-          name:'SecureScreen',
+          },
+        { name:'SecureScreen',
           capacity:'100000',
           grade:'4',
-        },
-        {
-          name:'Stronghold',
+          },
+        { name:'Stronghold',
           capacity:'100000',
           grade:'3',
-        },
-        {
-          name:'SureStop',
+          },
+        { name:'SureStop',
           capacity:'100000',
           grade:'3',
-        },
-        {
-          name:'Ward',
+          },
+        { name:'Ward',
           capacity:'90000',
           grade:'4',
-        },
+          },
         ],
       s4shields: [
-        {
-          name:'Bengal',
+        { name:'Bengal',
           capacity:'12084330',
           grade:'1',
-        },
-        {
-          name:'Idris',
+          },
+        { name:'Idris',
           capacity:'825565',
           grade:'1',
-        },
-        {
-          name:'Idris-Pirate',
+          },
+        { name:'Idris-Pirate',
           capacity:'715656',
           grade:'1',
-        },
-        {
-          name:'Javelin',
+          },
+        { name:'Javelin',
           capacity:'1084328',
           grade:'1',
-        },
-        {
-          name:'890 Jump',
+          },
+        { name:'890 Jump',
           capacity:'774520.6',
           grade:'1',
-        },
+          },
         ],
       s1quantumdrives: [
-        {
-          name:'Atlas',
+        { name:'Atlas',
           grade:'1',
           qfuelreq:'0.007546',
-        },
-        {
-          name:'Beacon',
+          },
+        { name:'Beacon',
           grade:'3',
           qfuelreq:'0.01862',
-        },
-        {
-          name:'Burst',
+          },
+        { name:'Burst',
           grade:'2',
           qfuelreq:'0.011368',
-        },
-        {
-          name:'Colossus',
+          },
+        { name:'Colossus',
           grade:'2',
           qfuelreq:'0.005488',
-        },
-        {
-          name:'Drift',
+          },
+        { name:'Drift',
           grade:'3',
           qfuelreq:'0.01666',
-        },
-        {
-          name:'Eos',
+          },
+        { name:'Eos',
           grade:'3',
           qfuelreq:'0.009114',
-        },
-        {
-          name:'Expedition',
+          },
+        { name:'Expedition',
           grade:'3',
           qfuelreq:'0.0098',
-        },
-        {
-          name:'Flood',
+          },
+        { name:'Flood',
           grade:'4',
           qfuelreq:'0.010094',
-        },
-        {
-          name:'FoxFire',
+          },
+        { name:'FoxFire',
           grade:'2',
           qfuelreq:'0.00588',
-        },
-        {
-          name:'Goliath',
+          },
+        { name:'Goliath',
           grade:'3',
           qfuelreq:'0.0058',
-        },
-        {
-          name:'Hyperion',
+          },
+        { name:'Hyperion',
           grade:'2',
           qfuelreq:'0.008232',
-        },
-        {
-          name:'LightFire',
+          },
+        { name:'LightFire',
           grade:'3',
           qfuelreq:'0.0049',
-        },
-        {
-          name:'Rush',
+          },
+        { name:'Rush',
           grade:'3',
           qfuelreq:'0.010682',
-        },
-        {
-          name:'Siren',
+          },
+        { name:'Siren',
           grade:'2',
           qfuelreq:'0.02058',
-        },
-        {
-          name:'Spectre',
+          },
+        { name:'Spectre',
           grade:'1',
           qfuelreq:'0.01862',
-        },
-        {
-          name:'VK-00',
+          },
+        { name:'VK-00',
           grade:'1',
           qfuelreq:'0.02156',
-        },
-        {
-          name:'Voyage',
+          },
+        { name:'Voyage',
           grade:'2',
           qfuelreq:'0.009114',
-        },
-        {
-          name:'Vulcan',
+          },
+        { name:'Vulcan',
           grade:'4',
           qfuelreq:'0.006076',
-        },
-        {
-          name:'Wayfare',
+          },
+        { name:'Wayfare',
           grade:'4',
           qfuelreq:'0.010094',
-        },
-        {
-          name:'Zephyr',
+          },
+        { name:'Zephyr',
           grade:'2',
           qfuelreq:'0.01764',
-        },
+          },
         ],
       s2quantumdrives: [
-        {
-          name:'Aither',
+        { name:'Aither',
           grade:'2',
           qfuelreq:'0.009156',
-        },
-        {
-          name:'Bolon',
+          },
+        { name:'Bolon',
           grade:'3',
           qfuelreq:'0.00654',
-        },
-        {
-          name:'Bolt',
+          },
+        { name:'Bolt',
           grade:'2',
           qfuelreq:'0.01962',
-        },
-        {
-          name:'Cascade',
+          },
+        { name:'Cascade',
           grade:'4',
           qfuelreq:'0.011227',
-        },
-        {
-          name:'Crossfield',
+          },
+        { name:'Crossfield',
           grade:'3',
           qfuelreq:'0.02071',
-        },
-        {
-          name:'Flash',
+          },
+        { name:'Flash',
           grade:'2',
           qfuelreq:'0.012644',
-        },
-        {
-          name:'Hemera',
+          },
+        { name:'Hemera',
           grade:'1',
           qfuelreq:'0.008393',
-        },
-        {
-          name:'Huracan',
+          },
+        { name:'Huracan',
           grade:'2',
           qfuelreq:'0.006104',
-        },
-        {
-          name:'Khaos',
+          },
+        { name:'Khaos',
           grade:'3',
           qfuelreq:'0.010137',
-        },
-        {
-          name:'Nova',
+          },
+        { name:'Nova',
           grade:'3',
           qfuelreq:'0.01853',
-        },
-        {
-          name:'Odyssey',
+          },
+        { name:'Odyssey',
           grade:'3',
           qfuelreq:'0.0109',
-        },
-        {
-          name:'Quest',
+          },
+        { name:'Quest',
           grade:'4',
           qfuelreq:'0.011227',
-        },
-        {
-          name:'Sojourn',
+          },
+        { name:'Sojourn',
           grade:'2',
           qfuelreq:'0.01355',
-        },
-        {
-          name:'SparkFire',
+          },
+        { name:'SparkFire',
           grade:'3',
           qfuelreq:'0.00545',
-        },
-        {
-          name:'Spicule',
+          },
+        { name:'Spicule',
           grade:'1',
           qfuelreq:'0.02071',
-        },
-        {
-          name:'SunFire',
+          },
+        { name:'SunFire',
           grade:'2',
           qfuelreq:'0.00654',
-        },
-        {
-          name:'Torrent',
+          },
+        { name:'Torrent',
           grade:'3',
           qfuelreq:'0.011881',
-        },
-        {
-          name:'XL1',
+          },
+        { name:'XL1',
           grade:'1',
           qfuelreq:'0.02398',
-        },
-        {
-          name:'Yaluk',
+          },
+        { name:'Yaluk',
           grade:'4',
           qfuelreq:'0.006758',
-        },
-        {
-          name:'Yeager',
+          },
+        { name:'Yeager',
           grade:'2',
           qfuelreq:'0.02289',
-        },
+          },
         ],
       s3quantumdrives: [
-        {
-          name:'Agni',
+        { name:'Agni',
           grade:'2',
           qfuelreq:'0.036064',
-        },
-        {
-          name:'Balandin',
+          },
+        { name:'Balandin',
           grade:'2',
           qfuelreq:'0.13524',
-        },
-        {
-          name:'Drifter',
+          },
+        { name:'Drifter',
           grade:'4',
           qfuelreq:'0.066332',
-        },
-        {
-          name:'Echo',
+          },
+        { name:'Echo',
           grade:'4',
           qfuelreq:'0.049588',
-        },
-        {
-          name:'Erebos',
+          },
+        { name:'Erebos',
           grade:'1',
           qfuelreq:'0.049588',
-        },
-        {
-          name:'Fissure',
+          },
+        { name:'Fissure',
           grade:'3',
           qfuelreq:'0.070196',
-        },
-        {
-          name:'Impulse',
+          },
+        { name:'Impulse',
           grade:'2',
           qfuelreq:'0.074704',
-        },
-        {
-          name:'Kama',
+          },
+        { name:'Kama',
           grade:'3',
           qfuelreq:'0.03864',
-        },
-        {
-          name:'Metis',
+          },
+        { name:'Metis',
           grade:'3',
           qfuelreq:'0.059892',
-        },
-        {
-          name:'Pontes',
+          },
+        { name:'Pontes',
           grade:'3',
           qfuelreq:'0.12236',
-        },
-        {
-          name:'Ranger',
+          },
+        { name:'Ranger',
           grade:'2',
           qfuelreq:'0.06118',
-        },
-        {
-          name:'TS2',
+          },
+        { name:'TS2',
           grade:'1',
           qfuelreq:'0.14168',
-        },
-        {
-          name:'Tyche',
+          },
+        { name:'Tyche',
           grade:'2',
           qfuelreq:'0.054096',
-        },
-        {
-          name:'Vesta',
+          },
+        { name:'Vesta',
           grade:'4',
           qfuelreq:'0.039928',
-        },
-        {
-          name:'Wanderer',
+          },
+        { name:'Wanderer',
           grade:'3',
           qfuelreq:'0.0644',
-        },
+          },
         ],
       s4quantumdrives: [
-        {
-          name:'Javelin',
+        { name:'Javelin',
           grade:'1',
           qfuelreq:'0.0613',
-        },
-        {
-          name:'Idris',
+          },
+        { name:'Idris',
           grade:'1',
           qfuelreq:'0.0613',
-        },
-        {
-          name:'890 Jump',
+          },
+        { name:'890 Jump',
           grade:'1',
           qfuelreq:'0.0613',
-        },
+          },
         ],
     };
   },
@@ -2459,198 +2270,197 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin: auto;
-  min-height: 85vh;
-  display: flex;
-  min-width:90vw;
-  background-color:var(--backgray);
-  animation: 1s appear;
-  padding-block-start:15px;
-  user-select:none;
-}
-.col-md-3 {
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-width:3px;
-  border-color:var(--lightorange);
-  border-radius:25px;
-  min-height:85vh;
-}
+  .container {
+    margin: auto;
+    min-height: 85vh;
+    display: flex;
+    min-width:90vw;
+    background-color:var(--backgray);
+    animation: 1s appear;
+    padding-block-start:15px;
+    user-select:none;
+  }
+  .col-md-3 {
+    background-color:var(--darkgray);
+    border-style:solid;
+    border-width:3px;
+    border-color:var(--lightorange);
+    border-radius:25px;
+    min-height:85vh;
+  }
 
-.leftcard {
-  position: relative;
-  width: 30%;
-  height: auto;
-  padding-inline-end:25px;
-  margin-inline-start:-15px;
-}
+  .leftcard {
+    position: relative;
+    width: 30%;
+    height: auto;
+    padding-inline-end:25px;
+    margin-inline-start:-15px;
+  }
 
-.centercard {
-  position: relative;
-  width: 40%;
-  height: auto;
-  padding-block-start:30px;
-}
+  .centercard {
+    position: relative;
+    width: 40%;
+    height: auto;
+    padding-block-start:30px;
+  }
 
-.centercard p {
-  font-size:18px;
-}
+  .centercard p {
+    font-size:18px;
+  }
 
-.rightcard {
-  position: relative;
-  width: 30%;
-  height: auto;
-}
+  .rightcard {
+    position: relative;
+    width: 30%;
+    height: auto;
+  }
 
-.infoCard {
-  text-align:center;
-  margin-inline-start:0px;
-}
-.infoCard td {
-  width:300px;
-}
+  .infoCard {
+    text-align:center;
+    margin-inline-start:0px;
+  }
+  .infoCard td {
+    width:300px;
+  }
 
-.title {
-  animation: 1s appear;
-  font: bold 64px/70px 'Segoe UI', sans-serif;
-  display: block;
-  color: var(--lightorange);
-  letter-spacing: 1px;
-}
+  .title {
+    animation: 1s appear;
+    font: bold 64px/70px 'Segoe UI', sans-serif;
+    display: block;
+    color: var(--lightorange);
+    letter-spacing: 1px;
+  }
 
-p {
-  font-weight: 300;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightgray);
-}
+  p {
+    font-weight: 300;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color: var(--lightgray);
+  }
 
-h4 {
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 28px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightgray);
-  padding-block-end:5px;
-  text-align:center;
-  padding-block-start:10px;
-}
+  h4 {
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color: var(--lightgray);
+    padding-block-end:5px;
+    text-align:center;
+    padding-block-start:10px;
+  }
 
-.infoCard p {
-  margin-block-start:-15px;
-  color:var(--lightorange);
-}
-.infoCard h4 {
-  font-size:20px;
-  margin-block-start:-10px;
-}
+  .infoCard p {
+    margin-block-start:-15px;
+    color:var(--lightorange);
+  }
+  .infoCard h4 {
+    font-size:20px;
+    margin-block-start:-10px;
+  }
 
-.dropdown .icon {
-  scale:200%;
-  padding-block-start:5px;
-  color:var(--lightgray);
-}
+  .dropdown .icon {
+    scale:200%;
+    padding-block-start:5px;
+    color:var(--lightgray);
+  }
 
 /*Left Card */
-
-.leftcard select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:20px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:300px;
-  font-weight:bold;
-  font-size:18px;
-  text-align:center;
-  height:40px;
-  margin-block-start:-20px;
-}
-.leftcard select option:hover {
-  color:var(--orangehover);
-}
-.leftcard button {
-  border-style:solid;
-  border-radius:50%;
-  border-width:15px;
-  border-color:var(--lightgray);
-  cursor:pointer;
-  display:inline-flex;
-  padding:5px 5px;
-  background-color:var(--lightgray);
-  margin-block-start:5px;
-}
-.leftcard button:hover {
-  background-color:var(--lightorange);
-  border-color:var(--lightorange);
-}
-.leftcard label {
-  margin-block-start:2px;
-  margin-block-end:2px;
-  display:inline-flex;
-}
-.leftcard table {
-  text-align:center;
-  min-width:250px;
-  margin-block-start:-20px;
-}
-.leftcard td {
-  width:125px;
-}
+  .leftcard select {
+    background-color:var(--lightorange);
+    border-style:solid;
+    border-radius:20px;
+    border-color:var(--lightorange);
+    color:var(--darkgray);
+    width:300px;
+    font-weight:bold;
+    font-size:18px;
+    text-align:center;
+    height:40px;
+    margin-block-start:-20px;
+  }
+  .leftcard select option:hover {
+    color:var(--orangehover);
+  }
+  .leftcard button {
+    border-style:solid;
+    border-radius:50%;
+    border-width:15px;
+    border-color:var(--lightgray);
+    cursor:pointer;
+    display:inline-flex;
+    padding:5px 5px;
+    background-color:var(--lightgray);
+    margin-block-start:5px;
+  }
+  .leftcard button:hover {
+    background-color:var(--lightorange);
+    border-color:var(--lightorange);
+  }
+  .leftcard label {
+    margin-block-start:2px;
+    margin-block-end:2px;
+    display:inline-flex;
+  }
+  .leftcard table {
+    text-align:center;
+    min-width:250px;
+    margin-block-start:-20px;
+  }
+  .leftcard td {
+    width:125px;
+  }
 
 /*Right Card*/
-.vehicleText {
-  padding-inline-start:15px;
-  padding-inline-end:15px;
-}
+  .vehicleText {
+    padding-inline-start:15px;
+    padding-inline-end:15px;
+  }
 
 
 /*Center Card*/
-.componentSelect {
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-width:3px;
-  border-color:var(--lightorange);
-  border-radius:25px;
-  margin-inline-end:25px;
-  margin-block-start:15px;
-}
-.coolerButton {
-  padding-inline-start:5px;
-  padding-block-end:2px;
-  padding-inline-end:5px;
-}
-.coolerButton h4 {
-  font-size:20px;
-  color:var(--lightorange);
-  padding-block-start:0px;
-}
-.coolerButton p {
-  padding-block-end:5px;
-  font-size:16px;
-}
-.coolerButton button {
-  background-color:transparent;
-  border:2px solid transparent;
-  border-radius:15px;
-  width:30%;
-  overflow:scroll;
-  margin-block-start:4px;
-}
-.coolerButton button:hover {
-  border-color:var(--lightorange);
-}
-.coolerButton button:hover h4 {
-  color:var(--orangehover);
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
+  .componentSelect {
+    background-color:var(--darkgray);
+    border-style:solid;
+    border-width:3px;
+    border-color:var(--lightorange);
+    border-radius:25px;
+    margin-inline-end:25px;
+    margin-block-start:15px;
   }
-}
+  .coolerButton {
+    padding-inline-start:5px;
+    padding-block-end:2px;
+    padding-inline-end:5px;
+  }
+  .coolerButton h4 {
+    font-size:20px;
+    color:var(--lightorange);
+    padding-block-start:0px;
+  }
+  .coolerButton p {
+    padding-block-end:5px;
+    font-size:16px;
+  }
+  .coolerButton button {
+    background-color:transparent;
+    border:2px solid transparent;
+    border-radius:15px;
+    width:30%;
+    overflow:scroll;
+    margin-block-start:4px;
+  }
+  .coolerButton button:hover {
+    border-color:var(--lightorange);
+  }
+  .coolerButton button:hover h4 {
+    color:var(--orangehover);
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+  }
 </style>
