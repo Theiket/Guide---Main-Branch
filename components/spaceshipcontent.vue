@@ -289,12 +289,15 @@
             <td class="shipDimensions">
               <h4>Dimensions</h4>
               <br>
-              <p>Length x<br>Width x<br>Height x</p>
+              <p>Length: {{vehicleLength}}
+              <br>Beam: {{vehicleBeam}}
+              <br>Height: {{vehicleHeight}}</p>
             </td>
             <td class="shipFuel">
               <h4>Fuel Capacity</h4>
               <br>
-              <p>Quantum Value<br>Hydrogen Value</p>
+              <p>Quantum: {{quantumCapacity}}
+              <br>Hydrogen: {{hydrogenCapacity}}</p>
             </td>
           </tr>
           <tr>
@@ -362,6 +365,11 @@ export default {
       vehicleDescription:'Please select a vehicle to see their description.',
       vehicleRole:'-',
       vehicleSize:'-',
+      vehicleLength:'-',
+      vehicleBeam:'-',
+      vehicleHeight:'-',
+      hydrogenCapacity:'-',
+      quantumCapacity:'-',
       companies: [
         'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
         ],
