@@ -289,9 +289,9 @@
             <td class="shipDimensions">
               <h4>Dimensions</h4>
               <br>
-              <p>Length: {{vehicleLength}}
-              <br>Beam: {{vehicleBeam}}
-              <br>Height: {{vehicleHeight}}</p>
+              <p>Length: {{vehicleLength}}m
+              <br>Beam: {{vehicleBeam}}m
+              <br>Height: {{vehicleHeight}}m</p>
             </td>
             <td class="shipFuel">
               <h4>Fuel Capacity</h4>
@@ -370,6 +370,8 @@ export default {
       vehicleHeight:'-',
       hydrogenCapacity:'-',
       quantumCapacity:'-',
+      scmSpeed:'-',
+      maxSpeed:'-',
       companies: [
         'Aegis Dynamics', 'Anvil Aerospace', 'AopoA', 'ARGO Astronautics', 'Banu Souli', 'Consolidated Outland', 'Crusader Industries', 'Drake Interplanetary', 'Esperia Inc.', 'Gatac Manufacture', 'Greycat Industrial','Kruger Intergalactic', 'Musashi Industrial (MISC)', 'Origin Jumpworks', 'Roberts Space Industries', 'Tumbril Land Systems'
         ],
@@ -378,6 +380,11 @@ export default {
           description:"Initially designed as a frontline carrier for the military, the Avenger Stalker took a different path, ultimately having a long and storied career as the standard patrol craft of the UEE Advocacy. Utilizing its cargo hold for prisoner transport, the Avenger features a sturdy, reliable hull and the capacity for larger-than-expected engine mounts.",
           role:'Interdiction',
           size:'S2',
+          beam:15,
+          length:20,
+          height:6.5,
+          scmspeed:184,
+          maxspeed:1307,
           },
         { name:'Avenger Titan',
           description:"With extra room in the back, the Titan’s hold is free to carry cargo. Couple that with the Avenger’s tried and true combat abilities and you’ve got a light cargo hauler that’s more than capable of handling itself in a fight.",
@@ -2264,6 +2271,11 @@ export default {
       this.vehicleDescription = ships.description
       this.vehicleRole = ships.role
       this.vehicleSize = ships.size
+      this.vehicleLength = ships.length
+      this.vehicleBeam = ships.beam
+      this.vehicleHeight = ships.height
+      this.scmSpeed = ships.scmspeed
+      this.maxSpeed = ships.maxspeed
     },
     toggleItem(itemName) {
       for (const name in this.componentStates) {
