@@ -56,22 +56,20 @@
       </div>
 
   <!-- Footer Text -->
-      <div class="bottomcontainer">
-      <footer>
-      <div>
-        <h3 class="footer">
-        <table class="cells">
-        <td class="copyright">
-          Copyright 2023 ©
-          Grindstone Mining Co.
-        </td>
-        <td class="version">
-          GUIDE v0.1-HADES | Updated for Star Citizen Alpha v3.17.4-LIVE
-        </td>
-        </table>
-        </h3>
-      </div>
-      </footer>
+      <div class="bottom-container">
+        <footer>
+          <div>
+            <h3 class="footer">
+            <span class="copyright">
+              Copyright 2023 ©
+              Grindstone Mining Co.
+            </span>
+            <span class="version">
+              GUIDE v0.1-HADES | Updated for Star Citizen Alpha v3.17.4-LIVE
+            </span>
+            </h3>
+          </div>
+        </footer>
       </div>
 
     </div>
@@ -159,30 +157,26 @@
     text-decoration:none;
     }
 /* Footer */
-  .bottomcontainer {
-    width:auto;
-    display: flex;
+  .bottom-container {
+    width:98vw;
+    display: inline-block;
     justify-content:center;
-    text-align: center;
     background-color:var(--backgray);
     animation: 1s appear;
     position:absolute;
     bottom:15px;
+    user-select:none;
     }
   .footer {
     font: bold 10px 'Segoe UI', sans-serif;
-    display: inline-block;
     color: var(--lightgray);
     letter-spacing: 1px;
     }
-  .copyright {
-    width:800px;
-    user-select:none;
-    }
-  .version {
-    width:800px;
-    user-select:none;
-    }
+  .bottom-container span {
+    width:100%;
+    margin-inline-start:25%;
+    text-align: center;
+  }
 
 /* Animations */
   @keyframes zoomfade {
