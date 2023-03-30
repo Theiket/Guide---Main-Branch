@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon',
     '@vuestic/nuxt',
+    '@nuxtjs/supabase',
   ],
   buildModules: [
     'mathjs',
