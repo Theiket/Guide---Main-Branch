@@ -1,78 +1,52 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <template>
   <div>
-  <!-- Header Nav Menu -->
-    <div class="topmenu">
-      <header>
-        <nav>
-        <table>
-          <td>
-            <NuxtLink to="/">
-              <h1 class="menu">
-              GUIDE
-              </h1>
-            </NuxtLink>
-          </td>
-          <td>
-            <div class="navlinks">
-              <div class="navbutton">
-                <NuxtLink to="/mining">
-                  <Icon name="bi:gem" />
-                </NuxtLink>
-              </div>
-              <div class="navbutton">
-                <NuxtLink to="/trading">
-                  <Icon name="material-symbols:currency-exchange" />
-                </NuxtLink>
-              </div>
-              <div class="navbutton">
-                <NuxtLink to="/spaceships">
-                  <Icon name="carbon:rocket" />
-                </NuxtLink>
-              </div>
-              <div class="navbutton">
-                <NuxtLink to="/starmap">
-                  <Icon name="ph:planet" />
-                </NuxtLink>
-              </div>
-              <div class="navbutton">
-                <NuxtLink to="/catalogue">
-                  <Icon name="material-symbols:search" />
-                </NuxtLink>
-              </div>
-              <div class="navbutton">
-                <NuxtLink to="/info">
-                  <Icon name="ic:outline-info" />
-                </NuxtLink>
-              </div>
-            </div>
-          </td>
-        </table>
-        </nav>
-      </header>
+    <header class="topmenu">
+      <nav role="navigation" aria-label="Main navigation">
+        <NuxtLink to="/" aria-label="Home page">
+          <h1 class="menu">
+          GUIDE
+          </h1>
+        </NuxtLink>
 
-  <!-- Output the page content-->
-      <div>
-        <slot />
-      </div>
+        <div class="navlinks">
+          <NuxtLink to="/mining" class="navbutton" aria-label="Mining page">
+            <Icon name="bi:gem" />
+          </NuxtLink>
+          <NuxtLink to="/trading" class="navbutton" aria-label="Trading page">
+            <Icon name="material-symbols:currency-exchange" />
+          </NuxtLink>
+          <NuxtLink to="/spaceships" class="navbutton" aria-label="Spaceships page">
+            <Icon name="carbon:rocket" />
+          </NuxtLink>
+          <NuxtLink to="/starmap" class="navbutton" aria-label="Starmap page">
+            <Icon name="ph:planet" />
+          </NuxtLink>
+          <NuxtLink to="/catalogue" class="navbutton" aria-label="Catalogue page">
+            <Icon name="material-symbols:search" />
+          </NuxtLink>
+          <NuxtLink to="/info" class="navbutton" aria-label="Information page">
+            <Icon name="ic:outline-info" />
+          </NuxtLink>
+        </div>
+      </nav>
+    </header>
 
-  <!-- Footer Text -->
-      <div class="bottom-container">
-        <footer>
-          <div>
-            <h3 class="footer">
-            <span class="copyright">
-              Copyright 2023 ©
-              Grindstone Mining Co.
-            </span>
-            <span class="version">
-              GUIDE v0.1-HADES | Updated for Star Citizen Alpha v3.17.4-LIVE
-            </span>
-            </h3>
-          </div>
-        </footer>
-      </div>
+    <main>
+      <slot />
+    </main>
 
-    </div>
+    <footer class="bottom-container">
+      <h3 class="footer">
+      <span class="copyright">
+        Copyright 2023 ©
+        Grindstone Mining Co.
+      </span>
+      <span class="version">
+        GUIDE v0.1-HADES | Updated for Star Citizen Alpha v3.17.4-LIVE
+      </span>
+      </h3>
+    </footer>
   </div>
 </template>
 
@@ -128,27 +102,23 @@
     border-color:var(--lightorange);
     animation: 1s appear;
     }
-  /* Nav Buttons */
-    .navbutton {
-      color:var(--lightorange);
-      border-style:none;
-      display: inline-block;
-      scale:150%;
-      padding: 10px 10px;
-      justify-content:center;
-      vertical-align:center;
-      text-decoration:none;
-      padding-inline-end:15px;
-      margin-inline-end:5px;
-      margin-block-end:5px;
-      }
-
-    .navbutton a {
-      color:var(--lightorange);
-      }
-    .navbutton a:hover {
-      color:var(--orangehover);
-      }
+/* Nav Buttons */
+  .navbutton {
+    color:var(--lightorange);
+    border-style:none;
+    display: inline-block;
+    scale:150%;
+    padding: 10px 10px;
+    justify-content:center;
+    vertical-align:center;
+    text-decoration:none;
+    padding-inline-end:15px;
+    margin-inline-end:5px;
+    margin-block-end:5px;
+    }
+  .navbutton:hover {
+    color: var(--orangehover);
+    }
 /* Nuxt Link */
   .router-link-exact-active {
     text-decoration:none;

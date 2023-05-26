@@ -549,7 +549,8 @@ export default {
   background-color:var(--backgray);
   justify-content:center;
   user-select:none;
-  display:table;
+  display:flex;
+  flex-direction:column;
 }
 
 .blocks {
@@ -558,6 +559,8 @@ export default {
   margin-block-start:15px;
   margin-inline-end:20px;
   height:auto;
+  max-width:70%;
+  justify-content:center;
   color:var(--lightorange);
   font-size:24px;
   border:3px;
@@ -739,6 +742,24 @@ p {
 @keyframes appear {
   0% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Responsive styles */
+  .blocks {
+    margin-block-start:5px;
+    margin-inline-end:10px;
+    font-size:18px;
+  }
+  .commodityInput, .quantityInput, .refineryLocation {
+    padding-inline-start:20px;
+  }
+  h3, h4 {
+    font-size:18px;
+  }
+  p {
+    font-size:12px;
   }
 }
 
