@@ -1,5 +1,8 @@
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <template>
+<!DOCTYPE html>
+<html lang="en">
   <div>
     <header class="topmenu">
       <nav role="navigation" aria-label="Main navigation">
@@ -48,7 +51,9 @@
       </h3>
     </footer>
   </div>
+</html>
 </template>
+
 
 <style>
  /* Root */
@@ -69,38 +74,53 @@
 
   nav {
     background-color:var(--backgray);
-    padding-block-end:10px;
+    -webkit-padding-after:10px;
+            padding-block-end:10px;
     }
 /* Top Menu */
   .topmenu {
     background-color:var(--backgray);
-    padding-inline-start:25px;
+    -webkit-padding-start:25px;
+            padding-inline-start:25px;
     letter-spacing:5px;
     text-decoration:none;
-    padding-block-end:7px;
-    animation: 1s appear;
+    -webkit-padding-after:7px;
+            padding-block-end:7px;
+    -webkit-animation: 1s appear;
+            animation: 1s appear;
     }
   .menu {
     color: var(--lightorange);
     font: bold 45px 'Segoe UI', sans-serif;
-    margin-block-start:0px;
+    -webkit-margin-before:0px;
+            margin-block-start:0px;
     text-decoration:none;
     display:inline-block;
-    animation: 1s appear;
-    user-select:none;
+    -webkit-animation: 1s appear;
+            animation: 1s appear;
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+            user-select:none;
     width:15%;
     }
 /* Navlinks */
   .navlinks {
     position:absolute;
     right:10px;
-    padding-inline-start:60%;
-    margin-block-start: -40px;
-    margin-block-end:7px;
-    border-block-start: solid;
-    border-block-end: solid;
+    -webkit-padding-start:60%;
+            padding-inline-start:60%;
+    -webkit-margin-before: -40px;
+            margin-block-start: -40px;
+    -webkit-margin-after:7px;
+            margin-block-end:7px;
+    -webkit-border-before: solid;
+            border-block-start: solid;
+    -webkit-border-after: solid;
+            border-block-end: solid;
     border-color:var(--lightorange);
-    animation: 1s appear;
+    -webkit-animation: 1s appear;
+            animation: 1s appear;
     }
 /* Nav Buttons */
   .navbutton {
@@ -109,12 +129,17 @@
     display: inline-block;
     scale:150%;
     padding: 10px 10px;
-    justify-content:center;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
     vertical-align:center;
     text-decoration:none;
-    padding-inline-end:15px;
-    margin-inline-end:5px;
-    margin-block-end:5px;
+    -webkit-padding-end:15px;
+            padding-inline-end:15px;
+    -webkit-margin-end:5px;
+            margin-inline-end:5px;
+    -webkit-margin-after:5px;
+            margin-block-end:5px;
     }
   .navbutton:hover {
     color: var(--orangehover);
@@ -130,12 +155,18 @@
   .bottom-container {
     width:98vw;
     display: inline-block;
-    justify-content:center;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
     background-color:var(--backgray);
-    animation: 1s appear;
+    -webkit-animation: 1s appear;
+            animation: 1s appear;
     position:absolute;
     bottom:15px;
-    user-select:none;
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+            user-select:none;
     }
   .footer {
     font: bold 10px 'Segoe UI', sans-serif;
@@ -144,29 +175,68 @@
     }
   .bottom-container span {
     width:100%;
-    margin-inline-start:25%;
+    -webkit-margin-start:25%;
+            margin-inline-start:25%;
     text-align: center;
   }
 
 /* Animations */
-  @keyframes zoomfade {
+  @-webkit-keyframes zoomfade {
     0% {
-      transform: scale(1);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
     100% {
-      transform: scale(4);
+      -webkit-transform: scale(4);
+              transform: scale(4);
+      opacity:0;
+    }
+    }
+  @keyframes zoomfade {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(4);
+              transform: scale(4);
+      opacity:0;
+    }
+    }
+  @-webkit-keyframes zoomout {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
       opacity:0;
     }
     }
   @keyframes zoomout {
     0% {
-      transform: scale(1);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
     100% {
-      transform: scale(0);
+      -webkit-transform: scale(0);
+              transform: scale(0);
       opacity:0;
+    }
+    }
+  @-webkit-keyframes slideappear {
+    0% {
+      opacity: 0;
+      left:-50px;
+    }
+    100% {
+      opacity: 1;
+      left:0px;
     }
     }
   @keyframes slideappear {
@@ -179,11 +249,27 @@
       left:0px;
     }
     }
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    }
   @keyframes appear {
     0% {
       opacity: 0;
     }
     }
+  @-webkit-keyframes flash {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
   @keyframes flash {
         0% {
           opacity: 0;
@@ -195,6 +281,14 @@
           opacity: 0;
         }
       }  
+  @-webkit-keyframes disappear {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+    }  
   @keyframes disappear {
     0% {
       opacity:1;
@@ -215,12 +309,28 @@
       opacity: 1;
       }
       }
+  @-webkit-keyframes scale1 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:110%;
+    }
+    }
   @keyframes scale1 {
     0% {
       scale:100%;
     }
     100% {
       scale:110%;
+    }
+    }
+  @-webkit-keyframes scale2 {
+    0% {
+      scale:100%;
+    }
+    100% {
+      scale:120%;
     }
     }
   @keyframes scale2 {
@@ -230,6 +340,16 @@
     100% {
       scale:120%;
     }
+    }
+  @-webkit-keyframes appear1 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    60% {
+      opacity:0;
+      scale:0.6;
+      }
     }
   @keyframes appear1 {
     0% {
@@ -241,7 +361,29 @@
       scale:0.6;
       }
     }
+  @-webkit-keyframes appear2 {
+    0% {
+      opacity: 0;
+      scale:0;
+      }
+    60% {
+      opacity:0;
+      scale:0.6;
+      rotate:0deg;
+      }
+    }
   @keyframes appear2 {
+    0% {
+      opacity: 0;
+      scale:0;
+      }
+    60% {
+      opacity:0;
+      scale:0.6;
+      rotate:0deg;
+      }
+    }
+  @-webkit-keyframes appear3 {
     0% {
       opacity: 0;
       scale:0;
@@ -263,6 +405,17 @@
       rotate:0deg;
       }
     }
+  @-webkit-keyframes appear4 {
+    0% {
+      opacity: 0;
+      scale:0;
+      }
+    60% {
+      opacity:0;
+      scale:0.6;
+      rotate:0deg;
+      }
+    }
   @keyframes appear4 {
     0% {
       opacity: 0;
@@ -271,6 +424,17 @@
     60% {
       opacity:0;
       scale:0.6;
+      rotate:0deg;
+      }
+    }
+  @-webkit-keyframes appear5 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    70% {
+      opacity:0;
+      scale:0.8;
       rotate:0deg;
       }
     }
@@ -285,7 +449,29 @@
       rotate:0deg;
       }
     }
+  @-webkit-keyframes appear6 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    80% {
+      opacity:0;
+      scale:0.8;
+      rotate:0deg;
+      }
+      }
   @keyframes appear6 {
+    0% {
+      opacity: 0;
+      scale:0.3;
+      }
+    80% {
+      opacity:0;
+      scale:0.8;
+      rotate:0deg;
+      }
+      }
+  @-webkit-keyframes appear7 {
     0% {
       opacity: 0;
       scale:0.3;
