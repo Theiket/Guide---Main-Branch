@@ -1,115 +1,72 @@
 <template>
-<div class="container">
-  <section>
-    <span>
+  <div class="container">
+    <section class="input-section">
       <div class="blocks input">
-        <center>
-        <td>
-          <div class="commodityInput">
-            <h3>
-            Commodity
-            </h3>
-            <br>
-            <select v-model="selectedCommodity">
-              <option disabled value="">Select Commodity</option>
-              <option v-for="commodity in commodities" :key="commodity">{{ commodity.name }}</option>
-            </select>
-          </div>
-        </td>
-        <td>
-          <div class="quantityInput">
-            <h3>Quantity</h3>
-            <br>
-            <input v-model="MassValue"
-            class="inputQuantity"
-            type="number"
-            min="0"
-            placeholder="Input quantity"
-            >
-          </div>
-        </td>
-        <td>
-          <div class="refineryLocation">
-              <h3>Location</h3>
-              <br>
-              <select v-model="selectedRefinery">
-              <option disabled value="">Select Refinery</option>
-              <option v-for="refinery in refineries" :key="refinery">{{ refinery.name }}</option>
-            </select>
-          </div>
-        </td>
-        </center>
-      </div>
-    </span>
-    <span>
-      <div class="blocks method">
-        <center>
-          <h3>Refining Method</h3>
-        <br>
-        <span v-for="method in refmethods" :key="method">
-          <td class="methodList">
-            <center>
-            <button :key="method.name" @click="updateInfo(method)" :class="{ 'clicked': method.clicked }">
-            </button>
-            <br>
-            <p>{{method.name}}</p>
-            </center>
-          </td>
-        </span>
-        </center>
-        <br>
-      </div>
-    </span>
-  </section>
-  <section>
-    <span>
-    <div class="blocks output">
-      <div class="outputBlock">
-        <center>
-          <td>
-            <h3>Yield</h3>
-            <br>
-            <p>{{ ( MassValue * (selectedCommodityYield - methodYield) * yieldModifier ).toFixed(2) }} cSCU</p>
-          </td>
-          <td>
-            <h3>Refining Cost</h3>
-            <br>
-            <p>{{ ((MassValue * refiningCost) * methodCost).toFixed(0) }} aUEC</p>
-          </td>
-          <td>
-            <h3>Refining Time</h3>
-            <br>
-            <p>{{ formatTime(((MassValue * refiningTime)*methodTime).toFixed(0)) }}</p>
-          </td>
-          <td>
-            <h3>Net Value</h3>
-            <br>
-            <p>{{ (((MassValue * selectedCommodityYield * yieldModifier)* selectedCommodityValue) - ((MassValue * refiningCost))).toFixed(2) }} aUEC</p>
-          </td>
-        </center>
-      </div>
-    </div>
-    </span>
-  </section>
-  <section>
-    <span>
-      <div class="blocks locations">
-        <div class="purchaseLocations">
-          <center>
-            <h3>Locations Buying {{selectedCommodity}}</h3>
-          <br>
-          <span v-for="location in locations" :key="location">
-            <td>
-              <h4>{{location.name}}</h4>
-              <p>{{ selectedCommodityValue }} aUEC</p>
-            </td>
-          </span>
-          </center>
+        <div class="form-group">
+          <label for="commodityInput" class="form-label">Commodity</label>
+          <select id="commodityInput" v-model="selectedCommodity">
+            <option disabled value="">Select Commodity</option>
+            <option v-for="commodity in commodities" :key="commodity">{{ commodity.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantityInput" class="form-label">Quantity</label>
+          <input id="quantityInput" v-model="MassValue" class="inputQuantity" type="number" min="0" placeholder="Input quantity">
+        </div>
+        <div class="form-group">
+          <label for="refineryLocation" class="form-label">Location</label>
+          <select id="refineryLocation" v-model="selectedRefinery">
+            <option disabled value="">Select Refinery</option>
+            <option v-for="refinery in refineries" :key="refinery">{{ refinery.name }}</option>
+          </select>
         </div>
       </div>
-    </span>
-  </section>
-</div>
+    </section>
+    <section class="methods-section">
+      <div class="blocks method">
+        <h3>Refining Method</h3>
+        <div class="methods">
+          <div v-for="method in refmethods" :key="method" class="methodList">
+            <button :key="method.name" @click="updateInfo(method)" :class="{ 'clicked': method.clicked }"></button>
+            <p>{{method.name}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="output-section">
+      <div class="blocks output">
+        <div class="outputBlock">
+          <div class="output-item">
+            <h3>Yield</h3>
+            <p>{{ ( MassValue * (selectedCommodityYield - methodYield) * yieldModifier ).toFixed(2) }} cSCU</p>
+          </div>
+          <div class="output-item">
+            <h3>Refining Cost</h3>
+            <p>{{ ((MassValue * refiningCost) * methodCost).toFixed(0) }} aUEC</p>
+          </div>
+          <div class="output-item">
+            <h3>Refining Time</h3>
+            <p>{{ formatTime(((MassValue * refiningTime)*methodTime).toFixed(0)) }}</p>
+          </div>
+          <div class="output-item">
+            <h3>Net Value</h3>
+            <p>{{ (((MassValue * selectedCommodityYield * yieldModifier)* selectedCommodityValue) - ((MassValue * refiningCost))).toFixed(2) }} aUEC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="locations-section">
+      <div class="blocks locations">
+        <h3>Locations Buying {{selectedCommodity}}</h3>
+        <div class="purchaseLocations">
+          <div v-for="location in locations" :key="location" class="location-item">
+            <h4>{{location.name}}</h4>
+            <p>{{ selectedCommodityValue }} aUEC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
@@ -544,222 +501,153 @@ export default {
 
 <style scoped>
 .container {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-height: 85vh;
-  background-color:var(--backgray);
-  justify-content:center;
-  user-select:none;
-  display:flex;
-  flex-direction:column;
+  background-color: var(--backgray);
+  user-select: none;
 }
 
 .blocks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  padding: 1em;
   animation: 1s appear;
-  background-color:var(--darkgray);
-  margin-block-start:15px;
-  margin-inline-end:20px;
-  height:auto;
-  max-width:70%;
-  justify-content:center;
-  color:var(--lightorange);
-  font-size:24px;
-  border:3px;
-  border-style:solid;
-  border-color:var(--lightorange);
-  border-radius:50px;
-  z-index:1;
-}
-.blocks.input {
-
-}
-.blocks.methods {
-
-}
-
-hr {
-  color:transparent;
-}
-
-.commodityInput {
-  width:200px;
-  text-align: center;
-  padding-inline-start:40px;
-  padding-block-start:10px;
-  padding-block-end:10px;
-}
-.commodityInput select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:25px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:200px;
-  height:42px;
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:20px;
+  background-color: var(--darkgray);
+  margin: 15px auto;
+  color: var(--lightorange);
+  font-size: 24px;
+  border: 3px solid var(--lightorange);
+  border-radius: 50px;
   text-align:center;
 }
-.commodityInput select option {
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-}
 
-.quantityInput {
-  width:200px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
   text-align: center;
-  padding-inline-start:80px;
-  padding-block-start:10px;
-  padding-block-end:10px;
-}
-.quantityInput h3 {
-  margin-inline-start:25px;
+  padding: 10px 20px;
 }
 
-.quantityInput .inputQuantity {
-  width:200px;
-  height:42px;
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-color:var(--lightorange);
-  border-width:2px;
-  border-radius:15px;
-  color:var(--lightgray);
-  margin-inline-start:-10px;
-  margin-block-start:1px;
-  padding-inline-start:15px;
-  padding-inline-end:5px;
-  margin-inline-end:0px;
-}
-
-.refineryLocation {
+.form-group select,
+.inputQuantity {
+  background-color: var(--lightorange);
+  border: solid;
+  border-radius: 25px;
+  border-color: var(--lightorange);
+  color: var(--darkgray);
+  width: 200px;
+  height: 42px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 20px;
   text-align: center;
-  padding-inline-start:80px;
-  padding-block-start:10px;
-  padding-inline-end:40px;
-  padding-block-end:10px;
 }
-.refineryLocation select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:25px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:200px;
-  height:42px;
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:20px;
-  text-align:center;
-  margin-inline-start:20px;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.refineryLocation select option {
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
-.method {
-  padding-block-start:10px;
+.form-group label,
+.blocks h3 {
+  font: bold 28px/28px 'Segoe UI', sans-serif;
+  color: var(--lightgray);
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  margin-left: 15px;
 }
-.method button {
-  border-style:solid;
-  border-radius:50%;
-  border-width:15px;
-  border-color:var(--lightgray);
-  cursor:pointer;
-  display:inline-flex;
-  padding:5px 5px;
-  background-color:var(--lightgray);
-  margin-block-start:5px;
-}
-.method button:hover {
-  background-color:var(--orangehover);
-  border-color:var(--orangehover);
+
+.methods {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
 }
 .methodList {
-  width:100px;
-}
-button.clicked {
-  background-color:var(--lightorange);
-  border-color:var(--lightorange);
+  font: 18px 'Segoe UI', sans-serif;
 }
 
-.outputBlock {
-  padding-block-start:10px;
-  padding-block-end:10px;
-  padding-inline-start:20px;
-  padding-inline-end:20px;
+.methods button {
+  border: 15px solid var(--lightgray);
+  border-radius: 50%;
+  background-color: var(--lightgray);
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 5px;
 }
-.outputBlock td {
-  padding-inline-end:15px;
-  text-align:center;
+
+.methods button:hover {
+  background-color: var(--orangehover);
+  border-color: var(--orangehover);
 }
-.outputBlock p {
-  color:var(--lightorange);
-  font-size:20px;
+
+.methods button.clicked {
+  background-color: var(--lightorange);
+  border-color: var(--lightorange);
+}
+
+.outputBlock,
+.purchaseLocations {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  min-width: 70vw;
+}
+
+.outputBlock .output-item {
+  padding-inline-end:30px;
 }
 
 .purchaseLocations {
-  padding-block-end:15px;
-}
-.purchaseLocations h4 {
-  text-decoration-line:underline;
-  text-decoration-color:var(--lightorange);
-}
-.purchaseLocations td {
-  padding-inline-end:10px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
 }
 
-h3 {
-  animation: 1s appear;
-  font: bold 28px/28px 'Segoe UI', sans-serif;
-  color:var(--lightgray);
-  letter-spacing:1px;
-  margin-block-end:-15px;
-  margin-inline-start:15px;
-}
-
-h4 {
-  animation: 1s appear;
-  font: bold 20px/24px 'Segoe UI', sans-serif;
-  color:var(--lightgray);
-  letter-spacing:1px;
-  margin-block-end:5px;
-  margin-inline-start:15px;
-}
-
-p {
-  font-weight: 300;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightgray);
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
+.input-section {
+  width:80vw;
 }
 
 @media screen and (max-width: 600px) {
-  /* Responsive styles */
   .blocks {
-    margin-block-start:5px;
-    margin-inline-end:10px;
-    font-size:18px;
+    width: 90%;
+    font-size: 18px;
+    margin: 5px auto;
   }
-  .commodityInput, .quantityInput, .refineryLocation {
-    padding-inline-start:20px;
+  
+  .form-group,
+  .methods,
+  .outputBlock,
+  .purchaseLocations {
+    padding: 10px;
   }
-  h3, h4 {
-    font-size:18px;
+  
+  .form-group select,
+  .inputQuantity {
+    width: 150px;
+    height: 36px;
+    font-size: 16px;
   }
-  p {
-    font-size:12px;
+  
+  .form-group label,
+  .blocks h3 {
+    font-size: 22px;
+  }
+  
+  .methods button {
+    border-width: 10px;
   }
 }
 
