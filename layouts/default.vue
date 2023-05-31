@@ -54,6 +54,9 @@
 </html>
 </template>
 
+<script>
+
+</script>
 
 <style>
  /* Root */
@@ -110,8 +113,8 @@
     right:10px;
     -webkit-padding-start:60%;
             padding-inline-start:60%;
-    -webkit-margin-before: -40px;
-            margin-block-start: -40px;
+    -webkit-margin-before: -50px;
+            margin-block-start: -50px;
     -webkit-margin-after:7px;
             margin-block-end:7px;
     -webkit-border-before: solid;
@@ -129,6 +132,7 @@
     display: inline-block;
     scale:150%;
     padding: 10px 10px;
+    transition: color 0.3s ease;
     -webkit-box-pack:center;
         -ms-flex-pack:center;
             justify-content:center;

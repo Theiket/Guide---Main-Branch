@@ -1,33 +1,25 @@
 <template>
   <div class="mining">
-    <table>
-      <td class="refinery">
-        <h3>
-          <div class="button">
-            <NuxtLink to="/refinery">
-              Refinery
-              <br />
-              <div class="loadouticon">
-                <Icon name="game-icons:anvil-impact" />
-              </div>
-            </NuxtLink>
+    <div class="navigation-card">
+      <h3>
+        <NuxtLink class="button" to="/refinery">
+          Refinery
+          <div class="icon-wrapper">
+            <Icon name="game-icons:anvil-impact" />
           </div>
-        </h3>
-      </td>
-      <td class="loadout">
-        <h3>
-          <div class="button">
-            <NuxtLink to="/loadout">
-              Loadout
-              <br />
-              <div class="loadouticon">
-                <Icon name="game-icons:laser-blast" />
-              </div>
-            </NuxtLink>
+        </NuxtLink>
+      </h3>
+    </div>
+    <div class="navigation-card">
+      <h3>
+        <NuxtLink class="button" to="/loadout">
+          Loadout
+          <div class="icon-wrapper">
+            <Icon name="game-icons:laser-blast" />
           </div>
-        </h3>
-      </td>
-    </table>
+        </NuxtLink>
+      </h3>
+    </div>
   </div>
 </template>
 
@@ -41,55 +33,52 @@ useHead({
 .mining {
   height: 85vh;
   background-color: var(--backgray);
-  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.button a {
-  background-color: var(--darkgray);
-  color: var(--lightorange);
-  text-align: center;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 15px;
-  font: bold 35px 'Segoe UI', sans-serif;
-  letter-spacing: 1px;
-  display: inline-block;
-  margin-block-start: -50px;
-  padding-inline-start: 100px;
-  padding-inline-end: 100px;
-  padding-block-start: 50px;
-  padding-block-end: 100px;
-  text-decoration: none;
+  flex-wrap: wrap;
   animation: 1s appear;
 }
 
-.refinery {
-  line-height: 200px;
+.navigation-card {
+  margin: 15px;
 }
 
-.loadout {
-  line-height: 200px;
-  padding-left: 20px;
+.button {
+  background-color: var(--darkgray);
+  color: var(--lightorange);
+  text-align: center;
+  border: 3px solid var(--lightorange);
+  border-radius: 15px;
+  font: bold 35px 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 100px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.loadouticon {
-  margin-block-start: 10px;
-  scale: 300%;
+.icon-wrapper {
+  margin-top: 30px;
+  margin-bottom:60px;
+  transform: scale(3);
 }
 
-.button a:hover {
+.button:hover {
   color: var(--orangehover);
 }
 
-.mining h3 {
-  text-decoration: none;
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
+@media screen and (max-width: 600px) {
+  .button {
+    font-size: 24px;
+    padding: 30px 60px;
+  }
+
+  .icon-wrapper {
+    transform: scale(2);
   }
 }
 </style>

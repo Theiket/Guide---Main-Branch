@@ -586,6 +586,7 @@ input[type=number] {
   cursor: pointer;
   padding: 5px;
   margin-top: 5px;
+  transition: border 0.3s ease, background-color 0.3s ease;
 }
 
 .methods button:hover {

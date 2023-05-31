@@ -1,11 +1,5 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        Starmap goes here
-      </h1>
-    </div>
-  </div>
+  <starmapStarMap />
 </template>
 
 <script setup>
@@ -15,15 +9,6 @@
 </script>
 
   <style scoped>
-.container {
-  margin: 0 auto;
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color:var(--backgray);
-}
 
 .title {
   width:1200px;

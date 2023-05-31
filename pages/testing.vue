@@ -1,6 +1,6 @@
 <template>
   <div>
-    <asteroidtest />
+    <starmaptest />
   </div>
 </template>
 

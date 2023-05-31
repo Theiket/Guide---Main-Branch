@@ -1369,6 +1369,7 @@ export default {
   font-size:25px;
   font-family:'Segoe UI', sans-serif;
   cursor:pointer;
+  transition: border 0.3s ease, background-color 0.3s ease;
 }
 .button:hover {
   border-color:var(--orangehover);
