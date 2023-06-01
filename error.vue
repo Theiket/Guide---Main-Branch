@@ -1,24 +1,16 @@
 <template>
+  <NuxtLayout name="default">
     <div class="pageError">
-    <NuxtLayout name="default">
-      <body>
-      <center>
-          <h1>{{ error.statusCode }}</h1>
-        <br>
-          <p>Task failed successfully</p>
-        <br>
-          <p>{{ error.message }}</p>
-        <br>
-        <br>
+      <h1>{{ error.statusCode }}</h1>
+      <p>Task failed successfully</p>
+      <p>{{ error.message }}</p>
+      <div class="errorbutton">
         <NuxtLink to="/">
-          <div class="errorbutton">
-            Back to Home
-          </div>
+          Back to Home
         </NuxtLink>
-      </center>
-      </body>
-    </NuxtLayout>
+      </div>
     </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
@@ -26,17 +18,13 @@
 </script>
 
 <style scoped>
-
 .pageError {
-  max-height:100vh;
-  height:75vh;
+  display:flex;
+  flex-direction:column;
+  height:50vh;
   user-select:none;
-}
-
- body {
-  background-color:var(--backgray);
   justify-content:center;
-  vertical-align:center;
+  text-align:center;
 }
 
 h1 {
@@ -55,11 +43,10 @@ p {
 }
 
 .errorbutton {  
-  color:var(--lightorange);
   font: bold 25px 'Segoe UI', sans-serif;
-  border:2px solid;
-  margin:0px 500px 0px 500px;
-  padding:15px 15px 15px 15px;
+  border:2px solid var(--lightorange);
+  margin: 2% 35%;
+  padding:15px;
   border-radius:15px;
   background-color:var(--darkgray);
 }
@@ -67,9 +54,35 @@ p {
 .errorbutton a {
   text-decoration:none;
   color:var(--lightorange);
-
+  transition:color 0.3s ease;
 }
+
 .errorbutton a:hover {
   color:var(--orangehover);
+}
+
+/* Responsive font sizes */
+@media screen and (max-width: 768px) {
+  h1 {
+    font: bold 50px 'Segoe UI', sans-serif;
+  }
+  p {
+    font: bold 25px 'Segoe UI', sans-serif;
+  }
+  .errorbutton {
+    font: bold 20px 'Segoe UI', sans-serif;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font: bold 35px 'Segoe UI', sans-serif;
+  }
+  p {
+    font: bold 18px 'Segoe UI', sans-serif;
+  }
+  .errorbutton {
+    font: bold 15px 'Segoe UI', sans-serif;
+  }
 }
 </style>
