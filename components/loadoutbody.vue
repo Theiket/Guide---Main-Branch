@@ -150,7 +150,7 @@
 <script>
 import * as math from 'mathjs';
 import pdf  from '@stdlib/stats-base-dists-exponential-pdf';
-import LaserModule from './miningloadout/LaserModule.vue';
+import LaserModule from './LaserModule.vue';
 
 export default {
   components: { LaserModule },
