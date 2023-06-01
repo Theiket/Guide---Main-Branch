@@ -87,121 +87,42 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
     <div class="rightcol">
-      <div class="prospectorCard" v-if="prospector">
+      <div v-for="(ship, index) in ships" :key="index" class="shipCard" v-if="ship.active">
         <center>
-          <button class="button Alternate" aria-label="Toggle Prospector" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = ['','',''];">
-            Prospector
+          <button class="button Alternate" @click="toggleShip(ship)">
+            {{ ship.name }}
           </button>
-          <br><br>
-          <p>Mining Laser</p>
-          <br>
-          <select v-model="prospectorLaser" aria-label="Select Laser">
-            <option disabled value="">Select Laser</option>
-            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
-              {{ laser.name }}
-            </option>
-          </select>
-          <br><br>
-          <div v-if="prospectorLaser">
-            <div v-for="n in prospectorLaser.consumables">
-              <div class="moduleSelect">
-                <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
-                  <option disabled value="">Select Module</option>
-                  <option v-for="module in laserModules" :key="module.name" :value="module">
-                    {{ module.name }}
-                  </option>
-                </select>
+          <div v-for="(laser, laserIndex) in ship.lasers" :key="laserIndex">
+            <p>Mining Laser {{ laserIndex + 1 }}</p>
+            <br>
+            <select v-model="laser.laser">
+              <option disabled value="">Select Laser</option>
+              <option v-for="laserOption in ship.availableLasers" :key="laserOption.name" :value="laserOption">
+                {{ laserOption.name }}
+              </option>
+            </select>
+            <br><br>
+            <div v-if="laser.laser">
+              <div v-for="n in laser.laser.consumables">
+                <div class="moduleSelect">
+                  <select v-model="laser.laserModules[n-1]">
+                    <option disabled value="">Select Module</option>
+                    <option v-for="module in laserModules" :key="module.name" :value="module">
+                      {{ module.name }}
+                    </option>
+                  </select>
+                </div>
+                <br>
               </div>
-              <br>
             </div>
           </div>
         </center>
       </div>
-      <div class="moleCard" v-else-if="mole">
+      <div class="mainButtons" v-if="!ships.some(ship => ship.active)">
         <center>
-        <button class="button Alternate" aria-label="Toggle MOLE" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
-        MOLE
-        </button>
-        <span>
-          <td style="padding-inline-end:5px;">
-          <br><br>
-          <p>Left Turret</p>
-            <br>
-            <select v-model="leftLaser">
-              <option value="" disabled>Select Laser</option>
-              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
-              {{ laser.name }}
-              </option>
-            </select>
-            <br><br>
-            <span class="moduleSelect" v-if="leftLaser">
-              <div v-for="n in leftLaser.consumables" style="padding-block-start:5px">
-                <select :id="'leftLaserModule' + n" v-model="leftLaserModules[n-1]">
-                  <option disabled value="">Select Module</option>
-                  <option v-for="module in laserModules" :key="module.name" :value="module">
-                  {{ module.name }}
-                  </option>
-                </select>
-              </div>
-            </span>
-          </td>
-          <td style="padding-inline-end:5px;">
-          <br><br>
-          <p>Central Turret</p>
-            <br>
-            <select v-model="centralLaser">
-              <option value="" disabled>Select Laser</option>
-              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
-              {{ laser.name }}
-              </option>
-            </select>
-            <br><br>
-            <span class="moduleSelect" v-if="centralLaser">
-              <div v-for="n in centralLaser.consumables" style="padding-block-start:5px">
-                <select :id="'centralLaserModule' + n" v-model="centralLaserModules[n-1]">
-                  <option disabled value="">Select Module</option>
-                  <option v-for="module in laserModules" :key="module.name" :value="module">
-                  {{ module.name }}
-                  </option>
-                </select>
-              </div>
-            </span>
-          </td>
-          <td style="padding-inline-end:0px;">
-          <br><br>
-          <p>Right Turret</p>
-            <br>
-            <select v-model="rightLaser">
-              <option value="" disabled>Select Laser</option>
-              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
-              {{ laser.name }}
-              </option>
-            </select>
-            <br><br>
-            <span class="moduleSelect" v-if="rightLaser">
-              <div v-for="n in rightLaser.consumables" style="padding-block-start:5px">
-                <select :id="'rightLaserModule' + n" v-model="rightLaserModules[n-1]">
-                  <option disabled value="">Select Module</option>
-                  <option v-for="module in laserModules" :key="module.name" :value="module">
-                  {{ module.name }}
-                  </option>
-                </select>
-              </div>
-            </span>
-          </td>
-        </span>
-        </center>
-      </div>
-      <div class="mainButtons" v-else>
-        <center>
-        <button class="button Prospector" @click="prospector = !prospector">
-        Prospector
-        </button>
-        <br>
-        <button class="button MOLE" @click="
-        mole = !mole">
-        MOLE
-        </button>
+          <button v-for="(ship, index) in ships" :key="index" class="button" @click="toggleShip(ship)">
+            {{ ship.name }}
+          </button>
         </center>
       </div>
     </div>
@@ -222,8 +143,6 @@ import pdf  from '@stdlib/stats-base-dists-exponential-pdf';
 export default {
   data() {
     return {
-      prospector: false,
-      mole: false,
       s1lasers: [
         { name:'Arbor S1',
           instability: 0,
@@ -394,23 +313,27 @@ export default {
           resistance: 0,
           },
         ],
-      leftLaser: '',
-      leftLaserModules: ['', '', ''],
-      centralLaser: '',
-      centralLaserModules: ['', '', ''],
-      rightLaser: '',
-      rightLaserModules: ['', '', ''],
-      prospectorLaser: '',
-      prospectorLaserModules: ['', '', ''],
-      l1laserModule: '',
-      l2laserModule: '',
-      l3laserModule: '',
-      c1laserModule: '',
-      c2laserModule: '',
-      c3laserModule: '',
-      r1laserModule: '',
-      r2laserModule: '',
-      r3laserModule: '',
+      ships: [
+        {
+          name: 'Prospector',
+          active: false,
+          lasers: [{laser: '', laserModules: ['', '', '']}],
+          availableLasers: s1lasers,
+          maxLasers: 1
+        },
+        {
+          name: 'MOLE',
+          active: false,
+          lasers: [
+            {laser: '', laserModules: ['', '', '']},
+            {laser: '', laserModules: ['', '', '']},
+            {laser: '', laserModules: ['', '', '']}
+          ],
+          availableLasers: s2lasers,
+          maxLasers: 3
+        }
+        ],
+
       locations: [
         'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe','Aaron Halo'
         ],
@@ -1181,6 +1104,13 @@ export default {
     }
   },
   methods: {
+    toggleShip(ship) {
+    ship.active = !ship.active;
+      if (!ship.active) {
+        ship.laser = '';
+        ship.laserModules = ['', '', ''];
+      }
+    },
     generateDeposit() {
       const minerals = this.selectedDeposit.minerals
       const minCount = this.selectedDeposit.minCount
@@ -1390,10 +1320,7 @@ export default {
 .Alternate {
   margin-block-start:15px;
 }
-.prospectorCard {
-  animation: 1s appear;
-}
-.moleCard {
+.shipCard {
   animation: 1s appear;
 }
 .mainButtons {
@@ -1418,7 +1345,7 @@ select option {
   font-family:'Segoe UI', sans-serif;
   font-size:16px;
 }
-.moleCard select {
+.shipCard select {
   width:130px;
 }
 .moduleSelect {
@@ -1505,9 +1432,4 @@ h3 {
   margin-block-start:-20px;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-}
 </style>
