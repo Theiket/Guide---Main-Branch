@@ -119,7 +119,7 @@
       </div>
       <div class="moleCard" v-else-if="mole">
         <center>
-        <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
+        <button class="button Alternate" aria-label="Toggle MOLE" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
         MOLE
         </button>
         <span>
