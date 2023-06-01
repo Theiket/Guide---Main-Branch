@@ -8,7 +8,7 @@
   })
 </script>
 
-  <style scoped>
+<style scoped>
 
 .title {
   width:1200px;
