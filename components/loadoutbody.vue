@@ -87,53 +87,121 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
     <div class="rightcol">
-    <!-- Prospector Card -->
       <div class="prospectorCard" v-if="prospector">
         <center>
-          <button class="button Alternate" aria-label="Toggle Prospector" @click="resetProspector">
+          <button class="button Alternate" aria-label="Toggle Prospector" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = ['','',''];">
             Prospector
           </button>
-          <laser-module 
-              turret="Mining Laser" 
-              :lasers="s1lasers" 
-              :laser-modules="laserModules" 
-              :selected-laser="prospectorLaser"
-              :selected-modules="prospectorLaserModules"
-              @update:selected-laser="prospectorLaser = $event"
-              @update:selected-modules="prospectorLaserModules = $event">
-          </laser-module>
+          <br><br>
+          <p>Mining Laser</p>
+          <br>
+          <select v-model="prospectorLaser" aria-label="Select Laser">
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+            </option>
+          </select>
+          <br><br>
+          <div v-if="prospectorLaser">
+            <div v-for="n in prospectorLaser.consumables">
+              <div class="moduleSelect">
+                <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="module in laserModules" :key="module.name" :value="module">
+                    {{ module.name }}
+                  </option>
+                </select>
+              </div>
+              <br>
+            </div>
+          </div>
         </center>
-    </div>
-    <!-- MOLE Card -->
-    <div class="moleCard" v-else-if="mole">
+      </div>
+      <div class="moleCard" v-else-if="mole">
         <center>
-        <button class="button Alternate" @click="resetMole">
+        <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
         MOLE
         </button>
         <span>
-            <td v-for="(turret, index) in ['Left Turret', 'Central Turret', 'Right Turret']">
-                <laser-module 
-                    :turret="turret" 
-                    :lasers="s2lasers" 
-                    :laser-modules="laserModules" 
-                    :selected-laser="turretLasers[index]"
-                    :selected-modules="turretModules[index]"
-                    @update:selected-laser="value => turretLasers[index] = value"
-                    @update:selected-modules="value => turretModules[index] = value">
-                </laser-module>
-            </td>
+          <td style="padding-inline-end:5px;">
+          <br><br>
+          <p>Left Turret</p>
+            <br>
+            <select v-model="leftLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="leftLaser">
+              <div v-for="n in leftLaser.consumables" style="padding-block-start:5px">
+                <select :id="'leftLaserModule' + n" v-model="leftLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="module in laserModules" :key="module.name" :value="module">
+                  {{ module.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
+          <td style="padding-inline-end:5px;">
+          <br><br>
+          <p>Central Turret</p>
+            <br>
+            <select v-model="centralLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="centralLaser">
+              <div v-for="n in centralLaser.consumables" style="padding-block-start:5px">
+                <select :id="'centralLaserModule' + n" v-model="centralLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="module in laserModules" :key="module.name" :value="module">
+                  {{ module.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
+          <td style="padding-inline-end:0px;">
+          <br><br>
+          <p>Right Turret</p>
+            <br>
+            <select v-model="rightLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="rightLaser">
+              <div v-for="n in rightLaser.consumables" style="padding-block-start:5px">
+                <select :id="'rightLaserModule' + n" v-model="rightLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="module in laserModules" :key="module.name" :value="module">
+                  {{ module.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
         </span>
         </center>
-    </div>
+      </div>
       <div class="mainButtons" v-else>
         <center>
-          <button class="button Prospector" @click="prospector = !prospector">
-          Prospector
-          </button>
-          <br>
-          <button class="button MOLE" @click="mole = !mole">
-          MOLE
-          </button>
+        <button class="button Prospector" @click="prospector = !prospector">
+        Prospector
+        </button>
+        <br>
+        <button class="button MOLE" @click="
+        mole = !mole">
+        MOLE
+        </button>
         </center>
       </div>
     </div>
@@ -150,10 +218,8 @@
 <script>
 import * as math from 'mathjs';
 import pdf  from '@stdlib/stats-base-dists-exponential-pdf';
-import LaserModule from './LaserModule.vue';
 
 export default {
-  components: { LaserModule },
   data() {
     return {
       prospector: false,
@@ -328,10 +394,14 @@ export default {
           resistance: 0,
           },
         ],
+      leftLaser: '',
+      leftLaserModules: ['', '', ''],
+      centralLaser: '',
+      centralLaserModules: ['', '', ''],
+      rightLaser: '',
+      rightLaserModules: ['', '', ''],
       prospectorLaser: '',
       prospectorLaserModules: ['', '', ''],
-      turretLasers: ['', '', ''],
-      turretModules: [['', '', ''], ['', '', ''], ['', '', '']],
       l1laserModule: '',
       l2laserModule: '',
       l3laserModule: '',
@@ -1187,17 +1257,7 @@ export default {
         this.generatedInstability = totalInstability
         this.generatedResistance = totalResistance
         this.generatedDeposit = includedMinerals
-    },
-    resetProspector() {
-      this.prospector = !this.prospector;
-      this.prospectorLaser = '';
-      this.prospectorLaserModules = ['', '', ''];
-    },
-    resetMole() {
-      this.mole = !this.mole;
-      this.turretLasers = ['', '', ''];
-      this.turretModules = [['', '', ''], ['', '', ''], ['', '', '']];
-    },
+      },
   },
 };
 
