@@ -314,15 +314,13 @@ export default {
           },
         ],
       ships: [
-        {
-          name: 'Prospector',
+        { name: 'Prospector',
           active: false,
           lasers: [{laser: '', laserModules: ['', '', '']}],
           availableLasers: s1lasers,
           maxLasers: 1
         },
-        {
-          name: 'MOLE',
+        { name: 'MOLE',
           active: false,
           lasers: [
             {laser: '', laserModules: ['', '', '']},
