@@ -30,17 +30,14 @@
             </option>
           </select>
         </va-card>
-        <center>
         <button class="button Generate" @click="generateDeposit">
         Generate
         </button>
-        </center>
       </div>
       <br>
-      <div class="mineralList" 
-        style="margin-block-start:15%;">
-        <span style="position:absolute; display:flex; align-content:center; justify-content:space-between; left: 50%; transform: translateX(-50%);">
-          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; position:relative; text-align:center; width:160px;">
+      <div class="mineralList">
+        <span style="display:flex; flex-direction:row; justify-content:center;">
+          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; text-align:center; width:160px;">
             <h4>{{ mineral.name }}</h4>
             <br>
             <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
@@ -1315,12 +1312,8 @@ export default {
     padding-inline-start:15px;
     padding-block-end:5px;
   }
-  .harvestableGeneration .provider {
-    width:200px;
-  }
-  .harvestableGeneration .harvestable {
-    width:200px;
-    padding-inline-start:10px;
+  .harvestableGeneration .provider, .harvestableGeneration .harvestable {
+    width:35%;
   }
 
 /*Bottom Card*/
@@ -1332,20 +1325,18 @@ export default {
     border-radius:25px;
     padding-inline-start:15px;
     padding-block-end:5px;
-    margin-top:300px; 
+    margin-top:45%; 
   }
-  .instability .provider {
-    width:200px;
-  }
-  .instability .harvestable {
-    width:150px;
+  .instability .provider, .instability .harvestable {
+    width:30%;
+    padding-inline-start:2.5%;
   }
 
 /* Asteroid */
   .asteroid {
-    margin-inline-start:100px;
-    padding-inline-end:400px;
-    margin-block-start:100px;
+    margin-inline-start:15%;
+    padding-inline-end:65%;
+    margin-block-start:15%;
     width:200px;
     height:200px;
     border-left:solid;
