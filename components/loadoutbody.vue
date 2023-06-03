@@ -35,19 +35,17 @@
         </button>
       </div>
       <br>
-      <div class="mineralList">
-        <span style="display:flex; flex-direction:row; justify-content:center;">
-          <td v-for="(mineral, index) in generatedDeposit" :key="index" style="animation: 0.5s appear; text-align:center; width:160px;">
+      <span class="mineralList">
+          <section v-for="(mineral, index) in generatedDeposit" :key="index" class="mineralItems">
             <h4>{{ mineral.name }}</h4>
             <br>
             <h3>{{ (mineral.percentage).toFixed(2) }}%</h3>
-          </td>
-        </span>
+          </section>
+      </span>
         <br>
         <div class="asteroid">
           <asteroidtest />
         </div>
-      </div>
       <br>
       <div class="instability">
         <va-card
@@ -1291,8 +1289,9 @@ export default {
 .rightcard {
   width: 30%;
   height: auto;
-  vertical-align:center;
   margin-inline-end:20px;
+  justify-content:center;
+  text-align:center;
 }
 /*Top Card*/
   .harvestableGeneration {
@@ -1365,9 +1364,11 @@ export default {
   }
   .Generate {
     margin-block-start:5px;
+    margin-inline-start:37%;
     height:30px;
     width:150px;
     font-size:20px;
+
   }
   .Alternate {
     margin-block-start:15px;
@@ -1395,11 +1396,26 @@ export default {
     font-size:16px;
   }
   .moleCard select {
-    width:130px;
+    width:100%;
   }
   .moduleSelect {
     padding-block-end:5px;
   }
+
+/* Mineral List */
+.mineralList {
+  position:absolute;
+  display:flex;
+  flex-flow: row wrap;
+  text-align:center;
+  left:35%;
+  transform:translateX(-50%);
+  justify-content:space-between;
+}
+.mineralList .mineralItems {
+  animation: 0.3s appear;
+  width:160px;
+}
 
 /* Cards */
   .harvestableGeneration {
