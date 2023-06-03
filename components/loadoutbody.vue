@@ -87,42 +87,121 @@
 <!-- Loadout Selection -->
   <div class="rightcard">
     <div class="rightcol">
-      <div v-for="(ship, index) in ships" :key="index" class="shipCard" v-if="ship.active">
+      <div class="prospectorCard" v-if="prospector">
         <center>
-          <button class="button Alternate" @click="toggleShip(ship)">
-            {{ ship.name }}
+          <button class="button Alternate" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = ['','',''];">
+            Prospector
           </button>
-          <div v-for="(laser, laserIndex) in ship.lasers" :key="laserIndex">
-            <p>Mining Laser {{ laserIndex + 1 }}</p>
-            <br>
-            <select v-model="laser.laser">
-              <option disabled value="">Select Laser</option>
-              <option v-for="laserOption in ship.availableLasers" :key="laserOption.name" :value="laserOption">
-                {{ laserOption.name }}
-              </option>
-            </select>
-            <br><br>
-            <div v-if="laser.laser">
-              <div v-for="n in laser.laser.consumables">
-                <div class="moduleSelect">
-                  <select v-model="laser.laserModules[n-1]">
-                    <option disabled value="">Select Module</option>
-                    <option v-for="module in laserModules" :key="module.name" :value="module">
-                      {{ module.name }}
-                    </option>
-                  </select>
-                </div>
-                <br>
+          <br><br>
+          <p>Mining Laser</p>
+          <br>
+          <select v-model="prospectorLaser">
+            <option disabled value="">Select Laser</option>
+            <option v-for="laser in s1lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+            </option>
+          </select>
+          <br><br>
+          <div v-if="prospectorLaser">
+            <div v-for="n in prospectorLaser.consumables">
+              <div class="moduleSelect">
+                <select :id="'prospectorLaserModule' + n" v-model="prospectorLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="laserModule in laserModules" :key="laserModule.name" :value="laserModule">
+                    {{ laserModule.name }}
+                  </option>
+                </select>
               </div>
+              <br>
             </div>
           </div>
         </center>
       </div>
-      <div class="mainButtons" v-if="!ships.some(ship => ship.active)">
+      <div class="moleCard" v-else-if="mole">
         <center>
-          <button v-for="(ship, index) in ships" :key="index" class="button" @click="toggleShip(ship)">
-            {{ ship.name }}
-          </button>
+        <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
+        MOLE
+        </button>
+        <span>
+          <td style="padding-inline-end:5px;">
+          <br><br>
+          <p>Left Turret</p>
+            <br>
+            <select v-model="leftLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="leftLaser">
+              <div v-for="n in leftLaser.consumables" style="padding-block-start:5px">
+                <select :id="'leftLaserModule' + n" v-model="leftLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="laserModule in laserModules" :key="laserModule.name" :value="laserModule">
+                  {{ laserModule.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
+          <td style="padding-inline-end:5px;">
+          <br><br>
+          <p>Central Turret</p>
+            <br>
+            <select v-model="centralLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="centralLaser">
+              <div v-for="n in centralLaser.consumables" style="padding-block-start:5px">
+                <select :id="'centralLaserModule' + n" v-model="centralLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="laserModule in laserModules" :key="laserModule.name" :value="laserModule">
+                  {{ laserModule.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
+          <td style="padding-inline-end:0px;">
+          <br><br>
+          <p>Right Turret</p>
+            <br>
+            <select v-model="rightLaser">
+              <option value="" disabled>Select Laser</option>
+              <option v-for="laser in s2lasers" :key="laser.name" :value="laser">
+              {{ laser.name }}
+              </option>
+            </select>
+            <br><br>
+            <span class="moduleSelect" v-if="rightLaser">
+              <div v-for="n in rightLaser.consumables" style="padding-block-start:5px">
+                <select :id="'rightLaserModule' + n" v-model="rightLaserModules[n-1]">
+                  <option disabled value="">Select Module</option>
+                  <option v-for="laserModule in laserModules" :key="laserModule.name" :value="laserModule">
+                  {{ laserModule.name }}
+                  </option>
+                </select>
+              </div>
+            </span>
+          </td>
+        </span>
+        </center>
+      </div>
+      <div class="mainButtons" v-else>
+        <center>
+        <button class="button Prospector" @click="prospector = !prospector">
+        Prospector
+        </button>
+        <br>
+        <button class="button MOLE" @click="
+        mole = !mole">
+        MOLE
+        </button>
         </center>
       </div>
     </div>
@@ -137,60 +216,932 @@
 </script>
 
 <script>
-import { reactive } from 'vue';
 import * as math from 'mathjs';
 import pdf  from '@stdlib/stats-base-dists-exponential-pdf';
-import data from './mining.json';
 
 export default {
-  setup() {
-    const s1lasers = reactive(data.s1lasers);
-    const s2lasers = reactive(data.s2lasers);
-    const ships = reactive(data.ships);
-    const deposits = reactive(data.deposits);
-    const locations = reactive(data.locations);
-    const laserModules = reactive(data.laserModules);
-
-    ships[0].availableLasers = s1lasers;
-    ships[1].availableLasers = s2lasers;
-    
-    return {
-      s1lasers,
-      s2lasers,
-      ships,
-      deposits,
-      locations,
-      laserModules
-    };
-  },
   data() {
     return {
+      prospector: false,
+      mole: false,
+      s1lasers: [
+        { name:'Arbor S1',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S1',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S1',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S1',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S1',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
+        ],
+      s2lasers: [
+        { name:'Arbor S2',
+          instability: 0,
+          resistance: 0,
+          consumables: 1,
+          },
+        { name:'Lancet S2',
+          instability: -75,
+          resistance: -0.75,
+          consumables: 3,
+          },
+        { name:'Hofstede S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 1,
+          },
+        { name:'Klein S2',
+          instability: 20,
+          resistance: -0.2,
+          consumables: 1,
+          },
+        { name:'Helix S2',
+          instability: -30,
+          resistance: -0.1,
+          consumables: 3,
+          },
+        { name:'Impact S2',
+          instability: 10,
+          resistance: -0.25,
+          consumables: 2,
+          },
+        ],
+      laserModules: [
+        { name:'Brandt',
+          instability: -75,
+          resistance: 0,
+          },
+        { name:'Forel',
+          instability: 10,
+          resistance: -0.2,
+          },
+        { name:'Lifeline',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Optimum',
+          instability: 10,
+          resistance: 0,
+          },
+        { name:'Rime',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Stampede',
+          instability: 10,
+          resistance: 0,
+          },
+        { name:'Surge',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Torpid',
+          instability: 0,
+          resistance: -0.2,
+          },
+        { name:'FLTR MK1',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'FLTR MK2',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'FLTR MK3',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'Focus MK1',
+          instability: 6,
+          resistance: -0.06,
+          },
+        { name:'Focus MK2',
+          instability: 5,
+          resistance: -0.08,
+          },
+        { name:'Focus MK3',
+          instability: 4,
+          resistance: -0.1,
+          },
+        { name:'Reiger MK1',
+          instability: 0,
+          resistance: 0.04,
+          },
+        { name:'Reiger MK2',
+          instability: 0,
+          resistance: 0.05,
+          },
+        { name:'Reiger MK3',
+          instability: 0,
+          resistance: 0.06,
+          },
+        { name:'Torrent MK1',
+          instability: 5,
+          resistance: 0,
+          },
+        { name:'Torrent MK2',
+          instability: 4,
+          resistance: 0,
+          },
+        { name:'Torrent MK3',
+          instability: 3,
+          resistance: 0,
+          },
+        { name:'Vaux MK1',
+          instability: -6,
+          resistance: 0,
+          },
+        { name:'Vaux MK2',
+          instability: -8,
+          resistance: 0,
+          },
+        { name:'Vaux MK3',
+          instability: -10,
+          resistance: 0,
+          },
+        { name:'XTR MK1',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'XTR MK2',
+          instability: 0,
+          resistance: 0,
+          },
+        { name:'XTR MK3',
+          instability: 0,
+          resistance: 0,
+          },
+        ],
+      leftLaser: '',
+      leftLaserModules: ['', '', ''],
+      centralLaser: '',
+      centralLaserModules: ['', '', ''],
+      rightLaser: '',
+      rightLaserModules: ['', '', ''],
+      prospectorLaser: '',
+      prospectorLaserModules: ['', '', ''],
+      l1laserModule: '',
+      l2laserModule: '',
+      l3laserModule: '',
+      c1laserModule: '',
+      c2laserModule: '',
+      c3laserModule: '',
+      r1laserModule: '',
+      r2laserModule: '',
+      r3laserModule: '',
+      locations: [
+        'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe','Aaron Halo'
+        ],
+      deposits: [
+        { name: 'C Type',
+          minerals: [
+            { name: 'Aluminium',
+              minPercentage: 2, 
+              maxPercentage: 30,
+              probability: 0.5,
+              exponent: 1,
+              instability: 0.01,
+              resistance: -0.00125,
+              },
+            { name: 'Laranite',
+              minPercentage: 2,
+              maxPercentage: 20,
+              probability: 0.125,
+              exponent: 3,
+              instability: 3.5,
+              resistance: 0.55,
+              },
+            { name: 'Quantanium',
+              minPercentage: 1,
+              maxPercentage: 20,
+              probability: 1,
+              exponent: 4,
+              instability: 10,
+              resistance: 0.94,
+              },
+          ],
+          minCount: 2,
+          found:[
+            'Lagrange B'
+            ],
+          },
+        { name: 'E Type',
+          minerals: [
+            { name: 'Borase',
+              minPercentage: 1.2,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.85,
+              },
+            { name: 'Corundum',
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.018125,
+              resistance: 0.02604167,
+              },
+            { name: 'Diamond',
+              minPercentage: 1,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 2,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Gold',
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.2184375,
+              resistance: 0.2614583,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange E','Lagrange F','Lagrange G','Lagrange Occupied','Yela Belt'
+            ],
+          },
+        { name: 'M Type',
+          minerals: [
+            { name: 'Hephaestanite',
+              minPercentage: 1.1,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 3,
+              instability: 2.5,
+              resistance: 0.6,
+              },
+            { name: 'Laranite',
+              minPercentage: 1.2,
+              maxPercentage: 30,
+              probability: 0.2,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.55,
+              },
+            { name: 'Tungsten',
+              minPercentage: 3,
+              maxPercentage: 45,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.011875,
+              resistance: 0.03958333,
+              },
+          ],
+          minCount: 2,
+          found:[
+            'Aaron Halo','Lagrange A','Lagrange C','Lagrange Occupied','Yela Belt'
+            ],
+          },
+        { name: 'P Type',
+          minerals: [
+            { name: 'Aluminium',
+              minPercentage: 3,
+              maxPercentage: 55,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.01,
+              resistance: -0.00125,
+              },
+            { name: 'Bexalite', 
+              minPercentage: 1.1,
+              maxPercentage: 20,
+              probability: 0.5,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.85,
+              },
+            { name: 'Corundum', 
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 1.5,
+              instability: 0.018125,
+              resistance: 0.02604167,
+              },
+            { name: 'Diamond', 
+              minPercentage: 1.15,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Titanium', 
+              minPercentage: 5,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 3,
+              instability: 1,
+              resistance: 0.8333334,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange B','Lagrange D','Lagrange F','Lagrange G','Lagrange Occupied','Yela Belt'
+            ],
+          },
+        { name: 'Q Type',
+          minerals: [
+            { name: 'Beryl',
+              minPercentage: 1.5,
+              maxPercentage: 30,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Borase', 
+              minPercentage: 1.12,
+              maxPercentage: 15,
+              probability: 0.25,
+              exponent: 4,
+              instability: 4,
+              resistance: 0.8,
+              },
+            { name: 'Quantanium', 
+              minPercentage: 2.1,
+              maxPercentage: 50,
+              probability: 1,
+              exponent: 6,
+              instability: 10,
+              resistance: 0.94,
+              },
+            { name: 'Quartz', 
+              minPercentage: 20,
+              maxPercentage: 40,
+              probability: 0.7,
+              exponent: 3,
+              instability: 0.004375,
+              resistance: 0.1145833,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aaron Halo','Lagrange A','Lagrange Occupied','Yela Belt'
+            ],
+          },
+        { name: 'S Type',
+          minerals: [
+            { name: 'Borase',
+              minPercentage: 1,
+              maxPercentage: 20,
+              probability: 0.0625,
+              exponent: 4,
+              instability: 4,
+              resistance: 0.8,
+              },
+            { name: 'Copper', 
+              minPercentage: 2,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 2,
+              instability: 0.0175,
+              resistance: 0.05833333,
+              },
+            { name: 'Titanium', 
+              minPercentage: 1,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 2,
+              instability: 1,
+              resistance: 0.08333334,
+              },
+          ],
+          minCount: 2,
+          found:[
+            'Lagrange C','Lagrange D','Lagrange E'
+            ],
+          },
+        { name: 'Atacamite',
+          minerals: [
+            { name: 'Agricium',
+              minPercentage: 1,
+              maxPercentage: 15,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.125,
+              resistance: 0.75,
+              },
+            { name: 'Beryl', 
+              minPercentage: 3,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 1.5,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Diamond', 
+              minPercentage: 2,
+              maxPercentage: 40,
+              probability: 0.25,
+              exponent: 4,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Quartz', 
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 1.5,
+              instability: 0.004375,
+              resistance: 0.1145833,
+              },
+            { name: 'Taranite', 
+              minPercentage: 1.16,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 5,
+              instability: 4,
+              resistance: 0.8,
+              },
+          ],
+          minCount: 2,
+          found:[
+            'Wala'
+            ],
+          },
+        { name: 'Felsic',
+          minerals: [
+            { name: 'Bexalite',
+              minPercentage: 1,
+              maxPercentage: 30,
+              probability: 0.2,
+              exponent: 6,
+              instability: 3.5,
+              resistance: 0.85,
+              },
+            { name: 'Hephaestanite', 
+              minPercentage: 2,
+              maxPercentage: 25,
+              probability: 0.25,
+              exponent: 4,
+              instability: 2.5,
+              resistance: 0.6,
+              },
+            { name: 'Quartz', 
+              minPercentage: 3,
+              maxPercentage: 55,
+              probability: 0.5,
+              exponent: 1.5,
+              instability: 0.004375,
+              resistance: 0.1145833,
+              },
+            { name: 'Tungsten', 
+              minPercentage: 3,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 2.5,
+              instability: 0.011875,
+              resistance: 0.03958333,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Arial',
+            ],
+          },
+        { name: 'Gneiss',
+          minerals: [
+            { name: 'Agricium',
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.125,
+              resistance: 0.75,
+              },
+            { name: 'Aluminium', 
+              minPercentage: 3,
+              maxPercentage: 65,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.01,
+              resistance: -0.00125,
+              },
+            { name: 'Beryl', 
+              minPercentage: 2,
+              maxPercentage: 20,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Diamond', 
+              minPercentage: 1,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 2,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Taranite', 
+              minPercentage: 1,
+              maxPercentage: 30,
+              probability: 0.2,
+              exponent: 6,
+              instability: 4,
+              resistance: 0.8,
+              },
+            { name: 'Tungsten',
+              minPercentage: 2,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.011875,
+              resistance: 0.03958333,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Arial','Aberdeen','Ita','Wala','Daymar','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Granite',
+          minerals: [
+            { name: 'Agricium',
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.125,
+              resistance: 0.75,
+              },
+            { name: 'Copper', 
+              minPercentage: 3,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.0175,
+              resistance: 0.05833333,
+              },
+            { name: 'Corundum', 
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.018125,
+              resistance: 0.02604167,
+              },
+            { name: 'Diamond', 
+              minPercentage: 3,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 4,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Laranite', 
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.55,
+              },
+            { name:'Tungsten',
+              minPercentage: 3,
+              maxPercentage: 45,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.011875,
+              resistance: 0.03958333,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aberdeen','Lyria','Cellin','Yela','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Igneous',
+          minerals: [
+            { name: 'Copper',
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.5,
+              exponent: 3,
+              instability: 0.0175,
+              resistance: 0.05833333,
+              },
+            { name: 'Gold',
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.2184375,
+              resistance: 0.2614583,
+              },
+            { name: 'Taranite',
+              minPercentage: 3,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 4,
+              instability: 4,
+              resistance: 0.8,
+              },
+            { name: 'Titanium',
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 3,
+              instability: 1,
+              resistance: 0.08333334,
+              },
+            { name: 'Tungsten',
+              minPercentage: 3,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 3,
+              instability: 0.011875,
+              resistance: 0.03958333,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Arial','Magda','Ita','Cellin','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Obsidian',
+          minerals: [
+            { name: 'Beryl',
+              minPercentage: 2,
+              maxPercentage: 40,
+              probability: 0.25,
+              exponent: 2,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Bexalite', 
+              minPercentage: 3,
+              maxPercentage: 30,
+              probability: 0.2,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.85,
+              },
+            { name: 'Corundum', 
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.018125,
+              resistance: 0.02604167,
+              },
+            { name: 'Diamond',
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.35,
+              exponent: 3,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Hephaestanite', 
+              minPercentage: 3,
+              maxPercentage: 30,
+              probability: 0.2,
+              exponent: 4,
+              instability: 2.5,
+              resistance: 0.6,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aberdeen','Magda','Ita','Cellin','Daymar','Lyria','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Quantanium',
+          minerals: [
+            { name: 'Aluminium',
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 3,
+              instability: 0.01,
+              resistance: -0.00125,
+              },
+            { name: 'Beryl', 
+              minPercentage: 2,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Borase', 
+              minPercentage: 1,
+              maxPercentage: 15,
+              probability: 0.15,
+              exponent: 4,
+              instability: 4,
+              resistance: 0.8,
+              },
+            { name: 'Quantanium', 
+              minPercentage: 2.1,
+              maxPercentage: 50,
+              probability: 1,
+              exponent: 5,
+              instability: 10,
+              resistance: 0.94,
+              },
+            { name: 'Quartz', 
+              minPercentage: 20,
+              maxPercentage: 60,
+              probability: 0.7,
+              exponent: 2,
+              instability: 0.004375,
+              resistance: 0.1145833,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Cellin','Daymar','Yela','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Quartzite',
+          minerals: [
+            { name: 'Beryl',
+              minPercentage: 2,
+              maxPercentage: 40,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.013125,
+              resistance: 0.14375,
+              },
+            { name: 'Copper', 
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.0175,
+              resistance: 0.05833333,
+              },
+            { name: 'Diamond', 
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.0625,
+              resistance: 0.06875,
+              },
+            { name: 'Gold', 
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 3,
+              instability: 0.2184375,
+              resistance: 0.2614583,
+              },
+            { name: 'Quartz', 
+              minPercentage: 20,
+              maxPercentage: 65,
+              probability: 1,
+              exponent: 2,
+              instability: 0.004375,
+              resistance: 0.1145833,
+              },
+            { name: 'Taranite',
+              minPercentage: 1,
+              maxPercentage: 15,
+              probability: 0.25,
+              exponent: 4,
+              instability: 4,
+              resistance: 0.8,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Arial','Ita','Cellin','Daymar','Yela','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Shale',
+          minerals: [
+            { name: 'Agricium',
+              minPercentage: 2,
+              maxPercentage: 30,
+              probability: 0.25,
+              exponent: 4,
+              instability: 3.125,
+              resistance: 0.75,
+              },
+            { name: 'Aluminium', 
+              minPercentage: 3,
+              maxPercentage: 50,
+              probability: 0.5,
+              exponent: 2,
+              instability: 0.01,
+              resistance: -0.00125,
+              },
+            { name: 'Gold', 
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 2,
+              instability: 0.2184375,
+              resistance: 0.2614583,
+              },
+            { name: 'Laranite', 
+              minPercentage: 2,
+              maxPercentage: 20,
+              probability: 0.25,
+              exponent: 5,
+              instability: 3.5,
+              resistance: 0.55,
+              },
+            { name: 'Titanium', 
+              minPercentage: 2,
+              maxPercentage: 35,
+              probability: 0.25,
+              exponent: 3,
+              instability: 1,
+              resistance: 0.08333334,
+              },
+          ],
+          minCount: 3,
+          found:[
+            'Aberdeen','Magda','Daymar','Yela','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Aphorite',
+          minerals: [
+            { name: 'Aphorite',
+              minPercentage: 50,
+              maxPercentage: 100,
+              probability: 1,
+              exponent: 1,
+              instability: 1,
+              resistance: 0.5,
+              },
+          ],
+          minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Dolivine',
+          minerals: [
+            { name: 'Dolivine',
+              minPercentage: 50,
+              maxPercentage: 100,
+              probability: 1,
+              exponent: 1,
+              instability: 4,
+              resistance: 0.3,
+              },
+          ],
+          minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        { name: 'Hadanite',
+		      minerals: [
+            { name: 'Hadanite',
+              minPercentage: 50,
+              maxPercentage: 100,
+              probability: 1,
+              exponent: 1,
+              instability: 2,
+              resistance: 0.7,
+              },
+          ],
+          minCount: 1,
+          found:[
+            'Hurston','Arial','Aberdeen','Magda','Ita','Crusader','Cellin','Daymar','Yela','Yela Belt','ArcCorp','Lyria','Wala','microTech','Calliope','Clio','Euterpe'
+            ],
+          },
+        ],
       selectedLocation: '',
       selectedDeposit: '',
       generatedDeposit: [],
       generatedInstability: 0,
       generatedResistance: 0,
     }
-  },
-  created() {
-    this.ships = [
-      { name: 'Prospector',
-        active: false,
-        lasers: [{laser: '', laserModules: ['', '', '']}],
-        availableLasers: this.s1lasers,
-        maxLasers: 1
-      },
-      { name: 'MOLE',
-        active: false,
-        lasers: [
-          {laser: '', laserModules: ['', '', '']},
-          {laser: '', laserModules: ['', '', '']},
-          {laser: '', laserModules: ['', '', '']}
-        ],
-        availableLasers: this.s2lasers,
-        maxLasers: 3
-      }
-    ];
   },
   computed : {
     totalInstability() {
@@ -230,13 +1181,6 @@ export default {
     }
   },
   methods: {
-    toggleShip(ship) {
-    ship.active = !ship.active;
-      if (!ship.active) {
-        ship.laser = '';
-        ship.laserModules = ['', '', ''];
-      }
-    },
     generateDeposit() {
       const minerals = this.selectedDeposit.minerals
       const minCount = this.selectedDeposit.minCount
@@ -332,6 +1276,8 @@ export default {
 }
 
 .rightcol {
+  display:flex;
+  flex-direction:column;
   background-color:var(--darkgray);
   border-style:solid;
   border-width:3px;
@@ -341,221 +1287,209 @@ export default {
 }
 
 .centercard {
-  position: absolute;
   width: 70%;
   height: auto;
   padding-block-start:5px;
   align-items:center;
   justify-content:center;
   display:flex;
+  flex-direction:column;
 }
 .centercard p {
   font-size:18px;
 }
 
 .rightcard {
-  position: absolute;
   width: 30%;
   height: auto;
   vertical-align:center;
-  right:20px;
+  margin-inline-end:20px;
 }
 /*Top Card*/
-.harvestableGeneration {
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-width:3px;
-  border-color:var(--lightorange);
-  border-radius:25px;
-  padding-inline-start:15px;
-  padding-block-end:5px;
-  position:relative;
-}
-.harvestableGeneration .provider {
-  width:200px;
-}
-.harvestableGeneration .harvestable {
-  width:200px;
-  padding-inline-start:10px;
-}
+  .harvestableGeneration {
+    background-color:var(--darkgray);
+    border-style:solid;
+    border-width:3px;
+    border-color:var(--lightorange);
+    border-radius:25px;
+    padding-inline-start:15px;
+    padding-block-end:5px;
+  }
+  .harvestableGeneration .provider {
+    width:200px;
+  }
+  .harvestableGeneration .harvestable {
+    width:200px;
+    padding-inline-start:10px;
+  }
 
 /*Bottom Card*/
-.instability {
-  background-color:var(--darkgray);
-  border-style:solid;
-  border-width:3px;
-  border-color:var(--lightorange);
-  border-radius:25px;
-  padding-inline-start:15px;
-  padding-block-end:5px;
-  margin-top:300px; 
-}
-.instability .provider {
-  width:200px;
-}
-.instability .harvestable {
-  width:150px;
-}
+  .instability {
+    background-color:var(--darkgray);
+    border-style:solid;
+    border-width:3px;
+    border-color:var(--lightorange);
+    border-radius:25px;
+    padding-inline-start:15px;
+    padding-block-end:5px;
+    margin-top:300px; 
+  }
+  .instability .provider {
+    width:200px;
+  }
+  .instability .harvestable {
+    width:150px;
+  }
 
 /* Asteroid */
-.asteroid {
-  margin-inline-start:100px;
-  padding-inline-end:400px;
-  margin-block-start:100px;
-  width:200px;
-  height:200px;
-  border-left:solid;
-  border-right:solid;
-  border-color:var(--lightorange);
-  border-width:2px;
-  border-radius:40px;
-  position:relative;
-}
+  .asteroid {
+    margin-inline-start:100px;
+    padding-inline-end:400px;
+    margin-block-start:100px;
+    width:200px;
+    height:200px;
+    border-left:solid;
+    border-right:solid;
+    border-color:var(--lightorange);
+    border-width:2px;
+    border-radius:40px;
+  }
 
 /* Buttons */
-.button {
-  width:300px;
-  height:70px;
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-color:var(--lightorange);
-  border-radius:50px;
-  font-weight:bold;
-  color:var(--darkgray);
-  font-size:25px;
-  font-family:'Segoe UI', sans-serif;
-  cursor:pointer;
-  transition: border 0.3s ease, background-color 0.3s ease;
-}
-.button:hover {
-  border-color:var(--orangehover);
-  background-color:var(--orangehover);
-}
-.Prospector {
-  margin-block-start:50%;
-}
-.MOLE {
-  margin-block-start:20%;
-}
-.Generate {
-  margin-block-start:5px;
-  height:30px;
-  width:150px;
-  font-size:20px;
-}
-.Alternate {
-  margin-block-start:15px;
-}
-.shipCard {
-  animation: 1s appear;
-}
-.mainButtons {
-  animation: 1s appear;
-}
+  .button {
+    width:300px;
+    height:70px;
+    background-color:var(--lightorange);
+    border-style:solid;
+    border-color:var(--lightorange);
+    border-radius:50px;
+    font-weight:bold;
+    color:var(--darkgray);
+    font-size:25px;
+    font-family:'Segoe UI', sans-serif;
+    cursor:pointer;
+    transition: border 0.3s ease, background-color 0.3s ease;
+  }
+  .button:hover {
+    border-color:var(--orangehover);
+    background-color:var(--orangehover);
+  }
+  .Prospector {
+    margin-block-start:50%;
+  }
+  .MOLE {
+    margin-block-start:20%;
+  }
+  .Generate {
+    margin-block-start:5px;
+    height:30px;
+    width:150px;
+    font-size:20px;
+  }
+  .Alternate {
+    margin-block-start:15px;
+  }
+  .prospectorCard .moleCard .mainButtons {
+    animation: 1s appear;
+  }
 
 /*Select*/
-select {
-  background-color:var(--lightorange);
-  border-style:solid;
-  border-radius:15px;
-  border-color:var(--lightorange);
-  color:var(--darkgray);
-  width:150px;
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-  text-align:center;
-}
-select option {
-  font-weight:bold;
-  font-family:'Segoe UI', sans-serif;
-  font-size:16px;
-}
-.shipCard select {
-  width:130px;
-}
-.moduleSelect {
-  padding-block-end:5px;
-}
+  select {
+    background-color:var(--lightorange);
+    border-style:solid;
+    border-radius:15px;
+    border-color:var(--lightorange);
+    color:var(--darkgray);
+    width:150px;
+    font-weight:bold;
+    font-family:'Segoe UI', sans-serif;
+    font-size:16px;
+    text-align:center;
+  }
+  select option {
+    font-weight:bold;
+    font-family:'Segoe UI', sans-serif;
+    font-size:16px;
+  }
+  .moleCard select {
+    width:130px;
+  }
+  .moduleSelect {
+    padding-block-end:5px;
+  }
 
 /* Cards */
-.harvestableGeneration {
-  --va-card-display: inline-block;
-  --va-card-position: relative;
-  --va-card-overflow: visible;
-  --va-card-box-shadow: var(--va-box-shadow);
-  --va-card-border-radius: 0.375rem;
-  --va-card-color: #34495e;
-  --va-card-background-color: var(--va-background-secondary);
-  --va-card-padding: 1.25rem;
-  width:600px;
-}
-.provider {
-  position:relative;
-  left:50px;
-  text-align:center;
-}
-.harvestable {
-  margin-inline-start:13%;
-  position:relative;
-  left:50px;
-  text-align:center;
-}
+  .harvestableGeneration {
+    --va-card-display: inline-block;
+    --va-card-overflow: visible;
+    --va-card-box-shadow: var(--va-box-shadow);
+    --va-card-border-radius: 0.375rem;
+    --va-card-color: #34495e;
+    --va-card-background-color: var(--va-background-secondary);
+    --va-card-padding: 1.25rem;
+    width:600px;
+  }
+  .provider {
+    left:50px;
+    text-align:center;
+  }
+  .harvestable {
+    margin-inline-start:13%;
+    left:50px;
+    text-align:center;
+  }
 
-.instability {
-  --va-card-display: inline-block;
-  --va-card-position: relative;
-  --va-card-overflow: visible;
-  --va-card-box-shadow: var(--va-box-shadow);
-  --va-card-border-radius: 0.375rem;
-  --va-card-color: #34495e;
-  --va-card-background-color: var(--va-background-secondary);
-  --va-card-padding: 1.25rem;
-  width:600px;
-  position:relative;
-}
+  .instability {
+    --va-card-display: inline-block;
+    --va-card-overflow: visible;
+    --va-card-box-shadow: var(--va-box-shadow);
+    --va-card-border-radius: 0.375rem;
+    --va-card-color: #34495e;
+    --va-card-background-color: var(--va-background-secondary);
+    --va-card-padding: 1.25rem;
+    width:600px;
+  }
 
 /*Text*/
+  .title {
+    animation: 1s appear;
+    font: bold 64px/70px 'Segoe UI', sans-serif;
+    display: block;
+    color: var(--lightorange);
+    letter-spacing: 1px;
+  }
 
-.title {
-  animation: 1s appear;
-  font: bold 64px/70px 'Segoe UI', sans-serif;
-  display: block;
-  color: var(--lightorange);
-  letter-spacing: 1px;
-}
+  p {
+    font-weight: 300;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color: var(--lightgray);
+    padding-inline-start:15px;
+    padding-inline-end:15px;
+  }
 
-p {
-  font-weight: 300;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightgray);
-  padding-inline-start:15px;
-  padding-inline-end:15px;
-}
+  h4 {
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color: var(--lightgray);
+    padding-block-end:5px;
+    padding-block-start:5px;
+  }
 
-h4 {
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 22px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightgray);
-  padding-block-end:5px;
-  padding-block-start:5px;
-}
-
-h3 {
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 28px;
-  font-weight:bold;
-  letter-spacing:1px;
-  color: var(--lightorange);
-  padding-block-end:5px;
-  margin-block-start:-20px;
-}
+  h3 {
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight:bold;
+    letter-spacing:1px;
+    color: var(--lightorange);
+    padding-block-end:5px;
+    margin-block-start:-20px;
+  }
 
 </style>
