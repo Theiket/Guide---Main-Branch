@@ -74,18 +74,15 @@
         </va-card>
       </div>
       <br>
-      <center>
         <p style="font-size:10px;">
         Generation is based on the mechanics of Star Citizen but may not be 100% accurate
         </p>
-      </center>
     </div>
   </div>
 <!-- Loadout Selection -->
   <div class="rightcard">
     <div class="rightcol">
       <div class="prospectorCard" v-if="prospector">
-        <center>
           <button class="button Alternate" @click="prospector = !prospector; prospectorLaser = ''; prospectorLaserModules = ['','',''];">
             Prospector
           </button>
@@ -112,10 +109,8 @@
               <br>
             </div>
           </div>
-        </center>
       </div>
       <div class="moleCard" v-else-if="mole">
-        <center>
         <button class="button Alternate" @click="mole = !mole; leftLaser = ''; leftLaserModules = ['','','']; centralLaser = ''; centralLaserModules = ['','','']; rightLaser = ''; rightLaserModules = ['','',''];">
         MOLE
         </button>
@@ -187,10 +182,8 @@
             </span>
           </td>
         </span>
-        </center>
       </div>
       <div class="mainButtons" v-else>
-        <center>
         <button class="button Prospector" @click="prospector = !prospector">
         Prospector
         </button>
@@ -199,7 +192,6 @@
         mole = !mole">
         MOLE
         </button>
-        </center>
       </div>
     </div>
   </div>
