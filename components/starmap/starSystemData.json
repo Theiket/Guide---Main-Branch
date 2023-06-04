@@ -2,25 +2,89 @@
   {
       "name": "Stanton",
       "objects": [
-          {
-              "name": "Hurston ",
+          { "name": "Hurston",
               "type": "planet",
               "objects": [
-                  {
-                      "name": "Arial",
+                  { "name": "Arial",
                       "type": "moon",
                       "objects": [
-                          {
-                              "name": "Outpost 1",
+                          { "name": "Outpost 1",
                               "type": "outpost"
                           }
                       ]
                   },
-                  {
-                      "name": "HUR-L1",
-                      "type": "lagrange station"
+                  { "name": "Aberdeen",
+                    "type": "moon",
+                    "objects": []
+                  },
+                  { "name": "Magda",
+                    "type": "moon",
+                    "objects": []
+                  },
+                  { "name": "Ita",
+                    "type": "moon",
+                    "objects": []
+                  },
+                  { "name": "HUR-L1",
+                    "type": "lagrange station"
                   }
               ]
+          },
+          { "name": "Crusader",
+            "type": "planet",
+            "objects": [
+                { "name": "Cellin",
+                  "type": "moon",
+                  "objects":[]
+                },
+                { "name": "Yela",
+                  "type": "moon",
+                  "objects": []
+                },
+                { "name": "Daymar",
+                  "type": "moon",
+                  "objects": []
+                },
+                { "name": "CRU-L1",
+                  "type": "lagrange station"
+                }
+            ]
+          },
+          { "name": "ArcCorp",
+            "type": "planet",
+            "objects": [
+                { "name": "Lyria",
+                  "type": "moon",
+                  "objects":[]
+                },
+                { "name": "Wala",
+                  "type": "moon",
+                  "objects": []
+                },
+                { "name": "ARC-L1",
+                  "type": "lagrange station"
+                }
+            ]
+          },
+          { "name": "microTech",
+            "type": "planet",
+            "objects": [
+                { "name": "Clio",
+                  "type": "moon",
+                  "objects":[]
+                },
+                { "name": "Calliope",
+                  "type": "moon",
+                  "objects": []
+                },
+                { "name": "Euterpe",
+                  "type": "moon",
+                  "objects": []
+                },
+                { "name": "MIC-L1",
+                  "type": "lagrange station"
+                }
+            ]
           },
           {
               "name": "Aaron Halo",

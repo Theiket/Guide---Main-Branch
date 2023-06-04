@@ -5,7 +5,7 @@
 <script>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 import starSystemData from './starSystemData.json'
-import { WebGLRenderer, Scene, PerspectiveCamera, SphereGeometry, MeshBasicMaterial, Mesh, Raycaster, Vector2, MeshPhongMaterial, PointLight, AmbientLight } from 'three'
+import { WebGLRenderer, Scene, PerspectiveCamera, SphereGeometry, Mesh, Raycaster, Vector2, MeshPhongMaterial, PointLight } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 
