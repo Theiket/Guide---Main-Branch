@@ -1,0 +1,60 @@
+[
+  {
+      "name": "Stanton",
+      "objects": [
+          {
+              "name": "Hurston ",
+              "type": "planet",
+              "objects": [
+                  {
+                      "name": "Arial",
+                      "type": "moon",
+                      "objects": [
+                          {
+                              "name": "Outpost 1",
+                              "type": "outpost"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "HUR-L1",
+                      "type": "lagrange station"
+                  }
+              ]
+          },
+          {
+              "name": "Aaron Halo",
+              "type": "asteroid belt"
+          }
+      ]
+  },
+  {
+      "name": "Pyro",
+      "objects": [
+          {
+              "name": "Pyro I",
+              "type": "planet",
+              "objects": [
+                  {
+                      "name": "Pyro Ia",
+                      "type": "moon",
+                      "objects": [
+                          {
+                              "name": "Outpost 1",
+                              "type": "outpost"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "PYR-L1",
+                      "type": "lagrange station"
+                  }
+              ]
+          },
+          {
+              "name": "Akira Cluster",
+              "type": "asteroid belt"
+          }
+      ]
+  }
+]

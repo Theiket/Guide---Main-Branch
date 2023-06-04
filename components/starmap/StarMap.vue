@@ -5,7 +5,7 @@
 <script>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 import starSystemData from './starSystemData.json'
-import { WebGLRenderer, Scene, PerspectiveCamera, SphereGeometry, MeshBasicMaterial, Mesh, Raycaster, Vector2 } from 'three'
+import { WebGLRenderer, Scene, PerspectiveCamera, SphereGeometry, MeshBasicMaterial, Mesh, Raycaster, Vector2, MeshPhongMaterial, PointLight, AmbientLight } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 
@@ -21,6 +21,13 @@ export default {
       scene = new Scene()
       camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
       renderer = new WebGLRenderer()
+
+      // Set the size of the renderer to match the canvas size
+      const width = 1200
+      const height= 900
+      renderer.setSize(
+        width, height
+      )
 
       // add the renderer's canvas to the container
       container.value.appendChild(renderer.domElement)
@@ -92,31 +99,64 @@ export default {
     function createObject(data) {
       // create a sphere geometry with a size based on the object's type
       const size = getSizeForObjectType(data.type)
-      const geometry = new THREE.SphereGeometry(size, 32, 32)
+      const geometry = new SphereGeometry(size, 32, 32)
 
       // create a material with a color based on the object's type
       const color = getColorForObjectType(data.type)
-      const material = new THREE.MeshBasicMaterial({ color })
+      const material = new MeshPhongMaterial({ color })
 
       // create a 3D mesh for this object
-      const object3D = new THREE.Mesh(geometry, material)
+      const object3D = new Mesh(geometry, material)
 
       // set the object's name, so we can identify it later
       object3D.name = data.name
 
+      // if this object is a star, add a point light
+      if (data.type === 'star') {
+        const light = new PointLight(0xffffff, 1, 100)
+        object3D.add(light)
+      }
+
       return object3D
+    }
+
+
+    function getColorForObjectType(type) {
+      // return a color based on the object's type
+      switch (type) {
+        case 'star':
+          return 0xffff00 // yellow
+        case 'planet':
+          return 0x0000ff // blue
+        case 'moon':
+          return 0xaaaaaa // grey
+        case 'outpost':
+          return 0x00ff00 // green
+        case 'lagrange station':
+          return 0xff00ff // magenta
+        case 'asteroid belt':
+          return 0x555555 // dark grey
+        default:
+          return 0xffffff // white
+      }
     }
 
     function getSizeForObjectType(type) {
       // return a size based on the object's type
-      // for now, let's just return 1 for all types
-      return 1
-    }
-
-    function getColorForObjectType(type) {
-      // return a color based on the object's type
-      // for now, let's just return white for all types
-      return 0xffffff
+      switch (type) {
+        case 'star':
+          return 5
+        case 'planet':
+          return 3
+        case 'moon':
+          return 1
+        case 'outpost':
+        case 'lagrange station':
+        case 'asteroid belt':
+          return 0.5
+        default:
+          return 1
+      }
     }
 
     return { container }
