@@ -1,189 +1,125 @@
 <template>
-  <div ref="container" class="star-map">
-    <StarSystem
-      v-for="system in starSystems"
-      :key="system.id"
-      :system="system"
-      :scene="scene"
-    />
-  </div>
+  <div ref="container"></div>
 </template>
 
 <script>
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { onMounted, ref, shallowRef, reactive } from 'vue';
-import StarSystem from './StarSystem.vue';
+import { onMounted, onBeforeUnmount, ref } from 'vue'
+import starSystemData from './starSystemData.json'
+import { WebGLRenderer, Scene, PerspectiveCamera, SphereGeometry, MeshBasicMaterial, Mesh, Raycaster, Vector2 } from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
 
 export default {
-  components: {
-    StarSystem,
-  },
-  data() {
-    return {
-      scene: shallowRef(new THREE.Scene()),
-    };
-  },
   setup() {
-    const container = ref(null);
-    const scene = shallowRef(new THREE.Scene());
-    const starSystems = reactive([
-        { id: '1', name: 'Solar System',
-          position: { x: 0, y: 0, z: 0 },
-          bodies: [
-            { id: '1-1', name: 'Sun',
-              type: 'star',
-              size: 1,
-              color: 0xffff00,
-            },
-            { id: '1-2', name: 'Earth',
-              type: 'planet',
-              size: 0.1,
-              color: 0x0000ff,
-            },
-            // Add more celestial bodies...
-          ],
-        },
-        { id: '2', name: 'Alpha Centauri',
-          position: { x: 3, y: 2, z: 1 },
-          bodies: [
-            { id: '2-1', name: 'Alpha Centauri A',
-              type: 'star',
-              size: 1.1,
-              color: 0xff8800,
-            },
-            { id: '2-2', name: 'Alpha Centauri B',
-              type: 'star',
-              size: 0.9,
-              color: 0xffaa00,
-            },
-            { id: '2-3', name: 'Proxima Centauri',
-              type: 'star',
-              size: 0.2,
-              color: 0xffcc00,
-            },
-            // Add more celestial bodies...
-          ],
-        },
-        // Add more star systems...
-      ]);
+    const container = ref(null)
+    const raycaster = new Raycaster()
+    const mouse = new Vector2()
+    let renderer, scene, camera, animationFrameId
 
     onMounted(() => {
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        container.value.clientWidth / container.value.clientHeight,
-        0.1,
-        1000
-      );
-      camera.position.z = 5;
+      // set up the THREE.js scene
+      scene = new Scene()
+      camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+      renderer = new WebGLRenderer()
 
-      // Star Geometry
-      for (const starSystem of starSystems) {
-        const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3()]);
-        const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
-        const points = new THREE.Points(geometry, material);
-        points.position.set(starSystem.position.x, starSystem.position.y, starSystem.position.z);
-        points.userData.starSystem = starSystem;
-        scene.value.add(points);
-      }
+      // add the renderer's canvas to the container
+      container.value.appendChild(renderer.domElement)
 
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(
-        container.value.clientWidth,
-        container.value.clientHeight
-      );
-      container.value.appendChild(renderer.domElement);
+      // position the camera
+      camera.position.z = 5
 
-      const controls = new OrbitControls(camera, renderer.domElement);
-      // Set the background color to black
-      renderer.setClearColor(0x24262B, 0)
+      // load orbit controls
+      const controls = new OrbitControls(camera, renderer.domElement)
 
-      // Lighting
-      const pointLight = new THREE.PointLight(0xffffff)
-      pointLight.position.set(10,10,10)
-      const ambientLight = new THREE.AmbientLight(0x24262B)
+      // load the 3D objects
+      loadObjects()
 
-      scene.value.add(pointLight, ambientLight)
+      // load event listener for mouse hover/click
+      window.addEventListener('click', (event) => {
+        // update the mouse vector
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
 
-      const animate = function() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene.value, camera);
-      }
-      // Hover Event Listener
-      const raycaster = new THREE.Raycaster();
-      const mouse = new THREE.Vector2();
+        // find intersections
+        raycaster.setFromCamera(mouse, camera)
+        const intersects = raycaster.intersectObjects(scene.children, true)
 
-      let hoveredStarSystem = null;
-
-      const onMouseMove = (event) => {
-        // Calculate mouse position in normalized device coordinates
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        // Update the picking ray with the camera and mouse position
-        raycaster.setFromCamera(mouse, camera);
-        // Calculate objects intersecting the picking ray
-        const intersects = raycaster.intersectObjects(scene.value.children);
+        // if there's an intersection, the first one is the closest object
         if (intersects.length > 0) {
-          const intersectedObject = intersects[0].object;
-          // If we're already hovering over a star system and it's not the one we just intersected, reset its color
-          if (hoveredStarSystem && hoveredStarSystem !== intersectedObject) {
-            hoveredStarSystem.material.color.set(0xffffff);
-          }
-          // Set the color of the intersected star system and update the hoveredStarSystem variable
-          intersectedObject.material.color.set(0xff0000);
-          hoveredStarSystem = intersectedObject;
-        } else if (hoveredStarSystem) {
-          // If we're not intersecting any star system but we were previously hovering over one, reset its color
-          hoveredStarSystem.material.color.set(0xffffff);
-          hoveredStarSystem = null;
+          const object = intersects[0].object
+          console.log(`You selected ${object.name}`)
         }
-      };
-      window.addEventListener('mousemove', onMouseMove);
-      
-      // Click Event Listener
-      const onMouseClick = (event) => {
-        // Calculate mouse position in normalized device coordinates
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        // Update the picking ray with the camera and mouse position
-        raycaster.setFromCamera(mouse, camera);
-        // Calculate objects intersecting the picking ray
-        const intersects = raycaster.intersectObjects(scene.value.children);
-        if (intersects.length > 0) {
-          const intersectedObject = intersects[0].object;
-          const starSystem = intersectedObject.userData.starSystem;
-          // Now do something with the clicked star system, for example, log it to the console
-          console.log(starSystem);
-          // Move the camera to the clicked star system
-          const distance = 5;  // Adjust this value as needed
-          const direction = new THREE.Vector3().subVectors(camera.position, intersectedObject.position).normalize();
-          camera.position.copy(intersectedObject.position).add(direction.multiplyScalar(distance));
-          camera.lookAt(intersectedObject.position);
+      })
+
+      // start the animation loop
+      animate()
+    })
+
+    onBeforeUnmount(() => {
+      // clean up the animation loop
+      cancelAnimationFrame(animationFrameId)
+
+      // remove the renderer's canvas from the container
+      container.value.removeChild(renderer.domElement)
+
+      // dispose of the scene, camera, and renderer
+      scene.dispose()
+      camera.dispose()
+      renderer.dispose()
+    })
+
+    function animate() {
+      animationFrameId = requestAnimationFrame(animate)
+      renderer.render(scene, camera)
+    }
+
+    function loadObjects() {
+      // loop over each star system in the data
+      for (const starSystem of starSystemData) {
+        // create a 3D object for the star system
+        const starSystemObject = createObject(starSystem)
+        scene.add(starSystemObject)
+
+        // loop over each object in the star system
+        for (const object of starSystem.objects) {
+          // create a 3D object for this object
+          const object3D = createObject(object)
+          starSystemObject.add(object3D)
         }
-      };
+      }
+    }
 
-      window.addEventListener('mousedown', onMouseClick);
+    function createObject(data) {
+      // create a sphere geometry with a size based on the object's type
+      const size = getSizeForObjectType(data.type)
+      const geometry = new THREE.SphereGeometry(size, 32, 32)
 
+      // create a material with a color based on the object's type
+      const color = getColorForObjectType(data.type)
+      const material = new THREE.MeshBasicMaterial({ color })
 
-      animate();
-    });
+      // create a 3D mesh for this object
+      const object3D = new THREE.Mesh(geometry, material)
 
-    onUnmounted(() => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mousedown', onMouseClick);
-    });
+      // set the object's name, so we can identify it later
+      object3D.name = data.name
 
-    return { container, scene };
-  },
-};
-</script>
+      return object3D
+    }
 
-<style scoped>
-.star-map {
-  display:flex;
-  height: 85vh;
-  width: 100vw;
-  justify-content:center;
+    function getSizeForObjectType(type) {
+      // return a size based on the object's type
+      // for now, let's just return 1 for all types
+      return 1
+    }
+
+    function getColorForObjectType(type) {
+      // return a color based on the object's type
+      // for now, let's just return white for all types
+      return 0xffffff
+    }
+
+    return { container }
+  }
 }
-</style>
+</script>
