@@ -25,31 +25,115 @@
       </div>
     </div>
   <!-- Component Selection Card -->
-  <div class="centercard">
-    <div v-for="component in components" :key="component.name" class="dropdown">
-      <va-button-group preset="plain" class="md-6">
-        <va-button @click="selectComponent(component)">
-          {{ component.name }}
-        </va-button>
-      </va-button-group>
-      <div v-if="component === selectedComponent">
-        <div class="component-search">
-          <input type="text" v-model="component.search" placeholder='Search for...'>
+    <div class="centercard">
+      <section class="component">
+        <p>Weapons</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('weapons')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
         </div>
-        <div v-for="item in filteredItems(component)" :key="item.name" class="componentSelect">
-          <span class="coolerButton">
-            <button @click="selectItem(component, item)">
-              <h4>{{ item.name }}</h4>
-              <p>{{ item.grade }} | Class</p>
-              <p v-if="item.capacity">Capacity: {{ item.capacity }}</p>
-              <p v-if="item.coolingrate">Cooling: {{ item.coolingrate }}</p>
-              <p v-if="item.power">Power: {{ item.power }}</p>
+        <div v-if="componentStates['weapons']">
+          <br>
+          <p>Become Visible</p>
+        </div>
+      </section>
+      <section class="component">
+        <p>Shields</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('shields')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['shields']">
+          <span class="coolerButton" v-for="shield in s1shields">
+            <button>
+            <h4> {{shield.name}} </h4>
+            <p>
+            {{shield.grade}} | Class <br>
+            Capacity: {{shield.capacity}}
+            </p>
             </button>
           </span>
+          <br>
         </div>
-      </div>
+      </section>
+      <section class="component">
+        <p>Power Plants</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('powerplants')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['powerplants']">
+          <span class="coolerButton" v-for="powerplant in s1powerplants">
+            <button>
+            <h4> {{powerplant.name}} </h4>
+            <p>
+            {{powerplant.grade}} | Class <br>
+            Power: {{powerplant.capacity}}
+            </p>
+            </button>
+          </span>
+          <br>
+        </div>
+      </section>
+      <section class="component">
+        <p>Coolers</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('coolers')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['coolers']">
+          <span class="coolerButton" v-for="cooler in s1coolers">
+            <button>
+              <h4> {{cooler.name}} </h4>
+              <p>
+              {{cooler.grade}} | Class <br>
+              Cooling: {{cooler.coolingrate}}
+              </p>
+            </button>
+          </span>
+          <br>
+        </div>
+      </section>
+      <section class="component">
+        <p>Quantum Drives</p>
+        <br>
+        <div class="dropdown">
+          <va-button-group preset="plain" class="mb-6">
+            <va-button @click="toggleItem('quantumdrives')">
+              <Icon name="bxs:caret-down-circle" />
+            </va-button>
+          </va-button-group>
+        </div>
+        <div class="componentSelect" v-if="componentStates['quantumdrives']">
+        <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
+            <button>
+              <h4> {{quantumdrive.name}} </h4>
+              <p>
+              {{quantumdrive.grade}} | Class <br>
+              Values Go Here
+              </p>
+            </button>
+          </span>
+          <br>
+        </div>
+      </section>
     </div>
-  </div>
   <!-- Ship Information Card -->
     <div class="rightcard">
       <div class="col-md-3">
@@ -145,14 +229,13 @@
 export default {
   data() {
     return {
-      components: [
-        { name: 'Weapons', items: [], search: '', selectedItem: null }, 
-        { name: 'Shields', items: this.s1shields, search: '', selectedItem: null },
-        { name: 'Power Plants', items: this.s1powerplants, search: '', selectedItem: null },
-        { name: 'Coolers', items: this.s1coolers, search: '', selectedItem: null },
-        { name: 'Quantum Drives', items: this.s1quantumdrives, search: '', selectedItem: null },
-        ],
-      selectedComponent: null,
+      componentStates: {
+        weapons: false,
+        shields: false,
+        powerplants: false,
+        coolers: false,
+        quantumdrives: false,
+      },
       selectedCompany: '',
       vehicleName:'Please select a vehicle',
       vehicleDescription:'Please select a vehicle to see their description.',
@@ -2223,16 +2306,13 @@ export default {
       this.scmSpeed = ships.scmspeed
       this.maxSpeed = ships.maxspeed
     },
-    filteredItems(component) {
-      if (!component.search) return component.items;
-      const lowerCaseSearch = component.search.toLowerCase();
-      return component.items.filter(item => item.name.toLowerCase().includes(lowerCaseSearch));
-    },
-    selectItem(component, item) {
-      component.selectedItem = item;
-    },
-    selectComponent(component) {
-      this.selectedComponent = this.selectedComponent === component ? null : component;
+    toggleItem(itemName) {
+      for (const name in this.componentStates) {
+        if (name !== itemName) {
+          this.componentStates[name] = false;
+        }
+      }
+      this.componentStates[itemName] = !this.componentStates[itemName];
     },
   },
 };
@@ -2243,6 +2323,7 @@ export default {
     margin: auto;
     min-height: 85vh;
     display: flex;
+    flex-direction:row;
     min-width:90vw;
     background-color:var(--backgray);
     animation: 1s appear;
@@ -2267,10 +2348,10 @@ export default {
   }
 
   .centercard {
-    position: relative;
     width: 40%;
     height: auto;
-    padding-block-start:30px;
+    display:flex;
+    flex-direction:row;
   }
 
   .centercard p {
@@ -2363,6 +2444,7 @@ export default {
     padding:5px 5px;
     background-color:var(--lightgray);
     margin-block-start:5px;
+    transition:border-color 0.3s ease, background-color 0.3s ease;
   }
   .leftcard button:hover {
     background-color:var(--lightorange);
@@ -2396,6 +2478,13 @@ export default {
     border-radius: 25px;
     margin-right: 25px;
     margin-top: 15px;
+    display:flex;
+    flex-flow:row wrap;
+    text-align:center;
+  }
+
+  .centercard .component {
+    
   }
 
   .coolerButton {
@@ -2421,6 +2510,7 @@ export default {
     border-radius: 15px;
     margin-top: 4px;
     overflow: hidden;
+    transition:border-color 0.3s ease;
   }
 
   .coolerButton button:hover {
@@ -2436,9 +2526,4 @@ export default {
     flex-direction:row;
   }
 
-  @keyframes appear {
-    0% {
-      opacity: 0;
-    }
-  }
 </style>
