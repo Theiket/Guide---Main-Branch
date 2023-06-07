@@ -27,75 +27,49 @@
   <!-- Component Selection Card -->
     <div class="centercard">
       <section class="component">
-        <p>Weapons</p>
-        <br>
-        <div class="dropdown">
-          <va-button-group preset="plain" class="mb-6">
-            <va-button @click="toggleItem('weapons')">
-              <Icon name="bxs:caret-down-circle" />
-            </va-button>
-          </va-button-group>
-        </div>
+        <span class="component-row">
+          <div class="dropdown" @click="toggleItem('weapons')">
+            <p>Weapons</p>
+          </div>
+          <div class="dropdown" @click="toggleItem('shields')">
+            <p>Shields</p>
+          </div>
+          <div class="dropdown" @click="toggleItem('powerplants')">
+            <p>Power Plants</p>
+          </div>
+          <div class="dropdown" @click="toggleItem('coolers')">
+            <p>Coolers</p>
+          </div>
+          <div class="dropdown" @click="toggleItem('quantumdrives')">
+            <p>Quantum Drives</p>
+          </div>
+        </span>
         <div v-if="componentStates['weapons']">
-          <br>
-          <p>Become Visible</p>
-        </div>
-      </section>
-      <section class="component">
-        <p>Shields</p>
-        <br>
-        <div class="dropdown">
-          <va-button-group preset="plain" class="mb-6">
-            <va-button @click="toggleItem('shields')">
-              <Icon name="bxs:caret-down-circle" />
-            </va-button>
-          </va-button-group>
+          <span v-if="componentStates['weapons']">
+            <p>Become Visible</p>
+          </span>
         </div>
         <div class="componentSelect" v-if="componentStates['shields']">
           <span class="coolerButton" v-for="shield in s1shields">
             <button>
-            <h4> {{shield.name}} </h4>
-            <p>
-            {{shield.grade}} | Class <br>
-            Capacity: {{shield.capacity}}
-            </p>
+              <h4> {{shield.name}} </h4>
+              <p>
+              {{shield.grade}} | Class <br>
+              Capacity: {{shield.capacity}}
+              </p>
             </button>
           </span>
-          <br>
-        </div>
-      </section>
-      <section class="component">
-        <p>Power Plants</p>
-        <br>
-        <div class="dropdown">
-          <va-button-group preset="plain" class="mb-6">
-            <va-button @click="toggleItem('powerplants')">
-              <Icon name="bxs:caret-down-circle" />
-            </va-button>
-          </va-button-group>
         </div>
         <div class="componentSelect" v-if="componentStates['powerplants']">
           <span class="coolerButton" v-for="powerplant in s1powerplants">
             <button>
-            <h4> {{powerplant.name}} </h4>
-            <p>
-            {{powerplant.grade}} | Class <br>
-            Power: {{powerplant.capacity}}
-            </p>
+              <h4> {{powerplant.name}} </h4>
+              <p>
+              {{powerplant.grade}} | Class <br>
+              Power: {{powerplant.capacity}}
+              </p>
             </button>
           </span>
-          <br>
-        </div>
-      </section>
-      <section class="component">
-        <p>Coolers</p>
-        <br>
-        <div class="dropdown">
-          <va-button-group preset="plain" class="mb-6">
-            <va-button @click="toggleItem('coolers')">
-              <Icon name="bxs:caret-down-circle" />
-            </va-button>
-          </va-button-group>
         </div>
         <div class="componentSelect" v-if="componentStates['coolers']">
           <span class="coolerButton" v-for="cooler in s1coolers">
@@ -107,21 +81,9 @@
               </p>
             </button>
           </span>
-          <br>
-        </div>
-      </section>
-      <section class="component">
-        <p>Quantum Drives</p>
-        <br>
-        <div class="dropdown">
-          <va-button-group preset="plain" class="mb-6">
-            <va-button @click="toggleItem('quantumdrives')">
-              <Icon name="bxs:caret-down-circle" />
-            </va-button>
-          </va-button-group>
         </div>
         <div class="componentSelect" v-if="componentStates['quantumdrives']">
-        <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
+          <span class="coolerButton" v-for="quantumdrive in s1quantumdrives">
             <button>
               <h4> {{quantumdrive.name}} </h4>
               <p>
@@ -130,7 +92,6 @@
               </p>
             </button>
           </span>
-          <br>
         </div>
       </section>
     </div>
@@ -2472,7 +2433,7 @@ export default {
 
 
 /*Center Card*/
-  .componentSelect {
+.componentSelect {
     background-color: var(--darkgray);
     border: 3px solid var(--lightorange);
     border-radius: 25px;
@@ -2483,8 +2444,9 @@ export default {
     text-align:center;
   }
 
-  .centercard .component {
-    
+  .component-row {
+    display:flex;
+    flex-flow:row wrap;
   }
 
   .coolerButton {
@@ -2524,6 +2486,11 @@ export default {
   .dropdown {
     display:flex;
     flex-direction:row;
+    text-align:center;
+    width:20%;
+  }
+  .dropdown:hover {
+    cursor:pointer;
   }
 
 </style>
