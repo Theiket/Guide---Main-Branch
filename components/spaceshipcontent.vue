@@ -103,9 +103,9 @@
         </h4>
         <div class="vehicleText">
           <center>
-          <p>
-          {{vehicleDescription}}
-          </p>
+            <p>
+            {{vehicleDescription}}
+            </p>
           </center>
         </div>
         <va-divider />
@@ -609,28 +609,28 @@ export default {
             description:"ARGO’s pragmatic no-nonsense approach to ship design is celebrated in the unmistakable silhouette of the MOLE. Just one look at this machine and you know it means business. Tap into your full potential with the combined force of ARGO’s patented trilateral mining system. The MOLE has a total of 24 mineral pods, each holding 12 SCU. Eight pods are usable at one time – when they’re full, either head home or jettison them for collection by another vessel and carry on mining. Three independently controlled articulated extraction stations allow for maximum power and near-limitless versatility. The MOLE lives by the adage ’many hands make for light work’.",
             role:'Prospecting & Mining',
             size:'S3'
-          },
+            },
           { name:'MPUV Cargo',
             description:"The ARGO Astronautics MPUV-1C (commonly ‘Argo Cargo’) is a dedicated merchant transfer ship, a ubiquitous intergalactic stevedore. Vast numbers of Argo Cargos are responsible for loading and unloading goods onto massive long-haul transports and miners that cannot otherwise land on planets or drydocks, such as the Hull D and the Orion. Some captains choose to own and operate their own Argo, while others pay privately owned ships operating as port services a rental fee for performing the unloading process. Boaty McBoatface.",
             role:'Light freight',
             size:'S1',
-          },
+            },
           { name:'MPUV Personnel',
             description:"The ARGO Astronautics MPUV-1P (commonly ‘Argo Personnel.’) is geared towards a simple but incredibly important responsibility: moving groups of people from place to place. The UEE Navy uses MPUV-1Ps extensively, and any new recruit can likely recall those terrifying moments in which such a ship carried them to their first space assignment. In civilian hands, Argo Personnel ships are adapted for everything from standard taxi services to use as makeshift combat dropships. The ARGO is capable of carrying up to eight Humans and their equipment.",
             role:'Passenger',
             size:'S1',
-          },
+            },
           { name:'RAFT',
             description:"As it does with all its industrial concerns, Argo takes cargo transport very seriously, on every scale. The RAFT is no exception, able to carry three standardized 32-SCU cargo containers for a total hauling capacity of 96 SCU. Perfect for entry-level haulers and old pros alike, the RAFT is an ideal solution for reliable local freight transport. Once again, Argo gets the job done.",
             role:'Medium freight',
             size:'S3',
-          },
+            },
           { name:'SRV',
             description:"When it comes to getting the job done, ARGO doesn’t mess around. From simple freight and cargo towing to harrowing search-and-rescue operations, the SRV handles whatever you can throw at it. The bespoke tractor system utilizes an innovative plate and arm combination, allowing for effortless solo use as well as precision team towing for bigger jobs. Your crew and passengers stay safe too thanks to durable shields and heavy-duty armor that keep the cockpit and components secure when the situation gets hairy.",
             role:'Recovery',
             size:'Unknown',
-          },
-          ],
+            },
+            ],
         'Banu Souli': [
           { name:'Defender',
             description:"Meet the Banu Defender, a multi-crew fighter whose patchwork design highlights technology from a variety of species. Featuring modest accommodations for its crew and easy access to components, the Defender gets its name from the role it serves: the first line of defense against enemy attacks. That's why the Defender makes the ideal companion to the Merchantman: one to do the heavy hauling and the other to perform the deadly dogfighting.",
@@ -2280,217 +2280,218 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    margin: auto;
-    min-height: 85vh;
-    display: flex;
-    flex-direction:row;
-    min-width:90vw;
-    background-color:var(--backgray);
-    animation: 1s appear;
-    padding-block-start:15px;
-    user-select:none;
-  }
-  .col-md-3 {
-    background-color:var(--darkgray);
-    border-style:solid;
-    border-width:3px;
-    border-color:var(--lightorange);
-    border-radius:25px;
-    min-height:85vh;
-  }
+  /* General */
+    .container {
+      margin: auto;
+      min-height: 85vh;
+      display: flex;
+      flex-direction:row;
+      min-width:90vw;
+      background-color:var(--backgray);
+      animation: 1s appear;
+      padding-block-start:15px;
+      user-select:none;
+    }
+    .col-md-3 {
+      background-color:var(--darkgray);
+      border-style:solid;
+      border-width:3px;
+      border-color:var(--lightorange);
+      border-radius:25px;
+      min-height:85vh;
+    }
 
-  .leftcard {
-    position: relative;
-    width: 30%;
-    height: auto;
-    padding-inline-end:25px;
-    margin-inline-start:10px;
-  }
+    .leftcard {
+      position: relative;
+      width: 30%;
+      height: auto;
+      padding-inline-end:25px;
+      margin-inline-start:10px;
+    }
 
-  .centercard {
-    width: 40%;
-    height: auto;
-    display:flex;
-    flex-direction:row;
-  }
+    .centercard {
+      width: 40%;
+      height: auto;
+      display:flex;
+      flex-direction:row;
+    }
 
-  .centercard p {
-    font-size:18px;
-  }
+    .centercard p {
+      font-size:18px;
+    }
 
-  .rightcard {
-    position: relative;
-    width: 30%;
-    height: auto;
-    margin-inline-end:10px;
-  }
+    .rightcard {
+      position: relative;
+      width: 30%;
+      height: auto;
+      margin-inline-end:10px;
+    }
 
-  .infoCard {
-    text-align:center;
-    margin-inline-start:0px;
-  }
-  .infoCard td {
-    width:300px;
-  }
+    .infoCard {
+      text-align:center;
+      margin-inline-start:0px;
+    }
+    .infoCard td {
+      width:300px;
+    }
 
-  .title {
-    animation: 1s appear;
-    font: bold 64px/70px 'Segoe UI', sans-serif;
-    display: block;
-    color: var(--lightorange);
-    letter-spacing: 1px;
-  }
+    .title {
+      animation: 1s appear;
+      font: bold 64px/70px 'Segoe UI', sans-serif;
+      display: block;
+      color: var(--lightorange);
+      letter-spacing: 1px;
+    }
 
-  p {
-    font-weight: 300;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-    font-weight:bold;
-    letter-spacing:1px;
-    color: var(--lightgray);
-  }
+    p {
+      font-weight: 300;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      font-weight:bold;
+      letter-spacing:1px;
+      color: var(--lightgray);
+    }
 
-  h4 {
-    font-weight: bold;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    letter-spacing:1px;
-    color: var(--lightgray);
-    padding-block-end:5px;
-    text-align:center;
-    padding-block-start:10px;
-  }
+    h4 {
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 28px;
+      font-weight:bold;
+      letter-spacing:1px;
+      color: var(--lightgray);
+      padding-block-end:5px;
+      text-align:center;
+      padding-block-start:10px;
+    }
 
-  .infoCard p {
-    margin-block-start:-15px;
-    color:var(--lightorange);
-  }
-  .infoCard h4 {
-    font-size:20px;
-    margin-block-start:-10px;
-  }
+    .infoCard p {
+      margin-block-start:-15px;
+      color:var(--lightorange);
+    }
+    .infoCard h4 {
+      font-size:20px;
+      margin-block-start:-10px;
+    }
 
-  .dropdown .icon {
-    scale:200%;
-    padding-block-start:5px;
-    color:var(--lightgray);
-  }
+    .dropdown .icon {
+      scale:200%;
+      padding-block-start:5px;
+      color:var(--lightgray);
+    }
 
-/*Left Card */
-  .leftcard select {
-    background-color:var(--lightorange);
-    border-style:solid;
-    border-radius:20px;
-    border-color:var(--lightorange);
-    color:var(--darkgray);
-    width:300px;
-    font-weight:bold;
-    font-size:18px;
-    text-align:center;
-    height:40px;
-    margin-block-start:-20px;
-  }
-  .leftcard select option:hover {
-    color:var(--orangehover);
-  }
-  .leftcard button {
-    border-style:solid;
-    border-radius:50%;
-    border-width:15px;
-    border-color:var(--lightgray);
-    cursor:pointer;
-    display:inline-flex;
-    padding:5px 5px;
-    background-color:var(--lightgray);
-    margin-block-start:5px;
-    transition:border-color 0.3s ease, background-color 0.3s ease;
-  }
-  .leftcard button:hover {
-    background-color:var(--lightorange);
-    border-color:var(--lightorange);
-  }
-  .leftcard label {
-    margin-block-start:2px;
-    margin-block-end:2px;
-    display:inline-flex;
-  }
-  .leftcard table {
-    text-align:center;
-    min-width:250px;
-    margin-block-start:-20px;
-  }
-  .leftcard td {
-    width:125px;
-  }
+  /*Left Card */
+    .leftcard select {
+      background-color:var(--lightorange);
+      border-style:solid;
+      border-radius:20px;
+      border-color:var(--lightorange);
+      color:var(--darkgray);
+      width:300px;
+      font-weight:bold;
+      font-size:18px;
+      text-align:center;
+      height:40px;
+      margin-block-start:-20px;
+    }
+    .leftcard select option:hover {
+      color:var(--orangehover);
+    }
+    .leftcard button {
+      border-style:solid;
+      border-radius:50%;
+      border-width:15px;
+      border-color:var(--lightgray);
+      cursor:pointer;
+      display:inline-flex;
+      padding:5px 5px;
+      background-color:var(--lightgray);
+      margin-block-start:5px;
+      transition:border-color 0.3s ease, background-color 0.3s ease;
+    }
+    .leftcard button:hover {
+      background-color:var(--lightorange);
+      border-color:var(--lightorange);
+    }
+    .leftcard label {
+      margin-block-start:2px;
+      margin-block-end:2px;
+      display:inline-flex;
+    }
+    .leftcard table {
+      text-align:center;
+      min-width:250px;
+      margin-block-start:-20px;
+    }
+    .leftcard td {
+      width:125px;
+    }
 
-/*Right Card*/
-  .vehicleText {
-    padding-inline-start:15px;
-    padding-inline-end:15px;
-  }
+  /*Right Card*/
+    .vehicleText {
+      padding-inline-start:15px;
+      padding-inline-end:15px;
+    }
 
 
-/*Center Card*/
-.componentSelect {
-    background-color: var(--darkgray);
-    border: 3px solid var(--lightorange);
-    border-radius: 25px;
-    margin-right: 25px;
-    margin-top: 15px;
-    display:flex;
-    flex-flow:row wrap;
-    text-align:center;
-  }
+  /*Center Card*/
+    .componentSelect {
+      background-color: var(--darkgray);
+      border: 3px solid var(--lightorange);
+      border-radius: 25px;
+      margin-right: 25px;
+      margin-top: 15px;
+      display:flex;
+      flex-flow:row wrap;
+      text-align:center;
+    }
 
-  .component-row {
-    display:flex;
-    flex-flow:row wrap;
-  }
+    .component-row {
+      display:flex;
+      flex-flow:row wrap;
+    }
 
-  .coolerButton {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 2px;
-  }
+    .coolerButton {
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 2px;
+    }
 
-  .coolerButton h4 {
-    font-size: 20px;
-    color: var(--lightorange);
-    padding-top: 0;
-  }
+    .coolerButton h4 {
+      font-size: 20px;
+      color: var(--lightorange);
+      padding-top: 0;
+    }
 
-  .coolerButton p {
-    padding-bottom: 5px;
-    font-size: 16px;
-  }
+    .coolerButton p {
+      padding-bottom: 5px;
+      font-size: 16px;
+    }
 
-  .coolerButton button {
-    background-color: transparent;
-    border: 2px solid transparent;
-    border-radius: 15px;
-    margin-top: 4px;
-    overflow: hidden;
-    transition:border-color 0.3s ease;
-  }
+    .coolerButton button {
+      background-color: transparent;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      margin-top: 4px;
+      overflow: hidden;
+      transition:border-color 0.3s ease;
+    }
 
-  .coolerButton button:hover {
-    border-color: var(--lightorange);
-  }
+    .coolerButton button:hover {
+      border-color: var(--lightorange);
+    }
 
-  .coolerButton button:hover h4 {
-    color: var(--orangehover);
-  }
+    .coolerButton button:hover h4 {
+      color: var(--orangehover);
+    }
 
-  .dropdown {
-    display:flex;
-    flex-direction:row;
-    text-align:center;
-    width:20%;
-  }
-  .dropdown:hover {
-    cursor:pointer;
-  }
+    .dropdown {
+      display:flex;
+      flex-direction:row;
+      text-align:center;
+      width:20%;
+    }
+    .dropdown:hover {
+      cursor:pointer;
+    }
 
 </style>
