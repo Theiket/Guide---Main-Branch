@@ -22,7 +22,7 @@
           <NuxtLink to="/spaceships" class="navbutton" aria-label="Spaceships page">
             <Icon name="carbon:rocket" />
           </NuxtLink>
-          <NuxtLink to="/testing" class="navbutton" aria-label="Starmap page">
+          <NuxtLink to="/starmap" class="navbutton" aria-label="Starmap page">
             <Icon name="ph:planet" />
           </NuxtLink>
           <NuxtLink to="/catalogue" class="navbutton" aria-label="Catalogue page">
